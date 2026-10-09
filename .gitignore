@@ -1,0 +1,46 @@
+# ===== 体积大的中间产物（不入库）=====
+# PDF 提取的原始图（189 张），仅作溯源用，正文不用
+教师版蓝皮书/assets_from_pdf/
+
+# PDF 提取的高分辨率原图（142 张 36.8MB），正文用的是 assets_opt 里的压缩版
+教师版蓝皮书/assets/
+
+# 打包产物（可由 build_official.py / build_bluebook.py 重新生成）
+*.zip
+
+# 公众号抓取的原图与页面（临时代替品，替换截图后即可删）
+_article_imgs/
+
+# PDF 提取的文本结果（可重新提取）
+_pdf_text/*.txt
+
+# 参考站抓取（体积大且可重新抓）
+_ref_raw/
+_wbguide.tar.gz
+*.mp4
+
+# WorkBuddy 本地缓存与数据
+.cache/
+.slidep/
+.workbuddy/
+
+# 可能含个人信息的临时文件
+_imgtest.md
+_pure__t.md
+_t.md
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+*.swp
+*.pyc
+__pycache__/
+.DS_Store
+Thumbs.db
+~$*
+
+# ================================================================
+# 注意：英语课程资料（他人版权教材，337MB）也需排除。
+# 中文目录名在 .gitignore 里匹配异常，实际规则写在 .git/info/exclude：
+#     英语课程资料/
+# ================================================================

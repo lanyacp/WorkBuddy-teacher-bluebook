@@ -1,0 +1,4281 @@
+{
+  "sha": "e510a2c89114efef2c3031d86ac9c31b36ff8b80",
+  "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/e510a2c89114efef2c3031d86ac9c31b36ff8b80",
+  "tree": [
+    {
+      "path": ".dev.vars.example",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2dbb07773a394ed2a5108d1f0d5739b232b52b5",
+      "size": 329,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f2dbb07773a394ed2a5108d1f0d5739b232b52b5"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d8351b17387a4591a8c46a46f838f6599ddd0f3e",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/d8351b17387a4591a8c46a46f838f6599ddd0f3e"
+    },
+    {
+      "path": ".github/CASE_TEMPLATE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "311a949030daa03ff672e3fd14c89c4fc3ba0a55",
+      "size": 1665,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/311a949030daa03ff672e3fd14c89c4fc3ba0a55"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e782609983102126e89eab08e0840a8c4566bde6",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/e782609983102126e89eab08e0840a8c4566bde6"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e9ac12d595ba881dd9d1e55e2757360b98f9f51",
+      "size": 635,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3e9ac12d595ba881dd9d1e55e2757360b98f9f51"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/content.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3819b0bd0edab4fa483872dc89bc9dff322f5bc6",
+      "size": 864,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3819b0bd0edab4fa483872dc89bc9dff322f5bc6"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99369149a28b1a0e2d813b70859c3813ba84f093",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/99369149a28b1a0e2d813b70859c3813ba84f093"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE/case.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97e87a360cb4ca5b3e8c244f59e2e9e44696b6dd",
+      "size": 1199,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/97e87a360cb4ca5b3e8c244f59e2e9e44696b6dd"
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9224c2ff2824446dd5617416c151b9bb3da94b0",
+      "size": 352,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b9224c2ff2824446dd5617416c151b9bb3da94b0"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b24a3b2a8fad50e2db952f7debf383016af0f05",
+      "size": 419,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2b24a3b2a8fad50e2db952f7debf383016af0f05"
+    },
+    {
+      "path": ".nvmrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bd5a0a98a36cc08ada88b804d3be047e6aa5b8a",
+      "size": 3,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2bd5a0a98a36cc08ada88b804d3be047e6aa5b8a"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5389c37cd62271c9c867a1e4f72ec589839146d6",
+      "size": 2633,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5389c37cd62271c9c867a1e4f72ec589839146d6"
+    },
+    {
+      "path": "CONTRIBUTING_en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4ca1e796d9ddd3eb78318cf23f36640725a80d7",
+      "size": 2106,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e4ca1e796d9ddd3eb78318cf23f36640725a80d7"
+    },
+    {
+      "path": "DEPLOYMENT.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae8a340bf0a8daa9015e449b3007b42588d08147",
+      "size": 3413,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ae8a340bf0a8daa9015e449b3007b42588d08147"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc70572ace33e1dac094a9b38331be08f89475b1",
+      "size": 1085,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/fc70572ace33e1dac094a9b38331be08f89475b1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7c2044ad46d728943f00a0959ab131ea21768b8",
+      "size": 7147,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a7c2044ad46d728943f00a0959ab131ea21768b8"
+    },
+    {
+      "path": "README_en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2399667927b3ec4935a4910bf15af0980b299ba",
+      "size": 4210,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d2399667927b3ec4935a4910bf15af0980b299ba"
+    },
+    {
+      "path": "SEO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c6100707c5ce9ec2300f8ea2787adbe486b99b5",
+      "size": 1319,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8c6100707c5ce9ec2300f8ea2787adbe486b99b5"
+    },
+    {
+      "path": "artifacts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3abd0c6cdac81e7818bc40c58467d7aa9835cc6",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/a3abd0c6cdac81e7818bc40c58467d7aa9835cc6"
+    },
+    {
+      "path": "artifacts/design-qa",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b38b556f9bcdaa2652b30fffcec99a7e4a0f98a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/4b38b556f9bcdaa2652b30fffcec99a7e4a0f98a"
+    },
+    {
+      "path": "artifacts/design-qa/code-block-contrast-fixed.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b66db38b0df76ae72c4fe8f00f038a73cd37731",
+      "size": 89816,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3b66db38b0df76ae72c4fe8f00f038a73cd37731"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-chapter-1488.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d30df8d615ba48844de5dbd46aee05cf1be2181b",
+      "size": 85929,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d30df8d615ba48844de5dbd46aee05cf1be2181b"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-chapter-mobile-390.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2657ca82e643fae7a863e237633941647bfb52ab",
+      "size": 40814,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2657ca82e643fae7a863e237633941647bfb52ab"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-chapter-one-1488.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6de633762d579a3d72cbb0a3a10df7792f02d577",
+      "size": 77459,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6de633762d579a3d72cbb0a3a10df7792f02d577"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-final-home-1280.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7db4d4afa06d3469a1cc5e62f5e6ac87f381939e",
+      "size": 80204,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7db4d4afa06d3469a1cc5e62f5e6ac87f381939e"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-home-1488.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "feecf1381856f2cc43adce3f3da0bfd79d562759",
+      "size": 123807,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/feecf1381856f2cc43adce3f3da0bfd79d562759"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-home-mobile-390.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4243000c76bf39ff431ac70243d612424a0c4dfa",
+      "size": 39223,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4243000c76bf39ff431ac70243d612424a0c4dfa"
+    },
+    {
+      "path": "artifacts/design-qa/design-qa-home.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7c3ea927acc8351003bf6c77175d5930972fbc4",
+      "size": 292252,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a7c3ea927acc8351003bf6c77175d5930972fbc4"
+    },
+    {
+      "path": "assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f36a114ba58130980d5436d760ebb286c6f0962a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/f36a114ba58130980d5436d760ebb286c6f0962a"
+    },
+    {
+      "path": "assets/authors",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8ddcf270bea3cd1f497ac934cc4809b22135af69",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8ddcf270bea3cd1f497ac934cc4809b22135af69"
+    },
+    {
+      "path": "assets/authors/cang-he.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3c0f0cbc76bb51f4d67d5153c597fc7267d46d3",
+      "size": 156102,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c3c0f0cbc76bb51f4d67d5153c597fc7267d46d3"
+    },
+    {
+      "path": "assets/authors/dai-shu-di-ai-ke-zhan.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a9ac7100a0bced7a0ff0b926a3c453364cfbcec",
+      "size": 166002,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7a9ac7100a0bced7a0ff0b926a3c453364cfbcec"
+    },
+    {
+      "path": "assets/authors/jia-mu-wei-lai-pai.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05ec5a80d73561d8ba6d18f31753bc3a07340a16",
+      "size": 157453,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/05ec5a80d73561d8ba6d18f31753bc3a07340a16"
+    },
+    {
+      "path": "assets/authors/liu-cong-nlp.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ebe8debb3e46ea747b11607442b34cd4a1f2542",
+      "size": 156535,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6ebe8debb3e46ea747b11607442b34cd4a1f2542"
+    },
+    {
+      "path": "assets/authors/mo-yu-xiao-li.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb821aedbc3a329f372b1edb87acfeb641a13c5a",
+      "size": 341461,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cb821aedbc3a329f372b1edb87acfeb641a13c5a"
+    },
+    {
+      "path": "assets/workbuddy-guide-banner.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5b35f91abc5eef77f99615d5b21d1654add4539",
+      "size": 452928,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a5b35f91abc5eef77f99615d5b21d1654add4539"
+    },
+    {
+      "path": "design-qa.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "574a01ce1340465263b4df9edcb321e0a8c26d7c",
+      "size": 2805,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/574a01ce1340465263b4df9edcb321e0a8c26d7c"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "90cc56932324067fe4f7d29ad1418876ebd3ea0e",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/90cc56932324067fe4f7d29ad1418876ebd3ea0e"
+    },
+    {
+      "path": "docs/.vitepress",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8e4d1a1790abe97bf109d13411a8757123149efb",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8e4d1a1790abe97bf109d13411a8757123149efb"
+    },
+    {
+      "path": "docs/.vitepress/config.mts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff9702d92f050becd2c9f1980756e100ef9e1693",
+      "size": 3239,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ff9702d92f050becd2c9f1980756e100ef9e1693"
+    },
+    {
+      "path": "docs/.vitepress/mermaid-markdown.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24af5a7b48d74da48c77240aa5a2176948f3f2ac",
+      "size": 550,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/24af5a7b48d74da48c77240aa5a2176948f3f2ac"
+    },
+    {
+      "path": "docs/.vitepress/seo.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "068df92f0ff271f012182dfb38ed77c232c2f805",
+      "size": 10208,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/068df92f0ff271f012182dfb38ed77c232c2f805"
+    },
+    {
+      "path": "docs/.vitepress/sidebar.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7560adddb56736cf4e3ec6d3d936334907644c7",
+      "size": 6438,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f7560adddb56736cf4e3ec6d3d936334907644c7"
+    },
+    {
+      "path": "docs/.vitepress/theme",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "12c46183216f8bdda99179c1ceff0cce274bfca3",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/12c46183216f8bdda99179c1ceff0cce274bfca3"
+    },
+    {
+      "path": "docs/.vitepress/theme/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6b4a5022256d061fcb23bb3e03586f797573cc84",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/6b4a5022256d061fcb23bb3e03586f797573cc84"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/GroupQrMenu.vue",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb8012358bb7e333980fc518767bc82607d8f943",
+      "size": 1871,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/bb8012358bb7e333980fc518767bc82607d8f943"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/HomePage.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "692694f3dd84fa46955e55ce757cbad4fff83a54",
+      "size": 1241,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/692694f3dd84fa46955e55ce757cbad4fff83a54"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/HomePage.vue",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "064e6226687975b7f10a7332ba54809e623131ba",
+      "size": 11768,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/064e6226687975b7f10a7332ba54809e623131ba"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/ImageLightbox.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "542a74f9ba2dfb6e7f3da53299d7514383fede65",
+      "size": 8623,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/542a74f9ba2dfb6e7f3da53299d7514383fede65"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/ImageLightbox.vue",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "42458ebb14eaedfc938553384f92ce7660345996",
+      "size": 16523,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/42458ebb14eaedfc938553384f92ce7660345996"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/MermaidDiagram.vue",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9735b735b7fee4af316f13a9198f6b6fb5da7339",
+      "size": 3294,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9735b735b7fee4af316f13a9198f6b6fb5da7339"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/PixelIcon.vue",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bfe0634929da5f1eea8877c378ec598b754f98a",
+      "size": 309,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8bfe0634929da5f1eea8877c378ec598b754f98a"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/PixelIconSprite.vue",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bee8f86330efde888edd8fbce769335ce160b4a",
+      "size": 6709,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8bee8f86330efde888edd8fbce769335ce160b4a"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/imageZoom.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e368d8fc6965687175484cc427c364976010426e",
+      "size": 2145,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e368d8fc6965687175484cc427c364976010426e"
+    },
+    {
+      "path": "docs/.vitepress/theme/components/imageZoom.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3070475268ad7591eb633c8f3fbddb0a2d8934c7",
+      "size": 1828,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3070475268ad7591eb633c8f3fbddb0a2d8934c7"
+    },
+    {
+      "path": "docs/.vitepress/theme/fonts.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81959c29221146def56950e584652ee349f804ca",
+      "size": 421,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/81959c29221146def56950e584652ee349f804ca"
+    },
+    {
+      "path": "docs/.vitepress/theme/index.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "054cc82c962d992dce2655ce1194383a8be2b4a7",
+      "size": 1916,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/054cc82c962d992dce2655ce1194383a8be2b4a7"
+    },
+    {
+      "path": "docs/.vitepress/theme/style.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c53a0a07d1735a1d6d600e55cdff40ebbcc3b13",
+      "size": 28190,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1c53a0a07d1735a1d6d600e55cdff40ebbcc3b13"
+    },
+    {
+      "path": "docs/bluebook",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "77ef7e2a189a59d087479097261c71cd6a4c9501",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/77ef7e2a189a59d087479097261c71cd6a4c9501"
+    },
+    {
+      "path": "docs/bluebook/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91799e5ce432080ba93c7b7c0104264e8ac726ee",
+      "size": 1600,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/91799e5ce432080ba93c7b7c0104264e8ac726ee"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "59eb6d8bc21c759ccc91d780901e3f58fc1de301",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/59eb6d8bc21c759ccc91d780901e3f58fc1de301"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "855fba4ddec15228d90bf8c04aecc3917196c621",
+      "size": 2028,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/855fba4ddec15228d90bf8c04aecc3917196c621"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 1 章 初识 WorkBuddy",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b2b9b8ba6c4c7da98355197f278509766640a110",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/b2b9b8ba6c4c7da98355197f278509766640a110"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 1 章 初识 WorkBuddy/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "46e5559aefd8ef12d12775249f1b63cb172497cd",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/46e5559aefd8ef12d12775249f1b63cb172497cd"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 1 章 初识 WorkBuddy/assets/001_image_Ve9kbu40Eo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28854980c2d47aebe5587a94177e84c4a207b536",
+      "size": 331846,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/28854980c2d47aebe5587a94177e84c4a207b536"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 1 章 初识 WorkBuddy/assets/002_image_IaB9bqqj6o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c5442328893de5bc45dfe35fed64af3ad4a1514",
+      "size": 472725,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6c5442328893de5bc45dfe35fed64af3ad4a1514"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 1 章 初识 WorkBuddy/assets/003_image_Idhdsahdl.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22a94242ebe5e27a6cc3c4a96830cfe18a95ce90",
+      "size": 801436,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/22a94242ebe5e27a6cc3c4a96830cfe18a95ce90"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 1 章 初识 WorkBuddy/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22d761e5421e43de7dc9dce7dc96417ffddee227",
+      "size": 2521,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/22d761e5421e43de7dc9dce7dc96417ffddee227"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8bec8e300584aaabb0692fa8fd5de963ab7ca563",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8bec8e300584aaabb0692fa8fd5de963ab7ca563"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d84048b063198813940a6b222c9bb7b8da5aab5",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/1d84048b063198813940a6b222c9bb7b8da5aab5"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务/assets/001_image_RklAba93No.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "798b1e2c4efd9d1cae71a0e19be6c3b2bf80fe24",
+      "size": 453549,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/798b1e2c4efd9d1cae71a0e19be6c3b2bf80fe24"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务/assets/002_image_MhojbPRsOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb0cee46d1c5e2c5351295010ed538d15a1ec567",
+      "size": 299927,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cb0cee46d1c5e2c5351295010ed538d15a1ec567"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务/assets/003_image_Ff6fbYuGoo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b38ebbb93a54aab3ad962d059d45d63b770146e",
+      "size": 343552,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6b38ebbb93a54aab3ad962d059d45d63b770146e"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务/assets/004_自动化-任务模板_FYNwbDWqbo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "046ff82b305a4e5ec9cf51927ba7091239cabb7b",
+      "size": 203497,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/046ff82b305a4e5ec9cf51927ba7091239cabb7b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 10 章 WorkBuddy 自动化任务/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8475a7748314d554888e2c90aaff258825f77528",
+      "size": 7210,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8475a7748314d554888e2c90aaff258825f77528"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ac77875fc4ad69ee2c1448ba6aaa59a3063ef86",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/6ac77875fc4ad69ee2c1448ba6aaa59a3063ef86"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e7d2dfeba1f306807419caa422186d37cbc149ac",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/e7d2dfeba1f306807419caa422186d37cbc149ac"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/001_image_GGeabJkE2o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46d74f2ea52fdc6e069749b5c0bb2f79ce827fac",
+      "size": 1618381,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/46d74f2ea52fdc6e069749b5c0bb2f79ce827fac"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/002_image_HaXcbwaJXo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdd5657c2cea24de289a59ab11077f6965c4322f",
+      "size": 155358,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cdd5657c2cea24de289a59ab11077f6965c4322f"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/003_image_Ehpebt4Eso.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2d374d70020ccb604ddbb800bb6f0a214f86189",
+      "size": 114194,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a2d374d70020ccb604ddbb800bb6f0a214f86189"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/004_image_LG3MbcWpvo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "162854a8cd3f58d91851e25046530c4d5b4f3483",
+      "size": 27578,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/162854a8cd3f58d91851e25046530c4d5b4f3483"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/005_image_CMvYbYWFOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20b68c73dbb3df62b85f94e29df2f8985e17a2cc",
+      "size": 17343,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/20b68c73dbb3df62b85f94e29df2f8985e17a2cc"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/006_image_Wujkbd9eTo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce50f8f844e9114b7de535a49354be20f3bac611",
+      "size": 17678,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ce50f8f844e9114b7de535a49354be20f3bac611"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/007_image_V9L2bhWF2o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb2f9aa7b58d0cb258d734705969e196c216713a",
+      "size": 12098,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/bb2f9aa7b58d0cb258d734705969e196c216713a"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/008_image_DjcGbKYJSo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4538b656702dd10dd9ff080ddd6d154e97a11434",
+      "size": 12658,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4538b656702dd10dd9ff080ddd6d154e97a11434"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/009_image_Q0l3bAkUPo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "735563543803476f305e2ccf94709045e60f2420",
+      "size": 46060,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/735563543803476f305e2ccf94709045e60f2420"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/010_image_TmYPbu7Ibo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "557be55e19b70e2cfc12b2aec2cb5afddc91e734",
+      "size": 448157,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/557be55e19b70e2cfc12b2aec2cb5afddc91e734"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/011_image_UlJcbVqX7o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7072e98de816f31b01b99f15babba1cf25914b1d",
+      "size": 95736,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7072e98de816f31b01b99f15babba1cf25914b1d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/012_image_LtqPbQ2z6o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f828121ab47cb43b0ff822a772a466a44e5bbced",
+      "size": 486985,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f828121ab47cb43b0ff822a772a466a44e5bbced"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/013_image_MMIXbZJafo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9c7e1ab5415e9552e6ecf183c6afa1b76c167f9",
+      "size": 77975,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c9c7e1ab5415e9552e6ecf183c6afa1b76c167f9"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/014_image_MdmYbB2Avo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24e0bb02a4d7b0f219549ca4e8fba967b12aca0c",
+      "size": 613577,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/24e0bb02a4d7b0f219549ca4e8fba967b12aca0c"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/015_image_WZrBbbWono.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "badc8778390bf532b5301de377cb53f220acf609",
+      "size": 31645,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/badc8778390bf532b5301de377cb53f220acf609"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/016_image_Pmh8b7xc8o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e78c8ebea1040c981bc254f4dc352a1db067594",
+      "size": 104160,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0e78c8ebea1040c981bc254f4dc352a1db067594"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/assets/017_image_Qt1gbb7J3o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fcff3c49d8fa19a3733e0b3b05bd5fd6976a590",
+      "size": 437985,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1fcff3c49d8fa19a3733e0b3b05bd5fd6976a590"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 2 章 WorkBuddy的下载、安装、登录与更新/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f7c30e6076ee54c4dba4225a2627037e3bee0fa",
+      "size": 2721,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7f7c30e6076ee54c4dba4225a2627037e3bee0fa"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "50734066afec9f796737a70f4c52529c1aa61e87",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/50734066afec9f796737a70f4c52529c1aa61e87"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e598252077e0160edffd79bd821d0a6f3b8285c",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/7e598252077e0160edffd79bd821d0a6f3b8285c"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区/assets/001_image_MuLCbdPyDo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca9b62f51ddbf5d52e6077c9fd6c88abeee081eb",
+      "size": 501890,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ca9b62f51ddbf5d52e6077c9fd6c88abeee081eb"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区/assets/002_image_DtASbQcrto.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30e9c373e6b013e1b294439d61ff623e78c22d98",
+      "size": 360535,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/30e9c373e6b013e1b294439d61ff623e78c22d98"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区/assets/003_image_W7VqbwVeJo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f4532bb9648712ccda44ac21064f2d1027dd0aa",
+      "size": 350729,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6f4532bb9648712ccda44ac21064f2d1027dd0aa"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区/assets/004_image_OzThbMYn5o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14f572165427f8b1fdcec3dbc25d2774fb81a5dd",
+      "size": 355727,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/14f572165427f8b1fdcec3dbc25d2774fb81a5dd"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 3 章 WorkBuddy 的主界面、任务与工作区/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ab3dced29d88d57a40443c0466f17872610dae2",
+      "size": 2433,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2ab3dced29d88d57a40443c0466f17872610dae2"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0fcd9a8680d5003d43e31c1e47d513ad523af1a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/c0fcd9a8680d5003d43e31c1e47d513ad523af1a"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "16daeef0c1f323f441060651959321d7577737d5",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/16daeef0c1f323f441060651959321d7577737d5"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/001_image_C4q3bdNKso.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cd80f58393d362de2a6bc99931e2936510b754b",
+      "size": 341910,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3cd80f58393d362de2a6bc99931e2936510b754b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/002_image_GeeybIFZLo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cba9d20e72adcd53662ba4900d376198620149a5",
+      "size": 356221,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cba9d20e72adcd53662ba4900d376198620149a5"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/003_image_DZ55bxbCvo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c0568fbac3d10941adb2b27d7c69740f47b170a",
+      "size": 352050,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0c0568fbac3d10941adb2b27d7c69740f47b170a"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/004_image_JiigbkdTKo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14f572165427f8b1fdcec3dbc25d2774fb81a5dd",
+      "size": 355727,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/14f572165427f8b1fdcec3dbc25d2774fb81a5dd"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/005_image_ReDxbwNkYo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "730031b508937f65ae8e2b17837d631e69d0d9f0",
+      "size": 340150,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/730031b508937f65ae8e2b17837d631e69d0d9f0"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/006_image_INLGb7TDQo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5199a2f8c0950576493bbc7181ede1a8de82605",
+      "size": 424969,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b5199a2f8c0950576493bbc7181ede1a8de82605"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/007_image_BD1FbDdcEo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dac195205c35a6f2bc9aebff6e1cbd7a142b748",
+      "size": 302500,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6dac195205c35a6f2bc9aebff6e1cbd7a142b748"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/assets/008_image_TzOAb2lxIo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75bbc79b010f40774fcb9d0be03f51014896d8b3",
+      "size": 629720,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/75bbc79b010f40774fcb9d0be03f51014896d8b3"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 4 章 快速完成第一个 WorkBuddy 任务/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05748074e3026d8f1e324a147ed952b0fa7ae173",
+      "size": 3119,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/05748074e3026d8f1e324a147ed952b0fa7ae173"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "934a2a5c876ca11717b3ca6e0bfacc0c8fbdae0a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/934a2a5c876ca11717b3ca6e0bfacc0c8fbdae0a"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f9d0d36849f9648a875fb8ac69b47917d0325f77",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/f9d0d36849f9648a875fb8ac69b47917d0325f77"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/001_image_TdcLblfvIo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51675c574d256ba76478e0c1e999ee116757cc38",
+      "size": 795203,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/51675c574d256ba76478e0c1e999ee116757cc38"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/002_image_V3E5bsVZGo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f082dccab0b6e83285ede1334724f2a5ecce032",
+      "size": 609779,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8f082dccab0b6e83285ede1334724f2a5ecce032"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/003_image_Oag3bNQHOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "618b4b859c74067b5c3b923ea9bed4d6e62d2fb0",
+      "size": 805339,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/618b4b859c74067b5c3b923ea9bed4d6e62d2fb0"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/004_image_GgOebNBh3o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e22f566890e0ecb970a7109ff542c945c4e7fcba",
+      "size": 694361,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e22f566890e0ecb970a7109ff542c945c4e7fcba"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/005_20260708200848_NN3hbPsKAo.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47c0549f3bb46c46c2c8bdf200b05b9ab4d94866",
+      "size": 886709,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/47c0549f3bb46c46c2c8bdf200b05b9ab4d94866"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/006_image_Xom2btXVZo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e690f9d7e375f8d3e5f1bc9a96e10d45c215cab1",
+      "size": 413983,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e690f9d7e375f8d3e5f1bc9a96e10d45c215cab1"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/007_image_AmOVb1oGEo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e0580f35f32d6f3059c495155c63b08d040dc8c",
+      "size": 109052,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7e0580f35f32d6f3059c495155c63b08d040dc8c"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/008_image_FbpQbmSswo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53ef7e813d9229b74aede63ceec113aa4b9fb979",
+      "size": 157724,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/53ef7e813d9229b74aede63ceec113aa4b9fb979"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/009_image_RhBKbRhgIo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8815e77f94f3f5cb3bf4eea2cef874e4dad7571e",
+      "size": 965038,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8815e77f94f3f5cb3bf4eea2cef874e4dad7571e"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/010_image_NGsdbBcjso.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eb0b348327f1aa61099d6af2b76475668b77f97",
+      "size": 794722,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1eb0b348327f1aa61099d6af2b76475668b77f97"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/011_image_DABBb41fGo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63aa41320e11c013e7248a2dc5a8665229e02835",
+      "size": 278896,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/63aa41320e11c013e7248a2dc5a8665229e02835"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/assets/012_image_Uya3bNC9io.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "912ec87915da4d212a896d72ca945b25adb0a59b",
+      "size": 395148,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/912ec87915da4d212a896d72ca945b25adb0a59b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 5 章 WorkBuddy加载一个真正用得上的 Skill/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "639434c94109ffb61ffa45088108e26a853c8908",
+      "size": 7253,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/639434c94109ffb61ffa45088108e26a853c8908"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "124c72166ed29e34c9b3d31f453ecd2412c98196",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/124c72166ed29e34c9b3d31f453ecd2412c98196"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b28991f90be32ec7513b7ccb95580b744b680b99",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/b28991f90be32ec7513b7ccb95580b744b680b99"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/001_image_T8L2bOcbBo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2124c129163d6fc2d5bb026d103022bb4b4a3315",
+      "size": 1800363,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2124c129163d6fc2d5bb026d103022bb4b4a3315"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/002_image_TlTJbNIQOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f69adaa20da199204e1a80a7a1fd440bd98a6c1",
+      "size": 1800811,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3f69adaa20da199204e1a80a7a1fd440bd98a6c1"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/003_image_Hfv9bPfcIo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6e16308bd6c76223f49634619f6ef8c9257470d",
+      "size": 339648,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d6e16308bd6c76223f49634619f6ef8c9257470d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/004_20260708204254_Nvfjb5QwFo.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1589530f6da933527b848a7272698223898efa16",
+      "size": 366567,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1589530f6da933527b848a7272698223898efa16"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/005_image_Bzc4b6Ukko.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c3c2bbba1562cb723ec161345efec0c23ff4219",
+      "size": 470023,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1c3c2bbba1562cb723ec161345efec0c23ff4219"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/006_image_Oz4wbqMTqo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9813fec77571442a27c0c1b11fc8113356158b75",
+      "size": 761452,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9813fec77571442a27c0c1b11fc8113356158b75"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/007_image_TDP4b0emBo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ba0593e64a846a1e78bdfea266d3f2172f646c6",
+      "size": 346629,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4ba0593e64a846a1e78bdfea266d3f2172f646c6"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/008_image_MHngbV84ro.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3266a42b9397a81bd5308e4cd38d06bb1c8303c6",
+      "size": 1863434,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3266a42b9397a81bd5308e4cd38d06bb1c8303c6"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/assets/009_image_LUaZbwcddo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c942905207d8d71aa0a1a0671cc32b0df2073a4",
+      "size": 343279,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1c942905207d8d71aa0a1a0671cc32b0df2073a4"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 6 章 WorkBuddy的专家和专家团/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87b0a7bccedbb1c9d806d032ce963c143cacb64d",
+      "size": 2837,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/87b0a7bccedbb1c9d806d032ce963c143cacb64d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14c6b3e88358f4dc264d9f8d666c2290fdaeb1b4",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/14c6b3e88358f4dc264d9f8d666c2290fdaeb1b4"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "42ea6975debe0bfd2aa0d5491889c833bad6239a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/42ea6975debe0bfd2aa0d5491889c833bad6239a"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/001_image_IZzfbK38Ao.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "792437f97bf76ab422198e22e5999cc5e736aec7",
+      "size": 817420,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/792437f97bf76ab422198e22e5999cc5e736aec7"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/002_image_WF3ab0WSbo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65355ceb18fa8ba2e0cf3d3f25516207fc9f2b46",
+      "size": 773965,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/65355ceb18fa8ba2e0cf3d3f25516207fc9f2b46"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/003_image_ZssEbuMsdo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31dc9df98d4e4d55c7c269c0f771cb8191d4f3fe",
+      "size": 770899,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/31dc9df98d4e4d55c7c269c0f771cb8191d4f3fe"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/004_image_KVIJbpUZdo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd31d48f4de675f727898dd2cac4e60a482a0cc7",
+      "size": 335168,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/fd31d48f4de675f727898dd2cac4e60a482a0cc7"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/005_image_FPy1bGJJZo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96a50fd68d1c2b64c6db1d8ecde19d311bb97b8f",
+      "size": 501647,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/96a50fd68d1c2b64c6db1d8ecde19d311bb97b8f"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/006_image_WQ6Zb1Rero.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7bea9c42d19accc589b879eadf2346e18f3d6d6",
+      "size": 117517,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d7bea9c42d19accc589b879eadf2346e18f3d6d6"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/assets/007_image_M2itbQUceo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c741833ab48d10644e454a7b2c0de5ae9ab8bc2e",
+      "size": 683519,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c741833ab48d10644e454a7b2c0de5ae9ab8bc2e"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 7 章 WorkBuddy 使用连接器/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "177b0e60935c009bf411aeee18995ec79893cacf",
+      "size": 4057,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/177b0e60935c009bf411aeee18995ec79893cacf"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b15ee760e11047e602266381c3114b1f97f8f717",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/b15ee760e11047e602266381c3114b1f97f8f717"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8f1cc9f999b6689a20d49933c5e8147400a5f634",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8f1cc9f999b6689a20d49933c5e8147400a5f634"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/001_image_Vv5bbtLVBo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cb586e3c8defa15933f5ce8bcec905b6621c9e2",
+      "size": 289812,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2cb586e3c8defa15933f5ce8bcec905b6621c9e2"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/002_微信助理-进入助理设置_NbI2b9v4fo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a1429b370265ed677f9c9e70882e861d896f7e5",
+      "size": 49815,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8a1429b370265ed677f9c9e70882e861d896f7e5"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/003_微信助理-选择集成_S9HlbaEmdo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1755a2879865531bf8025a01082383bfc3c902d",
+      "size": 145699,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b1755a2879865531bf8025a01082383bfc3c902d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/004_微信助理-扫码绑定_TElmbNPG5o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c352d118ddf5aace1b18ab822f5a70402f053a0",
+      "size": 51595,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0c352d118ddf5aace1b18ab822f5a70402f053a0"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/005_微信助理-已绑定_ZQtrb6jCmo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1bbb933c120d4fc3bbea83b44b7d0df95b00e5b",
+      "size": 97763,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b1bbb933c120d4fc3bbea83b44b7d0df95b00e5b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/006_image_SbcEbSaoio.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b89791fc0618ffaa802f122ed7d8490e1edb607",
+      "size": 436683,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5b89791fc0618ffaa802f122ed7d8490e1edb607"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/007_飞书-登录开放平台_EUPhblavHo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6154e034d6ddec64d1a27fa666c8ce8b59b3b3c3",
+      "size": 402202,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6154e034d6ddec64d1a27fa666c8ce8b59b3b3c3"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/008_飞书-添加机器人能力_XFmTb5HGQo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62400005f2ff01704a8250ba68f4177fc8897a1a",
+      "size": 500167,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/62400005f2ff01704a8250ba68f4177fc8897a1a"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/009_飞书-批量导入权限_MRdCbm3Dvo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56f21cddc59296610c753575ea3c2851a4ae44bf",
+      "size": 686544,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/56f21cddc59296610c753575ea3c2851a4ae44bf"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/010_飞书-应用凭证_CnItbspOUo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77808385e07a3eefc2469159825a1a9250d7436b",
+      "size": 280397,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/77808385e07a3eefc2469159825a1a9250d7436b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/011_飞书-加密与校验配置_WiAYbwBDKo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51f50580fd84cbe4bb5a5cdeaa02373acb9fc2a0",
+      "size": 241713,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/51f50580fd84cbe4bb5a5cdeaa02373acb9fc2a0"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/012_飞书-添加接收消息事件_X4z6bNPsso.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a407836fdca090c74bed48dab6d6e832b20b71dc",
+      "size": 519778,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a407836fdca090c74bed48dab6d6e832b20b71dc"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/013_飞书-卡片回调_AvOxbO7M9o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e995ce6786dd76bcb447b9a467e653b75d027481",
+      "size": 179487,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e995ce6786dd76bcb447b9a467e653b75d027481"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/014_飞书-发布应用_TafwbySxco.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c059ae2bdc83456911d726d7083d3c50181c0ceb",
+      "size": 108698,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c059ae2bdc83456911d726d7083d3c50181c0ceb"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/015_image_RRhMbPo5uo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa7e18eefedb1847450cd334615833fa2c5a7157",
+      "size": 449671,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/aa7e18eefedb1847450cd334615833fa2c5a7157"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/016_钉钉-创建应用_NuNTbdscZo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a75fa4c57b4497b974ec8c1b545f97f617122df",
+      "size": 196868,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5a75fa4c57b4497b974ec8c1b545f97f617122df"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/017_钉钉-添加机器人能力_ORRbbZrqgo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3718abe442aaa4bd8ac31a5c98422252a10de7be",
+      "size": 545703,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3718abe442aaa4bd8ac31a5c98422252a10de7be"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/018_钉钉-开通权限_QG1zbPhcxo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e7c68d82b764549a0edfed34c90afa3266a5748",
+      "size": 457980,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9e7c68d82b764549a0edfed34c90afa3266a5748"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/assets/019_钉钉-获取应用凭证_OI8fbW0JNo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "037efa83805461ee19790b36a48e046792fb6752",
+      "size": 363022,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/037efa83805461ee19790b36a48e046792fb6752"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 WorkBuddy 接入小程序与 IM 助理/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba687e536f0c86c021c85665ab9fa9336b8423ee",
+      "size": 4569,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ba687e536f0c86c021c85665ab9fa9336b8423ee"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "43f7cb0d387c8dc741f5b57e03f71ff4f145ad13",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/43f7cb0d387c8dc741f5b57e03f71ff4f145ad13"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d9d1a819f00a8efb9b37d917d4b83733ea58d1c1",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/d9d1a819f00a8efb9b37d917d4b83733ea58d1c1"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/authorize-app.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7f659c73742870233f380046e8df5ca65e1dd88",
+      "size": 128678,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b7f659c73742870233f380046e8df5ca65e1dd88"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/campaign-review.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26db41442f994ee5bea355e3b97e2c9dd3f25f12",
+      "size": 1664353,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/26db41442f994ee5bea355e3b97e2c9dd3f25f12"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/chat-summary.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a957c1792f631e5d7353e48a5cc45ff02931327",
+      "size": 5405738,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0a957c1792f631e5d7353e48a5cc45ff02931327"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/connection-test.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a463b49a9c7a6ad9d11d7ecf8867aef40f639d9c",
+      "size": 27816,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a463b49a9c7a6ad9d11d7ecf8867aef40f639d9c"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/connector-entry.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15a2e9e73c5f6a1939bf5df33a296c7af257c9a2",
+      "size": 63115,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/15a2e9e73c5f6a1939bf5df33a296c7af257c9a2"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/create-app-version.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c76d213384df5288fe9b8696bbb3cd500cc51580",
+      "size": 183098,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c76d213384df5288fe9b8696bbb3cd500cc51580"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/create-app.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "811fd58519232ef707d755440ff745950f63a253",
+      "size": 77381,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/811fd58519232ef707d755440ff745950f63a253"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/enable-connector.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bd645baf9b6e4d7177360c5f171018b72723db0",
+      "size": 170334,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8bd645baf9b6e4d7177360c5f171018b72723db0"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/external-group-error.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26c809cc93048adeb4c401b52c0e58a6c510bf5b",
+      "size": 249864,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/26c809cc93048adeb4c401b52c0e58a6c510bf5b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/external-group-message.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46288d5b248304bef04355dba18d08bd66529b4e",
+      "size": 48354,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/46288d5b248304bef04355dba18d08bd66529b4e"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/external-group-prompt.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c43fc60a192c5e1531608a672e64c7b1d33cf34",
+      "size": 133079,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6c43fc60a192c5e1531608a672e64c7b1d33cf34"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/external-group-result.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13d8c30bc4a761b3da2c5f25810714be5cb26755",
+      "size": 137168,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/13d8c30bc4a761b3da2c5f25810714be5cb26755"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/external-sharing.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c140f973188ce338b3877418648e274ef5168614",
+      "size": 187517,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c140f973188ce338b3877418648e274ef5168614"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/feishu-connector.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe6c9abfc6d28b78fd5645e1233a73a99291c958",
+      "size": 185577,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/fe6c9abfc6d28b78fd5645e1233a73a99291c958"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/geo-check-calendar.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d6e423227152a3f2d2f3295103c363956d8defb",
+      "size": 172091,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8d6e423227152a3f2d2f3295103c363956d8defb"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/geo-expert.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18712e73c3b3a8521d95f88c61cbcc07b5717b30",
+      "size": 88934,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/18712e73c3b3a8521d95f88c61cbcc07b5717b30"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/geo-reminder.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a82add00a57138130632c8bf7e71d181b9ce34f",
+      "size": 38442,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9a82add00a57138130632c8bf7e71d181b9ce34f"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/geo-report-message.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1bb3a71730f1ca3ca93ecf4be679f9197f00b2d",
+      "size": 327458,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a1bb3a71730f1ca3ca93ecf4be679f9197f00b2d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/geo-task-table.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a44d7dc8c5f2a94252fd4794ea54273c75b6a1f8",
+      "size": 529021,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a44d7dc8c5f2a94252fd4794ea54273c75b6a1f8"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/geo-workflow.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04ec79021c32721c50d35a6494abe360a8f8bf30",
+      "size": 3962233,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/04ec79021c32721c50d35a6494abe360a8f8bf30"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/meeting-authorization.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68fe616277803368286cc59613cfd9e381d09b23",
+      "size": 144847,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/68fe616277803368286cc59613cfd9e381d09b23"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/meeting-notice.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98856b0cfd9f9734460182e08a1d24a3f8be978b",
+      "size": 89947,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/98856b0cfd9f9734460182e08a1d24a3f8be978b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/meeting-result.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04599bd7654620eb3b298ae66992083c44e70f1d",
+      "size": 201002,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/04599bd7654620eb3b298ae66992083c44e70f1d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/meeting-schedule.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70c222744951e6a15000ed0f52d90a75113e2a88",
+      "size": 200448,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/70c222744951e6a15000ed0f52d90a75113e2a88"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/onboarding-plan.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "394cc7516b51683a88e2e527fa9c846b16afd566",
+      "size": 1536519,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/394cc7516b51683a88e2e527fa9c846b16afd566"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/trending-review-message.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1eb28e111e1c89a0e1e1cc7a7fe74e595f17369",
+      "size": 188793,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a1eb28e111e1c89a0e1e1cc7a7fe74e595f17369"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/trending-review.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf6ac984559142c18a82b1aab54019382f0f0fa3",
+      "size": 6289836,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cf6ac984559142c18a82b1aab54019382f0f0fa3"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/trending-topic-table.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae8370945362cdbdca84c36b5befc630fd144015",
+      "size": 332508,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ae8370945362cdbdca84c36b5befc630fd144015"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/weekly-report-card.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f802de5df1d7aeb172ae97dca53ae242dc46b508",
+      "size": 313512,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f802de5df1d7aeb172ae97dca53ae242dc46b508"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/weekly-report-doc.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e29e2eb5165a983cb763c86154212c7a971d432b",
+      "size": 442200,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e29e2eb5165a983cb763c86154212c7a971d432b"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/assets/weekly-report.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11cb210b3183d3dd3a50cf85cfffa88e203e6823",
+      "size": 8285433,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/11cb210b3183d3dd3a50cf85cfffa88e203e6823"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 8 章 飞书办公实战：从接入到交付/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b15caa16fce00cbdb97aaf64d8392b0cd3f15c8",
+      "size": 17042,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8b15caa16fce00cbdb97aaf64d8392b0cd3f15c8"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f27f250b2daad0d308b281b2380fa82009b652f9",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/f27f250b2daad0d308b281b2380fa82009b652f9"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "59fa91b922f44773cc50a03ad40ce1d595c26fbf",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/59fa91b922f44773cc50a03ad40ce1d595c26fbf"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets/001_image_CaRmbk2N1o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5c61e9576f5c2a6d1e074b67b7b6e572239b441",
+      "size": 374504,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f5c61e9576f5c2a6d1e074b67b7b6e572239b441"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets/002_image_PQxNb3id8o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34d2041264282bc368063ea112814d1eb6fa7e10",
+      "size": 356472,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/34d2041264282bc368063ea112814d1eb6fa7e10"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets/003_image_De1fbH0Gho.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cfc3bc2078887629477547b80d70ef04f02d1cd",
+      "size": 390084,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5cfc3bc2078887629477547b80d70ef04f02d1cd"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets/004_image_Fa7pb60ARo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8524eb8034acd4a27898fa830be1c6a57fe81654",
+      "size": 451745,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8524eb8034acd4a27898fa830be1c6a57fe81654"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets/005_image_W9u5bNsaMo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94836f8db20e5463e461879bfb07f53ea9baf2e8",
+      "size": 386467,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/94836f8db20e5463e461879bfb07f53ea9baf2e8"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/assets/006_image_BSnBbYupuo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef057eec46d3ab62a9fd997e84d177d68e5ba94e",
+      "size": 410236,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ef057eec46d3ab62a9fd997e84d177d68e5ba94e"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/第 9 章 如何接入外部 API/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83bd269bc167ef60950887b6fd320d9256022e2f",
+      "size": 773,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/83bd269bc167ef60950887b6fd320d9256022e2f"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/课外阅读：一章看懂 AI 工作系统",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f1dba7a34f932a58f6147d01c6b4a9ac385dd44d",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/f1dba7a34f932a58f6147d01c6b4a9ac385dd44d"
+    },
+    {
+      "path": "docs/bluebook/第一篇 使用手册：先把 WorkBuddy 用起来/课外阅读：一章看懂 AI 工作系统/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba662d0984a80d80805440f8d7308260c50f58cf",
+      "size": 16682,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ba662d0984a80d80805440f8d7308260c50f58cf"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce3d418dcdf49abfe4f48e144b81f60cfbdf0e28",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/ce3d418dcdf49abfe4f48e144b81f60cfbdf0e28"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3068686211655dba98d2e9a24398123024ded21",
+      "size": 890,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e3068686211655dba98d2e9a24398123024ded21"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a91e1ed248c67aa2d10ecbf68463bc194ef4740b",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/a91e1ed248c67aa2d10ecbf68463bc194ef4740b"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "65cdffb35e7c1503ca0d95c0e871159f2bfe58ea",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/65cdffb35e7c1503ca0d95c0e871159f2bfe58ea"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/001_image_WcJzb4b7Yo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8223d15818a8fe045df373561c9d5c4ca07ab1b",
+      "size": 332862,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e8223d15818a8fe045df373561c9d5c4ca07ab1b"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/002_image_M0YFbAywgo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e01fddfd32a85fbd9d21cceb20b3dc3b3792b341",
+      "size": 484196,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e01fddfd32a85fbd9d21cceb20b3dc3b3792b341"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/003_image_N5i2bw6V5o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "342516f7e09a73893c3e95edd3f731ba2f10e5e7",
+      "size": 437074,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/342516f7e09a73893c3e95edd3f731ba2f10e5e7"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/004_image_FiYybAIEQo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8412bed3626ed92d1f15ce256beae0e6de02aaa2",
+      "size": 352053,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8412bed3626ed92d1f15ce256beae0e6de02aaa2"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/005_image_NaOwbuAcQo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d435a7e90b9e187d88ab4a1a496e5cdef454153",
+      "size": 297699,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9d435a7e90b9e187d88ab4a1a496e5cdef454153"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/006_image_F5Ngb4vd5o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43867ca8bc172cfba0dc00d417cb707692abf097",
+      "size": 469578,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/43867ca8bc172cfba0dc00d417cb707692abf097"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/007_image_QMdJbhsm0o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2634e2e67e5ad35c490c4160073adc7fdc2d5696",
+      "size": 245783,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2634e2e67e5ad35c490c4160073adc7fdc2d5696"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/008_image_D7z7b4DWvo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0089789eb25b0599674641f2ce9554e99ab2f528",
+      "size": 368577,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0089789eb25b0599674641f2ce9554e99ab2f528"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/009_image_XXrkbXOymo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5084769d064712c8bee99e31ae6534708037177",
+      "size": 140361,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e5084769d064712c8bee99e31ae6534708037177"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/010_image_BXYeb8ld7o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d121085623121d854bb38d4d26be0c7577e99b4",
+      "size": 294129,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2d121085623121d854bb38d4d26be0c7577e99b4"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/011_image_NwvvbJkuco.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60131f75f3f1e56cd5cc4d3b6dccbbfe46d5d549",
+      "size": 297099,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/60131f75f3f1e56cd5cc4d3b6dccbbfe46d5d549"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/012_image_LEKGbkn2Go.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c80f6e3f3ba8b55599f21cf2fa26562cc39137ed",
+      "size": 214806,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c80f6e3f3ba8b55599f21cf2fa26562cc39137ed"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/013_image_Mp0ZbEmn7o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f5b668057ce792a8b92343fa08929a81d5b1f0f",
+      "size": 388047,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4f5b668057ce792a8b92343fa08929a81d5b1f0f"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/014_image_C1aCbJYz3o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98f3eea40c2c5dec2b6e38dace46d883084e3649",
+      "size": 216017,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/98f3eea40c2c5dec2b6e38dace46d883084e3649"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/015_image_MG56bW6jlo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "440a395513d98f3ded64bd37d60623558a58cbe1",
+      "size": 240431,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/440a395513d98f3ded64bd37d60623558a58cbe1"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/assets/016_image_HoW7bnRYFo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b3a24c2b3f764a1e478ecfe61f6c31b514c771d",
+      "size": 320417,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2b3a24c2b3f764a1e478ecfe61f6c31b514c771d"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 22 章 打造skill：将书和视频蒸馏为可执行 Skill/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "362c44a3ece81e5787fcd48feac3763ad36e6665",
+      "size": 14666,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/362c44a3ece81e5787fcd48feac3763ad36e6665"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f579daa80e57a903bc6cbaa849b8dcbba20e3a9",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/9f579daa80e57a903bc6cbaa849b8dcbba20e3a9"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7754304ef29bd0476617e2d761315ac0e2ae5022",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/7754304ef29bd0476617e2d761315ac0e2ae5022"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/assets/001_01_app_templates_To5yb29RMo.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "036caeb77dd20defa80cb6f9a5a376e28f807590",
+      "size": 186910,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/036caeb77dd20defa80cb6f9a5a376e28f807590"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/assets/002_image_F4BfbagcFo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ea95b109d21aae84c2e30717be1c94f641fd820",
+      "size": 508870,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0ea95b109d21aae84c2e30717be1c94f641fd820"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/assets/003_asset_HE1Nb74Hfo.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61bfc2ee4dc346378fa9db3122777322d6b4c822",
+      "size": 10555371,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/61bfc2ee4dc346378fa9db3122777322d6b4c822"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/assets/004_03_website_design_WX9gb8dBMo.gif",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebbac0d075a3742891d3e524742d46e5f709c9df",
+      "size": 3128584,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ebbac0d075a3742891d3e524742d46e5f709c9df"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/assets/005_04_skill_music_GxX3brlGeo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76d5e3220b452a7c192334037a0fa6d4f1cb6f6c",
+      "size": 428311,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/76d5e3220b452a7c192334037a0fa6d4f1cb6f6c"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 23 章 其他用法补充：WorkBuddy 实操案例集/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5268c8c630f19a0cd2caf3c5c8f2ed923941350",
+      "size": 4561,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a5268c8c630f19a0cd2caf3c5c8f2ed923941350"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ad28a1b05d58756f6fe13c0d2a943fbdc1efddea",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/ad28a1b05d58756f6fe13c0d2a943fbdc1efddea"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "81a4cd04a3adb03e91fcd757f32337bb81863f32",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/81a4cd04a3adb03e91fcd757f32337bb81863f32"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/001_image_AkBibtRBOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b6a5d2c6d11825281ece0510fff7e0208d792bb",
+      "size": 75471,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7b6a5d2c6d11825281ece0510fff7e0208d792bb"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/002_image_WdfWbMN9Do.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "402d821fb8762a771c26f1ad5767181446e267d9",
+      "size": 303081,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/402d821fb8762a771c26f1ad5767181446e267d9"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/003_image_NhwLbBH33o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a00681dd20f1b5532c0ed313f05ae616d96f412",
+      "size": 338189,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6a00681dd20f1b5532c0ed313f05ae616d96f412"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/004_image_MdzDbUKmlo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08ffbd2cb095423195331d968779849dc6424909",
+      "size": 152122,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/08ffbd2cb095423195331d968779849dc6424909"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/005_image_QASabZlKzo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9abb6bfba403adfc8643ad6a1043870b21184fe1",
+      "size": 127473,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9abb6bfba403adfc8643ad6a1043870b21184fe1"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/006_asset_Um2SbSClHo.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23c3d006cd46fd77ae308a23062ac5d3f113083a",
+      "size": 20499689,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/23c3d006cd46fd77ae308a23062ac5d3f113083a"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/007_image_BNYQbIE2no.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25a642450144287a4dce9c50a633b593dc5615f7",
+      "size": 749613,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/25a642450144287a4dce9c50a633b593dc5615f7"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/008_image_KXwlbyY7Oo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52a072cbde2e0431052ef93583333dfa3dd4dc48",
+      "size": 203053,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/52a072cbde2e0431052ef93583333dfa3dd4dc48"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/assets/009_image_HDlMbAHGTo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a07125fc59ca708063f1b4f7fa5a685ebc3c597",
+      "size": 701523,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3a07125fc59ca708063f1b4f7fa5a685ebc3c597"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 24 章 如何进行多 Agent 系统设计/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df7784c7a4323219fbc722825335fd91a5f67cdd",
+      "size": 10179,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/df7784c7a4323219fbc722825335fd91a5f67cdd"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "df0b43ad9540f792998a6a541f85059e5f21f22e",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/df0b43ad9540f792998a6a541f85059e5f21f22e"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9c1dc7fc45650df08f4d13ec9793c3b55736718",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/a9c1dc7fc45650df08f4d13ec9793c3b55736718"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/assets/001_image_FGBhb1udco.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f21a8a436daea8474ca58b2362642151c61aacb",
+      "size": 227097,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0f21a8a436daea8474ca58b2362642151c61aacb"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/assets/002_image_Yuucbmf9So.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffb8a8467d971061f5e9268e115663d180ed457b",
+      "size": 697106,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ffb8a8467d971061f5e9268e115663d180ed457b"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/assets/003_image_RNrFb50Tqo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "309ebb48c48ce2995aa0703adb8f2f3c2cbfb3fc",
+      "size": 152632,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/309ebb48c48ce2995aa0703adb8f2f3c2cbfb3fc"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/assets/004_image_IPtlb5D3Zo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99648507d5e213121814c3a1f030e94c818e1e1e",
+      "size": 178370,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/99648507d5e213121814c3a1f030e94c818e1e1e"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/assets/005_image_A6Jmbe0tao.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19dd1ea121ed7f762de9e110fc89cb59ca76828b",
+      "size": 379965,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/19dd1ea121ed7f762de9e110fc89cb59ca76828b"
+    },
+    {
+      "path": "docs/bluebook/第三篇 进阶篇：把案例变成自己的工作系统/第 25 章 自动化工作流的可靠性/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919a8a439112567f411bebcd9d14f27122b2168c",
+      "size": 13477,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/919a8a439112567f411bebcd9d14f27122b2168c"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "946fa090ee3e6f0b3149404001c269f3707709d9",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/946fa090ee3e6f0b3149404001c269f3707709d9"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b03c2cb8bb4f61e9ad0fc6feebddf426efc6d0e6",
+      "size": 3225,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b03c2cb8bb4f61e9ad0fc6feebddf426efc6d0e6"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "40520e404beb0186de772df11e46f307ecfbcd6f",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/40520e404beb0186de772df11e46f307ecfbcd6f"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8d9af52083b494e43617907e270003190e543c2a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8d9af52083b494e43617907e270003190e543c2a"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/001_image_PhFMbu3kTo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebc3e1927468d87979c27449325d09887615495d",
+      "size": 609213,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ebc3e1927468d87979c27449325d09887615495d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/002_image_UVm5bKLrZo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a676ce9df060046c96971f12822a604b708aad63",
+      "size": 585893,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a676ce9df060046c96971f12822a604b708aad63"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/003_image_IoOLbfEcvo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c24160c6a95e982bdd227f80a221b972ddfa0db",
+      "size": 685490,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8c24160c6a95e982bdd227f80a221b972ddfa0db"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/004_image_V1RpbVGuno.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ecb7a11061d634ca2aacf58aabd8c0690293924",
+      "size": 334136,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5ecb7a11061d634ca2aacf58aabd8c0690293924"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/005_image_I118b7wyUo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4fd739923fab3e20563a24d186b3382d06c4510",
+      "size": 833461,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d4fd739923fab3e20563a24d186b3382d06c4510"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/006_image_BWkRb60JPo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56e5d2b02d873338f92b7a677bf7c73d3ece380b",
+      "size": 518773,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/56e5d2b02d873338f92b7a677bf7c73d3ece380b"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/007_image_XtfQbkCqio.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df0978d583cceffef570361a02bb6d5d4535ccea",
+      "size": 474077,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/df0978d583cceffef570361a02bb6d5d4535ccea"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/008_image_ABXObcQeeo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "750d2d3cefa9a31d55bc8d463bdd676824efca0c",
+      "size": 448689,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/750d2d3cefa9a31d55bc8d463bdd676824efca0c"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/009_image_UNEqbRnJfo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da24000eb46b21c4aa85802072c25be266175b64",
+      "size": 920584,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/da24000eb46b21c4aa85802072c25be266175b64"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/010_image_L25tbHIUeo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6e296b2b7ade66c36b0dfe14e5d38182dcf5b4d",
+      "size": 156838,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b6e296b2b7ade66c36b0dfe14e5d38182dcf5b4d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/011_image_HqbtbVTw3o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ddbba3c85f162881c77e3f3d8068a02954d5443",
+      "size": 591280,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3ddbba3c85f162881c77e3f3d8068a02954d5443"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/assets/012_image_MhArbb6Woo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3171f54e937564e5a430ab87f8fce392d08c18ed",
+      "size": 485419,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3171f54e937564e5a430ab87f8fce392d08c18ed"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 11 章 办公三件套：Word、Excel、PPT/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c100161ab7d6db240e3576350a4771e53a9a5c70",
+      "size": 16992,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c100161ab7d6db240e3576350a4771e53a9a5c70"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 12 章 从整理桌面文件这些小事做起",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c343bda7168efb5271faf5be55d3ce4170b37f18",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/c343bda7168efb5271faf5be55d3ce4170b37f18"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 12 章 从整理桌面文件这些小事做起/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5194235b359f02975f15cb7ebf0c32bb051a2086",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/5194235b359f02975f15cb7ebf0c32bb051a2086"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 12 章 从整理桌面文件这些小事做起/assets/001_image_J9BUbk5hHo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6e276e5d0d8a5da99b01a833c759ff761135e19",
+      "size": 178997,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d6e276e5d0d8a5da99b01a833c759ff761135e19"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 12 章 从整理桌面文件这些小事做起/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "370157c23b2e25f3563052eaf3ea8ff7d79c3328",
+      "size": 1552,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/370157c23b2e25f3563052eaf3ea8ff7d79c3328"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b08a8ef6ed002e96b19f89aa1e47e3d1693132d3",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/b08a8ef6ed002e96b19f89aa1e47e3d1693132d3"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "556f6ff92e4b1cfb2806f1ee3de4ee9c8214f787",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/556f6ff92e4b1cfb2806f1ee3de4ee9c8214f787"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets/001_26MfTlZV_KWt4b43Mbo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2a15dc91441082ae0f84aa1f634ef93e363df48",
+      "size": 50510,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c2a15dc91441082ae0f84aa1f634ef93e363df48"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets/002_workbuddy-local-cloud-mode_CsMMbNpDWo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f2d1eeb2bbf1cd13b30230ac27587f273d03c6e",
+      "size": 98793,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0f2d1eeb2bbf1cd13b30230ac27587f273d03c6e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets/003_workbuddy-remote-ppt-search_TKo1bTVF0o.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f11cd0e9644cead0d899706bf7d79104c226a31f",
+      "size": 102068,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f11cd0e9644cead0d899706bf7d79104c226a31f"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets/004_p8IJTS7o_AFVJb6OkJo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00efd8a89143798b4837f89e1dd3233d643840d9",
+      "size": 82429,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/00efd8a89143798b4837f89e1dd3233d643840d9"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets/005_workbuddy-remote-task-execute_Aw3vbvuLho.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d16c96c3f991ef096644c97f3ecb9ec93bb2637",
+      "size": 192835,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8d16c96c3f991ef096644c97f3ecb9ec93bb2637"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/assets/006_image_GvG6bCfUyo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "741cb1697e7504d60a0c63d2dbab42e52b444929",
+      "size": 352833,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/741cb1697e7504d60a0c63d2dbab42e52b444929"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 13 章 远程控制你的电脑，不用发愁不在电脑前/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce783aaa4aa06b10c34ee84bbc1d8692ac1a319d",
+      "size": 5278,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ce783aaa4aa06b10c34ee84bbc1d8692ac1a319d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4c2335e4a01e744dadcaf38c98866876716f520d",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/4c2335e4a01e744dadcaf38c98866876716f520d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a0732e032ebbd7671117b5cb065631420e57088",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/5a0732e032ebbd7671117b5cb065631420e57088"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/001_image_AmSUbvzAjo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9061a8cad923e60a10099a03e5f7f6c3d06b9f2e",
+      "size": 267068,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9061a8cad923e60a10099a03e5f7f6c3d06b9f2e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/002_image_HJNdbxfvOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "532fb076491e64aa1f907923cd880b2624d81e68",
+      "size": 153257,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/532fb076491e64aa1f907923cd880b2624d81e68"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/003_image_IO4lbaAS1o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb3a64ccae4cedfcc0562dce886341bc9ea70c2a",
+      "size": 734908,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/eb3a64ccae4cedfcc0562dce886341bc9ea70c2a"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/004_image_JEOObotZfo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88d5c4d5169ced2b3ca075b95b41cd6d0e9d94ad",
+      "size": 322226,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/88d5c4d5169ced2b3ca075b95b41cd6d0e9d94ad"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/005_image_TCPXbvZ9Bo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f80549332370144288b9e9827ab6cfcc6c9dbee3",
+      "size": 777735,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f80549332370144288b9e9827ab6cfcc6c9dbee3"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/006_image_Fu9EbJOqWo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e6e8f6225f7568d5791f3fff186bcfef358cb5c",
+      "size": 217759,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4e6e8f6225f7568d5791f3fff186bcfef358cb5c"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/007_image_CYQ7b2c1Ho.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a010e5b8e1add832886eaf3722f800a043746d9",
+      "size": 165681,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6a010e5b8e1add832886eaf3722f800a043746d9"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/008_image_WNlYbFucxo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae548edb5020677b97721147d9bb6051771e4529",
+      "size": 554842,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ae548edb5020677b97721147d9bb6051771e4529"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/009_image_AS0HbQeP7o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "859d2aecaf24d9e6d288d2f84c69e0ab95aa804b",
+      "size": 534912,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/859d2aecaf24d9e6d288d2f84c69e0ab95aa804b"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/010_image_IOAgbitrRo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf5d8b2ca5016f2209c9988857fe4266b0fed0ef",
+      "size": 613688,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cf5d8b2ca5016f2209c9988857fe4266b0fed0ef"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/assets/011_image_Oar6b1pIjo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d850f0bd6918a7f12089e2ff8b26f196db84cbe5",
+      "size": 690474,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d850f0bd6918a7f12089e2ff8b26f196db84cbe5"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 14 章 生活助手的价值，是减少琐碎/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de6b26c7e27c0dd0c70d5bb0f74efd755f13a934",
+      "size": 10450,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/de6b26c7e27c0dd0c70d5bb0f74efd755f13a934"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2453e5b082b5fbacf283ba54fa32dddf57eb16e8",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/2453e5b082b5fbacf283ba54fa32dddf57eb16e8"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "af5ee21bb7e7f8f5a015d426d8041c660e58adc4",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/af5ee21bb7e7f8f5a015d426d8041c660e58adc4"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets/001_skillhub-info-skills_IzOlb7IQbo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b91e16d97753902a2489584678ad9d6e13ec3aca",
+      "size": 544155,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b91e16d97753902a2489584678ad9d6e13ec3aca"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets/002_image_Y8tcbQ5zXo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37484138f3eb42a6bd95ac7604088020b6b757c6",
+      "size": 456274,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/37484138f3eb42a6bd95ac7604088020b6b757c6"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets/003_image_QIV7b3XORo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bfa64da89f416ceeb9737059d23f41bfc206ed3",
+      "size": 478036,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7bfa64da89f416ceeb9737059d23f41bfc206ed3"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets/004_image_CG3xbVWBlo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12ec9e9f19c050af9bb64bd792b0884c1a10af27",
+      "size": 88266,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/12ec9e9f19c050af9bb64bd792b0884c1a10af27"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets/005_image_HKdRbaqczo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "968755542cd42e861aeaa62a242df4ba0b542b2b",
+      "size": 466040,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/968755542cd42e861aeaa62a242df4ba0b542b2b"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/assets/006_image_ZQW0bUCBso.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb685b4872cb236f998b9025d7ed52751f3e8b93",
+      "size": 592341,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cb685b4872cb236f998b9025d7ed52751f3e8b93"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 15 章 资讯整合：把信息流变成每日通知/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "546ff2fb24070e5a40f60dfb1e07790baa574159",
+      "size": 5541,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/546ff2fb24070e5a40f60dfb1e07790baa574159"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff64e4bcc9be6a872bec02bea7db9bc5c6464349",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/ff64e4bcc9be6a872bec02bea7db9bc5c6464349"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cdc078c5c7386c296f4979ef94e40e1884db2dbc",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/cdc078c5c7386c296f4979ef94e40e1884db2dbc"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是/assets/001_image_M29JbJQ3po.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aae6577d7df8379f3ee31af041c0bdad4ab2efb",
+      "size": 103150,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2aae6577d7df8379f3ee31af041c0bdad4ab2efb"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是/assets/002_byKl8HZ2_TtombzmOwo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d43797d154b3ae3ed414d881091656107403866",
+      "size": 84865,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8d43797d154b3ae3ed414d881091656107403866"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是/assets/003_image_D0c8blIsEo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1388d81512d35bc06c3d396d1366be2ebfd209af",
+      "size": 211965,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1388d81512d35bc06c3d396d1366be2ebfd209af"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是/assets/004_test_SSsAbxS8po.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "937641261949c810505a8a22faa974cbdf6fa0b5",
+      "size": 199000,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/937641261949c810505a8a22faa974cbdf6fa0b5"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 16 章 收藏不是知识管理，能再次用起来才是/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "807854b7fc152f180173383161e3b2c455502de5",
+      "size": 3294,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/807854b7fc152f180173383161e3b2c455502de5"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "76e3856a823f5f9e5a19f98be2ae4a89a0c5af3e",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/76e3856a823f5f9e5a19f98be2ae4a89a0c5af3e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5c45328a6bec9ed30db239c41addbcd2dede4fd0",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/5c45328a6bec9ed30db239c41addbcd2dede4fd0"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/001_image_AXyxbhbcqo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4af546b075791f54f090b2d5859b34cbeb91abc",
+      "size": 219973,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d4af546b075791f54f090b2d5859b34cbeb91abc"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/002_image_AqEYbLlgUo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f1049dd482533cbea7a73846388b658df4b672e",
+      "size": 351378,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0f1049dd482533cbea7a73846388b658df4b672e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/003_image_N3UabeCFBo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "836b77fa97768aa53c87a60d6cb7d4feafce1df9",
+      "size": 300716,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/836b77fa97768aa53c87a60d6cb7d4feafce1df9"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/004_image_Ne3BbzhZco.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f735233d617bdfdcb0089d7d12a66385328cca95",
+      "size": 523303,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f735233d617bdfdcb0089d7d12a66385328cca95"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/005_image_YK5Ebuvyto.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "188616a927c77402d42e257cc6882f490634f7f7",
+      "size": 242243,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/188616a927c77402d42e257cc6882f490634f7f7"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/006_image_DYjgbWFlGo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "730a817772f2204fd631c851f346eb7acc275a4f",
+      "size": 565036,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/730a817772f2204fd631c851f346eb7acc275a4f"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/assets/011_image_CIeub9uEro.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80cc72d2edd2f330380e100c07d49a6d768fc716",
+      "size": 521457,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/80cc72d2edd2f330380e100c07d49a6d768fc716"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 17 章 会议结束不是终点，工作才刚刚开始/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47305ddd2e4d20c4c5d93d745e0bf2d63a3e0dde",
+      "size": 9984,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/47305ddd2e4d20c4c5d93d745e0bf2d63a3e0dde"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f2db5a6e2aee2c22380b716faf74668626cfc095",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/f2db5a6e2aee2c22380b716faf74668626cfc095"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b50992df89bcdc85c1aeb74e12b9d5a7e082cac",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/0b50992df89bcdc85c1aeb74e12b9d5a7e082cac"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/001_CleanShot 2026-07-10 at 00.14.28@2x_Lxy0b4axOo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "095e671191756420579f38d03a8cf5aa42dc8680",
+      "size": 939235,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/095e671191756420579f38d03a8cf5aa42dc8680"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/002_image_TphobTIRXo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee5f0e120e6d58ec76f7dbf281abaf6ee2cce7ca",
+      "size": 368843,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/ee5f0e120e6d58ec76f7dbf281abaf6ee2cce7ca"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/003_image_CrgibiDW3o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfb1c5b46cb4ecccf24590289b8f43035c19001e",
+      "size": 317980,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cfb1c5b46cb4ecccf24590289b8f43035c19001e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/004_image_WX6WbFC9Oo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15c9ce13cea3f79838f0d052a8a745eb09aa358d",
+      "size": 270207,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/15c9ce13cea3f79838f0d052a8a745eb09aa358d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/005_image_LKNibvYSCo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e17cc8a4cdbec1dd4a3d7b9b9059802c447f55e",
+      "size": 252955,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4e17cc8a4cdbec1dd4a3d7b9b9059802c447f55e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/006_image_DvVSbW5D4o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d430878c5c57719501609e2d9c4908d9bca298e2",
+      "size": 214795,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d430878c5c57719501609e2d9c4908d9bca298e2"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/007_image_CScebfl1io.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3afabf6518014798d40f1300fc6bf30cbe526aba",
+      "size": 255854,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3afabf6518014798d40f1300fc6bf30cbe526aba"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/008_image_I6uBbecypo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67a7dd696fd3635eeb36a3f01850b55c637ef814",
+      "size": 184189,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/67a7dd696fd3635eeb36a3f01850b55c637ef814"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/009_image_XpbYbptp8o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f7830b668ef89d359b26097dda7b5e0dd2940e9",
+      "size": 208169,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2f7830b668ef89d359b26097dda7b5e0dd2940e9"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/010_image_FFsNbG1dYo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0250fc3c0e1c25fa10261b4d070ecc621481dede",
+      "size": 652501,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0250fc3c0e1c25fa10261b4d070ecc621481dede"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/011_image_LuArbEta0o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09aeae99bf080bd781d9b82dfa8edce4d7629d29",
+      "size": 361734,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/09aeae99bf080bd781d9b82dfa8edce4d7629d29"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/012_image_IUTibzqkPo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62c0f8f495337015a1cf8ffc0f01e7b196bcf275",
+      "size": 350041,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/62c0f8f495337015a1cf8ffc0f01e7b196bcf275"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/013_image_Nm2MbK8LDo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c5d64cab1cdc8b9731340c6bdba1eaa6ad6c67a",
+      "size": 501000,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1c5d64cab1cdc8b9731340c6bdba1eaa6ad6c67a"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/014_image_RQxfbNMGzo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d6fa5d1900fc3d20cb41162c71509fecd2a3830",
+      "size": 416978,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8d6fa5d1900fc3d20cb41162c71509fecd2a3830"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/015_image_Y0yvbzLRto.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6ff45b6970d397a37036e08ca67fc365a029f70",
+      "size": 284393,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d6ff45b6970d397a37036e08ca67fc365a029f70"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/016_image_DOOhbmIIeo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08ec0b657565b1253307ec6db78af0399698609d",
+      "size": 530135,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/08ec0b657565b1253307ec6db78af0399698609d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/assets/017_image_LPupbY4lGo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0edca9d31e1930ad33a0599c2893f4aa7fd66d42",
+      "size": 4244335,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0edca9d31e1930ad33a0599c2893f4aa7fd66d42"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 18 章 把投资分析变成你的日常/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "197b28517451cfcf475c84b61906540a9d310c8e",
+      "size": 31897,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/197b28517451cfcf475c84b61906540a9d310c8e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5607a92403b90fdfcc854713d5333853a4e44fea",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/5607a92403b90fdfcc854713d5333853a4e44fea"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe7fd777ccb08c4d9674718370ee0d435c5e8ade",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/fe7fd777ccb08c4d9674718370ee0d435c5e8ade"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/001_video-work-is-hard_Jn32bhqaho.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71d3ebf7cf0518fc0175d8f33c8e6031ceebc5b3",
+      "size": 911656,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/71d3ebf7cf0518fc0175d8f33c8e6031ceebc5b3"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/002_two-ai-video-teams_SXcUb9mpMo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cb90df8e6c231c18385a5504855c66bb171c75c",
+      "size": 135698,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3cb90df8e6c231c18385a5504855c66bb171c75c"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/003_summon-expert-team-pc_FHrNbNCiBo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb7672da4e031d29e7aed9d82d14ee3069ff13bd",
+      "size": 130108,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cb7672da4e031d29e7aed9d82d14ee3069ff13bd"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/004_video-team-roles_ZOJ8b7aQ7o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c44fc472681562c97c2358c786e076a02d1c9961",
+      "size": 196690,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c44fc472681562c97c2358c786e076a02d1c9961"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/005_multi-agent-team-overview_NzPHbTGH2o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23f39407a1c1c19e76a4de318159bd912504cc58",
+      "size": 825812,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/23f39407a1c1c19e76a4de318159bd912504cc58"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/006_hyperframes-engine_Uj4hbc6Tzo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37739ea1f18b213fdfaa11272d3f13d149e21e0b",
+      "size": 190929,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/37739ea1f18b213fdfaa11272d3f13d149e21e0b"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/007_collection-report_KPn1bXgYQo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dfaab612ccdfb40c7acd7a452fd7f05d3a28fe9",
+      "size": 155687,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6dfaab612ccdfb40c7acd7a452fd7f05d3a28fe9"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/008_planner-full_YPM3boyNTo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a62ddaa128d102b89831f86bb15616e78dab51eb",
+      "size": 252517,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a62ddaa128d102b89831f86bb15616e78dab51eb"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/009_video-producer_PohnbE1jKo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43812a8ad1f174d695f9baa5809667de0e6d450b",
+      "size": 44187,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/43812a8ad1f174d695f9baa5809667de0e6d450b"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/010_workbuddy-flow_FSJzb5xLQo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db595e0544b3a117cd6957fd93b503c5d05cef7e",
+      "size": 169501,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/db595e0544b3a117cd6957fd93b503c5d05cef7e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/011_publish-demo_DdTYbbBxLo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0660fbf86a29f50f5e6c5ed84ad221e07722cda",
+      "size": 92995,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a0660fbf86a29f50f5e6c5ed84ad221e07722cda"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/012_publish-result_Qpz2bvBwTo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cce38bb3b4ede30871c30c7995cf7e1eaeceb80",
+      "size": 47064,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4cce38bb3b4ede30871c30c7995cf7e1eaeceb80"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/013_anatomy-team_OI1Ubltu1o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51da132cab63a0036492dca5c233dbab0de032bb",
+      "size": 195697,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/51da132cab63a0036492dca5c233dbab0de032bb"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/014_anatomy-demo_PJuybCsQao.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22e965114553e74d24adb896ce132f4e15f363b3",
+      "size": 126236,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/22e965114553e74d24adb896ce132f4e15f363b3"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/015_anatomy-flow_CuFcbaM9Ao.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6622410f7f81634911b3313c14d0634393535d81",
+      "size": 495896,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6622410f7f81634911b3313c14d0634393535d81"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/016_audio-extract_EijVbt25mo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "803f31228c4f628bae649d11036c74f9613f36bb",
+      "size": 100911,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/803f31228c4f628bae649d11036c74f9613f36bb"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/017_transcript-result_Zyc0bjAhTo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64a7732fa006e52d568384d734c0e129d2281660",
+      "size": 191274,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/64a7732fa006e52d568384d734c0e129d2281660"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/018_video-understand_VwxLb62b1o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdf2f90426c11fac5a4b5ad992c600493c3439e1",
+      "size": 60074,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/fdf2f90426c11fac5a4b5ad992c600493c3439e1"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/assets/019_clip-cut_HAWrbELZIo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97c08be352f3ccb21b01d813322f96c6e2d97d7f",
+      "size": 555465,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/97c08be352f3ccb21b01d813322f96c6e2d97d7f"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 19 章 一句话召唤 AI 视频团队/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bb3d562a7d19a52ca699a1eeab9c3e390bb9c19",
+      "size": 7664,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0bb3d562a7d19a52ca699a1eeab9c3e390bb9c19"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c52f307ae15e3fa28cb9e34d8e7d9d5c003b5e7",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/6c52f307ae15e3fa28cb9e34d8e7d9d5c003b5e7"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7dce3e9005d12d9bb6c045ef42dde6e71074fd9c",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/7dce3e9005d12d9bb6c045ef42dde6e71074fd9c"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/001_image_TBeUbtO5Uo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02bb223a43824cce115815207d5069730a8e06b7",
+      "size": 305021,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/02bb223a43824cce115815207d5069730a8e06b7"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/002_image_UsfnbdO18o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b7e08974f4b871239c3f64e33625f34c02cf866",
+      "size": 759614,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4b7e08974f4b871239c3f64e33625f34c02cf866"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/003_image_D9dBbor45o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89724e23675f4a32171a19020bc3e82848a37d00",
+      "size": 229263,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/89724e23675f4a32171a19020bc3e82848a37d00"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/004_image_SgdBbN3bXo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07714a950b36d06564940179bb4930e9b0151547",
+      "size": 141072,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/07714a950b36d06564940179bb4930e9b0151547"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/005_image_IrhFbSsgxo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8403eafe95d81074744ce2a7c90471d142fe9f31",
+      "size": 201602,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8403eafe95d81074744ce2a7c90471d142fe9f31"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/006_image_OmoDbu7rBo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c19c41e807bace334a1276e36cc558dfc1e6b17",
+      "size": 238039,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3c19c41e807bace334a1276e36cc558dfc1e6b17"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/007_image_YCTubyoc3o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7eae98f3b17038ebcc87931a06e9c781a0f5e969",
+      "size": 685976,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7eae98f3b17038ebcc87931a06e9c781a0f5e969"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/008_image_Cezibb1uao.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29d35ac1398f70fa97600a347fa914c56fc1d73a",
+      "size": 220560,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/29d35ac1398f70fa97600a347fa914c56fc1d73a"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/009_image_YB8xbAm4Zo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ec913c0e6835dbe2cc7c5087b2817c0969b61f6",
+      "size": 935020,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6ec913c0e6835dbe2cc7c5087b2817c0969b61f6"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/010_image_FUCAbuw08o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af2e66a2c463da02fbc935777b5c95e3804b3e8b",
+      "size": 516480,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/af2e66a2c463da02fbc935777b5c95e3804b3e8b"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/011_image_VrCsbV8TPo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "883291e3eb19980cb48b8169f247bf8111edc885",
+      "size": 688207,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/883291e3eb19980cb48b8169f247bf8111edc885"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/012_image_WzaxbhMT7o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e110685358d28d089a16fde036456535b43f7a8",
+      "size": 270316,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1e110685358d28d089a16fde036456535b43f7a8"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/013_image_KqQsbAw8Ho.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00f5b117a0d520bb8c67ab502c60f7e784f1b259",
+      "size": 216432,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/00f5b117a0d520bb8c67ab502c60f7e784f1b259"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/014_image_GUBtbiSfao.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74ebe2e483d70ac47b9e90c113f1921777d59d0f",
+      "size": 309141,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/74ebe2e483d70ac47b9e90c113f1921777d59d0f"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/015_image_QHmHbuB4Ro.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29fb4de0bac22c89d16cae89c7c7c710af71f5b1",
+      "size": 749846,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/29fb4de0bac22c89d16cae89c7c7c710af71f5b1"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/assets/016_image_NtnjbhJRHo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46a280c1099ff74be604ab8e6e4808fd590007df",
+      "size": 602899,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/46a280c1099ff74be604ab8e6e4808fd590007df"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 20 章 自媒体不只是靠努力，而是一条增长闭环/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47dcd04baeb25cd0fbc0425c79d2730af63f74fd",
+      "size": 12250,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/47dcd04baeb25cd0fbc0425c79d2730af63f74fd"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e2e77c57c8a5a97e603c1c842cfbbb2767186b6f",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/e2e77c57c8a5a97e603c1c842cfbbb2767186b6f"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c36aae0d8a2795a049f0f2bf75e3a247612ff638",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/c36aae0d8a2795a049f0f2bf75e3a247612ff638"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/001_geo-expert-market_Aq5vbw1zpo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1987d1612807fb01ec34fc651129a3817d02c7f4",
+      "size": 220166,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1987d1612807fb01ec34fc651129a3817d02c7f4"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/002_geo-wesight-input_Igu2bhBHto.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da013d0dbff6b976d8eeb9c559e51e18260e35c2",
+      "size": 841131,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/da013d0dbff6b976d8eeb9c559e51e18260e35c2"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/003_geo-wesight-running-report_NPbHbLzS1o.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a7bd0ced1ebe33fb31ef969aab6e765ac9a9e79",
+      "size": 258319,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2a7bd0ced1ebe33fb31ef969aab6e765ac9a9e79"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/004_geo-overview-risk_F7TdbI1vDo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73033b50d210931cf29c56645591b6f812d10c5e",
+      "size": 252949,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/73033b50d210931cf29c56645591b6f812d10c5e"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/005_geo-aivo-score_IeIfb25yLo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a890918595b1c25300c178d0a30b0f8c6fc5c8f1",
+      "size": 248769,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a890918595b1c25300c178d0a30b0f8c6fc5c8f1"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/006_geo-user-profile_D9E2bdtMfo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c9975cabf09a9a89e54a7632de7ac65345f96f0",
+      "size": 258179,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5c9975cabf09a9a89e54a7632de7ac65345f96f0"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/007_geo-search-visibility_DlL8bB228o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "358f4a5331b266da9556f660983e36c922053893",
+      "size": 164953,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/358f4a5331b266da9556f660983e36c922053893"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/008_geo-infrastructure_EGT9bx2q1o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ff81b0945a19ce797ce9863a4289bbd847b0bea",
+      "size": 134267,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5ff81b0945a19ce797ce9863a4289bbd847b0bea"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/009_geo-competitor-analysis_DXc8bIG86o.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93db729ac70eb36740db4a4297b508e70a73589d",
+      "size": 130265,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/93db729ac70eb36740db4a4297b508e70a73589d"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/010_geo-inclusion-effect_Wtr5bIQjXo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2646be5852125dbd033f7a5ad6afd3df50b428aa",
+      "size": 113717,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2646be5852125dbd033f7a5ad6afd3df50b428aa"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/011_geo-sentiment-analysis_PGplbNBQFo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8cbe413523de0be88e4d72ec61d78eeca318fb86",
+      "size": 207447,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8cbe413523de0be88e4d72ec61d78eeca318fb86"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/012_geo-personal-ip-score_ImWjbM8HSo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2b7e955288c876528a461aab169a8a1ea78f3db",
+      "size": 209149,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c2b7e955288c876528a461aab169a8a1ea78f3db"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/013_geo-action-suggestions_MiImbUk7Io.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cff75dca9682311b5a7ae56fbeca332017291baa",
+      "size": 251424,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cff75dca9682311b5a7ae56fbeca332017291baa"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/assets/014_geo-roadmap_TlOTbehsFo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c41f77c6d23f31c2c42ad4223e47a4840595051",
+      "size": 262004,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2c41f77c6d23f31c2c42ad4223e47a4840595051"
+    },
+    {
+      "path": "docs/bluebook/第二篇 案例篇：从一项任务到一支 AI 团队/第 21 章 WorkBuddy也能做GEO专家/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32b34ae5ed5c4bfa0d3bdd66427142c48ddf7323",
+      "size": 13332,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/32b34ae5ed5c4bfa0d3bdd66427142c48ddf7323"
+    },
+    {
+      "path": "docs/bluebook/第四篇 岗位与行业落地",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5c86643ec4e048a1fd91a8cb464f9904bd6cf99f",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/5c86643ec4e048a1fd91a8cb464f9904bd6cf99f"
+    },
+    {
+      "path": "docs/bluebook/第四篇 岗位与行业落地/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c85a84036481821fe9394c2f062342d062d1c8a4",
+      "size": 557,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c85a84036481821fe9394c2f062342d062d1c8a4"
+    },
+    {
+      "path": "docs/bluebook/第四篇 岗位与行业落地/第 26 章 岗位路线图：不同岗位如何把 WorkBuddy 用深",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5f1615516a152177de213b756ccb4802af2e0e9f",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/5f1615516a152177de213b756ccb4802af2e0e9f"
+    },
+    {
+      "path": "docs/bluebook/第四篇 岗位与行业落地/第 26 章 岗位路线图：不同岗位如何把 WorkBuddy 用深/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5614fdbd38bd6542686840956b879b697f21f8c3",
+      "size": 4351,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5614fdbd38bd6542686840956b879b697f21f8c3"
+    },
+    {
+      "path": "docs/bluebook/第四篇 岗位与行业落地/第 27 章 行业路线图：从通用能力到行业工作流",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "102abf5564b91b901002645b568d686f02d5c474",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/102abf5564b91b901002645b568d686f02d5c474"
+    },
+    {
+      "path": "docs/bluebook/第四篇 岗位与行业落地/第 27 章 行业路线图：从通用能力到行业工作流/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d749ad07abdd85dab8b2d51b2df0395ba6406f24",
+      "size": 4920,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d749ad07abdd85dab8b2d51b2df0395ba6406f24"
+    },
+    {
+      "path": "docs/bluebook/附录",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a8077082252871c37a56343d5d2382de1a37d5d9",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/a8077082252871c37a56343d5d2382de1a37d5d9"
+    },
+    {
+      "path": "docs/bluebook/附录/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "195e1c24480d4bc03f8a68a7702773f9524e267c",
+      "size": 319,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/195e1c24480d4bc03f8a68a7702773f9524e267c"
+    },
+    {
+      "path": "docs/bluebook/附录/附录 A 常用指令模板",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8522be941bbffb818ac06141293c5e34ed643fd0",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8522be941bbffb818ac06141293c5e34ed643fd0"
+    },
+    {
+      "path": "docs/bluebook/附录/附录 A 常用指令模板/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d5181cd290fd10d8eba010c3405e68f9d6ad6d4",
+      "size": 1174,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/8d5181cd290fd10d8eba010c3405e68f9d6ad6d4"
+    },
+    {
+      "path": "docs/bluebook/附录/附录 B 场景速查表",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6ad8f5a86e06fe3790d6e8a39d9b50913aa7f2dc",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/6ad8f5a86e06fe3790d6e8a39d9b50913aa7f2dc"
+    },
+    {
+      "path": "docs/bluebook/附录/附录 B 场景速查表/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "462ca9e2c573cacc5f10b26219a7021475e1e5ca",
+      "size": 5298,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/462ca9e2c573cacc5f10b26219a7021475e1e5ca"
+    },
+    {
+      "path": "docs/cases",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d2acfe3fdff4f2e014327139a2fadcdc5130baed",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/d2acfe3fdff4f2e014327139a2fadcdc5130baed"
+    },
+    {
+      "path": "docs/cases/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f4dacd870cd3696c85d805103b322701975e45c",
+      "size": 5525,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7f4dacd870cd3696c85d805103b322701975e45c"
+    },
+    {
+      "path": "docs/cases/submissions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb2126fafe243a1a3f59f0287f36b54285e085cf",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/bb2126fafe243a1a3f59f0287f36b54285e085cf"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0db9bd3caec4bcd88178a2a254397efad4a76a9a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/0db9bd3caec4bcd88178a2a254397efad4a76a9a"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41e4aed91b9d122cd619c01965bf48d29307ff18",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/41e4aed91b9d122cd619c01965bf48d29307ff18"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/agent-swarm-todo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "260e333b14a7b06d310b7abb03c1bef7a8168f8c",
+      "size": 322780,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/260e333b14a7b06d310b7abb03c1bef7a8168f8c"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/cover.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09dc37216bba38545cc10b08d381f60c84acbdf2",
+      "size": 682732,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/09dc37216bba38545cc10b08d381f60c84acbdf2"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/primary-input.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f02acee7be2b22555fce366abe69ccd62e8f1d9a",
+      "size": 263771,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f02acee7be2b22555fce366abe69ccd62e8f1d9a"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/report-charts.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c93c8ff65047ec0e87d248bfb373d7a52a175094",
+      "size": 619200,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c93c8ff65047ec0e87d248bfb373d7a52a175094"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/report-conclusion.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a8ce0df51faadf43d433851b8aa447c04f9e896",
+      "size": 355939,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9a8ce0df51faadf43d433851b8aa447c04f9e896"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/report-framework.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7250d319c1dad7b9520df439e08db58d50fd12a",
+      "size": 554647,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c7250d319c1dad7b9520df439e08db58d50fd12a"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/source-files.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97b52b4ab1d069a6ffcb54a2cf5d024ac5e080a2",
+      "size": 442729,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/97b52b4ab1d069a6ffcb54a2cf5d024ac5e080a2"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/start-agents-swarm.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e549e30a5fc756d08089275fb919298c28b63cd8",
+      "size": 463126,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e549e30a5fc756d08089275fb919298c28b63cd8"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/assets/workbuddy-result.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a1f7ece48c62ae74cac4a4ec752be889b7b8364",
+      "size": 551728,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5a1f7ece48c62ae74cac4a4ec752be889b7b8364"
+    },
+    {
+      "path": "docs/cases/submissions/annual-report-digital-transformation/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4dbe9e219d42c9880729931f869fcd8f0a94871",
+      "size": 18951,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/b4dbe9e219d42c9880729931f869fcd8f0a94871"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "04ef8377620aa60562e027c088d8859105736d80",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/04ef8377620aa60562e027c088d8859105736d80"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b6ac6f6ab73a19e52a6e3827b3526228808bdc8",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/4b6ac6f6ab73a19e52a6e3827b3526228808bdc8"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/assets/campus.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3e85f9d48be9646341a4e8fe5a177ac09b051d7",
+      "size": 96106,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c3e85f9d48be9646341a4e8fe5a177ac09b051d7"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/assets/hero.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c23a446cac997a765f7d2e6e76095006d629f3f",
+      "size": 346488,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7c23a446cac997a765f7d2e6e76095006d629f3f"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/assets/location.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93dfc43ae1e2a47f6269a0558b8e9ff85d9c04f7",
+      "size": 71767,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/93dfc43ae1e2a47f6269a0558b8e9ff85d9c04f7"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/assets/timeline.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64c0e8de0a0e13ba2bc4f41fde21109afb0a1ce9",
+      "size": 63674,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/64c0e8de0a0e13ba2bc4f41fde21109afb0a1ce9"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/assets/vibe.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfefef4379fd562c2380f553a75dc0b8ce60b6ff",
+      "size": 85201,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cfefef4379fd562c2380f553a75dc0b8ce60b6ff"
+    },
+    {
+      "path": "docs/cases/submissions/city-guide-dongguan/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c65f1a5ced5c0998b91f9f03792240a6ede59e2",
+      "size": 8554,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4c65f1a5ced5c0998b91f9f03792240a6ede59e2"
+    },
+    {
+      "path": "docs/cases/submissions/daily-ai-news",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e046bbe836873879c330a0ab5ead232ecd1bf453",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/e046bbe836873879c330a0ab5ead232ecd1bf453"
+    },
+    {
+      "path": "docs/cases/submissions/daily-ai-news/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f38c6a4e6927066842604f69792bec67264082a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/3f38c6a4e6927066842604f69792bec67264082a"
+    },
+    {
+      "path": "docs/cases/submissions/daily-ai-news/assets/aihot-daily-report.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb685b4872cb236f998b9025d7ed52751f3e8b93",
+      "size": 592341,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cb685b4872cb236f998b9025d7ed52751f3e8b93"
+    },
+    {
+      "path": "docs/cases/submissions/daily-ai-news/assets/aihot-install.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12ec9e9f19c050af9bb64bd792b0884c1a10af27",
+      "size": 88266,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/12ec9e9f19c050af9bb64bd792b0884c1a10af27"
+    },
+    {
+      "path": "docs/cases/submissions/daily-ai-news/assets/aihot-openai-result.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "968755542cd42e861aeaa62a242df4ba0b542b2b",
+      "size": 466040,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/968755542cd42e861aeaa62a242df4ba0b542b2b"
+    },
+    {
+      "path": "docs/cases/submissions/daily-ai-news/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99e63cce01ee34022d17abfdb846ec463b734e0b",
+      "size": 7760,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/99e63cce01ee34022d17abfdb846ec463b734e0b"
+    },
+    {
+      "path": "docs/cases/submissions/jz-2025-showreel",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dc4c6895493a42fd98808174a0df8f965b0b98ee",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/dc4c6895493a42fd98808174a0df8f965b0b98ee"
+    },
+    {
+      "path": "docs/cases/submissions/jz-2025-showreel/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "da2c8213a8e33f6ccdb0a8cd45b1d4ee09d24b4b",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/da2c8213a8e33f6ccdb0a8cd45b1d4ee09d24b4b"
+    },
+    {
+      "path": "docs/cases/submissions/jz-2025-showreel/assets/showreel-scene.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f2264f7320f9e19731872971932d778c4ce178e",
+      "size": 482190,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3f2264f7320f9e19731872971932d778c4ce178e"
+    },
+    {
+      "path": "docs/cases/submissions/jz-2025-showreel/assets/showreel-sphere.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8ce2d01f4824e7b4a181bf0918b6d6be05d213e",
+      "size": 68105,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a8ce2d01f4824e7b4a181bf0918b6d6be05d213e"
+    },
+    {
+      "path": "docs/cases/submissions/jz-2025-showreel/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3782ceaf14d2cbdd6654a3018fcd43a7996a716d",
+      "size": 11852,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3782ceaf14d2cbdd6654a3018fcd43a7996a716d"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8876914775e0da95b4ce4af80628a169d512b1ab",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/8876914775e0da95b4ce4af80628a169d512b1ab"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "80d6d5ec28a800d93f2e19465522516c4743a4cb",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/80d6d5ec28a800d93f2e19465522516c4743a4cb"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/assets/cover.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bf1fd94de1644bc9fa3e1c9ee262684bb570235",
+      "size": 386051,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4bf1fd94de1644bc9fa3e1c9ee262684bb570235"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/assets/mess-data.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b3a2b50ca63453f55cea849a6bc7d442de3b5db",
+      "size": 746774,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4b3a2b50ca63453f55cea849a6bc7d442de3b5db"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/assets/report-xlsx.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "892c70ee6f6a79921c7269ef9a45da9f0f254a5c",
+      "size": 183400,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/892c70ee6f6a79921c7269ef9a45da9f0f254a5c"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/assets/workbuddy-cleaning.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "715397b57ed61b7fcb7ca42ab5838bcde5fb0538",
+      "size": 514527,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/715397b57ed61b7fcb7ca42ab5838bcde5fb0538"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/assets/workbuddy-task.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "024326188657026e1314e212e1d6b45d8f30d986",
+      "size": 180516,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/024326188657026e1314e212e1d6b45d8f30d986"
+    },
+    {
+      "path": "docs/cases/submissions/tea-shop-sales-analysis/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0eecf4f0d0d2e7c5001fad856877a6e80e8cac5b",
+      "size": 11418,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0eecf4f0d0d2e7c5001fad856877a6e80e8cac5b"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7924f13c798994bfdb46d658128c6da331585910",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/7924f13c798994bfdb46d658128c6da331585910"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b67c299e79354164ad387c6322f6e33d56b31100",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/b67c299e79354164ad387c6322f6e33d56b31100"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets/final-resume-result.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "751874488790c09acde229b5e6423d04d9442e53",
+      "size": 980417,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/751874488790c09acde229b5e6423d04d9442e53"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets/first-resume-result.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf0447d44f2cc423033902cf676e1045061841aa",
+      "size": 1033133,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/cf0447d44f2cc423033902cf676e1045061841aa"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets/install-skill.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa613b961df43648335c94493978cdd6fd158527",
+      "size": 473303,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/fa613b961df43648335c94493978cdd6fd158527"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets/send-resume-materials.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ee8b8211ed6ea14113f8c3cf575809003024574",
+      "size": 378442,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4ee8b8211ed6ea14113f8c3cf575809003024574"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets/skill-ready.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ffbc0a073d6bc36930d9dc4f74a5b551f6bbb1f",
+      "size": 410597,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9ffbc0a073d6bc36930d9dc4f74a5b551f6bbb1f"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/assets/template-list.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b4552444a3c5687e53c02bf6af03c70bdaa01c9",
+      "size": 521447,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2b4552444a3c5687e53c02bf6af03c70bdaa01c9"
+    },
+    {
+      "path": "docs/cases/submissions/vibe-resume/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d25ddb2d07c1271bb9c21be622a422c332a08068",
+      "size": 4604,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d25ddb2d07c1271bb9c21be622a422c332a08068"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-format-publish",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "580b389d06716988e653af7c93486e1ae56e4d61",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/580b389d06716988e653af7c93486e1ae56e4d61"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-format-publish/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d2f1de6d013f42be1aa53986ff29650bf1cc1d1",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/1d2f1de6d013f42be1aa53986ff29650bf1cc1d1"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-format-publish/assets/skill-install.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f1d763fddd111f54cf14cefb5aef32b05877cf9",
+      "size": 424218,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2f1d763fddd111f54cf14cefb5aef32b05877cf9"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-format-publish/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17b4e85bea5b8bbad0037a40fc6618e1fe2f5433",
+      "size": 9708,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/17b4e85bea5b8bbad0037a40fc6618e1fe2f5433"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-ima-knowledge",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f223d8aa8478cfbd77a98e063b8e7ea8876b666",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/9f223d8aa8478cfbd77a98e063b8e7ea8876b666"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-ima-knowledge/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ceb815f9c933bd23e01a7514f20a98970ed643cb",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/ceb815f9c933bd23e01a7514f20a98970ed643cb"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-ima-knowledge/assets/workbuddy添加ima连接器.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4c8f33baafb6a4bef1585eca46866d68a544289",
+      "size": 218032,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a4c8f33baafb6a4bef1585eca46866d68a544289"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-ima-knowledge/assets/小程序一键存入ima.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e92e0d175fabe4411d95ba01e6798180fd3e940f",
+      "size": 89506,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e92e0d175fabe4411d95ba01e6798180fd3e940f"
+    },
+    {
+      "path": "docs/cases/submissions/wechat-ima-knowledge/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bd98d82b50f8e6fcb856326b039994a25ef0187",
+      "size": 10876,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/6bd98d82b50f8e6fcb856326b039994a25ef0187"
+    },
+    {
+      "path": "docs/community",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9c05372b335cb202f8cadcac1fb56e201fc81ad0",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/9c05372b335cb202f8cadcac1fb56e201fc81ad0"
+    },
+    {
+      "path": "docs/community/case-contributing.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "958543a61bc48798c88f66b6ff70d9c9f0274a65",
+      "size": 3684,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/958543a61bc48798c88f66b6ff70d9c9f0274a65"
+    },
+    {
+      "path": "docs/community/contributing.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31de679786a8cd2e26cca429c65747b9fa74004b",
+      "size": 3308,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/31de679786a8cd2e26cca429c65747b9fa74004b"
+    },
+    {
+      "path": "docs/help",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bafa4c026ca384a0f8aee513a71fbb5135011c2d",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/bafa4c026ca384a0f8aee513a71fbb5135011c2d"
+    },
+    {
+      "path": "docs/help/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c29a761b0e564424a4d2d0bb54913b77310dd2ee",
+      "size": 8651,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c29a761b0e564424a4d2d0bb54913b77310dd2ee"
+    },
+    {
+      "path": "docs/index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a237f431c9ea94096522cff5afb623e2df3c97d8",
+      "size": 277,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a237f431c9ea94096522cff5afb623e2df3c97d8"
+    },
+    {
+      "path": "docs/plans",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d6dc70d4fb69f45dbcfa7386a9b4660c20040ce5",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/d6dc70d4fb69f45dbcfa7386a9b4660c20040ce5"
+    },
+    {
+      "path": "docs/plans/2026-07-10-workbuddy-pixel-green-ui-design.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc850be0944d9dd3f531ab90bd862d9dec7295ad",
+      "size": 20345,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/bc850be0944d9dd3f531ab90bd862d9dec7295ad"
+    },
+    {
+      "path": "docs/plans/2026-07-11-mobile-performance-design.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "946fa3b66e1045723c82935d8b34f46d4278519b",
+      "size": 2034,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/946fa3b66e1045723c82935d8b34f46d4278519b"
+    },
+    {
+      "path": "docs/plans/2026-07-11-mobile-performance.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d79b46292bb9f2f9420d3b59b7bd67d705b3087",
+      "size": 3689,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9d79b46292bb9f2f9420d3b59b7bd67d705b3087"
+    },
+    {
+      "path": "docs/plans/2026-07-12-inline-svg-icons-design.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1327279a90c20b25495a3c1314b3e910a393fc34",
+      "size": 1131,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1327279a90c20b25495a3c1314b3e910a393fc34"
+    },
+    {
+      "path": "docs/public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3dc53c056aa74d8aa906138b9a80156a4b999c4a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/3dc53c056aa74d8aa906138b9a80156a4b999c4a"
+    },
+    {
+      "path": "docs/public/_headers",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0313b30dd94d4ff5d422404770e2ea20fd24b225",
+      "size": 579,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/0313b30dd94d4ff5d422404770e2ea20fd24b225"
+    },
+    {
+      "path": "docs/public/_routes.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4626e1dd7539d93e14e4ce6077c9c17b542ab8a9",
+      "size": 61,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4626e1dd7539d93e14e4ce6077c9c17b542ab8a9"
+    },
+    {
+      "path": "docs/public/baidu_verify_codeva-RF1ZqL4g90.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "325264c86c3b2c4e6fd32f711392b9524b46f130",
+      "size": 32,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/325264c86c3b2c4e6fd32f711392b9524b46f130"
+    },
+    {
+      "path": "docs/public/cases",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "549d52bb128df36d0f3dc6401c48ec850abb68f5",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/549d52bb128df36d0f3dc6401c48ec850abb68f5"
+    },
+    {
+      "path": "docs/public/cases/submissions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a3181a88c0244ddc53357c5761c5cb039edd26d8",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/a3181a88c0244ddc53357c5761c5cb039edd26d8"
+    },
+    {
+      "path": "docs/public/cases/submissions/annual-report-digital-transformation",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "62f366ebfa01d291e7c9fbeeeec2f85a10f460ac",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/62f366ebfa01d291e7c9fbeeeec2f85a10f460ac"
+    },
+    {
+      "path": "docs/public/cases/submissions/annual-report-digital-transformation/company-deep-research-report.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2db35543d5db10a34119ae5bd97f7f222e11d637",
+      "size": 84334,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2db35543d5db10a34119ae5bd97f7f222e11d637"
+    },
+    {
+      "path": "docs/public/cases/workbuddy-co-create-wechat.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a23d15856dd7df4f3e92f1e05ac26aa2bca65ccc",
+      "size": 104262,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a23d15856dd7df4f3e92f1e05ac26aa2bca65ccc"
+    },
+    {
+      "path": "docs/public/community",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "371cac0952baba396cb9f00960ea8fe7dd30f93a",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/371cac0952baba396cb9f00960ea8fe7dd30f93a"
+    },
+    {
+      "path": "docs/public/community/contacts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "584230e8ba6b2b2aed6900adde42abab3cdbc096",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/584230e8ba6b2b2aed6900adde42abab3cdbc096"
+    },
+    {
+      "path": "docs/public/community/contacts/dai-shu-di.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f0bb77b3925388c8127b317446941b5fdba8b1e",
+      "size": 102552,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1f0bb77b3925388c8127b317446941b5fdba8b1e"
+    },
+    {
+      "path": "docs/public/community/contacts/jia-mu.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49575887f0c4c6b1a08262e409c5ce9cc3b50a02",
+      "size": 165363,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/49575887f0c4c6b1a08262e409c5ce9cc3b50a02"
+    },
+    {
+      "path": "docs/public/community/contacts/joy.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93baa2cf9b53b590f3d81898373b96a3a4855def",
+      "size": 160230,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/93baa2cf9b53b590f3d81898373b96a3a4855def"
+    },
+    {
+      "path": "docs/public/community/contacts/liu-cong-nlp.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a23d15856dd7df4f3e92f1e05ac26aa2bca65ccc",
+      "size": 104262,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/a23d15856dd7df4f3e92f1e05ac26aa2bca65ccc"
+    },
+    {
+      "path": "docs/public/community/workbuddy-wechat-group-20260807.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c20f116b3f481fe89f2d0d0520eb4818fe645a4d",
+      "size": 93118,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c20f116b3f481fe89f2d0d0520eb4818fe645a4d"
+    },
+    {
+      "path": "docs/public/community/workbuddy-wechat-group-20260815.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c20f116b3f481fe89f2d0d0520eb4818fe645a4d",
+      "size": 93118,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c20f116b3f481fe89f2d0d0520eb4818fe645a4d"
+    },
+    {
+      "path": "docs/public/community/workbuddy-wechat-group-20260827.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c20f116b3f481fe89f2d0d0520eb4818fe645a4d",
+      "size": 93118,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c20f116b3f481fe89f2d0d0520eb4818fe645a4d"
+    },
+    {
+      "path": "docs/public/community/workbuddy-wechat-group-20260904.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c20f116b3f481fe89f2d0d0520eb4818fe645a4d",
+      "size": 93118,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c20f116b3f481fe89f2d0d0520eb4818fe645a4d"
+    },
+    {
+      "path": "docs/public/community/workbuddy-wechat-group-20260918.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c20f116b3f481fe89f2d0d0520eb4818fe645a4d",
+      "size": 93118,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c20f116b3f481fe89f2d0d0520eb4818fe645a4d"
+    },
+    {
+      "path": "docs/public/community/workbuddy-wechat-group.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c20f116b3f481fe89f2d0d0520eb4818fe645a4d",
+      "size": 93118,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/c20f116b3f481fe89f2d0d0520eb4818fe645a4d"
+    },
+    {
+      "path": "docs/public/favicon.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d58a5d9d75f1a8f3acce4e5ba0b9e51841eec0fb",
+      "size": 318,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/d58a5d9d75f1a8f3acce4e5ba0b9e51841eec0fb"
+    },
+    {
+      "path": "docs/public/googlebaadda0cc3a7a9a7.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c9c858bd53ca415482ee345527288ba5bd75a4c",
+      "size": 53,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4c9c858bd53ca415482ee345527288ba5bd75a4c"
+    },
+    {
+      "path": "docs/public/help",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "efdca6d11e8def8d651c20adb617a445fe681069",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/efdca6d11e8def8d651c20adb617a445fe681069"
+    },
+    {
+      "path": "docs/public/help/workbuddy-scenario-survey.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a5591c6abb1f34a623d3198eff11f0070760889",
+      "size": 248938,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/3a5591c6abb1f34a623d3198eff11f0070760889"
+    },
+    {
+      "path": "docs/public/og",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "93a45af23680152d704b88338400d2fd0f27d0a5",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/93a45af23680152d704b88338400d2fd0f27d0a5"
+    },
+    {
+      "path": "docs/public/og/workbuddy-guide.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7db4d4afa06d3469a1cc5e62f5e6ac87f381939e",
+      "size": 80204,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7db4d4afa06d3469a1cc5e62f5e6ac87f381939e"
+    },
+    {
+      "path": "docs/public/robots.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aef9d5b510f51cb7fe465ab47e744a25bb5ba2d4",
+      "size": 69,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/aef9d5b510f51cb7fe465ab47e744a25bb5ba2d4"
+    },
+    {
+      "path": "docs/reading-guide.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "884b68f8947ab7d0d5ad04171ca22bfc4c6c0803",
+      "size": 2857,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/884b68f8947ab7d0d5ad04171ca22bfc4c6c0803"
+    },
+    {
+      "path": "functions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "482b6ae4f8a62581dcc0e130d16839785520a833",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/482b6ae4f8a62581dcc0e130d16839785520a833"
+    },
+    {
+      "path": "functions/api",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0dfbbf87d5c1f6d8c65e6f6764c1345e5b1865ea",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/0dfbbf87d5c1f6d8c65e6f6764c1345e5b1865ea"
+    },
+    {
+      "path": "functions/api/internal",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "02530dc67f62c822405f91ba800e3558ed5f0ecf",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/02530dc67f62c822405f91ba800e3558ed5f0ecf"
+    },
+    {
+      "path": "functions/api/internal/traffic-sync.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07e8da2b194ef86996d6d50539200a4ca675c815",
+      "size": 1188,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/07e8da2b194ef86996d6d50539200a4ca675c815"
+    },
+    {
+      "path": "functions/api/traffic.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a4f20b51d5d524264a7345151cf8c817f6089ae",
+      "size": 1947,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1a4f20b51d5d524264a7345151cf8c817f6089ae"
+    },
+    {
+      "path": "functions/api/traffic.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cd898c28aa5c3a88589f4f02ba433720ae23325",
+      "size": 2400,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/9cd898c28aa5c3a88589f4f02ba433720ae23325"
+    },
+    {
+      "path": "functions/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "13da074f2e3d567c655e5b094beb2d2dd15bff2c",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/13da074f2e3d567c655e5b094beb2d2dd15bff2c"
+    },
+    {
+      "path": "functions/lib/cloudflare-analytics.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10d317b9521c012c587a731d12fcbae462ebdfa5",
+      "size": 5312,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/10d317b9521c012c587a731d12fcbae462ebdfa5"
+    },
+    {
+      "path": "functions/lib/traffic-archive.test.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95da48bb32db2bf30e393231fc4ad04617e0519a",
+      "size": 5962,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/95da48bb32db2bf30e393231fc4ad04617e0519a"
+    },
+    {
+      "path": "functions/lib/traffic-archive.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b639a478fb38ff2a6581c696a7767ff94d19bd4",
+      "size": 8105,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/5b639a478fb38ff2a6581c696a7767ff94d19bd4"
+    },
+    {
+      "path": "migrations",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4440db27dab250d8e450b33bd2e0f2aa4c92d010",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/4440db27dab250d8e450b33bd2e0f2aa4c92d010"
+    },
+    {
+      "path": "migrations/0001_traffic_archive.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dc15b4bbde9ffb90a3ed699d253279c0bb86367",
+      "size": 1036,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/7dc15b4bbde9ffb90a3ed699d253279c0bb86367"
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6d7ab36978d8ef72aaccfff47076a2a23d23c58",
+      "size": 259275,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/f6d7ab36978d8ef72aaccfff47076a2a23d23c58"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33aef01665b11810f72c46197c3c23414288d96f",
+      "size": 1393,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/33aef01665b11810f72c46197c3c23414288d96f"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9028a9b6458bfb9e6c3a48021e4ff4b39a8b70e4",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/9028a9b6458bfb9e6c3a48021e4ff4b39a8b70e4"
+    },
+    {
+      "path": "scripts/download_feishu_wiki.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2307b18c55dacaf1e4ce84564443570fb8c2d6b9",
+      "size": 15826,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/2307b18c55dacaf1e4ce84564443570fb8c2d6b9"
+    },
+    {
+      "path": "scripts/local-traffic-seed.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ce11d2e64b357d91ef05daf23a21314a163f98b",
+      "size": 693,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/1ce11d2e64b357d91ef05daf23a21314a163f98b"
+    },
+    {
+      "path": "vitest.config.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0564b1c7003f012673868b08f079418d6ff7dc9",
+      "size": 281,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e0564b1c7003f012673868b08f079418d6ff7dc9"
+    },
+    {
+      "path": "workers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "314b929fc6a075a551ae1da8e012d859d8ce6bb0",
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/trees/314b929fc6a075a551ae1da8e012d859d8ce6bb0"
+    },
+    {
+      "path": "workers/traffic-collector.ts",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4887a140012d66f9e1a52a914cb0de35365835b4",
+      "size": 1835,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/4887a140012d66f9e1a52a914cb0de35365835b4"
+    },
+    {
+      "path": "wrangler.collector.jsonc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "397c8374188f65d51d96b09efe05eaccd11cd028",
+      "size": 324,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/397c8374188f65d51d96b09efe05eaccd11cd028"
+    },
+    {
+      "path": "wrangler.jsonc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6f4811245a95af32710e36dede4a68937a261c1",
+      "size": 448,
+      "url": "https://api.github.com/repos/AlephAITech/WorkBuddyGuide/git/blobs/e6f4811245a95af32710e36dede4a68937a261c1"
+    }
+  ],
+  "truncated": false
+}
