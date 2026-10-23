@@ -22,8 +22,8 @@ out = subprocess.run(['git', 'diff', '--cached', '--name-only', '-z'],
 files = [f for f in out.split('\0') if f]
 
 targets = [f for f in files if any(k in f for k in EXCLUDE_KEYS)]
-# assets/（正文用的 assets_opt 保留，只排assets/ 和 assets_from_pdf/）
-extra = [f for f in files if '/assets/' in f]
+# 只排蓝皮书高清图库 assets/（VR 案例的 */assets/ 是运行必需，保留）
+extra = [f for f in files if f.startswith('教师版蓝皮书/assets/')]
 targets = sorted(set(targets + extra))
 
 if not targets:
