@@ -1,0 +1,574 @@
+一、核心技术选型对比
+
+做 360° VR 全景互动网页，主流方案分「声明式框架」「底层 3D 引擎」「专业工具链」三类：
+
+方案 定位 上手难度 交互能力 适用场景
+
+A-Frame 基于 Three.js 的 HTML 声明式 VR 框架 ⭐ 低 热点/动画/WebXR 原生支持 快速出 Demo、VR 看房、教育漫游
+
+Three.js 底层 WebGL 3D 引擎 ⭐⭐⭐ 中高 完全自定义（射线/着色器/多场景） 商业级展厅、复杂交互、自研系统
+
+Pano2VR 可视化全景制作工具 ⭐ 低 热点/多场景/皮肤化输出 不写代码、交付静态漫游站点
+
+Pannellum 轻量全景查看器 ⭐⭐ 低 基础热点+场景跳转 单图展示、官网嵌入
+
+krpano 商业级全景内核 ⭐⭐⭐⭐ 高 极强（多边形热点/深度缩放） 大型地产/文旅项目（需授权）
+
+选型结论
+• 新手 / 教程演示 → A-Frame（几行 HTML 出效果）
+
+• 要完全掌控渲染与交互 → Three.js
+
+• 不想写代码做交付 → Pano2VR / Pannellum
+
+• 本教程主线：A-Frame 做基础，Three.js 讲原理。
+
+二、素材准备规范
+
+• 图片格式：等矩形（Equirectangular），推荐 4096×2048 或 5760×2880
+
+• 单张控制在 ≤8MB，用 TinyPNG / squoosh 压图
+
+• 多场景漫游：每个空间一张全景图，命名 room1.jpg / room2.jpg
+
+• 热点图标：透明 PNG，512×512 以内
+
+三、基于 A-Frame 的基础全景查看器
+
+1. 最小可用页面（CDN 引入）
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>360VR 全景 Demo</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- 资源 -->
+    <a-assets>
+      <img id="lobby" src="assets/lobby-360.jpg" alt="大厅全景" />
+    </a-assets>
+
+    <!-- 全景天空 -->
+    <a-sky src="#lobby" rotation="0 -90 0"></a-sky>
+
+    <!-- 相机 + 鼠标/陀螺仪控制 -->
+    <a-entity camera look-controls position="0 1.6 0"></a-entity>
+  </a-scene>
+</body>
+</html>
+
+
+打开即用：拖拽看四周，手机端自动支持陀螺仪。
+
+2. 加一个信息热点（点击弹标签）
+
+<a-scene>
+  <a-assets>
+    <img id="lobby" src="assets/lobby-360.jpg" />
+    <img id="pin" src="assets/hotspot.png" />
+  </a-assets>
+
+  <a-sky src="#lobby"></a-sky>
+
+  <!-- 热点 -->
+  <a-image
+    id="infoHotspot"
+    src="#pin"
+    position="-2 1.5 -3"
+    width="0.6" height="0.6"
+    look-at="[camera]"
+  ></a-image>
+
+  <!-- 信息面板（默认隐藏） -->
+  <a-entity id="infoPanel" visible="false" position="-2 2.2 -3">
+    <a-plane color="#222" opacity="0.85" width="2" height="0.6"></a-plane>
+    <a-text value="前台：可办理入住" align="center" color="#fff" width="3"></a-text>
+  </a-entity>
+
+  <a-entity camera look-controls position="0 1.6 0">
+    <a-cursor fuse="true" fuse-timeout="1200"></a-cursor>
+  </a-entity>
+</a-scene>
+
+<script>
+  const hotspot = document.querySelector('#infoHotspot');
+  const panel = document.querySelector('#infoPanel');
+
+  hotspot.addEventListener('click', () => {
+    const v = panel.getAttribute('visible');
+    panel.setAttribute('visible', !v);
+  });
+
+  hotspot.addEventListener('mouseenter', () => hotspot.setAttribute('scale', '1.2 1.2 1.2'));
+  hotspot.addEventListener('mouseleave', () => hotspot.setAttribute('scale', '1 1 1'));
+</script>
+
+
+要点：
+• a-image 做可视热点，position 用球面坐标调试
+
+• a-cursor 支持「注视 2 秒触发」，兼容 VR 头显
+
+• 面板用 a-plane + a-text 组合，避免依赖 DOM 弹窗 
+
+四、多场景跳转（虚拟漫游）
+
+思路：热点点击 → 切换 a-sky 的 src
+<a-scene id="tour">
+  <a-assets>
+    <img id="room1" src="assets/room1.jpg" />
+    <img id="room2" src="assets/room2.jpg" />
+  </a-assets>
+
+  <a-sky id="sky" src="#room1"></a-sky>
+
+  <!-- 去房间2的热点 -->
+  <a-image class="nav-hotspot" data-target="#room2"
+           src="assets/arrow.png"
+           position="0 1.2 -4" width="0.8" height="0.8"></a-image>
+
+  <a-entity camera look-controls position="0 1.6 0">
+    <a-cursor></a-cursor>
+  </a-entity>
+</a-scene>
+
+<script>
+  const sky = document.querySelector('#sky');
+  document.querySelectorAll('.nav-hotspot').forEach(h => {
+    h.addEventListener('click', () => {
+      sky.setAttribute('src', h.dataset.target);
+    });
+  });
+</script>
+
+
+进阶做法：用 JSON 配置场景关系（初始场景、热点位置、目标场景），参考 SWT Tour 思路，把热点数据驱动化。
+
+五、基于 Three.js 的原理级实现
+
+1. 球体反向贴图（核心原理）
+
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 0.1);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// 全景球
+const geometry = new THREE.SphereGeometry(500, 60, 40);
+geometry.scale(-1, 1, 1); // 翻转：贴图朝内
+
+const texture = new THREE.TextureLoader().load('assets/room1.jpg');
+texture.colorSpace = THREE.SRGBColorSpace;
+
+const material = new THREE.MeshBasicMaterial({ map: texture });
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableZoom = false;
+controls.enablePan = false;
+controls.rotateSpeed = -0.3;
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+
+关键点：
+• geometry.scale(-1,1,1) 让相机在球内看内侧贴图
+
+• MeshBasicMaterial 不受光照影响，颜色最准
+
+• OrbitControls 关掉缩放平移，避免穿出球体 
+
+2. Three.js 加热点（Raycaster 点击）
+
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+// 热点用精灵图
+const hotGeo = new THREE.SphereGeometry(2, 16, 16);
+const hotMat = new THREE.MeshBasicMaterial({ color: 0xff6b6b });
+const hotspot = new THREE.Mesh(hotGeo, hotMat);
+hotspot.position.set(20, 5, -40);
+hotspot.userData.target = 'room2.jpg';
+scene.add(hotspot);
+
+renderer.domElement.addEventListener('click', (e) => {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(mouse, camera);
+  const hit = raycaster.intersectObject(hotspot);
+  if (hit.length) {
+    const tex = new THREE.TextureLoader().load(hotspot.userData.target);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    sphere.material.map = tex;
+    sphere.material.needsUpdate = true;
+  }
+});
+
+
+六、交互功能设计清单
+
+交互类型 实现方式 建议
+
+信息标签 3D 面板 / DOM 浮层 内容少就用 a-text
+
+场景跳转 换贴图 / 换 sky src 加淡入淡出过渡
+
+热点高亮 scale 变化 / 呼吸动画 用 animation 组件
+
+声音引导 全景旁白 audio 首次交互后再播放
+
+VR 模式 A-Frame 自带 WebXR 加 VRButton
+
+小地图 2D DOM 叠加 标当前所处场景
+
+A-Frame 热区事件：click / mouseenter / mouseleave / mouseup
+Three.js 热区：统一走 Raycaster
+
+七、项目部署到网页（完整流程）
+
+1. 本地结构
+
+
+vr-tour/
+├── index.html
+├── css/style.css
+├── js/main.js
+└── assets/
+    ├── room1.jpg
+    ├── room2.jpg
+    └── hotspot.png
+
+
+2. 本地预览
+
+npx serve vr-tour
+# 或
+python -m http.server 8080
+
+必须用 HTTP 服务，直接双击 file:// 会报 CORS / 纹理加载失败
+
+3. 上线方案
+
+方案 A：静态托管（最常用）
+• Vercel：vercel deploy
+
+• Netlify：拖文件夹上传
+
+• GitHub Pages：push 到 gh-pages 分支
+
+• 国内：腾讯云 COS + CDN、阿里云 OSS
+
+方案 B：嵌进现有官网
+<iframe src="https://your-vr-site.com" style="width:100%;height:80vh;border:0"></iframe>
+
+
+方案 C：WordPress / 低代码
+• 自定义字段存场景 JSON
+
+• 前端用 A-Frame 渲染，后台可视化编辑热点
+
+4. 性能与兼容性优化
+
+• 全景图转 渐进式 JPEG + WebP 备用
+
+• 大图用瓦片切片（Marzipano / krpano 思路）
+
+• 移动端限制 DPR：renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
+
+• 加 loading 进度条（A-Frame 用 loading-screen 组件）
+
+• 视频全景必须用户点击后再 play()，绕过自动播放限制 
+
+八、教程内容结构建议（你可以照这个剪视频/写图文）
+
+1. 效果展示（30 秒）
+2. 技术选型一句话讲清（A-Frame vs Three.js）
+3. 准备全景图（拍摄/下载/压图）
+4. A-Frame 3 分钟出基础查看器
+5. 加热点 + 弹信息
+6. 多场景跳转漫游
+7. Three.js 原理补一课（球体反向贴图）
+8. 部署上线 + 手机/VR 头显测试
+9. 进阶：热点编辑器、CMS 管理、数据埋点
+
+九、避坑清单
+
+• 全景图不是普通宽图，必须是等矩形投影
+
+• A-Frame 的 src 引用资源要写 #id，不是直接路径
+
+• 热点位置靠「目测坐标 + 实时刷新」调，别指望一次写对
+
+• 移动端发热：关自动旋转、限帧率
+
+• 跨域图必须带 crossorigin="anonymous" + 服务器 CORS 头
+
+• SEO：纯 Canvas 不收录，关键信息用 DOM 浮层写文字
+
+这套资料可以直接拆成：
+• 一篇「小白图文教程」
+
+• 一期「10 分钟写代码」视频
+
+• 一个可开源的 GitHub 模板（A-Frame + JSON 驱动热点）
+
+这份教程资料已经成型，接下来可以选择一个更便于落地的成果：
+
+360VR全景教程资料整理
+listen
+听全文
+已处理
+资料很全了。下面把精细提示词（可直接复制给 AI 生成代码/内容）作为核心新增，结合官方验证过的代码和参数，整理成一份可落地的教程资料包。
+一、技术选型速查
+方案
+定位
+上手难度
+交互能力
+适用场景
+A-Frame​
+基于 Three.js 的 HTML 声明式 VR 框架
+⭐ 低
+热点/动画/WebXR 原生支持
+快速出 Demo、VR 看房、教育漫游
+Three.js​
+底层 WebGL 3D 引擎
+⭐⭐⭐ 中高
+完全自定义（射线/着色器/多场景）
+商业级展厅、复杂交互、自研系统
+Pannellum​
+轻量全景查看器
+⭐⭐ 低
+基础热点+场景跳转
+单图展示、官网嵌入、JSON 驱动
+Pano2VR​
+可视化全景制作工具
+⭐ 低
+热点/多场景/皮肤化输出
+不写代码、交付静态漫游站点
+krpano​
+商业级全景内核
+⭐⭐⭐⭐ 高
+极强（多边形热点/深度缩放/3D 高斯溅射）
+大型地产/文旅项目（需授权）
+结论：教程主线用 A-Frame 做基础 + Three.js 讲原理；轻量交付用 Pannellum；不写代码用 Pano2VR / krpano。
+二、素材准备规范（官方参数）
+格式：必须是等矩形（Equirectangular）投影，宽高比严格 2:1（如 4096×2048、5760×2880）
+单张控制在 ≤8MB，用 TinyPNG / squoosh 压图
+拼接：双鱼眼原片用 Insta360 Studio / PTGui 合成等矩形
+免费商用素材库：Poly Haven（CC0）、Pixabay、Unsplash、Pannellum 官方示例库、360Cities（非商用可嵌入）
+拍摄设备：Insta360 X4/RS（消费级）、Ricoh Theta Z1（地产专业级）
+## 提示词 1：生成 A-Frame 三、精细提示词库（可直接复制）
+基础全景查看器
+你是一名 WebXR 前端工程师。请用 A-Frame 1.5.0（CDN 引入）写一个 360° 全景查看器 HTML 单文件。
+
+要求：
+1. 全景图为等矩形（equirectangular）格式，资源 id 为 #pano，src 留占位符 {{panoUrl}}
+2. 用 <a-sky> 承载全景，rotation 初始值 0 -90 0
+3. 相机高度 1.6m，启用 look-controls，禁止平移、缩放，rotateSpeed 0.5，开启阻尼 dampingFactor 0.08
+4. 预加载资源用 <a-assets>，全景图必须带 crossorigin="anonymous"
+5. 页面带加载进度条（用 A-Frame 内置 loading-screen 组件）
+6. 移动端自动支持陀螺仪，桌面端鼠标拖拽环顾
+7. 输出完整可直接运行的 HTML，不要省略任何标签
+提示词 2：给全景加热点 + 信息弹层
+基于下面的 A-Frame 场景，给全景添加一个信息热点。
+
+热点要求：
+1. 用 <a-image> 做可视热点，贴图为 {{hotspotIcon}}，position 用球面坐标占位 {{x y z}}，look-at="[camera]" 始终面向相机
+2. 默认显示；鼠标进入放大到 1.2 倍，离开还原
+3. 点击后切换一个 3D 信息面板的显隐：面板用 <a-plane>+<a-text>，半透明深色底，文字为 {{hotspotText}}，支持中文
+4. 用 <a-cursor> 实现注视 2 秒触发（fuse:true, fuse-timeout:1200），同时兼容鼠标点击
+5. 加一个呼吸动画让热点持续缩放提示可交互
+6. 用事件委托，不要用内联 onclick
+7. 输出只含 <a-scene> 内增量片段 + 对应的 <script> 初始化代码
+提示词 3：多场景漫游跳转（含淡入淡出）
+写一个 A-Frame 多场景 360° 漫游，场景数据用 JSON 配置驱动，不要写死在 HTML 里。
+
+场景配置结构：
+{
+  "scenes": [
+    {"id":"room1","title":"大厅","pano":"assets/room1.jpg","hotspots":[
+      {"pitch":-5,"yaw":120,"target":"room2","text":"前往展厅"}
+    ]}
+  ]
+}
+
+要求：
+1. 初始加载 firstScene，其余场景图片用 <a-assets> 预加载，未加载完不给跳转
+2. 切换时先淡出当前 <a-sky>（opacity 1→0 动画 dur:800），加载完目标贴图后淡入
+3. 用 Raycaster 点击热点触发，鼠标 hover 热点放大 1.15 倍
+4. 左上角加小地图/场景标题 DOM 浮层，显示当前场景名
+5. 加一个「返回上一场景」的导航栈（数组实现，可连续后退）
+6. 切场景时把相机视角重置为初始 yaw，避免朝向错位
+7. 输出 index.html + tour.js 两个文件，ES Module 规范
+提示词 4：Three.js 原理级全景球（带注释）
+用 Three.js（importmap 引入）写一个 360° 全景查看器，必须用原生 WebGL 实现，不要用任何上层框架。
+
+要求：
+1. 场景 + 透视相机（fov75，近平面 0.1，远平面 1000）+ WebGLRenderer（antialias 开启）
+2. 全景用 SphereGeometry(500, 64, 40)，必须用 geometry.scale(-1, 1, 1) 翻转法线让贴图朝内；不要用 side:BackSide 的偷懒写法，要解释为什么翻转
+3. 材质用 MeshBasicMaterial，无需光照；纹理加载完必须设置 texture.colorSpace = THREE.SRGBColorSpace
+4. 控制器用 OrbitControls：禁止 zoom 和 pan，rotateSpeed 0.5，enableDamping true
+5. 自适应窗口 resize，DPR 上限 2：renderer.setPixelRatio(Math.min(devicePixelRatio,2))
+6. 加 loading
+7. 加一个用 Raycaster 实现 进度回调，用 THREE.LoadingManager的可点击 3D 热点（Sphere 精灵），点击后切换全景贴图
+8. 代码逐行中文注释，解释每一句在「把用户包进一个球里看内侧」这件事上的作用
+提示词 5：Pannellum 零代码配置（给不想写代码的人）
+给我一份 Pannellum 2.5 的 JSON 配置文件，实现 3 个场景的虚拟漫游。
+
+要求：
+1. 顶层 default：firstScene 为 entrance 1500，autoLoad true，sceneFadeDuration
+2. 每个场景配 hotSpots 数组，热点用 pitch/yaw（度数）定位，type 为 scene，配 sceneId 和中文 text
+3. 打开 hotSpotDebug:true 方便我在控制台点出坐标，交付前删掉这句
+4. 加罗盘 compass:true、northOffset 0
+5. 输出完整 JSON，字段名严格按 Pannellum 官方文档
+提示词 6：生成全景图素材
+生成一张等矩形（equirectangular）投影的 360° 全景室内环境图，宽高比严格 2:1（4096×2048）。
+
+场景：{{场景描述，如「现代极简客厅，落地窗，午后阳光，浅木地板」}}
+
+要求：
+1. 画面必须是完整 360°×180° 球面展开，左右边缘能无缝首尾相接（左右边界像素连续）
+2. 天顶（顶部）是天花板、天底（底部）是地板，正中是视平线
+3. 不要出现明显的拼接缝、扭曲变形、三脚架或拍摄设备影子
+4. 适合作为网页全景查看器的 skybox 素材
+提示词 7：视频全景 / VR 直播
+用 Three.js 写一个 360° 视频全景播放器。
+
+要求：
+1. 用 VideoTexture 把 <video> 贴到 SphereGeometry(500,60,40) 内壁，geometry.scale(-1,1,1) 翻转
+2. video 必须设 muted、loop、playsInline、crossOrigin="anonymous"，规避移动端自动播放限制
+3. 默认静音自动播放；页面上放一个显眼的「点击开启声音」按钮（首次交互后才能恢复音频）
+4. 支持 m3u8 直播流（用 hls.js 降级，不支持时提示用户换浏览器）
+5. 手机陀螺仪旋转视角：用 DeviceOrientationControls 或手动监听 deviceorientation
+6. 输出单文件 HTML，依赖全用 CDN
+四、官方验证过的关键代码片段
+A-Frame 官方 <a-sky> 标准写法
+<a-scene>
+  <a-assets>
+    <img id="sky" src="sky.png">
+  </a-assets>
+</a-scene>
+<a-sky> 本质是一个贴了纹理的大球，相机在其内部观看内表面；纯色背景用 color，全景用 src。
+Three.js 反向贴图（官方原理，已验证）
+const geometry = new THREE.SphereGeometry(500, 60, 40);
+geometry.scale(-1, 1, 1);   // 翻转：让贴图朝内
+const texture = new THREE.TextureLoader().load("pano.jpg");
+texture.colorSpace = THREE.SRGBColorSpace;
+const material = new THREE.MeshBasicMaterial({ map: texture });
+const mesh = new material);
+scene.add(m THREE.Mesh(geometry,esh);
+关键：翻转法线而非用 side:BackSide；用 MeshBasicMaterial（不受光照影响，颜色最准）；球体细分 64×32 是清晰度与性能的平衡点。
+Pannellum 官方热点配置
+{
+  "type": "equirectangular",
+  "panorama": "/images/bma-1.jpg",
+  "hotSpotDebug": true,
+  "hotSpots": [
+    { "pitch": 14.1, "yaw": 1.5,   "type": "info", "text": "Baltimore Museum of Art", "URL": "https://artbma.org/" },
+    { "pitch": -9.4, "yaw": 222.6, "type": "info", "text": "Art Museum Drive" },
+    { "pitch": -0.9, "yaw": 144.4, "type": "info", "text": "North Charles Street" }
+  ]
+}
+hotSpotDebug:true 会把鼠标点击的 pitch/yaw 打到控制台，方便校准热点坐标；做完务必删掉。
+A-Frame 官方 360° 漫游模板
+官方提供 aframe-cli + aframe-360-tour-template，把场景概念封装成可复用组件；内置 hotspot-helper 组件拖动热点实时显示坐标并支持复制，可省掉手工调坐标的痛苦。
+视频全景核心
+const video = document.createElement('video');
+video.src = "vr-video.mp4";
+video.loop = true; video.muted = true;
+video.playsInline = true; video.crossOrigin = "anonymous";
+video.play();
+const texture = new THREE.VideoTexture(video);
+const material = new THREE.MeshBasicMaterial({ map: texture });
+material.side = THREE.BackSide;   // 相机在球内，必须渲染背面
+直播流同理，把 <video> 换成 hls.js 拉取的 m3u8 即可。
+五、WebXR 兼容性与部署
+浏览器支持（2025 实测）
+浏览器/设备
+VR 支持
+说明
+Chrome 79+ / Edge 79+
+✅ 完整
+桌面 + Android，无需 flag
+Meta Quest Browser
+✅ 完整
+主力 VR 浏览器，支持手势追踪
+Samsung Internet 12+
+✅ 强
+三星手机优化
+Firefox
+⚠️ 部分
+需开 dom.vr.webxr.enabled flag
+Safari（iOS/iPad/Mac）
+❌ 不支持
+仅 visionOS 2+ 支持
+Safari 26.2+（试验）
+⚠️ 部分
+仅特定上下文
+全球 WebXR 基础能力覆盖已超 80%，但 iOS Safari 仍是最大缺口——必须做非 VR 桌面/手机 2D 降级。
+上线步骤
+本地预览必须走 HTTP（npx serve / python -m http.server），直接 file:// 会报 CORS
+必须 HTTPS：WebXR 要求安全上下文，且陀螺仪 API 只在 https 下可用
+静态托管：Vercel / Netlify / GitHub Pages / 腾讯云 COS+CDN
+大图用多分辨率瓦ires / krpano tile片切片（Pannellum mult）替代单张大图
+六、教程分集结构（对应视频脚本）
+集数
+主题
+可演示的提示词
+1
+效果展示 + 什么是等矩形全景
+提示词 6
+2
+A-Frame 3 分钟出基础查看器
+提示词 1
+3
+加热点 + 弹信息面板
+提示词 2
+4
+多场景漫游 + 淡入淡出
+提示词 3
+5
+Three.js 原理一课（球体反向贴图）
+提示词 4
+6
+Pannellum 零代码 JSON 方案
+提示词 5
+7
+视频全景 / VR 直播
+提示词 7
+8
+部署上线 + 手机/VR 头显实测
+—
+七、避坑清单（官方经验证）
+全景图不是普通宽图，必须是 2:1 等矩形；手机全景模式拍的需转换
+A-Frame 的 src 要引用 #id，不是直接写路径
+热点坐标靠调试工具校准，别指望一次写对：hotSpotDebug:true 或 hotspot-helper 组件
+跨域图必须 crossorigin="anonymous" + 服务器 CORS 头
+iOS Safari 无 WebXR → 必须有 2D 拖拽降级
+视频必须 muted + playsInline 才能自动播放
+自动旋转别开太久，会让人晕；移动端关掉自动旋转更稳妥
+SEO：纯 Canvas 不收录，关键信息用 DOM 浮层写文字
+这套资料可直接拆成小白图文教程、10 分钟代码视频或开源 GitHub 模板。要不要我把提示词 1+2 直接跑一遍，生成一个可运行的 index.html 成品文件给你？

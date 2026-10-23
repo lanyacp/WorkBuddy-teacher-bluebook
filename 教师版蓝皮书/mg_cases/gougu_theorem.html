@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>勾股定理·拼图证明 MG 动画</title>
+<style>
+  html,body{margin:0;padding:0;background:#0f1b33;font-family:"Microsoft YaHei","PingFang SC",sans-serif;overflow:hidden}
+  #wrap{width:1280px;height:720px;position:relative;margin:0 auto;background:linear-gradient(135deg,#101c38 0%,#1b2f5e 100%)}
+  canvas{display:block}
+  #subtitle{position:absolute;left:0;right:0;bottom:64px;text-align:center}
+  #subtitle .inner{display:inline-block;background:rgba(8,15,32,.82);border:1px solid rgba(255,255,255,.18);
+    color:#fff;font-size:24px;line-height:1.6;padding:12px 28px;border-radius:12px;max-width:980px;letter-spacing:.5px}
+  #title{position:absolute;left:0;right:0;top:26px;text-align:center;color:#fff;font-size:30px;font-weight:700;letter-spacing:2px}
+  #stageTag{position:absolute;left:26px;top:24px;color:#ffd166;font-size:16px;font-weight:600;letter-spacing:1px;
+    background:rgba(0,0,0,.35);padding:6px 14px;border-radius:8px;border:1px solid rgba(255,209,102,.35)}
+  #ctrl{position:absolute;left:0;right:0;bottom:0;height:52px;background:rgba(8,15,32,.92);display:flex;align-items:center;gap:14px;padding:0 20px;border-top:1px solid rgba(255,255,255,.15)}
+  #ctrl button{background:#2f7cf6;color:#fff;border:none;border-radius:8px;font-size:15px;padding:7px 18px;cursor:pointer;font-family:inherit}
+  #ctrl button:hover{background:#4a90ff}
+  #prog{flex:1;height:8px;background:rgba(255,255,255,.18);border-radius:4px;position:relative;cursor:pointer}
+  #progFill{height:100%;width:0;background:#ffd166;border-radius:4px}
+  #tLabel{color:#cfe0ff;font-size:14px;min-width:86px;text-align:right}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stageTag"></div>
+  <div id="title"></div>
+  <canvas id="cv" width="1280" height="720"></canvas>
+  <div id="subtitle"><span class="inner" id="subText"></span></div>
+  <div id="ctrl">
+    <button id="btnPlay">⏸ 暂停</button>
+    <button id="btnRestart">↻ 重播</button>
+    <div id="prog"><div id="progFill"></div></div>
+    <div id="tLabel">0.0 / 34s</div>
+  </div>
+</div>
+<script>
+/* 勾股定理拼图证明 · MG 动画（单文件，课堂可直接投屏，录屏即得视频） */
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const DUR=34;
+const STAGES=[
+ {t:0,  tag:'开场', title:'勾股定理：为什么 a² + b² = c² ？'},
+ {t:4,  tag:'认识直角三角形', title:'先看清 a、b、c'},
+ {t:9,  tag:'拼法一 · 大正方形', title:'拼法一：4 个三角形 + 中间的 c²'},
+ {t:16, tag:'拼法二 · 滑动重排', title:'拼法二：同样的 4 个，空出 a² 和 b²'},
+ {t:25, tag:'结论', title:'同一块面积，两种数法'},
+ {t:31, tag:'验证', title:'代入 3、4、5 验证'}
+];
+const SUBS=[
+ {t:0.3,d:3.4,s:'两千多年前，人们发现：直角三角形三条边之间，藏着一个永远成立的关系。'},
+ {t:4.2,d:4.4,s:'两条直角边是 a 和 b，斜边是 c。古人怎么“看见” a² + b² = c² ？——不靠计算，靠拼图。'},
+ {t:9.2,d:3.2,s:'取 4 个完全一样的直角三角形，拼进一个边长为 (a+b) 的大正方形。'},
+ {t:12.6,d:3.2,s:'中间空出来的，是一个边长为 c 的歪放正方形——它的面积就是 c²。'},
+ {t:16.2,d:3.6,s:'现在，让 4 个三角形换个位置滑动：竖着排两条、横着排两条。'},
+ {t:20.2,d:3.4,s:'空出来的变成了两块：一个 a×a，一个 b×b——面积正好是 a² + b²。'},
+ {t:24.2,d:3.4,s:'大正方形没变、4 个三角形没变，所以剩下的面积当然也没变：c² = a² + b²。'},
+ {t:28.2,d:2.8,s:'这就是“出入相补”原理：图形搬家，总面积不变。'},
+ {t:31.2,d:2.8,s:'代入最经典的 3、4、5：3² + 4² = 9 + 16 = 25，正好等于 5²。'}
+];
+let t=0,playing=true,last=performance.now();
+
+/* 几何参数：a=3,b=4，屏幕比例尺 */
+const S=78, A=3*S, B=4*S;
+const sqX=690, sqY=170, cell=(A+B); // 大正方形左上角
+function triPts(ox,oy,rot,mode){ // 直角三角形顶点（局部：0,0 / b,0 / 0,a）
+  let p=[[0,0],[B,0],[0,A]];
+  if(mode===1) p=[[0,0],[0,A],[B,A]]; // 翻转形态（面积不变，演示用平移即可——严格出入相补用全等平移）
+  const cx=B/2, cy=A/2;
+  return p.map(([x,y])=>{let dx=x-cx,dy=y-cy;
+    const c=Math.cos(rot),s=Math.sin(rot);
+    return [cx+dx*c-dy*s+ox, cy+dx*s+dy*c+oy];});
+}
+function drawTri(pts,fill,alpha){
+  ctx.save();ctx.globalAlpha=alpha;
+  ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);ctx.lineTo(pts[1][0],pts[1][1]);ctx.lineTo(pts[2][0],pts[2][1]);ctx.closePath();
+  ctx.fillStyle=fill;ctx.fill();
+  ctx.strokeStyle='rgba(255,255,255,.85)';ctx.lineWidth=2.5;ctx.stroke();ctx.restore();
+}
+function label(x,y,txt,color,size){ctx.save();ctx.fillStyle=color||'#fff';ctx.font=(size||22)+'px "Microsoft YaHei"';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(txt,x,y);ctx.restore();}
+function ease(u){u=Math.min(1,Math.max(0,u));return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+function lerp(a,b,u){return a+(b-a)*u;}
+
+function triShape(mode){ // 返回 [P0,P1,P2]，两种拼法的标准形态（大正方形内）
+  const m=cell;
+  if(mode===0){ // 拼法一：风车状
+    return [
+      [[sqX,sqY],[sqX+B,sqY],[sqX,sqY+A]],                       // 左上
+      [[sqX+A,sqY+B],[sqX+B,sqY+B],[sqX+B,sqY+A]],               // 右下小角
+      [[sqX,sqY+B],[sqX+B,sqY+B],[sqX,sqY+B+A]],                 // 左下
+      [[sqX+B,sqY],[sqX+B,sqY+B],[sqX+B+A-B+ B-0,sqY+B]]         // 占位，下面单独画
+    ];
+  }
+}
+/* 为清晰起见，直接定义两套三角形目标位置 */
+function layout1(u){ // 拼法一（风车）
+  const m=A+B;
+  const T=[
+    {p:[[sqX,sqY],[sqX+B,sqY],[sqX,sqY+A]],c:'#4f9dff'},
+    {p:[[sqX+m,sqY],[sqX+m,sqY+B],[sqX+m-A,sqY+B]],c:'#ffd166'},
+    {p:[[sqX+m,sqY+m],[sqX+m-A,sqY+m],[sqX+m,sqY+m-A]],c:'#ff7eb6'},
+    {p:[[sqX,sqY+m],[sqX,sqY+m-A],[sqX+B,sqY+m-A]],c:'#7ce38b'}
+  ];
+  return T;
+}
+function layout2(u){ // 拼法二：四个三角贴边，空出 a²(左下) 与 b²(右下)
+  const m=A+B;
+  const T=[
+    {p:[[sqX,sqY],[sqX,sqY+B],[sqX+A,sqY]],c:'#4f9dff'},           // 上左：贴上边与左边
+    {p:[[sqX+A,sqY],[sqX+m,sqY],[sqX+m,sqY+B]],c:'#ffd166'},       // 上右
+    {p:[[sqX,sqY+B],[sqX+A,sqY+B+A],[sqX,sqY+B+A]],c:'#ff7eb6'},   // 下左：竖排
+    {p:[[sqX+A,sqY+B+A],[sqX+m,sqY+B+A],[sqX+m,sqY+B]],c:'#7ce38b'}// 下右：注意拼法二用 b 竖直
+  ];
+  return T;
+}
+/* 拼法二的严格构造：区域分为 上带(h=B) 与 下带(h=A)。
+   上带：左侧竖三角形(a 底) + 右侧竖三角形；下带：左正方形 a²，右正方形 b²。
+   经典重排：上带放两个 (底 a 高 B 的斜置)，直接采用教科书标准图。 */
+function layout2std(){
+  const m=A+B;
+  // 上带高 B：两个直角三角形斜边相接沿对角线
+  return [
+    {p:[[sqX,sqY],[sqX+A,sqY],[sqX,sqY+B]],c:'#4f9dff'},
+    {p:[[sqX+A,sqY],[sqX+m,sqY],[sqX+m,sqY+B]],c:'#ffd166'},
+    {p:[[sqX,sqY+B],[sqX+A,sqY+B],[sqX,sqY+m]],c:'#ff7eb6'},
+    {p:[[sqX+A,sqY+B],[sqX+m,sqY+B],[sqX+m,sqY+m]],c:'#7ce38b'}
+  ];
+}
+function sq(x,y,w,fill,dash){ctx.save();ctx.fillStyle=fill;ctx.fillRect(x,y,w,w);
+  if(dash){ctx.setLineDash([10,7]);ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=2;ctx.strokeRect(x,y,w,w);}
+  ctx.restore();}
+
+function draw(){
+  ctx.clearRect(0,0,1280,720);
+  const m=A+B;
+  /* 舞台底板 */
+  ctx.save();ctx.globalAlpha=.16;ctx.strokeStyle='#9db8ff';ctx.lineWidth=1;
+  for(let i=40;i<1280;i+=40){ctx.beginPath();ctx.moveTo(i,0);ctx.lineTo(i,720);ctx.stroke();}
+  for(let j=40;j<720;j+=40){ctx.beginPath();ctx.moveTo(0,j);ctx.lineTo(1280,j);ctx.stroke();}
+  ctx.restore();
+
+  if(t<9){ /* 阶段2：三角形展示 */
+    const cx=430,cy=400;
+    const p=[[cx,cy+A],[cx+B,cy+A],[cx,cy]];
+    const u=ease((t-5.5)/2);
+    drawTri(p,'#4f9dff',1);
+    label(cx+B/2,cy+A+30,'b = 4','#cfe0ff',24);
+    label(cx-38,cy+A/2,'a = 3','#cfe0ff',24);
+    label(cx+B/2+52,cy/2+40,'c = ?','#ffd166',26);
+    ctx.save();ctx.strokeStyle='#ffd166';ctx.lineWidth=3;ctx.setLineDash([12,8]);
+    ctx.beginPath();ctx.moveTo(p[0][0],p[0][1]);ctx.lineTo(p[2][0],p[2][1]);ctx.stroke();ctx.restore();
+    if(t>7.2){ctx.save();ctx.globalAlpha=ease((t-7.2)/1.2)*.95;
+      label(430,120,'面积是关键：a²、b²、c² 分别是三个正方形的面积','#fff',24);ctx.restore();}
+  }else{ /* 拼图阶段 */
+    const T1=layout1(),T2=layout2std();
+    /* 大正方形底 */
+    ctx.save();ctx.globalAlpha=.10;ctx.fillStyle='#ffffff';ctx.fillRect(sqX,sqY,m,m);ctx.restore();
+    ctx.save();ctx.strokeStyle='rgba(255,255,255,.75)';ctx.lineWidth=2.5;ctx.strokeRect(sqX,sqY,m,m);ctx.restore();
+    label(sqX+m/2,sqY-24,'边长 ( a + b ) 的大正方形','#cfe0ff',20);
+
+    let T,extra=null;
+    if(t<16){ T=T1;
+      /* 中间 c² 高亮 */
+      const u=ease((t-12.6)/2);
+      ctx.save();ctx.globalAlpha=.25+.45*u;ctx.fillStyle='#ffd166';
+      ctx.beginPath();
+      ctx.moveTo(sqX,sqY+A);ctx.lineTo(sqX+B,sqY+m);ctx.lineTo(sqX+m,sqY+B);ctx.lineTo(sqX+A,sqY);ctx.closePath();ctx.fill();ctx.restore();
+      if(t>13.4) label(sqX+m/2,sqY+m/2,'c²','#7a4a00',34);
+    }else{
+      const u=ease((t-16.2)/3.6); // 三角形滑动
+      T=T1.map((tri,i)=>({c:tri.c,p:tri.p.map((pt,k)=>[lerp(pt[0],T2[i].p[k][0],u),lerp(pt[1],T2[i].p[k][1],u)])}));
+      if(u>=.999)T=T2;
+      if(t>20.2){const v=ease((t-20.2)/2.2);
+        sq(sqX,sqY+B,A,'rgba(124,227,139,'+(.2+.4*v)+')');
+        label(sqX+A/2,sqY+B+A/2,'a²','#0c3a18',32);
+        sq(sqX+A,sqY+B,B,'rgba(79,157,255,'+(.2+.4*v)+')');
+        label(sqX+A+B/2,sqY+B+B/2,'b²','#0b2a5c',32);
+      }
+    }
+    T.forEach(tri=>drawTri(tri.p,tri.c,1));
+    /* 结论阶段右侧板 */
+    if(t>24.2){
+      const u=ease((t-24.2)/1.6);
+      ctx.save();ctx.globalAlpha=u*.95;
+      const bx=170,by=250,bw=380;
+      ctx.fillStyle='rgba(255,255,255,.08)';ctx.strokeStyle='rgba(255,255,255,.35)';
+      roundRect(bx,by,bw,300,16);ctx.fill();ctx.stroke();
+      ctx.fillStyle='#fff';ctx.font='24px "Microsoft YaHei"';ctx.textAlign='left';
+      ctx.fillText('大正方形面积 = (a+b)²',bx+30,by+56);
+      ctx.fillStyle='#ffd166';
+      ctx.fillText('拼法一：(a+b)² − 4×(½ab) = c²',bx+30,by+116);
+      ctx.fillText('拼法二：(a+b)² − 4×(½ab) = a² + b²',bx+30,by+176);
+      ctx.fillStyle='#7ce38b';ctx.font='28px "Microsoft YaHei"';
+      ctx.fillText('所以  c² = a² + b²',bx+30,by+244);
+      ctx.restore();
+    }
+  }
+  /* 验证页 */
+  if(t>31){
+    const u=ease((t-31)/1.2);
+    ctx.save();ctx.globalAlpha=u;
+    ctx.fillStyle='rgba(10,20,45,.88)';ctx.fillRect(0,0,1280,720);
+    ctx.textAlign='center';
+    ctx.fillStyle='#fff';ctx.font='34px "Microsoft YaHei"';
+    ctx.fillText('验证：3² + 4² = 9 + 16 = 25 = 5²',640,300);
+    ctx.fillStyle='#ffd166';ctx.font='26px "Microsoft YaHei"';
+    ctx.fillText('换成 5、12、13 试试？—— 留给课堂',640,380);
+    ctx.restore();
+  }
+}
+function roundRect(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);
+  ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+/* 字幕与舞台标签 */
+const subEl=document.getElementById('subText'),tagEl=document.getElementById('stageTag'),titleEl=document.getElementById('title');
+function updUI(){
+  let cur=STAGES[0];
+  for(const s of STAGES){if(t>=s.t)cur=s;}
+  tagEl.textContent='第 '+(STAGES.indexOf(cur)+1)+' 幕 · '+cur.tag;
+  titleEl.textContent=cur.title;
+  let s='';
+  for(const x of SUBS){if(t>=x.t&&t<=x.t+x.d)s=x.s;}
+  subEl.textContent=s;
+  document.getElementById('progFill').style.width=(t/DUR*100)+'%';
+  document.getElementById('tLabel').textContent=t.toFixed(1)+' / '+DUR+'s';
+}
+function loop(now){
+  const dt=Math.min(.05,(now-last)/1000);last=now;
+  if(playing){t+=dt;if(t>=DUR)t=0;}
+  draw();updUI();requestAnimationFrame(loop);
+}
+document.getElementById('btnPlay').onclick=function(){playing=!playing;this.textContent=playing?'⏸ 暂停':'▶ 播放';};
+document.getElementById('btnRestart').onclick=function(){t=0;playing=true;};
+document.getElementById('prog').onclick=function(e){const r=this.getBoundingClientRect();t=DUR*(e.clientX-r.left)/r.width;};
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

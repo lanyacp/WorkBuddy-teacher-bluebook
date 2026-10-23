@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- 第 1 步：一个场景（最小进阶示例） -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>360 全景 · 第 1 步：一个场景</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="pano" src="assets/lushan_front.jpg" crossorigin="anonymous" />
+    </a-assets>
+
+    <a-sky src="#pano" rotation="0 -90 0"></a-sky>
+
+    <a-entity camera look-controls position="0 1.6 0"></a-entity>
+  </a-scene>
+</body>
+</html>

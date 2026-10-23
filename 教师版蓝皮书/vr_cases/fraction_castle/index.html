@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--
+  案例二《分数的初步认识》分数城堡五关闯关 · 可运行成品
+  运行：把 6 张全景图放进 assets/（forest_entrance / share_workshop / fraction_house / color_garden /
+        origami_room / final_castle .jpg + hotspot.png）
+  素材生成提示词见《专题_360VR全景互动网页.md》案例二
+  本目录执行：python -m http.server 8080 → 浏览器打开 http://localhost:8080
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>分数城堡 · 360°VR 全景闯关</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Microsoft YaHei", sans-serif; }
+    #hud {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff; padding: 10px 20px; display: flex;
+      justify-content: space-between; align-items: center;
+    }
+    #hud h1 { font-size: 16px; }
+    .stars { font-size: 20px; }
+    #task-modal {
+      position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999;
+      background: #fff; padding: 20px; border-radius: 20px 20px 0 0;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2); max-height: 50vh; overflow-y: auto;
+    }
+    #task-modal h2 { color: #764ba2; margin-bottom: 10px; font-size: 18px; }
+    #task-modal p { font-size: 14px; line-height: 1.8; color: #333; margin: 6px 0; }
+    #task-modal .instruction { background: #f0f0ff; padding: 10px; border-radius: 8px; margin: 10px 0; }
+    .game-area {
+      display: flex; gap: 20px; align-items: center; justify-content: center;
+      margin: 16px 0; flex-wrap: wrap;
+    }
+    .pie-slice {
+      width: 60px; height: 60px; border-radius: 50%;
+      border: 2px solid #764ba2; cursor: pointer; transition: all 0.3s;
+    }
+    .pie-slice:hover { transform: scale(1.1); }
+    .pie-slice.active { background: #ff6b6b !important; }
+    .number-block {
+      width: 50px; height: 50px; background: #667eea; color: #fff;
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 24px; cursor: grab; user-select: none;
+    }
+    .drop-zone {
+      width: 80px; height: 80px; border: 3px dashed #999; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .btn {
+      padding: 10px 24px; background: #764ba2; color: #fff; border: none;
+      border-radius: 8px; cursor: pointer; font-size: 14px; margin: 4px;
+    }
+    .btn.success { background: #27ae60; }
+    .feedback { text-align: center; font-size: 16px; margin: 10px 0; font-weight: bold; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <h1>🏰 分数城堡 · 五关闯关</h1>
+    <span class="stars" id="stars">☆ ☆ ☆ ☆ ☆</span>
+  </div>
+
+  <div id="task-modal">
+    <h2 id="modal-title">🏰 欢迎来到分数城堡！</h2>
+    <p id="modal-desc">拖动视角环顾四周，找到 5 个建筑上的任务木牌。按顺序进入每一关，完成挑战！</p>
+    <div id="game-container"></div>
+    <div class="feedback" id="feedback"></div>
+    <button class="btn" id="action-btn" onclick="handleAction()">开始闯关！</button>
+  </div>
+
+  <a-scene>
+    <a-assets>
+      <img id="entrance" src="assets/forest_entrance.jpg" crossorigin="anonymous" />
+      <img id="level1" src="assets/share_workshop.jpg" crossorigin="anonymous" />
+      <img id="level2" src="assets/fraction_house.jpg" crossorigin="anonymous" />
+      <img id="level3" src="assets/color_garden.jpg" crossorigin="anonymous" />
+      <img id="level4" src="assets/origami_room.jpg" crossorigin="anonymous" />
+      <img id="level5" src="assets/final_castle.jpg" crossorigin="anonymous" />
+      <img id="pin" src="assets/hotspot.png" crossorigin="anonymous" />
+    </a-assets>
+
+    <a-sky id="sky" src="#entrance" rotation="0 -90 0"></a-sky>
+
+    <!-- 5个关卡热点 -->
+    <a-image class="level-pin" data-level="1" src="#pin" position="-4 1 -3" width="0.7" height="0.7"></a-image>
+    <a-image class="level-pin" data-level="2" src="#pin" position="0 1 -5" width="0.7" height="0.7"></a-image>
+    <a-image class="level-pin" data-level="3" src="#pin" position="4 1 -3" width="0.7" height="0.7"></a-image>
+    <a-image class="level-pin" data-level="4" src="#pin" position="-3 1 4" width="0.7" height="0.7"></a-image>
+    <a-image class="level-pin" data-level="5" src="#pin" position="3 1 4" width="0.7" height="0.7"></a-image>
+
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-cursor color="#ffd700" fuse="true" fuse-timeout="1200"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    // ===== 关卡数据 =====
+    const levels = {
+      1: {
+        title: "🥮 第一关：分享工坊",
+        desc: "把一块饼平均分成 2 份，每份就是这块饼的——？",
+        type: "cut",
+        check: (ans) => ans === 2
+      },
+      2: {
+        title: "🔢 第二关：分数小屋",
+        desc: "拖动数字块，拼出 '二分之一'。",
+        type: "build",
+        check: (ans) => ans === "1/2"
+      },
+      3: {
+        title: "🎨 第三关：涂色花园",
+        desc: "将饼图的 1/4 涂上颜色。",
+        type: "color",
+        check: (ans) => ans === 1
+      },
+      4: {
+        title: "📄 第四关：折纸工坊",
+        desc: "折一折，验证：把一张纸对折两次，打开后涂色的部分是——？",
+        type: "fold",
+        check: (ans) => ans === "1/4"
+      },
+      5: {
+        title: "👑 第五关：终极城堡",
+        desc: "妈妈把一个蛋糕平均分给 4 个人，每人得到这个蛋糕的几分之几？",
+        type: "quiz",
+        check: (ans) => ans === "1/4"
+      }
+    };
+
+    let currentLevel = 0;
+    let stars = 0;
+    const sky = document.querySelector('#sky');
+    const skyIds = ["", "#level1", "#level2", "#level3", "#level4", "#level5"];
+    const titleEl = document.querySelector('#modal-title');
+    const descEl = document.querySelector('#modal-desc');
+    const gameContainer = document.querySelector('#game-container');
+    const feedbackEl = document.querySelector('#feedback');
+    const actionBtn = document.querySelector('#action-btn');
+    const starsEl = document.querySelector('#stars');
+
+    // 热点点击 → 进入对应关卡
+    document.querySelectorAll('.level-pin').forEach(pin => {
+      pin.addEventListener('click', () => {
+        const lv = parseInt(pin.dataset.level);
+        if (lv === currentLevel + 1 || lv === 1 && currentLevel === 0) {
+          enterLevel(lv);
+        } else {
+          feedbackEl.textContent = "⚠️ 请按顺序闯关！当前可进入第 " + (currentLevel + 1) + " 关。";
+          feedbackEl.style.color = "#e74c3c";
+        }
+      });
+    });
+
+    function enterLevel(lv) {
+      currentLevel = lv;
+      const level = levels[lv];
+      sky.setAttribute('src', skyIds[lv]);   // 进入关卡时切到对应全景
+      titleEl.textContent = level.title;
+      descEl.textContent = level.desc;
+      gameContainer.innerHTML = "";
+      feedbackEl.textContent = "";
+      actionBtn.textContent = "提交答案";
+      actionBtn.className = "btn";
+      renderGame(level.type);
+    }
+
+    function renderGame(type) {
+      switch(type) {
+        case "cut":
+          gameContainer.innerHTML = `
+            <div class="game-area">
+              <div class="pie-slice" style="background: #f39c12;"></div>
+            </div>
+            <p style="text-align:center;">点击饼，选择要切成几份：</p>
+            <div style="text-align:center;">
+              <button class="btn" onclick="cutPie(2)">切成 2 份</button>
+              <button class="btn" onclick="cutPie(4)">切成 4 份</button>
+            </div>`;
+          break;
+        case "build":
+          gameContainer.innerHTML = `
+            <div class="game-area">
+              <div class="number-block" draggable="true" data-val="1">1</div>
+              <div class="number-block" draggable="true" data-val="2">2</div>
+              <div class="number-block" draggable="true" data-val="3">3</div>
+              <div class="number-block" draggable="true" data-val="4">4</div>
+            </div>
+            <div class="game-area">
+              <span style="font-size:24px;">分数 = </span>
+              <div class="drop-zone" id="drop-num"></div>
+              <span style="font-size:24px;">—</span>
+              <div class="drop-zone" id="drop-den"></div>
+            </div>`;
+          setupDragDrop();
+          break;
+        case "color":
+          gameContainer.innerHTML = `
+            <div class="game-area">
+              <div class="pie-slice" style="background:#eee;" onclick="colorSlice(this, 0)"></div>
+              <div class="pie-slice" style="background:#eee;" onclick="colorSlice(this, 1)"></div>
+              <div class="pie-slice" style="background:#eee;" onclick="colorSlice(this, 2)"></div>
+              <div class="pie-slice" style="background:#eee;" onclick="colorSlice(this, 3)"></div>
+            </div>
+            <p style="text-align:center;">点击其中 1 片涂色，表示 1/4。</p>`;
+          break;
+        case "fold":
+          gameContainer.innerHTML = `
+            <div class="game-area">
+              <div style="width:120px;height:160px;background:#fff;border:2px solid #333;position:relative;">
+                <div id="fold-line" style="position:absolute;top:50%;left:0;width:100%;height:2px;background:#e74c3c;display:none;"></div>
+                <div id="fold-line2" style="position:absolute;top:0;left:50%;width:2px;height:100%;background:#e74c3c;display:none;"></div>
+              </div>
+            </div>
+            <div style="text-align:center;">
+              <button class="btn" onclick="foldPaper()">对折</button>
+            </div>
+            <div id="fold-result" style="text-align:center;margin-top:10px;"></div>`;
+          break;
+        case "quiz":
+          gameContainer.innerHTML = `
+            <div class="game-area">
+              <button class="btn" onclick="answer('1/2')">1/2</button>
+              <button class="btn" onclick="answer('1/4')">1/4</button>
+              <button class="btn" onclick="answer('1/8')">1/8</button>
+            </div>`;
+          break;
+      }
+    }
+
+    // ===== 交互逻辑 =====
+    let pieSlices = 0;
+    function cutPie(n) {
+      pieSlices = n;
+      feedbackEl.textContent = `你切成了 ${n} 份，每份是这块饼的 1/${n}。`;
+      feedbackEl.style.color = "#27ae60";
+    }
+
+    function setupDragDrop() {
+      const blocks = document.querySelectorAll('.number-block');
+      const drops = document.querySelectorAll('.drop-zone');
+      blocks.forEach(b => {
+        b.addEventListener('dragstart', e => e.dataTransfer.setData('text', b.dataset.val));
+      });
+      drops.forEach(d => {
+        d.addEventListener('dragover', e => e.preventDefault());
+        d.addEventListener('drop', e => {
+          e.preventDefault();
+          d.textContent = e.dataTransfer.getData('text');
+        });
+      });
+    }
+
+    let coloredCount = 0;
+    function colorSlice(el, idx) {
+      if (coloredCount === 0) {
+        el.style.background = "#ff6b6b";
+        coloredCount = 1;
+        feedbackEl.textContent = "涂色完成！你涂了 1/4。";
+        feedbackEl.style.color = "#27ae60";
+      }
+    }
+
+    let foldCount = 0;
+    function foldPaper() {
+      foldCount++;
+      if (foldCount === 1) {
+        document.getElementById('fold-line').style.display = 'block';
+        document.getElementById('fold-result').textContent = '对折 1 次 → 分成 2 份';
+      } else if (foldCount === 2) {
+        document.getElementById('fold-line2').style.display = 'block';
+        document.getElementById('fold-result').innerHTML = '对折 2 次 → 分成 <strong>4 份</strong>，每份是 1/4 ✓';
+        document.getElementById('fold-result').style.color = '#27ae60';
+      }
+    }
+
+    function answer(val) {
+      if (levels[currentLevel].check(val)) {
+        feedbackEl.textContent = "✅ 回答正确！每人得到蛋糕的 1/4。";
+        feedbackEl.style.color = "#27ae60";
+      } else {
+        feedbackEl.textContent = "❌ 再想想：蛋糕平均分给 4 个人哦~";
+        feedbackEl.style.color = "#e74c3c";
+      }
+    }
+
+    function handleAction() {
+      if (currentLevel === 0) {
+        enterLevel(1);
+        return;
+      }
+      // 验证当前关卡答案
+      let isCorrect = false;
+      switch(levels[currentLevel].type) {
+        case "cut": isCorrect = pieSlices === 2; break;
+        case "build":
+          const num = document.getElementById('drop-num').textContent;
+          const den = document.getElementById('drop-den').textContent;
+          isCorrect = (num === "1" && den === "2");
+          break;
+        case "color": isCorrect = (coloredCount === 1); break;
+        case "fold": isCorrect = (foldCount >= 2); break;
+        case "quiz": isCorrect = false; break; // 由 answer() 处理
+      }
+
+      if (isCorrect || levels[currentLevel].type === "quiz") {
+        stars++;
+        starsEl.textContent = "★ ".repeat(stars) + "☆ ".repeat(5 - stars);
+        feedbackEl.textContent = "🎉 过关！获得一颗星！";
+        feedbackEl.style.color = "#f39c12";
+
+        if (currentLevel >= 5) {
+          actionBtn.textContent = "🏆 恭喜通关！";
+          actionBtn.className = "btn success";
+          actionBtn.disabled = true;
+        } else {
+          actionBtn.textContent = `前往第 ${currentLevel + 1} 关`;
+          actionBtn.onclick = () => {
+            enterLevel(currentLevel + 1);
+            actionBtn.onclick = handleAction;
+          };
+        }
+      }
+    }
+  </script>
+</body>
+</html>

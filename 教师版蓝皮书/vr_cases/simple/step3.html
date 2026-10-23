@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- 第 3 步：多场景 + 淡入淡出过渡（最小进阶示例） -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>360 全景 · 第 3 步：多场景漫游</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
+  <style>
+    #hud {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 9;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(0,0,0,.65); color: #fff; padding: 10px 16px;
+    }
+    #hud button {
+      border: none; background: #0f766e; color: #fff;
+      border-radius: 6px; padding: 6px 14px; font-size: 13px;
+    }
+    #hud button:disabled { background: #555; }
+    #hud #scene-name { font-weight: 600; }
+    #hud .tip { margin-left: auto; font-size: 12px; color: #ddd; }
+    #info-card {
+      position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+      width: min(420px, 92vw); background: rgba(255,255,255,.96); color: #1c1917;
+      border-radius: 12px; padding: 16px 20px; box-shadow: 0 6px 24px rgba(0,0,0,.25); z-index: 9;
+    }
+    #info-card h3 { margin: 0 0 6px; font-size: 16px; color: #0f766e; }
+    #info-card p { margin: 0 0 10px; font-size: 14px; line-height: 1.7; }
+    #info-card button { border: none; background: #0f766e; color: #fff; border-radius: 6px; padding: 6px 16px; font-size: 13px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <button id="back-btn" disabled>◀ 返回</button>
+    <span id="scene-name">正面远观</span>
+    <span class="tip">橙色圆点＝讲解　蓝色圆点＝传送到下一场景</span>
+  </div>
+
+  <div id="info-card" class="hidden">
+    <h3 id="info-title"></h3>
+    <p id="info-text"></p>
+    <button onclick="document.getElementById('info-card').classList.add('hidden')">关闭</button>
+  </div>
+
+  <a-scene>
+    <a-assets>
+      <img id="view1" src="assets/lushan_front.jpg"  crossorigin="anonymous" />
+      <img id="view2" src="assets/lushan_side.jpg"   crossorigin="anonymous" />
+      <img id="view3" src="assets/lushan_inside.jpg" crossorigin="anonymous" />
+      <img id="view4" src="assets/lushan_top.jpg"    crossorigin="anonymous" />
+    </a-assets>
+
+    <!-- material transparent: true 是淡入淡出的前提，不能省 -->
+    <a-sky id="sky" src="#view1" rotation="0 -90 0" material="transparent: true"></a-sky>
+
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-cursor fuse="true" fuse-timeout="1500"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    // ====== 场景清单：一个场景 = 名称 + 全景图 + 一组标签 ======
+    const SCENES = {
+      front: { name: "正面远观", img: "#view1", spots: [
+        { pos: "-3 1.5 -4", title: "层峦叠嶂", text: "从正面看，庐山是连绵起伏的山岭。" },
+        { type: "goto", target: "side", pos: "3.5 1.3 -3" },
+      ]},
+      side: { name: "侧面仰望", img: "#view2", spots: [
+        { pos: "2 1.8 -4", title: "峭壁成峰", text: "从侧面看，山变成了高耸陡峭的峰——横看成岭侧成峰。" },
+        { type: "goto", target: "inside", pos: "3.5 1.3 -3" },
+      ]},
+      inside: { name: "山间漫步", img: "#view3", spots: [
+        { pos: "0 1.6 -3", title: "身在此山中", text: "走进山里，反而看不清全貌——只缘身在此山中。" },
+        { type: "goto", target: "top", pos: "3.5 1.3 -3" },
+      ]},
+      top: { name: "山顶俯瞰", img: "#view4", spots: [
+        { pos: "0 1.5 -4", title: "远近高低各不同", text: "站上峰顶看云海群山，对庐山又有了新的认识。" },
+      ]},
+    };
+
+    let current = "front";
+    const history = [];
+
+    const sceneEl = document.querySelector("a-scene");
+
+    sceneEl.addEventListener("loaded", () => {
+      renderSpots(current);
+      document.getElementById("scene-name").textContent = SCENES[current].name;
+      document.getElementById("back-btn").addEventListener("click", goBack);
+    });
+
+    // ====== 标签渲染：信息标签橙色，传送标签蓝色 ======
+    function renderSpots(id) {
+      document.querySelectorAll(".hotspot").forEach((el) => el.remove());
+      SCENES[id].spots.forEach((s, i) => {
+        const dot = document.createElement("a-circle");
+        const isGoto = s.type === "goto";
+        dot.setAttribute("color", isGoto ? "#4a90d9" : "#ff9f43");
+        dot.setAttribute("radius", "0.35");
+        dot.setAttribute("position", s.pos);
+        dot.setAttribute("look-at", "[camera]");
+        dot.setAttribute("animation", "property: scale; to: 1.15 1.15 1.15; dir: alternate; loop: true; dur: 900");
+        dot.classList.add("hotspot");
+        dot.dataset.index = i;
+        sceneEl.appendChild(dot);
+      });
+    }
+
+    // ====== 点击：信息标签弹卡，传送标签切场景 ======
+    document.addEventListener("click", (e) => {
+      const dot = e.target.closest && e.target.closest(".hotspot");
+      if (!dot) return;
+      const s = SCENES[current].spots[dot.dataset.index];
+      if (s.type === "goto") {
+        switchScene(s.target, true);
+      } else {
+        document.getElementById("info-title").textContent = s.title;
+        document.getElementById("info-text").textContent = s.text;
+        document.getElementById("info-card").classList.remove("hidden");
+      }
+    });
+
+    // ====== 场景切换：淡出 600ms → 换图 → 淡入，并重置视角 ======
+    function switchScene(id, remember) {
+      if (id === current) return;
+      if (remember) history.push(current);
+      const sky = document.querySelector("#sky");
+      sky.setAttribute("animation", "property: components.material.material.opacity; from: 1; to: 0; dur: 600");
+      setTimeout(() => {
+        sky.setAttribute("src", SCENES[id].img);
+        sky.setAttribute("animation", "property: components.material.material.opacity; from: 0; to: 1; dur: 600");
+        renderSpots(id);
+        resetView();
+        current = id;
+        document.getElementById("scene-name").textContent = SCENES[id].name;
+        document.getElementById("back-btn").disabled = history.length === 0;
+      }, 650);
+    }
+
+    // 切场景后相机朝向重置为正前，避免"进来先看到一片墙"
+    function resetView() {
+      const lc = document.querySelector("[camera]").components["look-controls"];
+      if (lc) lc.yawObject.rotation.set(0, 0, 0);
+    }
+
+    function goBack() {
+      const prev = history.pop();
+      if (prev) switchScene(prev, false);
+    }
+  </script>
+</body>
+</html>

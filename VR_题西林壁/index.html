@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+  《题西林壁》VR 观庐山 · 互动网页（教师极简流程实跑产出）
+  运行：本目录执行 python -m http.server 8080 → 浏览器打开 http://localhost:8080
+  素材：assets/ 下 4 张全景（2:1）+ 2 张特写（4:3），即梦生成后对称裁洗（去水印、校比例、接缝融合）
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>《题西林壁》VR 观庐山</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
+  <style>
+    body { margin: 0; font-family: "Microsoft YaHei", sans-serif; }
+    #hud {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 9;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(20, 30, 40, 0.72); color: #fff; padding: 10px 16px;
+    }
+    #hud button {
+      border: none; background: #2c6e63; color: #fff;
+      border-radius: 6px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+    }
+    #hud button:disabled { background: #666; cursor: default; }
+    #scene-name { font-weight: 600; font-size: 15px; }
+    #poem-line { color: #f3e5b0; font-size: 13px; font-style: italic; }
+    #hud .tip { margin-left: auto; font-size: 12px; color: #ddd; }
+    #info-card {
+      position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+      width: min(480px, 92vw); background: rgba(255,255,255,0.96); color: #1c1917;
+      border-radius: 12px; padding: 16px 20px; box-shadow: 0 6px 24px rgba(0,0,0,0.28); z-index: 9;
+    }
+    #info-card h3 { margin: 0 0 6px; font-size: 16px; color: #2c6e63; }
+    #info-card p { margin: 0 0 10px; font-size: 14px; line-height: 1.7; }
+    #info-card img {
+      width: 100%; border-radius: 8px; margin-bottom: 10px; display: block;
+    }
+    #info-card button {
+      border: none; background: #2c6e63; color: #fff;
+      border-radius: 6px; padding: 6px 16px; font-size: 13px; cursor: pointer;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <button id="back-btn" disabled>◀ 返回</button>
+    <span id="scene-name">正面远观</span>
+    <span id="poem-line">横看成岭侧成峰</span>
+    <span class="tip">橙点＝讲解/观察　蓝点＝传送下一场景</span>
+  </div>
+
+  <div id="info-card" class="hidden">
+    <h3 id="info-title"></h3>
+    <img id="info-img" class="hidden" alt="" />
+    <p id="info-text"></p>
+    <button id="close-btn">关闭</button>
+  </div>
+
+  <a-scene>
+    <a-assets timeout="20000">
+      <img id="view1" src="assets/scene1_front.jpg"  crossorigin="anonymous" />
+      <img id="view2" src="assets/scene2_side.jpg"   crossorigin="anonymous" />
+      <img id="view3" src="assets/scene3_inside.jpg" crossorigin="anonymous" />
+      <img id="view4" src="assets/scene4_top.jpg"    crossorigin="anonymous" />
+    </a-assets>
+
+    <!-- material transparent: true 是淡入淡出的前提，不能省 -->
+    <a-sky id="sky" src="#view1" rotation="0 -90 0" material="transparent: true"></a-sky>
+
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-cursor fuse="true" fuse-timeout="1500"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    // ====== 场景配置：加减场景只动这个数组 ======
+    const SCENES = {
+      s1: {
+        name: "正面远观", img: "#view1", url: "assets/scene1_front.jpg", poem: "横看成岭侧成峰",
+        spots: [
+          { pos: "-3 1.6 -4", title: "横看成岭",
+            text: "「横看成岭侧成峰」——正面看庐山，山岭连绵成一片。" },
+          { pos: "2.5 1.2 -3.5", title: "连绵群峰",
+            text: "找一找：画面里的山脉是不是连成一整片？这就是「岭」。" },
+          { type: "goto", pos: "4 1.5 -2", target: "s2" }
+        ]
+      },
+      s2: {
+        name: "侧面仰望", img: "#view2", url: "assets/scene2_side.jpg", poem: "横看成岭侧成峰",
+        spots: [
+          { pos: "-2.5 2 -3.5", title: "侧看成峰",
+            text: "换到侧面，山势陡峭如峰——同一座山，样子全变了。" },
+          { pos: "3 1.3 -3", title: "陡峭山壁",
+            text: "比一比：这里的「峰」和刚才的「岭」差在哪里？", img: "assets/spot_cliff.jpg" },
+          { type: "goto", pos: "0 1 -4.5", target: "s3" }
+        ]
+      },
+      s3: {
+        name: "山道之中", img: "#view3", url: "assets/scene3_inside.jpg", poem: "只缘身在此山中",
+        spots: [
+          { pos: "-3 1.8 -3", title: "身在此山",
+            text: "站在山里，树石挡住视线，看不全山——「只缘身在此山中」。" },
+          { pos: "2.8 1.2 -3", title: "林木遮挡",
+            text: "找一找：哪些东西挡住了你看山的视线？", img: "assets/spot_pine.jpg" },
+          { type: "goto", pos: "4 1.5 -1.5", target: "s4" }
+        ]
+      },
+      s4: {
+        name: "山顶俯瞰", img: "#view4", url: "assets/scene4_top.jpg", poem: "不识庐山真面目，只缘身在此山中",
+        spots: [
+          { pos: "-3 1.8 -3.5", title: "不识真面目",
+            text: "「不识庐山真面目」——站得远、站得高，才看得清全貌。" },
+          { pos: "2.5 1.3 -3", title: "远近高低",
+            text: "「远近高低各不同」——角度一变，看到的就不一样。" },
+          { type: "goto", pos: "4 1.4 -2", target: "s1" }
+        ]
+      }
+    };
+
+    let current = "s1";
+    const history = [];
+    const sceneEl = document.querySelector("a-scene");
+
+    sceneEl.addEventListener("loaded", () => {
+      renderSpots(current);
+      paint();
+    });
+
+    // ====== 热点渲染：信息点橙色，传送点蓝色（实跑验证的委托点击模式）======
+    function renderSpots(id) {
+      document.querySelectorAll(".hotspot").forEach((el) => el.remove());
+      SCENES[id].spots.forEach((s, i) => {
+        const dot = document.createElement("a-circle");
+        const isGoto = s.type === "goto";
+        dot.setAttribute("color", isGoto ? "#4a90d9" : "#ff9f43");
+        dot.setAttribute("radius", "0.35");
+        dot.setAttribute("position", s.pos);
+        dot.setAttribute("look-at", "[camera]");
+        dot.setAttribute("animation", "property: scale; to: 1.15 1.15 1.15; dir: alternate; loop: true; dur: 900");
+        dot.classList.add("hotspot");
+        dot.dataset.index = i;
+        dot.setAttribute("data-raycastable", "");
+        dot.addEventListener("click", onHotspotClick);
+        sceneEl.appendChild(dot);
+      });
+    }
+
+    // ====== 点击：信息点弹卡，传送点切场景（实体直绑 + document 委托双保险）======
+    function onHotspotClick(e) {
+      const dot = (e.target && e.target.closest && e.target.closest(".hotspot")) || e.currentTarget;
+      if (!dot) return;
+      const s = SCENES[current].spots[dot.dataset.index];
+      if (s.type === "goto") {
+        switchScene(s.target, true);
+      } else {
+        document.getElementById("info-title").textContent = s.title;
+        document.getElementById("info-text").textContent = s.text;
+        const img = document.getElementById("info-img");
+        if (s.img) { img.src = s.img; img.classList.remove("hidden"); }
+        else { img.classList.add("hidden"); }
+        document.getElementById("info-card").classList.remove("hidden");
+      }
+    }
+    document.addEventListener("click", onHotspotClick);
+
+    document.getElementById("close-btn").addEventListener("click", () => {
+      document.getElementById("info-card").classList.add("hidden");
+    });
+
+    // ====== 场景切换：淡出 → 换图 → 等纹理上 GPU → 淡入（timer 驱动，浏览器与预览都稳）======
+    function fade(sky, from, to, dur, done) {
+      const start = Date.now();
+      const iv = setInterval(() => {
+        const t = Math.min(1, (Date.now() - start) / dur);
+        sky.setAttribute("material", "opacity", from + (to - from) * t);
+        if (t >= 1) { clearInterval(iv); if (done) done(); }
+      }, 32);
+    }
+
+    function switchScene(id, remember) {
+      if (id === current) return;
+      if (remember) history.push(current);
+      const sky = document.querySelector("#sky");
+      fade(sky, 1, 0, 500, () => {
+        // 等新图真正加载完再换，避免纹理为空白屏
+        const pre = new Image();
+        const swap = () => {
+          sky.setAttribute("src", SCENES[id].img);
+          renderSpots(id);
+          resetView();
+          current = id;
+          paint();
+          setTimeout(() => fade(sky, 0, 1, 500), 300);
+        };
+        pre.onload = swap;
+        pre.onerror = swap;
+        pre.src = SCENES[id].url;
+      });
+    }
+
+    // 切场景后相机朝向重置为正前，避免"进来先看到一片墙"
+    function resetView() {
+      const lc = document.querySelector("[camera]").components["look-controls"];
+      if (lc) lc.yawObject.rotation.set(0, 0, 0);
+    }
+
+    function paint() {
+      const scene = SCENES[current];
+      document.getElementById("scene-name").textContent = scene.name;
+      document.getElementById("poem-line").textContent = scene.poem;
+      document.getElementById("back-btn").disabled = history.length === 0;
+      document.getElementById("info-card").classList.add("hidden");
+    }
+
+    document.getElementById("back-btn").addEventListener("click", () => {
+      const prev = history.pop();
+      if (prev) switchScene(prev, false);
+    });
+  </script>
+</body>
+</html>

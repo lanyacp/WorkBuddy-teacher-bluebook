@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>月相变化 · 科普 MG 动画</title>
+<style>
+  html,body{margin:0;padding:0;background:#050a18;font-family:"Microsoft YaHei","PingFang SC",sans-serif;overflow:hidden}
+  #wrap{width:1280px;height:720px;position:relative;margin:0 auto;background:radial-gradient(1200px 800px at 70% 30%,#12204a 0%,#050a18 70%)}
+  canvas{display:block}
+  #title{position:absolute;left:0;right:0;top:24px;text-align:center;color:#fff;font-size:30px;font-weight:700;letter-spacing:2px}
+  #stageTag{position:absolute;left:26px;top:22px;color:#8fd3ff;font-size:16px;font-weight:600;letter-spacing:1px;
+    background:rgba(0,0,0,.4);padding:6px 14px;border-radius:8px;border:1px solid rgba(143,211,255,.35)}
+  #subtitle{position:absolute;left:0;right:0;bottom:60px;text-align:center}
+  #subtitle .inner{display:inline-block;background:rgba(5,10,24,.85);border:1px solid rgba(255,255,255,.18);
+    color:#fff;font-size:24px;line-height:1.6;padding:12px 28px;border-radius:12px;max-width:1000px;letter-spacing:.5px}
+  #phaseName{position:absolute;right:36px;top:120px;color:#fff;text-align:right}
+  #phaseName .big{font-size:34px;font-weight:700;color:#ffe9a8}
+  #phaseName .small{font-size:16px;color:#9db8ff;margin-top:6px}
+  #ctrl{position:absolute;left:0;right:0;bottom:0;height:52px;background:rgba(5,10,24,.94);display:flex;align-items:center;gap:14px;padding:0 20px;border-top:1px solid rgba(255,255,255,.15)}
+  #ctrl button{background:#2f7cf6;color:#fff;border:none;border-radius:8px;font-size:15px;padding:7px 18px;cursor:pointer;font-family:inherit}
+  #ctrl button:hover{background:#4a90ff}
+  #prog{flex:1;height:8px;background:rgba(255,255,255,.18);border-radius:4px;position:relative;cursor:pointer}
+  #progFill{height:100%;width:0;background:#8fd3ff;border-radius:4px}
+  #tLabel{color:#cfe0ff;font-size:14px;min-width:86px;text-align:right}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stageTag"></div>
+  <div id="title"></div>
+  <canvas id="cv" width="1280" height="720"></canvas>
+  <div id="phaseName"><div class="big" id="phBig"></div><div class="small" id="phSmall"></div></div>
+  <div id="subtitle"><span class="inner" id="subText"></span></div>
+  <div id="ctrl">
+    <button id="btnPlay">⏸ 暂停</button>
+    <button id="btnRestart">↻ 重播</button>
+    <div id="prog"><div id="progFill"></div></div>
+    <div id="tLabel">0.0 / 40s</div>
+  </div>
+</div>
+<script>
+/* 月相变化科普 MG 动画（单文件，投影+录屏即视频） */
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const DUR=40;
+const STAGES=[
+ {t:0, tag:'开场', title:'月亮为什么会“变脸”？'},
+ {t:4, tag:'关键一 · 月亮不发光', title:'月亮自己不发光'},
+ {t:10,tag:'关键二 · 绕地球转', title:'角度在变，亮面看到的部分就在变'},
+ {t:17,tag:'八相巡礼', title:'一个月里，月亮的八张脸'},
+ {t:30,tag:'两个误会', title:'别把这两件事搞混'},
+ {t:36,tag:'收尾', title:'今晚就去看月亮'}
+];
+const SUBS=[
+ {t:0.3,d:3.4,s:'同一个夜空，月亮有时像细钩，有时像圆盘。它真的在“变”吗？'},
+ {t:4.3,d:2.9,s:'月亮不是光源。我们看到的月光，是它反射的太阳光。'},
+ {t:7.4,d:2.9,s:'所以任何时候，月亮都只有一半被照亮——亮面永远朝着太阳。'},
+ {t:10.4,d:3.2,s:'月亮大约 29.5 天绕地球一圈，我们看它的角度天天在变。'},
+ {t:13.8,d:2.9,s:'看到的亮面多一点，月亮就“胖”一点；少一点，就“瘦”一点。'},
+ {t:17.2,d:12.5,s:''},/* 八相阶段动态字幕 */
+ {t:30.3,d:2.9,s:'误会一：月食不是月相！月食是地球挡住了太阳光，只发生在满月的深夜，几分钟到几小时。'},
+ {t:33.3,d:2.6,s:'误会二：月亮的“暗面”不等于“背面”。背面我们看不见，但背面同样会被照亮。'},
+ {t:36.3,d:3.4,s:'今晚抬头，先判断：今天是农历几号？你看到的应该是什么月相？——把答案画在科学记录本上。'}
+];
+const PHASES=[
+ {name:'新月（朔）',note:'农历初一 · 月亮在日地之间，亮面背对我们'},
+ {name:'蛾眉月',note:'农历初三初四 · 傍晚西方天空'},
+ {name:'上弦月',note:'农历初七八 · 正午升起，半夜落下，右半亮'},
+ {name:'盈凸月',note:'农历十一二 · 越来越圆'},
+ {name:'满月（望）',note:'农历十五六 · 整夜可见，一轮全亮'},
+ {name:'亏凸月',note:'农历十八九 · 开始变瘦'},
+ {name:'下弦月',note:'农历廿二三 · 左半亮，后半夜才升起'},
+ {name:'残月',note:'农历廿六七 · 黎明前东方一弯细钩'}
+];
+let t=0,playing=true,last=performance.now();
+const EARTH={x:520,y:430,r:34},ORBIT={r:200};
+const SUN={x:90,y:430,r:46};
+
+function stars(){ctx.save();ctx.fillStyle='#fff';
+ for(let i=0;i<90;i++){const x=(i*887)%1280,y=(i*367)%720;const tw=.3+.7*Math.abs(Math.sin(i*9+t*.8));
+ ctx.globalAlpha=.13+.3*tw*(y<120?0:1);ctx.fillRect(x,y,2,2);}ctx.restore();}
+function drawSun(u){ctx.save();ctx.globalAlpha=u;
+ const g=ctx.createRadialGradient(SUN.x,SUN.y,10,SUN.x,SUN.y,150);
+ g.addColorStop(0,'rgba(255,220,120,.85)');g.addColorStop(1,'rgba(255,220,120,0)');
+ ctx.fillStyle=g;ctx.beginPath();ctx.arc(SUN.x,SUN.y,150,0,7);ctx.fill();
+ ctx.fillStyle='#ffd76a';ctx.beginPath();ctx.arc(SUN.x,SUN.y,SUN.r,0,7);ctx.fill();
+ ctx.fillStyle='#7a4a00';ctx.font='20px "Microsoft YaHei"';ctx.textAlign='center';ctx.fillText('太阳',SUN.x,SUN.y+SUN.r+26);
+ /* 光线方向箭头 */
+ ctx.strokeStyle='rgba(255,215,106,.55)';ctx.lineWidth=2;ctx.setLineDash([10,9]);
+ for(let i=-2;i<=2;i++){ctx.beginPath();ctx.moveTo(SUN.x+SUN.r+8,SUN.y+i*60);ctx.lineTo(SUN.x+330,SUN.y+i*60);ctx.stroke();}
+ ctx.restore();}
+function drawEarth(u){ctx.save();ctx.globalAlpha=u;
+ const g=ctx.createRadialGradient(EARTH.x-8,EARTH.y-8,4,EARTH.x,EARTH.y,EARTH.r);
+ g.addColorStop(0,'#7ec8ff');g.addColorStop(1,'#1c56b8');
+ ctx.fillStyle=g;ctx.beginPath();ctx.arc(EARTH.x,EARTH.y,EARTH.r,0,7);ctx.fill();
+ ctx.fillStyle='#cfe8ff';ctx.font='20px "Microsoft YaHei"';ctx.textAlign='center';ctx.fillText('地球',EARTH.x,EARTH.y+EARTH.r+26);ctx.restore();}
+function moonPos(f){const ang=Math.PI+f*2*Math.PI; /* f:0=新月(moon toward sun) */
+ return {x:EARTH.x+ORBIT.r*Math.cos(ang),y:EARTH.y+ORBIT.r*Math.sin(ang*0)-ORBIT.r*Math.sin(0),ang};
+ /* 轨道画成椭圆（俯视透视） */}
+function drawOrbit(u){ctx.save();ctx.globalAlpha=.5*u;ctx.strokeStyle='rgba(143,211,255,.5)';ctx.setLineDash([6,8]);ctx.lineWidth=1.5;
+ ctx.beginPath();ctx.ellipse(EARTH.x,EARTH.y,ORBIT.r,ORBIT.r*0.38,0,0,7);ctx.stroke();ctx.restore();}
+/* 俯视图上的月亮：亮面朝太阳（左） */
+function drawMoonTop(x,y,u){ctx.save();ctx.globalAlpha=u;
+ ctx.beginPath();ctx.arc(x,y,16,0,7);ctx.fillStyle='#3a4664';ctx.fill();
+ /* 亮半：朝太阳一侧（左） */
+ ctx.beginPath();ctx.arc(x,y,16,Math.PI/2,Math.PI*1.5);ctx.closePath();ctx.fillStyle='#ffe9a8';ctx.fill();
+ ctx.strokeStyle='rgba(255,255,255,.6)';ctx.lineWidth=1;ctx.stroke();ctx.restore();}
+/* 从地球看：相位渲染（右面板大月亮） */
+function drawPhaseMoon(cx,cy,R,frac){ /* frac 0..1 月相周期，0=新月 */
+ ctx.save();
+ ctx.beginPath();ctx.arc(cx,cy,R,0,7);ctx.fillStyle='#202a44';ctx.fill();  /* 暗底盘 */
+ /* 绘制亮区：用两段椭圆弧 */
+ const ph=frac*2*Math.PI; /* 0=new */
+ const k=Math.cos(ph); /* 1=new(全暗过渡) -1=full */
+ /* 亮面始终在右侧（上弦右亮、下弦左亮 → 以北半球视角近似） */
+ let litDir = (frac<0.5)?1:-1; /* 上半月右亮，下半月左亮 */
+ ctx.beginPath();
+ if(Math.abs(k)<1e-6){ /* 弦月：半圆 */
+   ctx.arc(cx,cy,R,-Math.PI/2,Math.PI/2,litDir<0);
+ }else{
+   const bulge=Math.abs(k)*R;
+   ctx.arc(cx,cy,R,-Math.PI/2,Math.PI/2,litDir<0);
+   ctx.ellipse(cx,cy,bulge,R,0,Math.PI/2,-Math.PI/2,(k<0)?litDir>0:litDir<0);
+ }
+ ctx.closePath();ctx.fillStyle='#ffe9a8';ctx.fill();
+ ctx.beginPath();ctx.arc(cx,cy,R,0,7);ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=2;ctx.stroke();
+ ctx.restore();}
+function label(x,y,txt,c,s,align){ctx.save();ctx.fillStyle=c||'#fff';ctx.font=(s||22)+'px "Microsoft YaHei"';
+ ctx.textAlign=align||'center';ctx.textBaseline='middle';ctx.fillText(txt,x,y);ctx.restore();}
+function ease(u){u=Math.min(1,Math.max(0,u));return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+
+function draw(){
+ ctx.clearRect(0,0,1280,720);stars();
+ const intro=ease(t/1.2);
+ /* 右侧“从地球看”面板 */
+ const PX=1010,PY=430,PR=120;
+ ctx.save();ctx.globalAlpha=ease((t-4)/1.5);
+ ctx.fillStyle='rgba(255,255,255,.05)';ctx.strokeStyle='rgba(255,255,255,.25)';ctx.lineWidth=1.5;
+ ctx.beginPath();ctx.roundRect?ctx.roundRect(PX-190,PY-190,380,380,18):ctx.rect(PX-190,PY-190,380,380);ctx.fill();ctx.stroke();
+ label(PX,PY-158,'👁 从地球看','#9db8ff',20);
+ ctx.restore();
+
+ const u1=ease((t-4)/1.5); drawSun(u1);drawOrbit(u1);drawEarth(u1);
+ /* 月相周期进度 */
+ let frac=0;
+ if(t>=10){frac=((t-10)%29.5)/29.5;}
+ if(t>=17&&t<30){frac=((t-17)/12.5);} /* 八相阶段匀速一圈 */
+ if(t>=30){frac=0.02;}
+ /* 俯视月亮位置：新月在太阳一侧 */
+ const ang=Math.PI+frac*2*Math.PI;
+ const mx=EARTH.x+ORBIT.r*Math.cos(ang), my=EARTH.y+ORBIT.r*0.38*Math.sin(ang);
+ if(t>=10){drawMoonTop(mx,my,1);}
+ else{drawMoonTop(EARTH.x+ORBIT.r,EARTH.y,0.001);} /* 初始静置 */
+ /* 观察视线 */
+ if(t>=10){ctx.save();ctx.globalAlpha=.35;ctx.strokeStyle='#8fd3ff';ctx.setLineDash([4,7]);ctx.lineWidth=1.5;
+ ctx.beginPath();ctx.moveTo(EARTH.x,EARTH.y);ctx.lineTo(mx,my);ctx.stroke();ctx.restore();}
+ /* 右侧相位 */
+ if(t>=7.4){drawPhaseMoon(PX,PY,PR, t>=10?frac:0.98);}
+ /* 八相名称 */
+ if(t>=17&&t<30){
+   const idx=Math.min(7,Math.floor(frac*8));
+   const ph=PHASES[idx];
+   document.getElementById('phBig').textContent=ph.name;
+   document.getElementById('phSmall').textContent=ph.note;
+   /* 顶部时间轴点 */
+   const bx=180,by=140;
+   ctx.save();
+   for(let i=0;i<8;i++){const x=bx+i*110;
+     ctx.beginPath();ctx.arc(x,by,7,0,7);
+     ctx.fillStyle=i===idx?'#ffe9a8':'rgba(255,255,255,.25)';ctx.fill();
+     if(i===idx){ctx.strokeStyle='#ffe9a8';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,by,13,0,7);ctx.stroke();}}
+   ctx.fillStyle='#9db8ff';ctx.font='15px "Microsoft YaHei"';ctx.textAlign='center';
+   ctx.fillText('初一',bx,by+28);ctx.fillText('十五',bx+4*110,by+28);ctx.fillText('廿九',bx+7*110,by+28);
+   ctx.restore();
+ } else {document.getElementById('phBig').textContent='';document.getElementById('phSmall').textContent='';}
+ /* 误会阶段 */
+ if(t>=30&&t<36){ctx.save();ctx.globalAlpha=ease((t-30)/1);
+  ctx.fillStyle='rgba(255,120,120,.12)';ctx.fillRect(140,180,1000,90);
+  label(640,225,'❌ 月食 = 地球挡光（几分钟～几小时，满月深夜才可能发生）','#ffb3b3',22);
+  ctx.fillStyle='rgba(255,120,120,.12)';ctx.fillRect(140,290,1000,90);
+  label(640,335,'❌ “暗面”≠“背面”——背面永远背对地球，但背面也会被太阳照亮','#ffb3b3',22);ctx.restore();}
+ if(t>=36){ctx.save();ctx.globalAlpha=ease((t-36)/1);
+  label(640,300,'今晚的作业：抬头 · 记农历 · 画月相','#ffe9a8',32);
+  label(640,360,'连续记录一周，你能预测下周一的月亮吗？','#9db8ff',22);ctx.restore();}
+}
+const subEl=document.getElementById('subText'),tagEl=document.getElementById('stageTag'),titleEl=document.getElementById('title');
+function updUI(){
+ let cur=STAGES[0];for(const s of STAGES){if(t>=s.t)cur=s;}
+ tagEl.textContent='第 '+(STAGES.indexOf(cur)+1)+' 幕 · '+cur.tag;titleEl.textContent=cur.title;
+ let s='';for(const x of SUBS){if(t>=x.t&&t<=x.t+x.d)s=x.s;}
+ /* 八相阶段动态字幕 */
+ if(t>=17.2&&t<29.7){const frac=(t-17)/12.5;const idx=Math.min(7,Math.floor(frac*8));
+   s=PHASES[idx].name+' —— '+PHASES[idx].note;}
+ subEl.textContent=s;
+ document.getElementById('progFill').style.width=(t/DUR*100)+'%';
+ document.getElementById('tLabel').textContent=t.toFixed(1)+' / '+DUR+'s';
+}
+function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;
+ if(playing){t+=dt;if(t>=DUR)t=0;}draw();updUI();requestAnimationFrame(loop);}
+document.getElementById('btnPlay').onclick=function(){playing=!playing;this.textContent=playing?'⏸ 暂停':'▶ 播放';};
+document.getElementById('btnRestart').onclick=function(){t=0;playing=true;};
+document.getElementById('prog').onclick=function(e){const r=this.getBoundingClientRect();t=DUR*(e.clientX-r.left)/r.width;};
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

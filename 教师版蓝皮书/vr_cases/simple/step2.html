@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- 第 2 步：热点标签（最小进阶示例） -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>360 全景 · 第 2 步：热点标签</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <!-- 标签始终面向相机必需的官方扩展，必须引入 -->
+  <script src="https://unpkg.com/aframe-look-at-component@1.0.0/dist/aframe-look-at-component.min.js"></script>
+  <style>
+    #info-card {
+      position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+      width: min(420px, 92vw); background: rgba(255,255,255,.96); color: #1c1917;
+      border-radius: 12px; padding: 16px 20px; box-shadow: 0 6px 24px rgba(0,0,0,.25); z-index: 9;
+    }
+    #info-card h3 { margin: 0 0 6px; font-size: 16px; color: #0f766e; }
+    #info-card p { margin: 0 0 10px; font-size: 14px; line-height: 1.7; }
+    #info-card button { border: none; background: #0f766e; color: #fff; border-radius: 6px; padding: 6px 16px; font-size: 13px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <!-- 信息卡：只有一个，点任何标签都只更新它的文字 -->
+  <div id="info-card" class="hidden">
+    <h3 id="info-title"></h3>
+    <p id="info-text"></p>
+    <button onclick="document.getElementById('info-card').classList.add('hidden')">关闭</button>
+  </div>
+
+  <a-scene>
+    <a-assets>
+      <img id="pano" src="assets/lushan_front.jpg" crossorigin="anonymous" />
+    </a-assets>
+
+    <a-sky src="#pano" rotation="0 -90 0"></a-sky>
+
+    <!-- 标签由下面的 HOTSPOTS 数组生成；改文字、加减标签只动数组 -->
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-cursor fuse="true" fuse-timeout="1500"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    // ====== 标签清单：pos = "左右 上下 前后"（米），改数字就是挪位置 ======
+    const HOTSPOTS = [
+      { pos: "-3 1.5 -4", title: "迎客松",   text: "石缝中斜生的松树，庐山标志性景观。" },
+      { pos: "0 2.2 -5",  title: "山腰云雾", text: "庐山常年云雾缭绕，古人写\"庐山烟雨\"即指此景。" },
+      { pos: "3 1.2 -3",  title: "石板山道", text: "登山必经之路，陡处设有石阶。" },
+    ];
+
+    const sceneEl = document.querySelector("a-scene");
+    sceneEl.addEventListener("loaded", () => {
+      HOTSPOTS.forEach((h, i) => {
+        const dot = document.createElement("a-circle");
+        dot.setAttribute("color", "#ff9f43");
+        dot.setAttribute("radius", "0.35");
+        dot.setAttribute("position", h.pos);
+        dot.setAttribute("look-at", "[camera]");
+        dot.setAttribute("animation", "property: scale; to: 1.15 1.15 1.15; dir: alternate; loop: true; dur: 900");
+        dot.classList.add("hotspot");
+        dot.dataset.index = i;
+        sceneEl.appendChild(dot);
+      });
+    });
+
+    // 点击标签 → 信息卡显示对应内容（事件委托，只绑一次）
+    document.addEventListener("click", (e) => {
+      const dot = e.target.closest && e.target.closest(".hotspot");
+      if (!dot) return;
+      const h = HOTSPOTS[dot.dataset.index];
+      document.getElementById("info-title").textContent = h.title;
+      document.getElementById("info-text").textContent = h.text;
+      document.getElementById("info-card").classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

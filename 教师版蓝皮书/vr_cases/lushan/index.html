@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+  案例一《题西林壁》VR 观庐山 · 可运行成品
+  运行：把 4 张全景图放进 assets/（lushan_front.jpg / lushan_side.jpg / lushan_inside.jpg / lushan_top.jpg + hotspot.png）
+  素材生成提示词见《专题_360VR全景互动网页.md》案例一
+  本目录执行：python -m http.server 8080 → 浏览器打开 http://localhost:8080
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>《题西林壁》VR 观庐山</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <style>
+    body { margin: 0; font-family: "Microsoft YaHei", sans-serif; }
+    #ui {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
+      background: rgba(0,0,0,0.7); color: #fff; padding: 12px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    #ui h1 { font-size: 18px; margin: 0; }
+    #ui .poem-line { font-size: 14px; color: #ffd700; font-style: italic; }
+    #task-panel {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,0.92); color: #333; padding: 16px 24px;
+      border-radius: 12px; max-width: 400px; z-index: 999;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    #task-panel h3 { margin: 0 0 8px 0; color: #1a5276; }
+    #task-panel p { margin: 4px 0; font-size: 14px; line-height: 1.6; }
+    .btn {
+      display: inline-block; margin: 4px 6px 0 0; padding: 6px 14px;
+      background: #2980b9; color: #fff; border: none; border-radius: 6px;
+      cursor: pointer; font-size: 13px;
+    }
+    .btn:hover { background: #1a5276; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <h1>🏔️ 《题西林壁》· 苏轼 · 观庐山</h1>
+    <span class="poem-line" id="current-line">横看成岭侧成峰，远近高低各不同</span>
+  </div>
+
+  <div id="task-panel">
+    <h3 id="task-title">📍 当前视角：正面远观</h3>
+    <p id="task-desc">请仔细观察眼前的庐山全景，感受群峰连绵的气势。</p>
+    <p id="task-question" style="color:#c0392b;font-weight:bold;">思考：你能看到庐山的全貌吗？为什么？</p>
+    <button class="btn" onclick="nextView()">切换到下一视角 →</button>
+    <button class="btn" onclick="showAnswer()">💡 查看解析</button>
+  </div>
+
+  <a-scene>
+    <a-assets>
+      <img id="view1" src="assets/lushan_front.jpg" crossorigin="anonymous" />
+      <img id="view2" src="assets/lushan_side.jpg" crossorigin="anonymous" />
+      <img id="view3" src="assets/lushan_inside.jpg" crossorigin="anonymous" />
+      <img id="view4" src="assets/lushan_top.jpg" crossorigin="anonymous" />
+      <img id="hotspot" src="assets/hotspot.png" crossorigin="anonymous" />
+    </a-assets>
+
+    <a-sky id="pano" src="#view1" rotation="0 -90 0"></a-sky>
+
+    <!-- 信息热点 -->
+    <a-image src="#hotspot" position="-3 1.5 -4" width="0.8" height="0.8"
+             animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000">
+      <a-text value="📖 点击查看诗句" align="center" position="0 -0.8 0" color="#ffd700" width="4"></a-text>
+    </a-image>
+
+    <a-entity camera look-controls position="0 1.6 0">
+      <a-cursor color="#ffd700" fuse="true" fuse-timeout="1500"></a-cursor>
+    </a-entity>
+  </a-scene>
+
+  <script>
+    const views = [
+      { id: "#view1", title: "正面远观", desc: "请仔细观察眼前的庐山全景，感受群峰连绵的气势。",
+        question: "思考：你能看到庐山的全貌吗？为什么？",
+        line: "横看成岭侧成峰，远近高低各不同",
+        answer: "从正面看，庐山呈现出连绵起伏的山岭形态。因为距离远，视野开阔，但只能看到山的'一面'。" },
+      { id: "#view2", title: "侧面仰望", desc: "现在你站在山峰的侧面，抬头仰望。",
+        question: "思考：同一个庐山，为什么看起来变成了'峰'？",
+        line: "横看成岭侧成峰",
+        answer: "从侧面看，庐山变成了高耸陡峭的山峰。观察角度不同，看到的形状就不同——这就是'横看成岭侧成峰'。" },
+      { id: "#view3", title: "山间漫步", desc: "你正走在庐山山道上，两侧是峭壁和松林。",
+        question: "思考：身在庐山之中，你能看到它的全貌吗？",
+        line: "不识庐山真面目，只缘身在此山中",
+        answer: "身处庐山之中，只能看到眼前的山石树木，无法看到整座山的样貌。这就是'只缘身在此山中'。" },
+      { id: "#view4", title: "山顶俯瞰", desc: "你站在庐山最高峰，俯瞰脚下的云海和群山。",
+        question: "思考：换个角度看，你对庐山有了什么新的认识？",
+        line: "远近高低各不同",
+        answer: "站在山顶俯瞰，云海翻涌、群山如棋。同一个庐山，从不同的距离和高度看，景色各不相同。" }
+    ];
+
+    let currentIndex = 0;
+    const sky = document.querySelector('#pano');
+    const titleEl = document.querySelector('#task-title');
+    const descEl = document.querySelector('#task-desc');
+    const questionEl = document.querySelector('#task-question');
+    const lineEl = document.querySelector('#current-line');
+
+    function nextView() {
+      currentIndex = (currentIndex + 1) % views.length;
+      const v = views[currentIndex];
+      // 淡出
+      sky.setAttribute('animation', 'property: components.material.material.opacity; from: 1; to: 0; dur: 600');
+      setTimeout(() => {
+        sky.setAttribute('src', v.id);
+        // 淡入
+        sky.setAttribute('animation', 'property: components.material.material.opacity; from: 0; to: 1; dur: 600');
+        titleEl.textContent = `📍 当前视角：${v.title}`;
+        descEl.textContent = v.desc;
+        questionEl.textContent = v.question;
+        lineEl.textContent = v.line;
+      }, 650);
+    }
+
+    function showAnswer() {
+      alert(views[currentIndex].answer);
+    }
+
+    // 热点点击
+    document.querySelector('a-image').addEventListener('click', () => {
+      alert(views[currentIndex].line + "\n\n—— " + views[currentIndex].answer);
+    });
+  </script>
+</body>
+</html>
