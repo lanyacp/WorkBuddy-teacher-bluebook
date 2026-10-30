@@ -39,6 +39,17 @@ __pycache__/
 Thumbs.db
 ~$*
 
+# Node 依赖与构建/播放缓存（体积巨大，可由 package.json 重装）
+node_modules/
+*.genie
+.wbapp_*
+
+# 大体积媒体工程与外部参考抓取（非蓝皮书正文，避免仓库膨胀）
+教师版蓝皮书/microcourse/
+教师版蓝皮书/remotion_ap/
+VR_长卷方案/
+_vr_ref/
+
 # ================================================================
 # 注意：英语课程资料（他人版权教材，337MB）也需排除。
 # 中文目录名在 .gitignore 里匹配异常，实际规则写在 .git/info/exclude：
