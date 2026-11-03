@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>长方体表面积与体积 · 可交互 3D 教具</title>
+<style>
+  :root{
+    --ink:#12263f; --sub:#5b6b82; --accent:#1f6feb; --warm:#e8590c;
+    --panel:#ffffff; --line:#dbe4ef; --soft:#f4f8fd;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    background:radial-gradient(1200px 700px at 18% 0%,#eaf3ff 0%,#f8fbfe 45%,#f2f8f4 100%);
+    background-attachment:fixed;
+    color:var(--ink); display:flex; flex-direction:column; overflow:hidden;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{padding:20px 34px 6px; flex:none;}
+  h1{font-size:23px; font-weight:700; letter-spacing:.4px;}
+  h1 span{color:var(--accent);}
+  .sub{margin-top:5px; font-size:13px; color:var(--sub);}
+  main{flex:1; display:flex; gap:0; min-height:0;}
+  .stage{flex:1; position:relative; min-width:0;}
+  canvas{display:block; width:100%; height:100%; cursor:grab;}
+  canvas:active{cursor:grabbing;}
+  .hint{
+    position:absolute; left:34px; bottom:22px; font-size:12.5px; color:var(--sub);
+    background:rgba(255,255,255,.82); border:1px solid var(--line); border-radius:9px;
+    padding:8px 13px; backdrop-filter:blur(6px); line-height:1.7;
+  }
+  .hint b{color:var(--ink);}
+  aside{
+    flex:none; width:346px; margin:10px 24px 22px 8px; padding:22px 22px 18px;
+    background:var(--panel); border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 10px 34px rgba(24,52,90,.07); overflow-y:auto;
+  }
+  .grp{margin-bottom:20px;}
+  .grp:last-child{margin-bottom:0;}
+  .lab{display:flex; justify-content:space-between; align-items:baseline; font-size:13px; margin-bottom:9px;}
+  .lab .name{font-weight:700;}
+  .lab .val{font-family:Consolas,monospace; font-size:15px; color:var(--accent); font-weight:700;}
+  input[type=range]{
+    -webkit-appearance:none; width:100%; height:5px; border-radius:3px;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent) var(--p,50%),#e3ebf5 var(--p,50%),#e3ebf5 100%);
+    outline:none; cursor:pointer;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:17px; height:17px; border-radius:50%;
+    background:#fff; border:3px solid var(--accent); box-shadow:0 1px 5px rgba(31,111,235,.35);
+  }
+  .out{
+    background:var(--soft); border:1px solid var(--line); border-radius:12px;
+    padding:15px 16px; margin-top:4px;
+  }
+  .row{display:flex; justify-content:space-between; align-items:baseline; padding:7px 0;}
+  .row + .row{border-top:1px dashed #dfe8f3;}
+  .row .k{font-size:13px; color:var(--sub);}
+  .row .v{font-family:Consolas,monospace; font-size:19px; font-weight:700;}
+  .row .v.blue{color:var(--accent);}
+  .row .v.orange{color:var(--warm);}
+  .formula{
+    margin-top:10px; font-family:Consolas,monospace; font-size:12.5px;
+    color:var(--sub); line-height:1.9; word-break:break-all;
+  }
+  .badge{
+    display:none; margin-top:12px; font-size:13px; padding:9px 12px; border-radius:9px;
+    background:#fff4e6; border:1px solid #ffd8a8; color:#a8580c; line-height:1.6;
+  }
+  .badge.on{display:block;}
+  .reset{
+    width:100%; margin-top:16px; padding:11px; border:1px solid var(--line); border-radius:10px;
+    background:#fff; color:var(--ink); font-size:13.5px; font-family:inherit; cursor:pointer;
+    transition:.18s;
+  }
+  .reset:hover{border-color:var(--accent); color:var(--accent);}
+  @media (max-width:900px){
+    main{flex-direction:column;}
+    aside{width:auto; margin:0 16px 16px;}
+    .stage{min-height:44vh;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>长方体：<span>表面积</span>与<span>体积</span>看得见</h1>
+  <div class="sub">拖动滑块改长宽高，模型的形状和两个公式的结果同步变化 · 初中数学「立体图形」</div>
+</header>
+
+<main>
+  <div class="stage">
+    <canvas id="cv"></canvas>
+    <div class="hint"><b>拖拽</b> 旋转视角　·　<b>滚轮</b> 缩放　·　<b>双击</b> 复位</div>
+  </div>
+
+  <aside>
+    <div class="grp">
+      <div class="lab"><span class="name">长 a</span><span class="val" id="va">6</span></div>
+      <input type="range" id="sa" min="1" max="10" step="0.5" value="6">
+    </div>
+    <div class="grp">
+      <div class="lab"><span class="name">宽 b</span><span class="val" id="vb">4</span></div>
+      <input type="range" id="sb" min="1" max="10" step="0.5" value="4">
+    </div>
+    <div class="grp">
+      <div class="lab"><span class="name">高 c</span><span class="val" id="vc">3</span></div>
+      <input type="range" id="sc" min="1" max="10" step="0.5" value="3">
+    </div>
+
+    <div class="out">
+      <div class="row"><span class="k">表面积 S</span><span class="v blue" id="oS">108.00</span></div>
+      <div class="row"><span class="k">体积 V</span><span class="v orange" id="oV">72.00</span></div>
+      <div class="formula" id="fS">S = 2(ab + bc + ca) = 2(6×4 + 4×3 + 3×6) = 108</div>
+      <div class="formula" id="fV">V = a × b × c = 6 × 4 × 3 = 72</div>
+    </div>
+
+    <div class="badge" id="cube">此刻 a = b = c，它是<b>正方体</b>。正方体是长方体的特例，表面积 6a²、体积 a³。</div>
+    <button class="reset" id="reset">复位视角与尺寸</button>
+  </aside>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  var cv = document.getElementById('cv');
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  var state = { a: 6, b: 4, c: 3, yaw: -0.62, pitch: 0.34, zoom: 1 };
+
+  // 8 顶点，以原点为中心，单位坐标 ±0.5（渲染时再乘边长）
+  var V = [
+    [-0.5,-0.5,-0.5], [ 0.5,-0.5,-0.5], [ 0.5, 0.5,-0.5], [-0.5, 0.5,-0.5],
+    [-0.5,-0.5, 0.5], [ 0.5,-0.5, 0.5], [ 0.5, 0.5, 0.5], [-0.5, 0.5, 0.5]
+  ];
+  // 六个面（顶点索引，按外法向逆时针）
+  var F = [
+    { idx:[4,5,6,7], n:[0,0,1],  color:'#8ec5ff', name:'前' },
+    { idx:[1,0,3,2], n:[0,0,-1], color:'#5d9fe0', name:'后' },
+    { idx:[5,1,2,6], n:[1,0,0],  color:'#a8d5ff', name:'右' },
+    { idx:[0,4,7,3], n:[-1,0,0], color:'#7fb6ee', name:'左' },
+    { idx:[7,6,2,3], n:[0,1,0],  color:'#c6e2ff', name:'上' },
+    { idx:[0,1,5,4], n:[0,-1,0], color:'#6aa9e6', name:'下' }
+  ];
+
+  function resize(){
+    var r = cv.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height;
+    cv.width  = Math.round(W * DPR);
+    cv.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    draw();
+  }
+
+  // 绕 Y 轴 yaw、绕 X 轴 pitch 旋转，再做透视投影（dist 取大，接近弱透视，几何更"正"）
+  function project(p){
+    var cy1 = Math.cos(state.yaw),  sy1 = Math.sin(state.yaw);
+    var cx1 = Math.cos(state.pitch), sx1 = Math.sin(state.pitch);
+
+    var x1 =  p[0]*cy1 + p[2]*sy1;
+    var z1 = -p[0]*sy1 + p[2]*cy1;
+    var y1 =  p[1];
+
+    var y2 = y1*cx1 - z1*sx1;
+    var z2 = y1*sx1 + z1*cx1;
+
+    var dist = 14.0;
+    var f = dist / (dist + z2);
+
+    var unit = Math.min(W, H) * 0.082 * state.zoom;
+    var maxSide = Math.max(state.a, state.b, state.c);
+    var norm = 6 / maxSide;                 // 大模型自动缩小，保持画幅稳定
+
+    return {
+      x: W*0.5 + x1 * unit * norm * f,
+      y: H*0.5 - y2 * unit * norm * f,
+      z: z2, f: f
+    };
+  }
+
+  // x → 长 a，y → 高 c，z → 宽 b（与课堂口径一致）
+  function worldVert(i){
+    return [ V[i][0]*state.a, V[i][1]*state.c, V[i][2]*state.b ];
+  }
+
+  function rotNormal(n){
+    var cy1 = Math.cos(state.yaw),  sy1 = Math.sin(state.yaw);
+    var cx1 = Math.cos(state.pitch), sx1 = Math.sin(state.pitch);
+    // 与顶点同一套旋转（只转方向，不平移）
+    var x1 =  n[0]*cy1 + n[2]*sy1;
+    var z1 = -n[0]*sy1 + n[2]*cy1;
+    var y1 =  n[1];
+    var y2 = y1*cx1 - z1*sx1;
+    var z2 = y1*sx1 + z1*cx1;
+    return [x1, y2, z2];
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+
+    var pts = [];
+    for (var i = 0; i < 8; i++) pts.push(project(worldVert(i)));
+
+    // 可见性：面法向旋转后朝向相机（z 分量为正即朝向观察者）
+    var vis = [];
+    for (var k = 0; k < F.length; k++){
+      var rn = rotNormal(F[k].n);
+      vis.push({ face: F[k], front: rn[2] > 0.02, depth: rn[2] });
+    }
+
+    // 先画背面（虚线淡色）
+    for (var m = 0; m < vis.length; m++){
+      if (vis[m].front) continue;
+      drawFace(vis[m].face, pts, true);
+    }
+    // 再画正面（填充 + 实线）
+    var fronts = vis.filter(function(v){ return v.front; })
+                    .sort(function(p, q){ return p.depth - q.depth; });
+    for (var n = 0; n < fronts.length; n++) drawFace(fronts[n].face, pts, false);
+
+    // 尺寸标注
+    drawLabels(pts);
+  }
+
+  function drawFace(face, pts, isBack){
+    var idx = face.idx;
+    ctx.beginPath();
+    ctx.moveTo(pts[idx[0]].x, pts[idx[0]].y);
+    for (var i = 1; i < 4; i++) ctx.lineTo(pts[idx[i]].x, pts[idx[i]].y);
+    ctx.closePath();
+
+    if (isBack){
+      ctx.strokeStyle = 'rgba(120,155,195,.34)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([5, 5]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    } else {
+      ctx.fillStyle = face.color;
+      ctx.globalAlpha = 0.92;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = '#1c4f86';
+      ctx.lineWidth = 2;
+      ctx.lineJoin = 'round';
+      ctx.stroke();
+    }
+  }
+
+  function drawLabels(pts){
+    ctx.font = '700 14px Consolas, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    function tag(p, text, color){
+      var w = ctx.measureText(text).width + 16;
+      ctx.fillStyle = 'rgba(255,255,255,.95)';
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1.4;
+      roundRect(p.x, p.y, w, 24);
+      ctx.fill(); ctx.stroke();
+      ctx.fillStyle = color;
+      ctx.fillText(text, p.x, p.y + 0.5);
+    }
+
+    // 顶点：4=左下前 5=右下前 6=右上前 1=右下后
+    // 长 a 沿 x（4→5），高 c 沿 y（5→6），宽 b 沿 z（5→1）
+    var P4 = pts[4], P5 = pts[5], P6 = pts[6], P1 = pts[1];
+    tag({ x:(P4.x+P5.x)/2, y:(P4.y+P5.y)/2 + 26 }, 'a = ' + state.a, '#1f6feb');
+    tag({ x:(P5.x+P6.x)/2 + 34, y:(P5.y+P6.y)/2 }, 'c = ' + state.c, '#e8590c');
+    tag({ x:(P5.x+P1.x)/2 + 4, y:(P5.y+P1.y)/2 + 26 }, 'b = ' + state.b, '#2f9e44');
+  }
+
+  function roundRect(x, y, w, h){
+    var r = 7;
+    ctx.beginPath();
+    ctx.moveTo(x - w/2 + r, y - h/2);
+    ctx.arcTo(x + w/2, y - h/2, x + w/2, y + h/2, r);
+    ctx.arcTo(x + w/2, y + h/2, x - w/2, y + h/2, r);
+    ctx.arcTo(x - w/2, y + h/2, x - w/2, y - h/2, r);
+    ctx.arcTo(x - w/2, y - h/2, x + w/2, y - h/2, r);
+    ctx.closePath();
+  }
+
+  // ---------- 数据面板 ----------
+  function fmt(n){
+    return (Math.round(n * 100) / 100).toString();
+  }
+
+  function updatePanel(){
+    var a = state.a, b = state.b, c = state.c;
+    var S = 2 * (a*b + b*c + c*a);
+    var Vol = a * b * c;
+
+    document.getElementById('va').textContent = a;
+    document.getElementById('vb').textContent = b;
+    document.getElementById('vc').textContent = c;
+    document.getElementById('oS').textContent = fmt(S);
+    document.getElementById('oV').textContent = fmt(Vol);
+
+    document.getElementById('fS').textContent =
+      'S = 2(ab + bc + ca) = 2(' + a + '×' + b + ' + ' + b + '×' + c + ' + ' + c + '×' + a + ') = ' + fmt(S);
+    document.getElementById('fV').textContent =
+      'V = a × b × c = ' + a + ' × ' + b + ' × ' + c + ' = ' + fmt(Vol);
+
+    var cube = document.getElementById('cube');
+    if (a === b && b === c) cube.classList.add('on');
+    else cube.classList.remove('on');
+  }
+
+  // ---------- 交互 ----------
+  var dragging = false, lastX = 0, lastY = 0;
+
+  cv.addEventListener('pointerdown', function(e){
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    cv.setPointerCapture(e.pointerId);
+  });
+  cv.addEventListener('pointermove', function(e){
+    if (!dragging) return;
+    state.yaw   += (e.clientX - lastX) * 0.009;
+    state.pitch += (e.clientY - lastY) * 0.009;
+    state.pitch = Math.max(-1.35, Math.min(1.35, state.pitch));
+    lastX = e.clientX; lastY = e.clientY;
+    draw();
+  });
+  cv.addEventListener('pointerup', function(e){
+    dragging = false;
+    try { cv.releasePointerCapture(e.pointerId); } catch(err){}
+  });
+  cv.addEventListener('wheel', function(e){
+    e.preventDefault();
+    state.zoom *= (e.deltaY > 0 ? 0.93 : 1.07);
+    state.zoom = Math.max(0.45, Math.min(2.6, state.zoom));
+    draw();
+  }, { passive:false });
+  cv.addEventListener('dblclick', resetAll);
+
+  function bindSlider(id, key){
+    var el = document.getElementById(id);
+    function sync(){
+      state[key] = parseFloat(el.value);
+      el.style.setProperty('--p', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
+      updatePanel(); draw();
+    }
+    el.addEventListener('input', sync);
+    sync();
+  }
+  bindSlider('sa', 'a');
+  bindSlider('sb', 'b');
+  bindSlider('sc', 'c');
+
+  function resetAll(){
+    state.yaw = -0.62; state.pitch = 0.34; state.zoom = 1;
+    document.getElementById('sa').value = 6;
+    document.getElementById('sb').value = 4;
+    document.getElementById('sc').value = 3;
+    ['sa','sb','sc'].forEach(function(id){
+      var el = document.getElementById(id);
+      el.dispatchEvent(new Event('input'));
+    });
+    draw();
+  }
+  document.getElementById('reset').addEventListener('click', resetAll);
+
+  window.addEventListener('resize', resize);
+  resize();
+  updatePanel();
+})();
+</script>
+</body>
+</html>

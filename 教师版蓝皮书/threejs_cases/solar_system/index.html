@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>太阳系三维演示 · 真 3D 案例（Three.js）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { width:100%; height:100%; overflow:hidden; background:#05070d; }
+  body { font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; color:#e8eefc; }
+  canvas { display:block; }
+
+  #hud {
+    position:absolute; top:0; left:0; right:0;
+    padding:18px 24px 40px;
+    background:linear-gradient(180deg, rgba(5,7,13,.82) 0%, rgba(5,7,13,.35) 58%, rgba(5,7,13,0) 100%);
+    display:flex; align-items:flex-start; justify-content:space-between;
+    pointer-events:none; z-index:10;
+  }
+  #hud h1 { font-size:18px; font-weight:500; letter-spacing:.1em; }
+  #hud .sub { font-size:12px; color:rgba(232,238,252,.5); letter-spacing:.08em; margin-top:6px; }
+  #hud .right { text-align:right; font-size:12px; color:rgba(232,238,252,.42); line-height:1.9; letter-spacing:.06em; }
+
+  #panel {
+    position:absolute; left:24px; bottom:24px; z-index:10;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .row { display:flex; align-items:center; gap:10px; }
+  .btn {
+    font-family:inherit; font-size:12px; letter-spacing:.08em;
+    color:rgba(232,238,252,.75); background:rgba(18,24,40,.78);
+    border:1px solid rgba(120,160,230,.24); border-radius:4px;
+    padding:8px 14px; cursor:pointer; transition:all .18s ease;
+  }
+  .btn:hover { color:#fff; border-color:rgba(120,160,230,.6); background:rgba(28,38,62,.9); }
+  .btn.on { color:#05070d; background:#8fb8ff; border-color:#8fb8ff; }
+  .speedwrap {
+    display:flex; align-items:center; gap:9px;
+    font-size:12px; color:rgba(232,238,252,.5);
+    background:rgba(18,24,40,.78); border:1px solid rgba(120,160,230,.24);
+    border-radius:4px; padding:6px 13px;
+  }
+  input[type=range] {
+    -webkit-appearance:none; width:110px; height:3px; border-radius:2px;
+    background:rgba(140,175,240,.28); outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance:none; width:12px; height:12px; border-radius:50%;
+    background:#8fb8ff; cursor:pointer;
+  }
+  #speedVal { min-width:30px; color:rgba(232,238,252,.8); font-variant-numeric:tabular-nums; }
+
+  #card {
+    position:absolute; right:24px; top:50%; transform:translateY(-50%) translateX(18px);
+    width:320px; background:rgba(12,17,30,.94);
+    border:1px solid rgba(120,160,230,.3); border-radius:6px;
+    padding:24px; opacity:0; pointer-events:none;
+    transition:opacity .26s ease, transform .26s ease;
+    backdrop-filter:blur(8px); z-index:20;
+  }
+  #card.show { opacity:1; pointer-events:auto; transform:translateY(-50%) translateX(0); }
+  #card .kicker {
+    font-size:10px; letter-spacing:.3em; color:#8fb8ff;
+    border:1px solid rgba(143,184,255,.35); padding:2px 7px;
+    display:inline-block; margin-bottom:14px;
+  }
+  #card h2 { font-size:20px; font-weight:500; letter-spacing:.08em; margin-bottom:4px; }
+  #card .en { font-size:11px; color:rgba(232,238,252,.4); letter-spacing:.18em; margin-bottom:16px; }
+  #card dl { display:grid; grid-template-columns:auto 1fr; gap:9px 14px; font-size:13px; margin-bottom:16px; }
+  #card dt { color:rgba(232,238,252,.45); letter-spacing:.04em; }
+  #card dd { color:rgba(232,238,252,.92); }
+  #card .teach {
+    font-size:13px; line-height:1.85; color:#c8d7f5;
+    border-left:2px solid rgba(143,184,255,.5); padding-left:12px;
+    letter-spacing:.02em;
+  }
+  #card .close {
+    position:absolute; top:12px; right:14px; width:26px; height:26px;
+    border:0; background:none; color:rgba(232,238,252,.4);
+    font-size:20px; cursor:pointer; line-height:1; font-family:inherit;
+  }
+  #card .close:hover { color:#fff; }
+
+  #legend {
+    position:absolute; right:24px; bottom:24px; z-index:10;
+    font-size:11px; color:rgba(232,238,252,.35); letter-spacing:.06em;
+    text-align:right; line-height:1.9;
+  }
+
+  #fallback {
+    position:absolute; inset:0; display:none;
+    align-items:center; justify-content:center; text-align:center;
+    padding:40px; font-size:14px; line-height:2; color:#c8d7f5;
+    background:#05070d; z-index:99;
+  }
+  #fallback b { color:#8fb8ff; }
+
+  @media (max-width:820px) {
+    #card { right:12px; left:12px; width:auto; top:auto; bottom:120px; transform:translateY(16px); max-height:46vh; overflow-y:auto; }
+    #card.show { transform:translateY(0); }
+    #hud .right { display:none; }
+    #legend { display:none; }
+    #panel { left:12px; bottom:12px; }
+    input[type=range] { width:80px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="hud">
+  <div>
+    <h1>太阳系 · 三维演示</h1>
+    <div class="sub">拖动旋转视角 · 滚轮缩放 · 点击行星看资料</div>
+  </div>
+  <div class="right">
+    比例经过压缩，便于课堂观察<br>
+    光照方向来自太阳，行星有明暗两面
+  </div>
+</div>
+
+<div id="panel">
+  <div class="row">
+    <button class="btn on" id="btn-play">暂停</button>
+    <div class="speedwrap">
+      速度 <input type="range" id="speed" min="0" max="300" value="100">
+      <span id="speedVal">1.0×</span>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn" data-view="top">俯视全貌</button>
+    <button class="btn" data-view="side">侧视轨道</button>
+    <button class="btn" data-view="earth">地球特写</button>
+    <button class="btn" data-view="saturn">土星特写</button>
+  </div>
+</div>
+
+<div id="card">
+  <button class="close" id="card-close">×</button>
+  <span class="kicker">行星资料</span>
+  <h2 id="card-name"></h2>
+  <div class="en" id="card-en"></div>
+  <dl>
+    <dt>距太阳</dt><dd id="card-dist"></dd>
+    <dt>公转周期</dt><dd id="card-period"></dd>
+    <dt>相对大小</dt><dd id="card-size"></dd>
+  </dl>
+  <div class="teach" id="card-teach"></div>
+</div>
+
+<div id="legend">Three.js 实时渲染 · 无外部图片素材</div>
+
+<div id="fallback">
+  <div>
+    <b>没能加载 Three.js</b><br>
+    这个页面需要联网加载三维库。<br>
+    请检查网络后刷新；或参考蓝皮书里的离线方案。
+  </div>
+</div>
+
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script>
+(function () {
+  if (typeof THREE === "undefined") {
+    document.getElementById("fallback").style.display = "flex";
+    return;
+  }
+
+  const PLANETS = [
+    { key:"mercury", name:"水星", en:"MERCURY", orbit:8.2,  r:0.34, speed:2.35, au:"0.39 AU", period:"88 天",   size:"地球的 0.38 倍",
+      color:0x9a8e86, rough:1.0,
+      teach:"离太阳最近，公转只要 88 天。因为它没有大气层，白天能到 400℃ 以上，夜里又降到 -170℃。可以问学生：为什么它比离太阳更远的金星还极端？" },
+    { key:"venus",   name:"金星", en:"VENUS",   orbit:11.4, r:0.62, speed:1.78, au:"0.72 AU", period:"225 天",  size:"地球的 0.95 倍",
+      color:0xe0c07a, rough:0.95,
+      teach:"金星和地球差不多大，但表面有厚厚的二氧化碳大气，温室效应让温度高达 460℃——比水星还热。这是讲「温室效应」最直观的例子。" },
+    { key:"earth",   name:"地球", en:"EARTH",   orbit:15.0, r:0.66, speed:1.47, au:"1.00 AU", period:"365 天",  size:"基准",
+      color:0x2a6fd4, rough:0.85, earth:true,
+      teach:"我们的家。注意看它被太阳照亮的那一半永远是白天，背光的一半是黑夜——地球自转一圈就是一天，这就能解释昼夜交替。" },
+    { key:"mars",    name:"火星", en:"MARS",    orbit:18.8, r:0.46, speed:1.18, au:"1.52 AU", period:"687 天",  size:"地球的 0.53 倍",
+      color:0xc1502e, rough:1.0,
+      teach:"地球的「邻居」。表面是氧化铁，所以是红色。它有太阳系最高的火山（奥林帕斯山，约 22 公里），差不多是珠峰的 2.5 倍。" },
+    { key:"jupiter", name:"木星", en:"JUPITER", orbit:26.5, r:1.62, speed:0.72, au:"5.20 AU", period:"11.9 年", size:"地球的 11.2 倍",
+      color:0xc9a877, rough:0.9, bands:true,
+      teach:"太阳系里最大的行星，能装下 1300 个地球。表面那些条纹是高速气流带。它的引力像「吸尘器」，帮内行星挡掉了很多小天体。" },
+    { key:"saturn",  name:"土星", en:"SATURN",  orbit:33.5, r:1.38, speed:0.52, au:"9.58 AU", period:"29.5 年", size:"地球的 9.4 倍",
+      color:0xd8c48e, rough:0.9, ring:true, bands:true,
+      teach:"最显眼的是它的光环，主要由冰块和岩石碎屑组成。注意光环很薄——如果土星是篮球，光环的厚度大约只有一张纸。一个常被追问的问题：光环为什么不会掉下去？" },
+    { key:"uranus",  name:"天王星", en:"URANUS", orbit:40.2, r:0.92, speed:0.36, au:"19.2 AU", period:"84 年",   size:"地球的 4.0 倍",
+      color:0x9fd6dd, rough:0.85,
+      teach:"它是「躺着」转的——自转轴倾斜约 98°，几乎躺倒在轨道面上。所以它的两极会各有 42 年的白天和 42 年的黑夜。" },
+    { key:"neptune", name:"海王星", en:"NEPTUNE", orbit:46.5, r:0.90, speed:0.28, au:"30.1 AU", period:"165 年",  size:"地球的 3.9 倍",
+      color:0x3f63c8, rough:0.85,
+      teach:"离太阳最远，公转要 165 年——从发现到现在（1846 年），它才刚刚绕完一圈多一点。它是先被数学算出来、再被望远镜找到的行星。" }
+  ];
+
+  let scene, camera, renderer, raycaster, pointer;
+  const meshes = [];
+  let sunMesh, clock, playing = true, speedScale = 1;
+  let camTheta = 0.85, camPhi = 1.02, camDist = 72;
+  let focusKey = null;            // 当前特写的行星 key，非空时相机跟随该行星
+  let thetaLocked = false;        // 是否锁定方位角（保持晨昏线正对镜头），用户拖拽后解除
+  const camTarget = new THREE.Vector3(0, 0, 0);
+
+  function makeGlow() {
+    const c = document.createElement("canvas");
+    c.width = c.height = 256;
+    const g = c.getContext("2d");
+    const grd = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+    grd.addColorStop(0, "rgba(255,246,214,1)");
+    grd.addColorStop(0.18, "rgba(255,214,120,0.72)");
+    grd.addColorStop(0.45, "rgba(255,166,60,0.26)");
+    grd.addColorStop(1, "rgba(255,140,40,0)");
+    g.fillStyle = grd;
+    g.fillRect(0, 0, 256, 256);
+    return new THREE.CanvasTexture(c);
+  }
+
+  function noiseTexture(base, spots, spotCount, stripes) {
+    const c = document.createElement("canvas");
+    c.width = 512; c.height = 256;
+    const g = c.getContext("2d");
+    g.fillStyle = base; g.fillRect(0, 0, 512, 256);
+
+    if (stripes) {
+      for (let i = 0; i < 26; i++) {
+        const y = Math.random() * 256;
+        const h = 3 + Math.random() * 13;
+        g.fillStyle = spots[Math.floor(Math.random() * spots.length)];
+        g.globalAlpha = 0.25 + Math.random() * 0.45;
+        g.fillRect(0, y, 512, h);
+      }
+      g.globalAlpha = 1;
+    } else {
+      for (let i = 0; i < spotCount; i++) {
+        const x = Math.random() * 512, y = Math.random() * 256;
+        const rx = 8 + Math.random() * 46, ry = 6 + Math.random() * 30;
+        g.fillStyle = spots[Math.floor(Math.random() * spots.length)];
+        g.globalAlpha = 0.2 + Math.random() * 0.5;
+        g.beginPath();
+        g.ellipse(x, y, rx, ry, Math.random() * Math.PI, 0, Math.PI * 2);
+        g.fill();
+      }
+      g.globalAlpha = 1;
+    }
+    return new THREE.CanvasTexture(c);
+  }
+
+  function init() {
+    scene = new THREE.Scene();
+    clock = new THREE.Clock();
+
+    const w = window.innerWidth, h = window.innerHeight;
+    camera = new THREE.PerspectiveCamera(52, w / h, 0.1, 4000);
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(w, h);
+    document.body.insertBefore(renderer.domElement, document.body.firstChild);
+
+    scene.add(new THREE.AmbientLight(0x2a3a5c, 0.9));
+
+    const sunLight = new THREE.PointLight(0xfff0cc, 2.6, 0, 1.6);
+    scene.add(sunLight);
+    const fill = new THREE.DirectionalLight(0x334466, 0.35);
+    fill.position.set(-1, 0.6, -1);
+    scene.add(fill);
+
+    sunMesh = new THREE.Mesh(
+      new THREE.SphereGeometry(3.4, 48, 32),
+      new THREE.MeshBasicMaterial({ color: 0xfff3c4 })
+    );
+    scene.add(sunMesh);
+
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: makeGlow(), transparent: true, blending: THREE.AdditiveBlending, depthWrite: false
+    }));
+    glow.scale.set(15, 15, 1);
+    scene.add(glow);
+
+    PLANETS.forEach(p => {
+      const pts = [];
+      for (let i = 0; i <= 180; i++) {
+        const a = i / 180 * Math.PI * 2;
+        pts.push(new THREE.Vector3(Math.cos(a) * p.orbit, 0, Math.sin(a) * p.orbit));
+      }
+      const orbitGeo = new THREE.BufferGeometry().setFromPoints(pts);
+      const orbitLine = new THREE.Line(orbitGeo, new THREE.LineBasicMaterial({
+        color: 0x4a6ba8, transparent: true, opacity: 0.42
+      }));
+      scene.add(orbitLine);
+
+      let tex = null;
+      if (p.earth) tex = noiseTexture("#1e57b0", ["#2f7a3e", "#3d8f4a", "#c8d4a8", "#1a4a8a"], 26, false);
+      else if (p.bands) tex = noiseTexture(
+        "#" + p.color.toString(16).padStart(6, "0"),
+        ["#f0e0c0", "#a08050", "#e8d4a8", "#8a6a40"], 0, true
+      );
+      else tex = noiseTexture("#" + p.color.toString(16).padStart(6, "0"),
+        ["#" + p.color.toString(16).padStart(6, "0"), "#ffffff", "#000000"], 18, false);
+
+      const mat = new THREE.MeshStandardMaterial({
+        map: tex, roughness: p.rough, metalness: 0.0
+      });
+      const mesh = new THREE.Mesh(new THREE.SphereGeometry(p.r, 36, 24), mat);
+      mesh.userData = p;
+      scene.add(mesh);
+      meshes.push(mesh);
+      p._mesh = mesh;
+      p.angle = Math.random() * Math.PI * 2;
+      // 初始位置必须在这里就摆好，不能只依赖 animate()——否则一旦页面是暂停状态，
+      // 所有行星会全部堆在原点（太阳内部），看起来像一颗巨大的花球。
+      mesh.position.set(
+        Math.cos(p.angle) * p.orbit, 0, Math.sin(p.angle) * p.orbit
+      );
+
+      if (p.ring) {
+        const ringGeo = new THREE.RingGeometry(p.r * 1.42, p.r * 2.4, 96);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: 0xe4d3a8, side: THREE.DoubleSide,
+          transparent: true, opacity: 0.78
+        });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = Math.PI / 2.35;
+        mesh.add(ring);
+      }
+    });
+
+    const starPos = [];
+    for (let i = 0; i < 3200; i++) {
+      const r = 420 + Math.random() * 900;
+      const t = Math.random() * Math.PI * 2;
+      const ph = Math.acos(2 * Math.random() - 1);
+      starPos.push(
+        r * Math.sin(ph) * Math.cos(t),
+        r * Math.cos(ph),
+        r * Math.sin(ph) * Math.sin(t)
+      );
+    }
+    const starGeo = new THREE.BufferGeometry();
+    starGeo.setAttribute("position", new THREE.Float32BufferAttribute(starPos, 3));
+    scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({
+      color: 0xdce8ff, size: 1.7, sizeAttenuation: true, transparent: true, opacity: 0.85
+    })));
+
+    raycaster = new THREE.Raycaster();
+    pointer = new THREE.Vector2();
+
+    bindEvents();
+    updateCamera();
+
+    // 支持用链接直接定住视角，方便课堂投屏/截图：
+    //   ?view=earth   地球特写（看晨昏线）
+    //   ?view=saturn  土星特写（看光环）
+    //   ?view=top     俯视全貌
+    //   ?still=1      暂停公转，画面静止
+    const q = new URLSearchParams(location.search);
+    const wantView = q.get("view");
+    if (wantView) setView(wantView, true);
+    if (q.get("still")) playing = false;
+
+    if (q.get("debug")) {
+      setInterval(function () {
+        const e = PLANETS.find(x => x.key === "earth");
+        document.title = "dist=" + camDist.toFixed(2) + " phi=" + camPhi.toFixed(2) +
+          " theta=" + camTheta.toFixed(2) +
+          " tgt=" + camTarget.x.toFixed(1) + "," + camTarget.z.toFixed(1) +
+          " earthPos=" + e._mesh.position.x.toFixed(1) + "," + e._mesh.position.z.toFixed(1) +
+          " earthR=" + e.r + " size=" + renderer.domElement.width + "x" + renderer.domElement.height;
+      }, 80);
+    }
+
+    animate();
+  }
+
+  function updateCamera() {
+    camPhi = Math.max(0.14, Math.min(Math.PI - 0.14, camPhi));
+    // 相机位置 = 目标点 + 以目标点为中心的球坐标偏移。
+    // 全景时 camTarget 就是原点，所以这里等价于原来的写法；
+    // 特写某颗行星时 camTarget 是那颗行星，camDist 才是「到行星的距离」。
+    camera.position.set(
+      camTarget.x + camDist * Math.sin(camPhi) * Math.cos(camTheta),
+      camTarget.y + camDist * Math.cos(camPhi),
+      camTarget.z + camDist * Math.sin(camPhi) * Math.sin(camTheta)
+    );
+    camera.lookAt(camTarget);
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const dt = Math.min(clock.getDelta(), 0.05);
+
+    if (playing) {
+      PLANETS.forEach(p => {
+        p.angle += dt * 0.28 * p.speed * speedScale;
+        p._mesh.position.set(
+          Math.cos(p.angle) * p.orbit, 0, Math.sin(p.angle) * p.orbit
+        );
+        p._mesh.rotation.y += dt * 0.55;
+      });
+      sunMesh.rotation.y += dt * 0.06;
+    }
+
+    if (focusKey) {
+      // 特写模式：相机跟着这颗行星走，并保持垂直于「太阳—行星」连线，
+      // 这样晨昏线（明暗分界）始终正对镜头——贴图球永远做不出这一幕。
+      const fp = PLANETS.find(p => p.key === focusKey);
+      if (fp) {
+        camTarget.copy(fp._mesh.position);
+        if (thetaLocked) camTheta = fp.angle + Math.PI / 2;
+        updateCamera();
+      }
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  function pick(ev) {
+    const rect = renderer.domElement.getBoundingClientRect();
+    pointer.x = ((ev.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((ev.clientY - rect.top) / rect.height) * 2 + 1;
+    raycaster.setFromCamera(pointer, camera);
+    const hits = raycaster.intersectObjects(meshes, false);
+    if (hits.length) showCard(hits[0].object.userData);
+  }
+
+  function showCard(p) {
+    document.getElementById("card-name").textContent = p.name;
+    document.getElementById("card-en").textContent = p.en;
+    document.getElementById("card-dist").textContent = p.au;
+    document.getElementById("card-period").textContent = p.period;
+    document.getElementById("card-size").textContent = p.size;
+    document.getElementById("card-teach").textContent = p.teach;
+    document.getElementById("card").classList.add("show");
+  }
+
+  // 视角预设。which 可以是 top / side，也可以是任意行星 key（earth / mars / saturn ...）
+  function presetTarget(which) {
+    if (which === "top") return { theta: camTheta, phi: 0.24, dist: 96 };
+    if (which === "side") return { theta: camTheta, phi: 1.48, dist: 86 };
+    const p = PLANETS.find(x => x.key === which);
+    if (!p) return null;
+    return {
+      theta: p.angle + Math.PI / 2,   // 垂直于「太阳—行星」连线，晨昏线正对镜头
+      phi: 1.24,
+      dist: p.r * (p.ring ? 9.5 : 4.6),
+      planet: p
+    };
+  }
+
+  // immediate=true 时直接跳到位，不做过渡动画（课堂投屏、链接直达、截图都靠它）
+  function setView(which, immediate) {
+    const to = presetTarget(which);
+    if (!to) return;
+
+    if (to.planet) {
+      focusKey = to.planet.key;
+      thetaLocked = true;
+      camTarget.copy(to.planet._mesh.position);
+    } else {
+      focusKey = null;
+      thetaLocked = false;
+      camTarget.set(0, 0, 0);
+    }
+
+    if (immediate) {
+      camTheta = to.theta; camPhi = to.phi; camDist = to.dist;
+      updateCamera();
+      return;
+    }
+    tweenTo({ theta: to.theta, phi: to.phi, dist: to.dist });
+  }
+
+  function tweenTo(to) {
+    const from = { theta: camTheta, phi: camPhi, dist: camDist };
+    const dur = 720, t0 = performance.now();
+    function step(now) {
+      const t = Math.min(1, (now - t0) / dur);
+      const k = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      camTheta = from.theta + (to.theta - from.theta) * k;
+      camPhi = from.phi + (to.phi - from.phi) * k;
+      camDist = from.dist + (to.dist - from.dist) * k;
+      updateCamera();
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function bindEvents() {
+    let down = false, sx = 0, sy = 0, ot = 0, op = 0, moved = false;
+
+    renderer.domElement.addEventListener("pointerdown", e => {
+      down = true; moved = false;
+      sx = e.clientX; sy = e.clientY; ot = camTheta; op = camPhi;
+      renderer.domElement.style.cursor = "grabbing";
+    });
+
+    window.addEventListener("pointermove", e => {
+      if (!down) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+      camTheta = ot - dx * 0.005;
+      camPhi = op - dy * 0.005;
+      thetaLocked = false;   // 用户自己转了视角，就不再强行锁定晨昏线
+      updateCamera();
+    });
+
+    window.addEventListener("pointerup", e => {
+      if (down && !moved) pick(e);
+      down = false;
+      renderer.domElement.style.cursor = "grab";
+    });
+
+    renderer.domElement.addEventListener("wheel", e => {
+      e.preventDefault();
+      camDist = Math.max(12, Math.min(160, camDist * (1 + e.deltaY * 0.0011)));
+      updateCamera();
+    }, { passive: false });
+
+    let pinch = null;
+    renderer.domElement.addEventListener("touchstart", e => {
+      if (e.touches.length === 2) {
+        const [a, b] = e.touches;
+        pinch = { d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY), dist: camDist };
+      }
+    }, { passive: true });
+    renderer.domElement.addEventListener("touchmove", e => {
+      if (e.touches.length === 2 && pinch) {
+        e.preventDefault();
+        const [a, b] = e.touches;
+        const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+        camDist = Math.max(12, Math.min(160, pinch.dist * (pinch.d / d)));
+        updateCamera();
+      }
+    }, { passive: false });
+    renderer.domElement.addEventListener("touchend", () => { pinch = null; });
+
+    document.getElementById("btn-play").addEventListener("click", function () {
+      playing = !playing;
+      this.textContent = playing ? "暂停" : "播放";
+      this.classList.toggle("on", playing);
+    });
+
+    const sp = document.getElementById("speed");
+    sp.addEventListener("input", () => {
+      speedScale = sp.value / 100;
+      document.getElementById("speedVal").textContent = speedScale.toFixed(1) + "×";
+    });
+
+    document.querySelectorAll("[data-view]").forEach(b => {
+      b.addEventListener("click", () => {
+        document.querySelectorAll("[data-view]").forEach(x => x.classList.remove("on"));
+        b.classList.add("on");
+        setView(b.dataset.view);
+      });
+    });
+
+    document.getElementById("card-close").addEventListener("click", () => {
+      document.getElementById("card").classList.remove("show");
+    });
+
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape") document.getElementById("card").classList.remove("show");
+      if (e.key === " ") { e.preventDefault(); document.getElementById("btn-play").click(); }
+    });
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

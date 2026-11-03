@@ -50,6 +50,17 @@ node_modules/
 VR_长卷方案/
 _vr_ref/
 
+# ===== 3D 教学模型专题（2026-11）=====
+# 文生 3D 的原始 GLB 单个 35–50MB，三个共 126MB：
+# 教程里给了完整提示词，老师可自行重新生成；预览图已压缩进 assets_opt/ 入库
+教师版蓝皮书/three3d_cases/geo_earth/earth.glb
+教师版蓝皮书/three3d_cases/bio_dna/dna.glb
+教师版蓝皮书/three3d_cases/chem_methane/methane.glb
+# 注意：路线 C 自建的小模型（volcano_section*.glb，40–82KB）体积很小，照常入库
+
+# 编辑器调试过程的中间 HTML/JS（28MB，可重新生成）
+教师版蓝皮书/_diag/
+
 # ================================================================
 # 注意：英语课程资料（他人版权教材，337MB）也需排除。
 # 中文目录名在 .gitignore 里匹配异常，实际规则写在 .git/info/exclude：
