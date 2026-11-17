@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;min-height:1700px;background:#FFFFFF;font-family:"Microsoft YaHei","Noto Sans SC",sans-serif;color:#0F1419}
+.hero{height:168px;background:#F9F9FB;padding:30px 56px 0}
+.kicker{font-size:16px;color:#6B7280;letter-spacing:1px}
+h1{font-size:40px;line-height:1.25;margin-top:9px;font-weight:700}
+.sub{font-size:17px;color:#6B7280;margin-top:9px}
+section{padding:0 56px}
+h2{font-size:24px;font-weight:700;margin:28px 0 14px}
+.map{background:#F9F9FB;border-radius:12px;padding:18px 24px;font-size:15px;line-height:2.0}
+.map b{color:#5046E5;display:inline-block;min-width:250px}
+.tbl{width:100%;border-collapse:collapse;font-size:15px}
+.tbl th{text-align:left;font-size:13px;color:#6B7280;font-weight:400;padding:0 0 6px;letter-spacing:1px}
+.tbl td{padding:6px 0;line-height:1.6;border-top:1px solid #EDEFF2}
+.tbl td:last-child,.tbl th:last-child{text-align:right;white-space:nowrap;font-weight:700}
+.tbl .cheap{color:#10B981}
+.tbl .expensive{color:#EF4444}
+.warn{background:#FFF1F0;border:1px solid #F5C2C0;border-radius:12px;padding:16px 22px;font-size:16px;line-height:1.9}
+.warn b{color:#C0392B}
+.routes{background:#F0F6F4;border-left:4px solid #10B981;border-radius:8px;padding:16px 22px;font-size:15px;line-height:2.0}
+.routes b{color:#1E3A34}
+.pits{background:#FFF7EC;border:1px solid #F6D9A8;border-radius:12px;padding:16px 22px;font-size:15px;line-height:1.95}
+.green{color:#10B981}.amber{color:#B45309}
+.rule{height:1px;background:#E7E7EA;margin:22px 56px 0}
+.foot{padding:16px 56px 40px;font-size:13px;color:#6B7280;line-height:1.9}
+</style></head><body>
+<div class="hero">
+  <div class="kicker">2026-11-11 · 教师数字人微课 · Token Plan 模型应用速查</div>
+  <h1>用已有模型做数字人：能，但别拿视频模型烧长片</h1>
+  <div class="sub">声音复刻 3 秒 / 字级时间戳 / 照片按音频开口 —— 都有；成本按秒算，要混合用</div>
+</div>
+
+<section>
+  <h2>① 模型 → 数字人链路</h2>
+  <div class="map">
+    <b>qwen-audio-3.0-tts-plus</b>3 秒复刻「我的声音」+ 全稿配音（48KHz）<br>
+    <b>qwen-audio-3.0-asr-flash</b>词级毫秒时间戳 → 字幕、动效锚点<br>
+    <b>qwen-audio-3.0-realtime-plus</b>会回答学生提问的互动数字人<br>
+    <b>qwen-image-3.0-pro / wan2.7</b>形象照处理、课件配图、B-roll<br>
+    <b>happyhorse-1.1-i2v / r2v</b>正脸照 → 原生口型同步短片（≤15 秒、9 图锁脸）<br>
+    <b>wan3.0-video（New）</b>≤30 秒、参考音频驱动、首尾帧串长片<br>
+    <b>decision-model-preview</b>口播稿、分镜、教学设计
+  </div>
+
+  <h2>② 成本真相：视频模型贵 70～100 倍</h2>
+  <table class="tbl">
+    <tr><th>方案</th><th>单价</th><th>折合每分钟</th><th>8 分钟</th></tr>
+    <tr><td>蔓藤 AI 数字人视频</td><td>0.5 元/分钟</td><td class="cheap">0.5 元</td><td class="cheap">≈4 元</td></tr>
+    <tr><td>蝉镜基础版 ¥78/月</td><td>≈33 分钟</td><td>≈2.3 元</td><td>≈18 元</td></tr>
+    <tr><td>WPS AI 讲解 PPT</td><td>10 分钟 18 元</td><td>1.8 元</td><td>≈14.4 元</td></tr>
+    <tr><td>wan3.0-video 720P</td><td>0.6 元/秒（折后 0.42）</td><td class="expensive">36 元</td><td class="expensive">≈288 元</td></tr>
+    <tr><td>happyhorse-1.1-i2v 720P</td><td>0.9 元/秒</td><td class="expensive">54 元</td><td class="expensive">≈432 元</td></tr>
+  </table>
+  <div class="warn" style="margin-top:14px">
+    <b>结论</b>：这些视频模型不是「更便宜的蔓藤 AI」，是贵两个数量级的质感工具。只用来做 5～15 秒片头 / 关键概念；整节 8 分钟长口播仍走按分钟计费的专门平台或真人实拍。Token Plan 若按积分扣，先看套餐页的实际扣减规则。
+  </div>
+
+  <h2>③ 推荐：混合链（约 20 元/节，可压到 ≈5 元）</h2>
+  <div class="routes">
+    <b>Token Plan 做便宜又关键的四环</b>：写稿 → 声音复刻配音 → ASR 字级时间戳字幕 → 形象照/配图<br>
+    <b>Token Plan 做 1～2 段 8 秒质感镜头</b>：正脸照 + 台词 / 参考音频，让「我本人」在片头开口<br>
+    <b>长口播主体交给蔓藤 AI</b>（0.5 元/分钟）或真人实拍，最后 video-talkcraft / 剪映合成<br>
+    <b>可替掉</b>：蔓藤声音克隆 1 元/次、语音合成 0.13 元/分、video-talkcraft 的 767MB FireRedASR2 下载
+  </div>
+
+  <h2>④ 六个坑</h2>
+  <div class="pits">
+    1 别用视频模型做整节口播（按秒计费）　2 I2V 只有源图有脸才启用唇形同步<br>
+    3 台词时长要撑满片段，否则后半段闭嘴　4 口型只是草稿，需人工校准；长片分段拼<br>
+    5 wan3.0 首尾帧与参考素材互斥，参考图 ≤10 张、输入视频秒数也计费<br>
+    6 免费额度/折扣口径冲突（10 秒 vs 30 秒免费、控制台写「不支持开启」），以控制台当日为准
+  </div>
+</section>
+
+<div class="rule"></div>
+<div class="foot">
+  验证顺序：控制台查扣减规则 → 3 秒干声跑 TTS 复刻试听 → 正脸照 + 5 秒台词跑 480P 记实际扣减与口型效果。<br>
+  只用本人肖像与声音；发布加「人工智能生成合成」显式标识；竞赛要求本人出镜时不用。<br>
+  价格 2026-11-11 核对，多来源口径有差异，结算以账户控制台为准 · 详见《TokenPlan模型_数字人应用指南》
+</div>
+</body></html>

@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>00 · P3 · 回想+选型</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>你现在是怎么做课件、做微课的？</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>左：找素材 → 自己排版 → 存到文件夹 → 下次再找一遍</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>右 · 用：想直接做出能上课的东西｜别用：只想了解 AI 是什么</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>5 / 34</Text>
+  </Box>
+</Slide>

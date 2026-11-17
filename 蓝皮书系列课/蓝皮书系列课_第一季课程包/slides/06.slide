@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>00 · P4 · 原理+路径</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>先看成片，再决定学哪条路</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>三步：看成片 → 做自测 → 选路径 A / B</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>这门课不按章节讲，按你这一周要交的东西讲</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>6 / 34</Text>
+  </Box>
+</Slide>

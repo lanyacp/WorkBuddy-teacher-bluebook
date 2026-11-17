@@ -1,0 +1,18 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>02 · P4 · 原理+路径</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>先给计划，再让它动手</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>五步：装好 → 建工作区目录 → 提任务 → 二次修改 → 追问</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>唯一指令：把刚才那份改成分栏，其它别动</Text>
+    <Box style={{ background: '#E9EEF1', border: '2px solid #9BB2BF', borderRadius: 10, padding: 18, marginTop: 12 }}>
+      <Text style={{ fontSize: 22, color: '#4A6272', textAlign: 'center', lineHeight: 1.4 }}>【待补｜S-02-02】 「工作区目录已建好」的目录树截图</Text>
+    </Box>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>22 / 34</Text>
+  </Box>
+</Slide>

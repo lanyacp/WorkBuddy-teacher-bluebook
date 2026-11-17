@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>02 · P3 · 回想+选型</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>你是不是一次把要求全说完？</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>一口气说完 → 结果不对 → 重说一遍 → 越改越乱</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>右 · 用：第一次上手、想让修改只改一处｜别用：只临时问一句</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>21 / 34</Text>
+  </Box>
+</Slide>

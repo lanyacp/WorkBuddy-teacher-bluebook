@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>路径 A 前四节 · 课件小样（留白版）</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#F2F6F9;color:#1B2A38}
+  body.single{height:1500px;overflow:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px 30px}
+  header{background:linear-gradient(120deg,#12304A,#1B4A6B 62%,#1E9E8A 140%);color:#fff;margin:0 -24px 20px;padding:24px 40px}
+  .k{font-size:14px;letter-spacing:2px;color:#8FE0D2;font-weight:700}
+  header h1{font-size:30px;margin-top:6px;font-weight:800}
+  header p{font-size:15px;color:#CFE4EA;margin-top:6px}
+  .legend{display:flex;gap:16px;margin-top:12px;font-size:13px;color:#CFE4EA;align-items:center;flex-wrap:wrap}
+  .lg{display:inline-block;width:26px;height:14px;background:#E9EEF1;border:1.5px dashed #9BB2BF;border-radius:3px;vertical-align:middle;margin-right:5px}
+  .lg.p{background:#E8833A;border-color:#E8833A}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .item{background:#fff;border:1px solid #DCE8ED;border-radius:10px;padding:9px}
+  .meta{font-size:12px;color:#6B8090;margin-bottom:7px;font-weight:700}
+  .meta b{color:#12304A}
+  .canvas{width:100%;aspect-ratio:16/9;border-radius:6px;padding:15px;overflow:hidden;display:flex;flex-direction:column}
+  .canvas.light{background:#F7FAFB;border:1px solid #E3EBEF}
+  .canvas.dark{background:linear-gradient(135deg,#12304A,#1B4A6B);color:#fff}
+  .canvas.pause{background:linear-gradient(135deg,#D96F2B,#E8833A);color:#fff}
+  .h{font-size:20px;font-weight:800;line-height:1.3}
+  .l{font-size:13px;line-height:1.4;margin-top:6px;color:inherit;opacity:.85}
+  .blank{margin-top:8px;background:#E9EEF1;border:1.5px dashed #9BB2BF;border-radius:5px;color:#4A6272;font-size:12px;line-height:1.35;text-align:center;padding:6px 8px}
+  .dark .blank,.pause .blank{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.7);color:#fff}
+  .note{margin-top:14px;font-size:13px;color:#6B8090;border-top:1px solid #D5E2E8;padding-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="k">SEASON 1 · PATH A · FIRST 4 SESSIONS · SLIDE PREVIEW</div>
+    <h1 id="ttl">路径 A 前四节 · 课件小样</h1>
+    <p id="sub">00 / 01 / 02 / 03 共 32 页 · 缩略示意，正式页标题 ≥56px、正文 ≥28px</p>
+    <div class="legend">
+      <span><i class="lg"></i>灰底虚线框 ＝ 等你补的视频或截图</span>
+      <span><i class="lg p"></i>橙底 ＝ P6 暂停跟做页</span>
+      <span>深蓝 ＝ P1 封面 / P8 红线页</span>
+    </div>
+  </header>
+  <div class="grid" id="grid"></div>
+  <div class="note" id="note">留白编号与规格见《路径A_前三节_待补素材清单.md》；逐页口播与时间轴见《路径A_前三节_录制脚本.md》。03 为 2026-11-12 补入。</div>
+</div>
+
+<script>
+const S = [
+ {n:"00",p:"P1",r:"封面",t:"dark",title:"先看成片，再选路线",lines:["这讲解决你哪个麻烦：值不值得花时间、该学哪一段"],b:[]},
+ {n:"00",p:"P2",r:"成片先行",title:"看完这四个，你就知道自己要不要学",lines:["四个成片各 15 秒，中间只说一句串词"],b:[{id:"V-00-01～04",d:"4 段成片录屏｜各 15s"}]},
+ {n:"00",p:"P3",r:"回想+选型",title:"你现在是怎么做课件、做微课的？",lines:["左：找素材 → 自己排版 → 存文件夹","右：用 / 别用"],b:[]},
+ {n:"00",p:"P4",r:"原理+路径",title:"先看成片，再决定学哪条路",lines:["看成片 → 做自测 → 选路径","右半页嵌【已有】课程地图.png"],b:[]},
+ {n:"00",p:"P5",r:"教师演示",title:"这四样，分别在哪一讲做出来",lines:["14 希沃 / 16 微课 / 18 VR / 15 3D"],b:[{id:"S-00-01",d:"成果墙 2×2 拼图（可由 4 段首帧截）"}]},
+ {n:"00",p:"P6",r:"路线自测",title:"先花 90 秒，答三题",lines:["① 任课教师还是组长 ② 先解决什么 ③ 每周几个 20 分钟","S 类跳过动手页"],b:[]},
+ {n:"00",p:"P7",r:"交付验收",title:"交付：课程地图 + 路线自测表",lines:["验收 3 条｜踩坑 ≤3 条｜允许只看不做"],b:[]},
+ {n:"00",p:"P8",r:"红线+回想",t:"dark",title:"别把学生数据粘进对话框",lines:["下周：把课程地图贴到备课本第一页｜预告 01"],b:[]},
+
+ {n:"01",p:"P1",r:"封面",t:"dark",title:"对话框，和工作区差在哪",lines:["麻烦：用了半年 AI，教案还是自己排版","DeepSeek 网页版等＝你平时那个对话框"],b:[]},
+ {n:"01",p:"P2",r:"成片先行",title:"同一个模型、同一个任务：左边一段话，右边一个文件夹",lines:["模型相同、任务相同，只是用法不同"],b:[{id:"V-01-01",d:"20s 分屏录屏｜左右模型与任务必须一致，不点名产品"}]},
+ {n:"01",p:"P3",r:"回想+选型",title:"你在对话框里让 AI 答完，后面还自己干了哪些活？",lines:["复制 / 排版 / 找图 / 改名 / 存文件夹","右：用 / 别用"],b:[]},
+ {n:"01",p:"P4",r:"原理+路径",title:"对话框给答案，工作区给成品",lines:["提任务 → 先给计划 → 出成品落盘","指令：先给计划，别直接动手"],b:[{id:"S-01-01",d:"自制两栏对照表｜产物落在哪 / 能不能接着改 / 能否复用"}]},
+ {n:"01",p:"P5",r:"教师演示",title:"对话框问一次 → 工作区下一次任务",lines:["同一个任务、两种用法｜一镜到底 90 秒"],b:[{id:"V-01-02",d:"90s 录屏"},{id:"S-01-02",d:"工作区产物树截图"}]},
+ {n:"01",p:"P6",r:"一句话自测",title:"用你自己的话，说清差别",lines:["不许用「更智能」「更好用」，也不许说某个产品不行","S 类跳过动手页"],b:[]},
+ {n:"01",p:"P7",r:"交付验收",title:"交付：一句话差别 + 第一个落盘任务",lines:["验收 3 条｜差别不在模型更聪明，在产物落在哪"],b:[]},
+ {n:"01",p:"P8",r:"红线+回想",t:"dark",title:"别把学生数据粘进对话框",lines:["回想：上一讲的课程地图放在哪｜预告 02"],b:[]},
+
+ {n:"02",p:"P1",r:"封面",t:"dark",title:"装好、连上，跑通第一个任务",lines:["麻烦：做出来的东西转头就找不到"],b:[]},
+ {n:"02",p:"P2",r:"成片先行",title:"做完你会得到一个自己的文件夹",lines:["目录树 + 一份已保存的成品"],b:[{id:"S-02-01",d:"成片截图｜用示例教案，不出现真实姓名成绩"}]},
+ {n:"02",p:"P3",r:"回想+选型",title:"你是不是一次把要求全说完？",lines:["左：一口气说完 → 重说 → 越改越乱","右：用 / 别用"],b:[]},
+ {n:"02",p:"P4",r:"原理+路径",title:"先给计划，再让它动手",lines:["五步｜指令：把刚才那份改成分栏，其它别动"],b:[{id:"S-02-02",d:"「工作区目录已建好」的目录树截图"}]},
+ {n:"02",p:"P5",r:"教师演示",title:"教师演示：三层对话",lines:["一镜到底 3 分钟｜≤3 张截屏位"],b:[{id:"V-02-01",d:"3min 录屏（计划 / 落盘 / 其它别动）"},{id:"S-02-03 / 04",d:"计划屏 + 二次修改前后对照"}]},
+ {n:"02",p:"P6",r:"暂停跟做",t:"pause",title:"现在暂停，自己动手",lines:["① 建文件夹 ② 提第一个任务 ③ 说一次「其它别动」","卡住三步回退 + 允许跳过｜做完标志：文件能双击打开","10:00–20:00 静音定格，不加新信息"],b:[]},
+ {n:"02",p:"P7",r:"交付验收",title:"交付：工作区目录 + 一次三层对话",lines:["验收 3 条｜踩坑 ≤3 条"],b:[{id:"S-02-05",d:"学员做完的对照样张（可选）"}]},
+ {n:"02",p:"P8",r:"红线+回想",t:"dark",title:"动手前先复制一份副本",lines:["补一句：做错了不会毁文件｜预告 03"],b:[]},
+
+ {n:"03",p:"P1",r:"封面",t:"dark",title:"会下指令，更要会装 Skill",lines:["麻烦：同一段要求每次重说，或装了一堆总选错"],b:[]},
+ {n:"03",p:"P2",r:"成片先行",title:"装一次，以后这句话就不用再打一遍",lines:["一个教学 Skill 跑出来的导学案"],b:[{id:"S-03-01",d:"成品截图｜要能看出是一份文件，不是一段对话"}]},
+ {n:"03",p:"P3",r:"回想+选型",title:"同一段要求，你是不是每次都重新说一遍？",lines:["左：复制提示词 / 换个班又重说 / 存哪忘了","右：用 / 别用"],b:[]},
+ {n:"03",p:"P4",r:"原理+路径",title:"重复三次的流程才值得装成技能",lines:["五步｜只装 1 个，装完立刻跑一遍"],b:[]},
+ {n:"03",p:"P5",r:"教师演示",title:"找入口 → 搜 → 看说明 → 装 1 个 → 跑一遍",lines:["一镜到底 90 秒｜看说明只管「它管哪一段」"],b:[{id:"V-03-01",d:"90s 录屏"},{id:"S-03-02 / 03",d:"搜索那一屏 +「已启用」那一屏"}]},
+ {n:"03",p:"P6",r:"暂停跟做",t:"pause",title:"现在暂停，自己动手",lines:["① 搜一个本学科 Skill ② 只装 1 个 ③ 用示例教案跑一遍","卡住三步回退 + 允许跳过｜做完标志：说得出管哪一段 + 有文件","12:00–22:00 静音定格，不加新信息"],b:[]},
+ {n:"03",p:"P7",r:"交付验收",title:"交付：装好并跑通的 1 个 Skill + 一份文件",lines:["验收 3 条｜踩坑 ≤3 条｜29 个 Skill 全表放讲义"],b:[{id:"S-03-04",d:"学员做完的对照样张（可选）"}]},
+ {n:"03",p:"P8",r:"红线+回想",t:"dark",title:"Skill 输出也要人工核验",lines:["下周：生成材料后自己先通读一遍｜预告 04"],b:[]}
+];
+
+const ALL = ["00","01","02","03"];
+const hash = location.hash.replace("#","");
+const list = ALL.includes(hash) ? S.filter(x=>x.n===hash) : S;
+if(ALL.includes(hash)){
+  document.body.classList.add("single");
+  document.getElementById("ttl").textContent = `第 ${hash} 讲 · 8 页课件小样`;
+  document.getElementById("sub").textContent = "路径 A 前四节之一 · 缩略示意，正式页标题 ≥56px、正文 ≥28px";
+}
+const grid = document.getElementById("grid");
+list.forEach(s=>{
+  const item=document.createElement("div"); item.className="item";
+  const tone=s.t||"light";
+  item.innerHTML = `<div class="meta"><b>${s.n} · ${s.p}</b>　${s.r}</div>`+
+    `<div class="canvas ${tone}"><div class="h">${s.title}</div>`+
+    s.lines.map(l=>`<div class="l">${l}</div>`).join("")+
+    s.b.map(x=>`<div class="blank">【待补｜${x.id}】<br>${x.d}</div>`).join("")+
+    `</div>`;
+  grid.appendChild(item);
+});
+</script>
+</body>
+</html>

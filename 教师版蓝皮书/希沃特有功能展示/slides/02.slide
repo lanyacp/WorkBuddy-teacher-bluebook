@@ -1,0 +1,46 @@
+<Slide style={{
+    width: 1280, height: 720,
+    padding: 60,
+    background: '#FFF7ED',
+    fontFamily: 'Microsoft YaHei, Arial',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    <Box style={{ flexDirection: 'column' }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.2 }}>值钱的不是排版，是学生能上手动</Text>
+        <Box style={{ width: '100%', height: 1, background: '#EA580C', marginTop: 16 }} />
+    </Box>
+    <Box style={{ flexDirection: 'row', gap: 24, marginTop: 24, height: 420 }}>
+        <Box style={{ width: 640, background: '#FFFFFF', borderRadius: 8, border: '1px solid #E7E5E4', padding: 28, flexDirection: 'column' }}>
+            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#78716C', lineHeight: 1.3 }}>普通 PPT 技能</Text>
+            <Box style={{ width: '100%', height: 1, background: '#E7E5E4', marginTop: 16, marginBottom: 20 }} />
+            <Box style={{ flexDirection: 'column', gap: 18 }}>
+                <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>文字变成图片</span>　导出的每页是一张图，回去改不了字</Text>
+                <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>只能顺序翻页</span>　课堂上的动作只有「下一页」</Text>
+                <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>互动靠口头问</span>　学生有没有懂，全看举手</Text>
+                <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>判分靠老师</span>　练习结果不能即时反馈</Text>
+            </Box>
+            <Box style={{ width: '100%', height: 1, background: '#E7E5E4', marginTop: 24, marginBottom: 16 }} />
+            <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5 }}>做得再漂亮，也是一份「给老师看」的演示稿。</Text>
+        </Box>
+        <Box style={{ width: 496, background: '#C2410C', borderRadius: 8, padding: 28, flexDirection: 'column' }}>
+            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#FFFFFF', lineHeight: 1.3 }}>希沃原生组件</Text>
+            <Box style={{ width: '100%', height: 1, background: '#FDBA74', marginTop: 16, marginBottom: 20 }} />
+            <Box style={{ flexDirection: 'column', gap: 18 }}>
+                <Text style={{ fontSize: 18, color: '#FFFFFF', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>文字全部可编辑</span>　课堂现场改一个字都行</Text>
+                <Text style={{ fontSize: 18, color: '#FFFFFF', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>笔顺可以播放</span>　生字卡自带笔画演示</Text>
+                <Text style={{ fontSize: 18, color: '#FFFFFF', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>学生上台拖拽</span>　分类、配对、脑图能展开</Text>
+                <Text style={{ fontSize: 18, color: '#FFFFFF', lineHeight: 1.5 }}><span style={{ fontWeight: 'bold' }}>即时判分</span>　PK 小游戏当场出结果</Text>
+            </Box>
+            <Box style={{ width: '100%', height: 1, background: '#FDBA74', marginTop: 24, marginBottom: 16 }} />
+            <Text style={{ fontSize: 18, color: '#FFEDD5', lineHeight: 1.5 }}>这些组件，只有在希沃客户端里才加得进去。</Text>
+        </Box>
+    </Box>
+    <Box style={{ background: '#FDBA74', borderRadius: 8, padding: 16, marginTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.5 }}>本地 MCP 直连客户端　→　做出来的不是 PPT，是 .enbx 课件</Text>
+    </Box>
+    <Box style={{ position: 'absolute', top: 670, left: 60, width: 1160, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>希沃白板 · 特有功能</Text>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>02</Text>
+    </Box>
+</Slide>

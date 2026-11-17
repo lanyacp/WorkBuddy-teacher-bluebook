@@ -1,0 +1,57 @@
+<Slide style={{
+    width: 1280, height: 720,
+    padding: 60,
+    background: '#FFF7ED',
+    fontFamily: 'Microsoft YaHei, Arial',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    <Box style={{ flexDirection: 'column' }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.2 }}>三类原生组件，撑起一节课的互动</Text>
+        <Box style={{ width: '100%', height: 1, background: '#EA580C', marginTop: 16 }} />
+    </Box>
+    <Box style={{ flexDirection: 'row', gap: 32, marginTop: 24, height: 424 }}>
+        <Box style={{ width: 300, flexDirection: 'column', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 120, fontWeight: 'bold', color: '#0EA5E9', lineHeight: 1.1 }}>3</Text>
+            <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#1C1917', marginTop: 8 }}>类原生组件</Text>
+            <Text style={{ fontSize: 18, color: '#78716C', marginTop: 20, lineHeight: 1.5 }}>只有希沃客户端里<br />才加得进去</Text>
+            <Box style={{ width: 160, height: 4, background: '#FDBA74', borderRadius: 2, marginTop: 28 }} />
+        </Box>
+        <Box style={{ width: 828, flexDirection: 'column' }}>
+            <Box style={{ flexDirection: 'row', gap: 20, alignItems: 'center', padding: 26, borderBottom: '1px solid #E7E5E4' }}>
+                <Box style={{ width: 48, height: 48, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFFFFF' }}>01</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column', width: 700 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.3 }}>汉字卡</Text>
+                    <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5, marginTop: 6 }}>生字笔顺、部首、笔画数，点一下就播</Text>
+                </Box>
+            </Box>
+            <Box style={{ flexDirection: 'row', gap: 20, alignItems: 'center', padding: 26, borderBottom: '1px solid #E7E5E4' }}>
+                <Box style={{ width: 48, height: 48, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFFFFF' }}>02</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column', width: 700 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.3 }}>可交互思维导图</Text>
+                    <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5, marginTop: 6 }}>写景顺序、层次关系，学生自己一级级展开</Text>
+                </Box>
+            </Box>
+            <Box style={{ flexDirection: 'row', gap: 20, alignItems: 'center', padding: 26 }}>
+                <Box style={{ width: 48, height: 48, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#FFFFFF' }}>03</Text>
+                </Box>
+                <Box style={{ flexDirection: 'column', width: 700 }}>
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.3 }}>课堂互动游戏</Text>
+                    <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5, marginTop: 6 }}>判断、选择、分类、配对，当场判分</Text>
+                </Box>
+            </Box>
+        </Box>
+    </Box>
+    <Box style={{ background: '#FDBA74', borderRadius: 8, padding: 16, marginTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.5 }}>提示词里要点名组件，只说「做得互动一点」等于没说</Text>
+    </Box>
+    <Box style={{ position: 'absolute', top: 670, left: 60, width: 1160, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>希沃白板 · 特有功能</Text>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>03</Text>
+    </Box>
+</Slide>

@@ -1,0 +1,53 @@
+<Slide style={{
+    width: 1280, height: 720,
+    padding: 60,
+    background: '#FFF7ED',
+    fontFamily: 'Microsoft YaHei, Arial',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    <Box style={{ flexDirection: 'column' }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.2 }}>思维导图：写景顺序让学生自己展开</Text>
+        <Box style={{ width: '100%', height: 1, background: '#EA580C', marginTop: 16 }} />
+    </Box>
+    <Box style={{ width: '100%', height: 280, background: '#FFFFFF', borderRadius: 8, border: '1px solid #E7E5E4', marginTop: 24, position: 'relative' }}>
+        <Box style={{ position: 'absolute', left: 40, top: 100, width: 180, height: 80, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 28, fontWeight: 'bold', color: '#FFFFFF' }}>三峡</Text>
+        </Box>
+        <svg width={320} height={240} viewBox='0 0 320 240' style={{ position: 'absolute', left: 220, top: 20 }}>
+            <path d='M0 120 C 160 120, 160 40, 320 40' fill='none' stroke='#FDBA74' strokeWidth='3' />
+            <path d='M0 120 L 320 120' fill='none' stroke='#FDBA74' strokeWidth='3' />
+            <path d='M0 120 C 160 120, 160 200, 320 200' fill='none' stroke='#FDBA74' strokeWidth='3' />
+        </svg>
+        <Box style={{ position: 'absolute', left: 540, top: 18, width: 340, height: 64, borderRadius: 8, background: '#FFF7ED', border: '1px solid #FDBA74', justifyContent: 'center', padding: 16 }}>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917' }}>山 · 连绵高峻</Text>
+        </Box>
+        <Box style={{ position: 'absolute', left: 540, top: 108, width: 340, height: 64, borderRadius: 8, background: '#FFF7ED', border: '1px solid #FDBA74', justifyContent: 'center', padding: 16 }}>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917' }}>水 · 四季不同</Text>
+        </Box>
+        <Box style={{ position: 'absolute', left: 540, top: 198, width: 340, height: 64, borderRadius: 8, background: '#FFF7ED', border: '1px solid #FDBA74', justifyContent: 'center', padding: 16 }}>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917' }}>景 · 情景交融</Text>
+        </Box>
+        <Box style={{ position: 'absolute', left: 920, top: 100, width: 190, flexDirection: 'column', gap: 8 }}>
+            <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5 }}>每个节点都能<br />在课堂上点开 / 收起</Text>
+            <Box style={{ width: 100, height: 3, background: '#0EA5E9', borderRadius: 2, marginTop: 8 }} />
+        </Box>
+    </Box>
+    <Box style={{ flexDirection: 'row', gap: 24, marginTop: 20, height: 124 }}>
+        <Box style={{ width: 620, flexDirection: 'column', gap: 10 }}>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917' }}>怎么传进去</Text>
+            <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5 }}>用多级 Markdown 列表传入，节点写短、层级别太深。节点超过 4 个字会被定宽节点挤压，校验器会报警告。</Text>
+        </Box>
+        <Box style={{ width: 516, background: '#FFFFFF', border: '1px solid #FDBA74', borderRadius: 8, padding: 18, flexDirection: 'column', gap: 8 }}>
+            <Text style={{ fontSize: 18, color: '#78716C' }}>提示词照抄</Text>
+            <Text style={{ fontSize: 18, color: '#C2410C', lineHeight: 1.5 }}>用思维导图梳理《三峡》写景顺序，节点别超过 4 个字</Text>
+        </Box>
+    </Box>
+    <Box style={{ background: '#FDBA74', borderRadius: 8, padding: 16, marginTop: 16, flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.5 }}>脑图不是把板书搬上屏，是让学生点开一级级看结构</Text>
+    </Box>
+    <Box style={{ position: 'absolute', top: 670, left: 60, width: 1160, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>希沃白板 · 特有功能</Text>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>05</Text>
+    </Box>
+</Slide>

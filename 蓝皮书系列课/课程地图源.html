@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>WorkBuddy 教师实战蓝皮书 · 系列课（第一季）课程地图 v2</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1900px;overflow:hidden}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#F2F6F9;color:#1B2A38}
+  .page{width:1080px;height:1900px;padding:0 48px;display:flex;flex-direction:column}
+
+  .hd{height:180px;margin:0 -48px 0;background:linear-gradient(120deg,#12304A 0%,#1B4A6B 62%,#1E9E8A 140%);padding:28px 48px 0;color:#fff;position:relative;flex:none}
+  .hd .kicker{font-size:20px;letter-spacing:3px;color:#8FE0D2;font-weight:700}
+  .hd h1{font-size:38px;line-height:1.25;margin-top:10px;font-weight:800;max-width:565px;white-space:nowrap}
+  .hd .sub{font-size:21px;color:#CFE4EA;margin-top:8px}
+  .kpis{position:absolute;right:48px;top:44px;display:flex;gap:14px}
+  .kpi{width:130px;height:92px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.22);border-radius:14px;text-align:center;padding-top:12px}
+  .kpi b{display:block;font-size:38px;line-height:1.1;color:#fff}
+  .kpi span{display:block;font-size:16px;color:#BFE3DC;margin-top:5px}
+
+  .st{font-size:21px;font-weight:800;color:#12304A;margin:20px 0 10px;display:flex;align-items:center;gap:10px;flex:none}
+  .st::before{content:"";width:6px;height:22px;background:#1E9E8A;border-radius:3px}
+  .st em{font-style:normal;font-size:16px;font-weight:400;color:#6B8090;margin-left:auto}
+
+  .mods{flex:none;display:grid;grid-template-rows:repeat(6,132px);gap:8px}
+  .mod{background:#fff;border-radius:14px;border-left:8px solid #1E9E8A;box-shadow:0 3px 12px rgba(18,48,74,.06);padding:14px 20px;display:grid;grid-template-columns:140px 1fr 168px;align-items:center;gap:14px;position:relative}
+  .mod.m0{border-left-color:#6C8BA4}
+  .mod.m5{border-left-color:#E8833A}
+  .mod.m4{border-left-color:#12304A;background:#EAF3F4}
+  .mod .tag{font-size:30px;font-weight:800;color:#12304A;line-height:1.1;white-space:nowrap}
+  .mod .tag small{display:block;font-size:13px;font-weight:600;color:#6B8090;margin-top:6px;white-space:nowrap}
+  .mod h2{font-size:25px;font-weight:800;color:#12304A;margin-bottom:6px}
+  .mod .desc{font-size:17px;color:#5A7180;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mod .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  .chip{font-size:14px;color:#12776A;background:#E4F4F0;border-radius:5px;padding:2px 8px;white-space:nowrap}
+  .mod .side{text-align:right;border-left:1px dashed #D5E2E8;padding-left:14px}
+  .mod .side b{font-size:27px;color:#12304A;white-space:nowrap}
+  .mod .side span{display:block;font-size:16px;color:#6B8090;margin-top:4px;white-space:nowrap}
+  .badge{position:absolute;right:20px;top:12px;font-size:13px;font-weight:700;color:#fff;background:#E8833A;border-radius:4px;padding:2px 8px}
+
+  .types{flex:none;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;height:126px}
+  .ty{background:#fff;border:1px solid #DCE8ED;border-radius:12px;padding:13px 16px;position:relative}
+  .ty.s{border-top:5px solid #6C8BA4}
+  .ty.r{border-top:5px solid #1E9E8A}
+  .ty.l{border-top:5px solid #E8833A}
+  .ty b{font-size:21px;color:#12304A}
+  .ty .n{position:absolute;right:14px;top:12px;font-size:15px;color:#6B8090}
+  .ty p{font-size:16px;color:#5A7180;margin-top:7px;line-height:1.5}
+  .ty .hi{color:#12776A;font-weight:700}
+
+  .paths{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;height:150px}
+  .path{background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #DCE8ED}
+  .path .pname{font-size:19px;font-weight:800;color:#12304A;margin-bottom:10px}
+  .path .pname i{font-style:normal;font-size:14px;color:#fff;background:#1E9E8A;border-radius:4px;padding:2px 7px;margin-right:8px}
+  .path.b .pname i{background:#E8833A}
+  .flow{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
+  .node{font-size:16px;font-weight:700;color:#12304A;background:#EAF3F4;border-radius:6px;padding:6px 9px;white-space:nowrap}
+  .node.hi{background:#12304A;color:#fff}
+  .arw{font-size:17px;color:#1E9E8A;font-weight:800}
+  .pmeta{font-size:15px;color:#6B8090;margin-top:10px;white-space:nowrap}
+
+  .sk{flex:none;margin-top:16px;background:#fff;border-radius:14px;padding:14px 18px;height:138px;border:1px solid #DCE8ED}
+  .sk .sktitle{font-size:18px;font-weight:800;color:#12304A;margin-bottom:10px}
+  .sk .sktitle span{font-weight:400;font-size:15px;color:#6B8090;margin-left:10px}
+  .pages{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+  .pg{background:#EAF3F4;border-radius:7px;height:64px;text-align:center;padding-top:8px}
+  .pg b{display:block;font-size:19px;color:#12304A}
+  .pg span{display:block;font-size:14px;color:#5A7180;margin-top:4px}
+  .pg.dark{background:#12304A}
+  .pg.dark b,.pg.dark span{color:#fff}
+  .pg.acc{background:#E4F4F0}
+  .pg.acc b{color:#12776A}
+  .pg.pause{background:#E8833A}
+  .pg.pause b,.pg.pause span{color:#fff}
+
+  .lines{flex:none;margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;height:82px}
+  .line{background:#12304A;color:#fff;border-radius:12px;padding:14px 16px}
+  .line b{display:block;font-size:17px;color:#8FE0D2;margin-bottom:5px}
+  .line span{font-size:16px;line-height:1.4}
+  .ft{flex:none;margin-top:18px;height:44px;display:flex;align-items:center;justify-content:space-between;font-size:15px;color:#4A6272;border-top:1px solid #D5E2E8}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hd">
+    <div class="kicker">WORK BUDDY · TEACHER SERIES / SEASON 1 · V2</div>
+    <h1>教师实战蓝皮书 · 系列课地图</h1>
+    <div class="sub">26 讲 · 时长给跟做不给讲解 · 管理轨已并入第一季</div>
+    <div class="kpis">
+      <div class="kpi"><b>26</b><span>讲</span></div>
+      <div class="kpi"><b>11h</b><span>含跟做</span></div>
+      <div class="kpi"><b>6h</b><span>讲解净时长</span></div>
+    </div>
+  </div>
+
+  <div class="st">六个模块 · 连播顺序<em>M5 为分轨模块，按观看路径插入</em></div>
+  <div class="mods">
+
+    <div class="mod m0">
+      <div class="tag">M0<small>先导 · 00</small></div>
+      <div><h2>先看成片，再选路线</h2><div class="desc">四个成片各 15 秒，不从「本书怎么用」开场</div>
+        <div class="chips"><span class="chip">课程地图</span><span class="chip">路线自测</span></div></div>
+      <div class="side"><b>1 讲</b><span>10 min</span></div>
+    </div>
+
+    <div class="mod">
+      <div class="tag">M1<small>地基 · 01–04</small></div>
+      <div><h2>把工具用起来</h2><div class="desc">第 2–6 章 · 对话框 vs 工作区／Skill／通用文件助手</div>
+        <div class="chips"><span class="chip">工作区目录</span><span class="chip">教学 Skill</span><span class="chip">教案→导学案</span></div></div>
+      <div class="side"><b>4 讲</b><span>92 min</span></div>
+    </div>
+
+    <div class="mod">
+      <div class="tag">M2<small>教学流程 · 05–12</small></div>
+      <div><h2>跑通一周备课闭环</h2><div class="desc">第 7–16 章 · 按「一周」串，不按章号；13/14/15 做学科三选一</div>
+        <div class="chips"><span class="chip">教学设计</span><span class="chip">8 页课件</span><span class="chip">A/B/C 作业</span><span class="chip">卷+细目表</span><span class="chip">批改复核</span><span class="chip">讲评 HTML</span></div></div>
+      <div class="side"><b>8 讲</b><span>190 min</span></div>
+    </div>
+
+    <div class="mod">
+      <div class="tag">M3<small>高光专题 · 13–18</small></div>
+      <div><h2>做出让人记住的课件</h2><div class="desc">专题 09/11/12/13/14/15 · 各讲独立；专题 16 归第二季</div>
+        <div class="chips"><span class="chip">.enbx</span><span class="chip">59s MP4</span><span class="chip">GLB</span><span class="chip">单文件网页</span><span class="chip">VR 链接</span></div></div>
+      <div class="side"><b>6 讲</b><span>212 min</span></div>
+    </div>
+
+    <div class="mod m5">
+      <div class="badge">分轨模块</div>
+      <div class="tag">M5<small>管理轨 · 19–24</small></div>
+      <div><h2>从一个人到一间教研组</h2><div class="desc">第 17–22 章 · 面向教研组长／校长，本期新增进第一季</div>
+        <div class="chips"><span class="chip">共用清单</span><span class="chip">6 项观察表</span><span class="chip">90min 培训脚本</span><span class="chip">行政四件套</span></div></div>
+      <div class="side"><b>6 讲</b><span>144 min</span></div>
+    </div>
+
+    <div class="mod m4">
+      <div class="tag">M4<small>收尾 · 25</small></div>
+      <div><h2>把红线带走</h2><div class="desc">附录 C + 全书三条底线 + 30 天练习计划</div>
+        <div class="chips"><span class="chip">个人红线清单</span><span class="chip">30 天计划</span><span class="chip">能力自测</span></div></div>
+      <div class="side"><b>1 讲</b><span>12 min</span></div>
+    </div>
+  </div>
+
+  <div class="st">三类讲次 · 时长分层<em>放宽的部分全部给演示与学员跟做，讲解净时长不增</em></div>
+  <div class="types">
+    <div class="ty s"><b>S 概念 / 收尾</b><span class="n">3 讲</span><p>讲解 <span class="hi">8–12′</span> · 无跟做<br>单讲 10–14′，只建立一个判断</p></div>
+    <div class="ty r"><b>R 单成品跟做</b><span class="n">15 讲</span><p>讲解 <span class="hi">12–13′</span> + 跟做 10–14′<br>单讲 20–26′ · 1 个暂停点</p></div>
+    <div class="ty l"><b>L 双段实操</b><span class="n">8 讲</span><p>讲解 <span class="hi">16–18′</span>（分 2 段）+ 跟做 16–22′<br>单讲 32–40′ · 2 个暂停点</p></div>
+  </div>
+
+  <div class="st">两条观看路径<em>只看不做的观摩路径不产出成品</em></div>
+  <div class="paths">
+    <div class="path">
+      <div class="pname"><i>路径 A</i>一线教师 · 跳过 M5</div>
+      <div class="flow"><span class="node hi">00</span><span class="arw">→</span><span class="node">01–04 地基</span><span class="arw">→</span><span class="node">05–12 闭环</span><span class="arw">→</span><span class="node">13–18 专题</span><span class="arw">→</span><span class="node hi">25</span></div>
+      <div class="pmeta">20 讲 · 含跟做 8.6 h · 讲解净时长 ≈4.6 h</div>
+    </div>
+    <div class="path b">
+      <div class="pname"><i>路径 B</i>教研组长 / 校长 · 跳过 M2/M3 细节</div>
+      <div class="flow"><span class="node hi">00</span><span class="arw">→</span><span class="node">01–04 地基</span><span class="arw">→</span><span class="node">19–24 管理轨</span><span class="arw">→</span><span class="node hi">25</span></div>
+      <div class="pmeta">12 讲 · 含跟做 4.3 h · 讲解净时长 ≈2.4 h</div>
+    </div>
+  </div>
+
+  <div class="sk">
+    <div class="sktitle">每讲固定 8 页课件骨架<span>页数不变、信息减半；P6 改成「暂停跟做」</span></div>
+    <div class="pages">
+      <div class="pg dark"><b>P1</b><span>解决啥麻烦</span></div>
+      <div class="pg"><b>P2</b><span>成片先行</span></div>
+      <div class="pg"><b>P3</b><span>回想+选型</span></div>
+      <div class="pg acc"><b>P4</b><span>一句原理</span></div>
+      <div class="pg"><b>P5</b><span>教师演示</span></div>
+      <div class="pg pause"><b>P6</b><span>暂停跟做</span></div>
+      <div class="pg acc"><b>P7</b><span>交付验收</span></div>
+      <div class="pg dark"><b>P8</b><span>红线回想</span></div>
+    </div>
+  </div>
+
+  <div class="lines">
+    <div class="line"><b>底线 ①</b><span>学生数据不出本机</span></div>
+    <div class="line"><b>底线 ②</b><span>需要判断的位置，必须留给人</span></div>
+    <div class="line"><b>底线 ③</b><span>效果数据不挪用，在自己班里验证</span></div>
+  </div>
+
+  <div class="ft"><span>2026-11-12 · v2 成人学习版 · 26 章 + 8 专题 + 附录 A–E · 144 张配图</span><span>工具负责「量」，教师负责「读懂学生」</span></div>
+</div>
+</body>
+</html>

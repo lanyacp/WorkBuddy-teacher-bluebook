@@ -1,0 +1,30 @@
+<Slide style={{
+    width: 1280, height: 720,
+    padding: 60,
+    background: '#FFF7ED',
+    fontFamily: 'Microsoft YaHei, Arial',
+    position: 'relative',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+}}>
+    <Box style={{ position: 'absolute', top: 0, right: 0, width: 300, height: 720, background: '#EA580C', borderTopLeftRadius: 16, borderBottomLeftRadius: 16, justifyContent: 'center', alignItems: 'center' }}>
+        <Box style={{ width: 190, height: 190, background: '#FFFFFF', borderRadius: 8, border: '2px solid #FDBA74', justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 96, fontWeight: 'bold', color: '#C2410C', textAlign: 'center' }}>峡</Text>
+        </Box>
+        <Box style={{ flexDirection: 'row', gap: 12, marginTop: 28 }}>
+            <Box style={{ width: 12, height: 12, borderRadius: 6, background: '#FFFFFF' }} />
+            <Box style={{ width: 12, height: 12, borderRadius: 6, background: '#FDBA74' }} />
+            <Box style={{ width: 12, height: 12, borderRadius: 6, background: '#FDBA74' }} />
+        </Box>
+    </Box>
+    <Box style={{ width: 850, flexDirection: 'column', marginTop: 60 }}>
+        <Text style={{ fontSize: 64, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.2 }}>
+            用 WorkBuddy 直接做<br />希沃白板课件
+        </Text>
+        <Box style={{ width: 560, height: 1, background: '#EA580C', marginTop: 32 }} />
+        <Text style={{ fontSize: 24, color: '#1C1917', lineHeight: 1.5, marginTop: 32 }}>
+            汉字卡 · 思维导图 · 课堂互动游戏<br />让课件从「只能翻页」变成「学生能上手动」
+        </Text>
+        <Text style={{ fontSize: 16, color: '#78716C', marginTop: 76 }}>WorkBuddy 教师实战蓝皮书　|　专题教程　|　2026 年 11 月</Text>
+    </Box>
+</Slide>

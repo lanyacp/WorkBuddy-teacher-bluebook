@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#12304A', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#8FE0D2' }}>00 · P8 · 红线+回想</Text>
+    <Text style={{ fontSize: 17, color: '#CFE4EA' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#FFFFFF', lineHeight: 1.25 }}>别把学生数据粘进对话框</Text>
+    <Text style={{ fontSize: 27, color: '#CFE4EA', lineHeight: 1.45 }}>下周在哪用：把课程地图贴到备课本第一页</Text>
+    <Text style={{ fontSize: 27, color: '#CFE4EA', lineHeight: 1.45 }}>下一讲：对话框模式和工作区模式，差在哪</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#CFE4EA' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#CFE4EA' }}>10 / 34</Text>
+  </Box>
+</Slide>

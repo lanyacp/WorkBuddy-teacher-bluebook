@@ -1,0 +1,369 @@
+{
+  "_note": "阶段④ 正式 spec。内容基于四阶段已确认的《赵州桥》第一课时大纲；背景池为三张真实出图、已按16:9物理裁切并视觉回读，imageLayout 与 bgTone 均为裁切后1280x720画面的实测结果。",
+  "title": "赵州桥",
+  "specDir": "D:/projects/WorkBuddy/2026-06-17-11-18-20/教师版蓝皮书/赵州桥示范课件",
+  "grade": "小学三年级下册",
+  "imageStrategy": "generated",
+  "pagePlan": { "range": [5, 10] },
+  "teachingObjectives": [
+    "通过汉字卡笔顺演示与书空，能正确认读并书写「匠、慧、赵」，表现为按笔顺写出「匠」字，并说出「慧」是心字底。",
+    "通过圈画中心句与对比阅读，能找出第 2、3 自然段的关键句，并说出「不但…而且…」承接了哪两部分内容。",
+    "通过思维导图逐级展开，能归纳「雄伟、坚固、美观」三个特点并各举一处课文依据，表现为判断题 5 题答对 4 题以上。",
+    "在「小导游介绍赵州桥」的拟真情境中，能用「不但…而且…」写一句特点对应准确、语序完整的话。"
+  ],
+  "visualPlanning": {
+    "backgroundImageMinRatio": 0.5,
+    "creativeDirection": {
+      "concept": "一座桥的三种看法：远看其势、近观其构、细察其纹",
+      "visualMetaphor": "洨河水面上一道石弧，镜头从远景逐级推近到栏板上的龙纹",
+      "backgroundStrategy": "封面用桥在右、左侧雾面留白的远视图；讲解与梳理页用主体压在四角、中心安静的淡墨水岸图；资料、表达与总结页用上部淡山、中下部极安静的同源雾面图；判断活动页由希沃组件独占，不设背景"
+    }
+  },
+  "pages": [
+    {
+      "role": "cover",
+      "layout": "authored_canvas",
+      "title": "赵州桥",
+      "kicker": "人教版小学语文 · 三年级下册 · 第一课时",
+      "lead": "一座一千四百多年的石拱桥，为什么到今天还写进课本？",
+      "anti_pattern": "禁止把标题压在右侧桥体上，禁止给标题加色块底板",
+      "visualPlan": {
+        "teachingIntent": "moment",
+        "designRationale": "封面把完整石拱桥放在右侧，左侧雾面留白承载大字课题，先建立「远看其势」的第一眼印象，与后页逐级推近的镜头形成呼应。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-a.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "left",
+            "subjects": [
+              { "label": "赵州桥石拱主体", "importance": "primary", "box": { "x": 700, "y": 250, "w": 580, "h": 310 } }
+            ],
+            "textSafeRegions": [
+              { "label": "左侧雾面留白", "box": { "x": 50, "y": 50, "w": 430, "h": 610 }, "bgTone": "#E5DFD0" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 80, "y": 150, "w": 400, "h": 100 }, "z": 10, "style": { "fontSize": 72, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "kicker", "role": "kicker", "box": { "x": 80, "y": 270, "w": 400, "h": 68 }, "z": 10, "style": { "fontSize": 24, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 80, "y": 350, "w": 400, "h": 180 }, "z": 10, "style": { "fontSize": 30, "color": "#3F5A62", "lineSpacing": 1.35 } }
+        ]
+      }
+    },
+    {
+      "layout": "authored_canvas",
+      "title": "一座一千四百多年的桥",
+      "lead": "看图，先不读课文——你一眼能看出这座桥哪几个地方和别的桥不一样？",
+      "body": "赵州桥在河北省赵县的洨河上，隋朝石匠李春设计并参加建造，到今天已经有一千四百多年。它没有桥墩，只有一个大桥洞横跨河面，大桥洞顶上左右两边还各有两个小桥洞。古人把它造得又轻又稳，所以人们说它世界闻名。",
+      "items": [
+        "远远看：桥有多长、多宽，横跨在河面上是什么气势",
+        "走近看：桥洞怎么排，栏板上刻着什么",
+        "想一想：为什么一千多年过去了，它还在"
+      ],
+      "question": "如果让你用两个词向外地同学介绍这座桥，你会选哪两个？",
+      "summary": "先有观察，才有后面课文里的三个特点。",
+      "anti_pattern": "禁止把三条观察线索写成居中卡片墙，禁止在右上角桥影上叠文字",
+      "visualPlan": {
+        "teachingIntent": "moment",
+        "designRationale": "导入页用通栏标题加左文右线索的双栏，让「看图说话」的任务与三条观察线索并置；中心留白图保证大段引导语和正文清晰可读。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-b.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "右上角桥影", "importance": "primary", "box": { "x": 870, "y": 0, "w": 410, "h": 82 } }
+            ],
+            "textSafeRegions": [
+              { "label": "全页安静带", "box": { "x": 50, "y": 20, "w": 1180, "h": 680 }, "bgTone": "#DFDCD2" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 40, "w": 800, "h": 70 }, "z": 10, "style": { "fontSize": 48, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 120, "w": 760, "h": 80 }, "z": 10, "style": { "fontSize": 28, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "body", "role": "body", "box": { "x": 60, "y": 200, "w": 760, "h": 180 }, "z": 10, "style": { "fontSize": 24, "color": "#26312F", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 860, "y": 170, "w": 360, "h": 70 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.1", "role": "item", "box": { "x": 860, "y": 250, "w": 360, "h": 70 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.2", "role": "item", "box": { "x": 860, "y": 330, "w": 360, "h": 70 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "question", "role": "question", "box": { "x": 60, "y": 400, "w": 760, "h": 90 }, "z": 10, "style": { "fontSize": 28, "color": "#7A2E1B", "bold": true, "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "summary", "role": "summary", "box": { "x": 60, "y": 510, "w": 1160, "h": 60 }, "z": 10, "style": { "fontSize": 30, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } }
+        ]
+      }
+    },
+    {
+      "layout": "authored_canvas",
+      "title": "赵州桥档案",
+      "lead": "读课文第 1 自然段，把介绍这座桥身份的信息圈出来。",
+      "body": "「河北省赵县的洨河上，有一座世界闻名的石拱桥，叫安济桥，又叫赵州桥。它是隋朝的石匠李春设计并参加建造的，到现在已经有一千四百多年了。」这一段给了五个可查的事实：位置、别名、设计者、年代、地位。它们既是读懂全文的起点，也是后面判断题的依据。",
+      "items": [
+        "位置：河北省赵县 · 洨河",
+        "别名：安济桥",
+        "设计者：隋朝石匠李春",
+        "年代：距今一千四百多年",
+        "地位：世界闻名"
+      ],
+      "summary": "一段话五个信息点，读说明文先抓事实。",
+      "anti_pattern": "禁止把五个信息点做成表格组件，本页只做圈画与提取；禁止文字压住上方桥影",
+      "visualPlan": {
+        "teachingIntent": "evidence",
+        "designRationale": "资料页把标题与圈画任务收在上方左侧安静带，正文横贯中下部，五个事实点横向铺开成档案条，与导入页的双栏轮廓明显不同。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-c.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "远景石拱桥", "importance": "primary", "box": { "x": 460, "y": 105, "w": 360, "h": 95 } }
+            ],
+            "textSafeRegions": [
+              { "label": "上方左侧留白", "box": { "x": 50, "y": 20, "w": 390, "h": 210 }, "bgTone": "#D3CFC4" },
+              { "label": "中下部雾面留白", "box": { "x": 50, "y": 240, "w": 1180, "h": 440 }, "bgTone": "#E7E1D5" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 30, "w": 380, "h": 70 }, "z": 10, "style": { "fontSize": 44, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 110, "w": 380, "h": 110 }, "z": 10, "style": { "fontSize": 24, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "body", "role": "body", "box": { "x": 60, "y": 240, "w": 1160, "h": 130 }, "z": 10, "style": { "fontSize": 24, "color": "#26312F", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 60, "y": 380, "w": 370, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.1", "role": "item", "box": { "x": 450, "y": 380, "w": 370, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.2", "role": "item", "box": { "x": 840, "y": 380, "w": 380, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.3", "role": "item", "box": { "x": 60, "y": 450, "w": 370, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.4", "role": "item", "box": { "x": 450, "y": 450, "w": 370, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "summary", "role": "summary", "box": { "x": 60, "y": 530, "w": 1160, "h": 60 }, "z": 10, "style": { "fontSize": 28, "color": "#7A2E1B", "bold": true, "lineSpacing": 1.2 } }
+        ]
+      }
+    },
+    {
+      "layout": "tool_page",
+      "title": "三个容易写错的字",
+      "lead": "先点「播放笔顺」看「匠」字怎么写，再跟着书空一遍。",
+      "items": [
+        "匠：匚部 6 画",
+        "慧：心部 15 画",
+        "赵：走部 9 画"
+      ],
+      "anti_pattern": "禁止把三个字拆成三张独立卡，禁止用截图冒充汉字卡组件",
+      "subjectTool": { "type": "hanzi", "data": { "characters": "匠慧赵" } },
+      "visualPlan": {
+        "teachingIntent": "practice",
+        "designRationale": "汉字卡由希沃原生组件独占中下部交互区，页面只在顶部留一条通栏标题与三个短提示，让笔顺演示成为唯一视觉焦点。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-b.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "右上角桥影", "importance": "primary", "box": { "x": 870, "y": 0, "w": 410, "h": 82 } }
+            ],
+            "textSafeRegions": [
+              { "label": "全页安静带", "box": { "x": 50, "y": 20, "w": 1180, "h": 680 }, "bgTone": "#DFDCD2" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 20, "w": 800, "h": 70 }, "z": 10, "style": { "fontSize": 46, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 95, "w": 1160, "h": 50 }, "z": 10, "style": { "fontSize": 26, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 60, "y": 155, "w": 360, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#26312F", "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "item.1", "role": "item", "box": { "x": 440, "y": 155, "w": 360, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#26312F", "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "item.2", "role": "item", "box": { "x": 820, "y": 155, "w": 400, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#26312F", "lineSpacing": 1.2 } }
+        ]
+      }
+    },
+    {
+      "layout": "tool_page",
+      "title": "两段话，两句关键的话",
+      "lead": "圈出每段最能概括意思的那一句，填进对照表。",
+      "items": [
+        "第 2 段：赵州桥非常雄伟",
+        "第 3 段：不但坚固，而且美观",
+        "相同：都在段首，都能概括段意",
+        "不同：前者管本段，后者连两段"
+      ],
+      "anti_pattern": "禁止用普通文本框手绘对照表，禁止把过渡句讲成全文中心句",
+      "subjectTool": {
+        "type": "table",
+        "data": {
+          "markdownTable": "| 对照维度 | 第 2 自然段 | 第 3 自然段 |\n| --- | --- | --- |\n| 关键句 | 赵州桥非常雄伟 | 不但坚固，而且美观 |\n| 管几段 | 只管本段 | 连接两段 |\n| 句子作用 | 中心句 | 过渡句，承上启下 |"
+        }
+      },
+      "visualPlan": {
+        "teachingIntent": "compare",
+        "designRationale": "对照表组件承担两段关键句的同构比较，顶部用窄标题加两行两列的辨析提示，与前一页汉字卡的通栏一行式提示形成不同轮廓。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-b.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "右上角桥影", "importance": "primary", "box": { "x": 870, "y": 0, "w": 410, "h": 82 } }
+            ],
+            "textSafeRegions": [
+              { "label": "全页安静带", "box": { "x": 50, "y": 20, "w": 1180, "h": 680 }, "bgTone": "#DFDCD2" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 20, "w": 700, "h": 70 }, "z": 10, "style": { "fontSize": 46, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 95, "w": 700, "h": 50 }, "z": 10, "style": { "fontSize": 26, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 60, "y": 150, "w": 560, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#26312F", "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "item.1", "role": "item", "box": { "x": 640, "y": 150, "w": 580, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#26312F", "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "item.2", "role": "item", "box": { "x": 60, "y": 190, "w": 560, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "item.3", "role": "item", "box": { "x": 640, "y": 190, "w": 580, "h": 36 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.2 } }
+        ]
+      }
+    },
+    {
+      "layout": "tool_page",
+      "title": "课文从哪几方面写赵州桥",
+      "lead": "全文是总分总：先总说桥的身份，中间分写三个特点，最后收在宝贵的历史文化遗产。先不看展开的节点，猜一猜会写哪几支，再逐层点开，每支都回课文找一句原话作证据。",
+      "items": [
+        "先找总起和总结，再找分写的几支；三个特点的顺序不能调换。"
+      ],
+      "anti_pattern": "禁止把脑图节点写成整句课文，禁止用纯色灰底代替同源背景图",
+      "subjectTool": {
+        "type": "mindmap",
+        "data": {
+          "markdown": "# 赵州桥\n## 总说\n- 身份\n- 世界闻名\n## 分写\n### 雄伟\n- 长五十米\n### 坚固\n- 大小桥洞\n### 美观\n- 栏板龙纹\n## 总结\n- 文化遗产"
+        }
+      },
+      "visualPlan": {
+        "teachingIntent": "sequence",
+        "designRationale": "脑图页顶部按标题、任务引导、结构说明依次纵向排布，全部避开组件安全区；中心留白图的中下部安静低细节，保证逐级展开的节点清晰可读。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-b.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "右上角桥影", "importance": "primary", "box": { "x": 870, "y": 0, "w": 410, "h": 82 } }
+            ],
+            "textSafeRegions": [
+              { "label": "全页安静带", "box": { "x": 50, "y": 20, "w": 1180, "h": 680 }, "bgTone": "#DFDCD2" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 20, "w": 760, "h": 65 }, "z": 10, "style": { "fontSize": 46, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 90, "w": 760, "h": 96 }, "z": 10, "style": { "fontSize": 24, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 60, "y": 190, "w": 760, "h": 40 }, "z": 10, "style": { "fontSize": 22, "color": "#26312F", "lineSpacing": 1.25 } }
+        ]
+      }
+    },
+    {
+      "layout": "activity_page",
+      "title": "五道题，检验刚才有没有读懂",
+      "anti_pattern": "禁止给活动页加背景或装饰，禁止把判断题写成普通文本",
+      "activity": {
+        "activityType": "judge",
+        "statements": [
+          "赵州桥在河北省赵县的洨河上",
+          "隋朝石匠李春设计并参加建造",
+          "距今已有一千四百多年",
+          "四个小桥洞是为了让桥更好看",
+          "「不但坚固，而且美观」是全文中心句"
+        ],
+        "answers": [true, true, true, false, false]
+      }
+    },
+    {
+      "layout": "authored_canvas",
+      "title": "当一回小导游",
+      "lead": "假如你站在赵州桥边，用一句话向外地游客介绍它，必须用上「不但…而且…」。",
+      "question": "这句话该把哪两个特点连起来？顺序能不能颠倒？",
+      "answer": "前半句接「坚固」（上一段），后半句接「美观」（本段），顺序不能颠倒，要顺着课文的过渡句走。例：赵州桥不但坚固，而且栏板上的龙刻得活灵活现。",
+      "items": [
+        "特点要对应课文依据，不能凭空夸",
+        "关联词前后各接一个特点",
+        "写完读一遍，看顺不顺口"
+      ],
+      "summary": "会用这个关联词，就真的读懂了那句过渡句。",
+      "anti_pattern": "禁止把参考答案直接铺满全页，禁止把三个写作要求做成卡片网格",
+      "visualPlan": {
+        "teachingIntent": "practice",
+        "designRationale": "表达页用问题与答案的通栏纵向递进占据中部，三条写作要求横排收在下方，形成「问—答—用」的单一阅读动线，与前后页的分栏骨架都不同。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-c.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "远景石拱桥", "importance": "primary", "box": { "x": 460, "y": 105, "w": 360, "h": 95 } }
+            ],
+            "textSafeRegions": [
+              { "label": "上方左侧留白", "box": { "x": 50, "y": 20, "w": 390, "h": 210 }, "bgTone": "#D3CFC4" },
+              { "label": "中下部雾面留白", "box": { "x": 50, "y": 240, "w": 1180, "h": 440 }, "bgTone": "#E7E1D5" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 25, "w": 380, "h": 70 }, "z": 10, "style": { "fontSize": 44, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 105, "w": 380, "h": 115 }, "z": 10, "style": { "fontSize": 24, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "question", "role": "question", "box": { "x": 60, "y": 250, "w": 1160, "h": 70 }, "z": 10, "style": { "fontSize": 30, "color": "#7A2E1B", "bold": true, "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "answer", "role": "answer", "box": { "x": 60, "y": 330, "w": 1160, "h": 110 }, "z": 10, "style": { "fontSize": 24, "color": "#26312F", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 60, "y": 450, "w": 370, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.1", "role": "item", "box": { "x": 450, "y": 450, "w": 370, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.2", "role": "item", "box": { "x": 840, "y": 450, "w": 380, "h": 55 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "summary", "role": "summary", "box": { "x": 60, "y": 530, "w": 1160, "h": 60 }, "z": 10, "style": { "fontSize": 28, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } }
+        ]
+      }
+    },
+    {
+      "layout": "authored_canvas",
+      "title": "带走一条线，留下三件事",
+      "lead": "从观察到表达，认字、找关键句、理结构，最后自己用了一次。",
+      "body": "一条线是「总说身份 → 分写雄伟、坚固、美观 → 总结为宝贵的历史文化遗产」。下一课时我们再看作者怎样把「美观」写得像在眼前，那一段的龙纹值得慢慢读。",
+      "items": [
+        "必做：背诵第 3 自然段",
+        "选做：用思维导图复述三个特点",
+        "实践：当小导游讲给家人听"
+      ],
+      "summary": "结构记住了，表达才带得走。",
+      "anti_pattern": "禁止把三条作业做成同色卡片墙，禁止在总结页重复整段课文",
+      "visualPlan": {
+        "teachingIntent": "summary",
+        "designRationale": "收束页把「一条线」放在左下大块正文，三层作业收在右侧纵列，形成左重右轻的收尾节奏；沿用上方淡山的同源背景，与封面首尾呼应。",
+        "background": {
+          "type": "image",
+          "source": "images/bg-c.png",
+          "fit": "cover",
+          "imageLayout": {
+            "hasRecognizableSubject": true,
+            "whitespace": "center",
+            "subjects": [
+              { "label": "远景石拱桥", "importance": "primary", "box": { "x": 460, "y": 105, "w": 360, "h": 95 } }
+            ],
+            "textSafeRegions": [
+              { "label": "上方左侧留白", "box": { "x": 50, "y": 20, "w": 390, "h": 210 }, "bgTone": "#D3CFC4" },
+              { "label": "中下部雾面留白", "box": { "x": 50, "y": 240, "w": 1180, "h": 440 }, "bgTone": "#E7E1D5" }
+            ]
+          }
+        },
+        "elements": [
+          { "kind": "text", "source": "title", "role": "title", "box": { "x": 60, "y": 25, "w": 380, "h": 110 }, "z": 10, "style": { "fontSize": 44, "color": "#26312F", "bold": true, "lineSpacing": 1.2 } },
+          { "kind": "text", "source": "lead", "role": "lead", "box": { "x": 60, "y": 145, "w": 380, "h": 80 }, "z": 10, "style": { "fontSize": 24, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "body", "role": "body", "box": { "x": 60, "y": 250, "w": 700, "h": 175 }, "z": 10, "style": { "fontSize": 24, "color": "#26312F", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.0", "role": "item", "box": { "x": 790, "y": 250, "w": 430, "h": 60 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.1", "role": "item", "box": { "x": 790, "y": 320, "w": 430, "h": 60 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "item.2", "role": "item", "box": { "x": 790, "y": 390, "w": 430, "h": 60 }, "z": 10, "style": { "fontSize": 22, "color": "#3F5A62", "lineSpacing": 1.3 } },
+          { "kind": "text", "source": "summary", "role": "summary", "box": { "x": 60, "y": 450, "w": 700, "h": 90 }, "z": 10, "style": { "fontSize": 28, "color": "#7A2E1B", "bold": true, "lineSpacing": 1.25 } }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<Slide style={{
+    width: 1280, height: 720,
+    padding: 60,
+    background: '#EA580C',
+    fontFamily: 'Microsoft YaHei, Arial',
+    position: 'relative',
+    flexDirection: 'column',
+    justifyContent: 'center',
+}}>
+    <Box style={{ position: 'absolute', right: -60, bottom: -80, width: 380, height: 380, borderRadius: 190, background: '#FFFFFF', opacity: 0.08 }} />
+    <Box style={{ position: 'absolute', right: 120, top: 80, width: 120, height: 120, borderRadius: 60, background: '#FDBA74', opacity: 0.25 }} />
+    <Box style={{ width: 900, flexDirection: 'column', position: 'relative' }}>
+        <Text style={{ fontSize: 18, color: '#FFEDD5', lineHeight: 1.4, letterSpacing: 2 }}>写到最后</Text>
+        <Text style={{ fontSize: 52, fontWeight: 'bold', color: '#FFFFFF', lineHeight: 1.3, marginTop: 24 }}>省下来的时间，<br />磨你的教学设计。</Text>
+        <Box style={{ width: 620, height: 1, background: '#FFEDD5', marginTop: 36, marginBottom: 28 }} />
+        <Text style={{ fontSize: 22, color: '#FFFFFF', lineHeight: 1.6 }}>装技能　→　说清课题　→　四步确认　→　查三件事　→　沉淀检查项</Text>
+        <Text style={{ fontSize: 18, color: '#FFEDD5', lineHeight: 1.6, marginTop: 20 }}>课件只是载体；汉字卡、思维导图、课堂活动，都是为学生的那一次动手服务的。</Text>
+        <Text style={{ fontSize: 16, color: '#FFEDD5', lineHeight: 1.5, marginTop: 60 }}>WorkBuddy 教师实战蓝皮书　|　专题教程　|　2026 年 11 月</Text>
+    </Box>
+</Slide>

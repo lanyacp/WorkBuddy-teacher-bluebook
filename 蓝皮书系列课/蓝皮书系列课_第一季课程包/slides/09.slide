@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>00 · P7 · 交付验收</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>交付：课程地图 + 路线自测表</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>验收 3 条：选了路径 / 说出第一周 3 讲 / 指出最想要的成片</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>踩坑 ≤3 条｜允许「只看不做」的观摩路径，但它不产出成品</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>9 / 34</Text>
+  </Box>
+</Slide>

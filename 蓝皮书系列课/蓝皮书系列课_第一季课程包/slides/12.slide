@@ -1,0 +1,18 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>01 · P2 · 成片先行</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>同一个模型、同一个任务：左边一段话，右边一个文件夹</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>模型相同、任务相同，只是用法不同；两边文案必须一模一样</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>差别不在谁更聪明，在右边多出来的那些文件</Text>
+    <Box style={{ background: '#E9EEF1', border: '2px solid #9BB2BF', borderRadius: 10, padding: 18, marginTop: 12 }}>
+      <Text style={{ fontSize: 22, color: '#4A6272', textAlign: 'center', lineHeight: 1.4 }}>【待补｜V-01-01】 20 秒分屏录屏</Text>
+    </Box>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>12 / 34</Text>
+  </Box>
+</Slide>

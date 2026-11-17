@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>图文预览 · AI 做的课件，为什么在希沃里点不动</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#EDEAE3;font-family:"Microsoft YaHei","PingFang SC",sans-serif;color:#26312F}
+.wrap{max-width:720px;margin:0 auto;background:#FFFFFF;padding:36px 34px 60px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.cover{width:100%;display:block;border-radius:6px;margin-bottom:30px}
+h1{font-size:30px;line-height:1.4;margin:0 0 8px}
+.meta{font-size:14px;color:#8A8A82;border-bottom:1px solid #E5DFD0;padding-bottom:18px;margin-bottom:28px}
+h2{font-size:22px;margin:38px 0 16px;padding-left:12px;border-left:4px solid #B4472B;line-height:1.4}
+p{font-size:16px;line-height:1.9;margin:0 0 16px;letter-spacing:.2px}
+strong{color:#B4472B}
+code{background:#F5F1E8;padding:2px 6px;border-radius:4px;font-size:14px;color:#3F5A62}
+figure{margin:26px 0}
+figure img{width:100%;display:block;border:1px solid #E5DFD0;border-radius:6px}
+figcaption{font-size:13px;color:#8A8A82;text-align:center;margin-top:9px;line-height:1.6}
+hr{border:0;border-top:1px solid #E5DFD0;margin:30px 0}
+.miss{color:#B4472B;background:#FBF0EC;padding:10px 14px;border-radius:6px}
+</style></head><body><div class="wrap">
+<img class="cover" src="配图/00-封面-公众号首图.png" alt="公众号首图">
+<h1>AI 做的课件，为什么在希沃里点不动</h1>
+<div class="meta">公众号图文预览 · 图片按 00–11 编号插入 · 与「配图清单.md」一一对应</div>
+<p>很多老师第一次用 AI 做课件，都会卡在同一个地方。</p>
+<p>PPT 生成得挺漂亮，导进希沃白板也没报错。可一到课堂上：点汉字卡，没反应；点思维导图，不会展开；「课堂活动」那一页，就是一张截图。</p>
+<p>于是有了一句很真实的吐槽：<strong>看着像课件，用起来像图片。</strong></p>
+<p>问题不在 AI 不聪明，也不在希沃不兼容，而在交付的那一步。PPTX 是通用格式，而希沃的汉字卡、思维导图、课堂活动是客户端里的<strong>原生元素</strong>——它们不是图片，也不是普通形状。一旦走「生成 PPT → 再导入」这条路，就会被压平成静态内容。</p>
+<figure><img src="配图/01-痛点对比-PPT与原生课件.png" alt="配图 01"><figcaption>配图 01 · 同样一句提示词，两种交付差在哪</figcaption></figure>
+<h2>这次换了个做法：不让 AI 交文件</h2>
+<p>我用的是 WorkBuddy 里的希沃白板助手技能。它不导 PPT，而是通过本地 MCP 直接连到希沃客户端，把内容写成 <code>.enbx</code> 原生课件。</p>
+<p>链路很短：<strong>一句课题 → WorkBuddy → 本地 MCP（127.0.0.1:7916）→ 希沃客户端</strong>。</p>
+<figure><img src="配图/02-链路-WorkBuddy连进希沃.png" alt="配图 02"><figcaption>配图 02 · WorkBuddy → 本地 MCP → 希沃客户端，以及四步就绪判据</figcaption></figure>
+<p>这里有个坑值得单独说：<strong>窗口开着 ≠ 连上</strong>。</p>
+<p>我第一次试的时候，希沃进程明明在跑，五个候选端口却一个都没监听，返回的是 <code>login_required</code>。客户端重启之后，端口才通、<code>tools/list</code> 才返回非空，连接才算真就绪。</p>
+<p>判据就四步：进程在跑 → 端口可达 → MCP 握手成功 → 工具列表非空。少一步都别急着生成。这一步没打通，后面做出来的东西再漂亮，也只是躺在文件夹里的一个文件。</p>
+<h2>连上之后，也不是一句话梭哈</h2>
+<p>按技能的四阶段走：</p>
+<p><strong>① 基本信息</strong>——课题、学段、页数区间、图片方案、硬约束；</p>
+<p><strong>② 教学目标</strong>——按新课标对齐，写清素养指向与检测方式；</p>
+<p><strong>③ 大纲设计</strong>——先选原生组件，再排教学环节，逐环节回看目标；</p>
+<p><strong>④ 分段生成</strong>——补内容 → 校验 → 出图 → 生成 → 回读。</p>
+<figure><img src="配图/03-四阶段建课流程.png" alt="配图 03"><figcaption>配图 03 · 四个检查点，每一步先确认再前进</figcaption></figure>
+<p>每一步确认了才往下一步走。这次选的是人教版三年级下册《赵州桥》第一课时，9 页，其中 8 页有原生背景。</p>
+<p>有意思的是：教学目标和结构一定下来，剩下的排版、配色、出图、写坐标、算对比度，全交给 AI。<strong>教学决策由人定，重复劳动交给 AI</strong>——这才是分工该有的样子。</p>
+<h2>做出来的东西长什么样</h2>
+<figure><img src="配图/04-成品封面页-赵州桥.png" alt="配图 04"><figcaption>配图 04 · 生成的 9 页课件 · 封面页实拍</figcaption></figure>
+<p>9 页里，最值得看的是四页「希沃才有的东西」：</p>
+<p><strong>汉字卡</strong>：「匠 / 慧 / 赵」三个字。拼音、笔画数、部首、田字格，全是组件从本地汉字库带出来的，不是我写死在页面上的静态文字。</p>
+<figure><img src="配图/05-汉字卡页.png" alt="配图 05"><figcaption>配图 05 · 「匠 / 慧 / 赵」原生汉字卡</figcaption></figure>
+<p><strong>对照表</strong>：第 2、3 自然段的关键句同构并置，一眼看出「中心句」和「过渡句」的差别。</p>
+<figure><img src="配图/06-对照表页.png" alt="配图 06"><figcaption>配图 06 · 两段话、两句关键句的同构对照表</figcaption></figure>
+<p><strong>思维导图</strong>：总分总三支逐级展开，学生可以自己点开看。</p>
+<figure><img src="配图/07-思维导图页.png" alt="配图 07"><figcaption>配图 07 · 思维导图总分总三支逐级展开</figcaption></figure>
+<p><strong>判断对错</strong>：5 道题，3 对 2 错，专挑「四个小桥洞是为了更好看」「不但…而且…是全文中心句」这两个高频易错点。</p>
+<figure><img src="配图/08-判断对错活动页.png" alt="配图 08"><figcaption>配图 08 · 判断对错活动页（备课态预览）</figcaption></figure>
+<p>另外，8 页背景是三张同源水墨图，镜头从远看桥、到近观结构、再到细察纹样，跟教学推进是同一条线。这里也踩了个小坑：AI 出图右下角自带水印，按 16:9 物理裁切时正好一起裁掉。</p>
+<figure><img src="配图/09-三张同源背景池.png" alt="配图 09"><figcaption>配图 09 · 三张同源水墨背景，镜头从远到近</figcaption></figure>
+<h2>汉字卡到底是不是图片？</h2>
+<p>这个问题必须说清楚，不然前面都白讲。</p>
+<figure><img src="配图/10-汉字卡控件说明.png" alt="配图 10"><figcaption>配图 10 · 三个控件：发音、笔顺、田字格</figcaption></figure>
+<p>我回读了客户端：那个元素的类型是 <code>HanziCard</code>，在页面信息里叫「汉字卡片.1」，不是「图片.1」。放大看，每个字上方有绿色小喇叭，下方有「连续 / 分步」两个按钮——<strong>能朗读音节，能逐笔演示笔顺</strong>。</p>
+<p>但有个前提：<strong>要点「开始授课」</strong>。备课态只显示静态预览，交互进授课模式才激活。这也是为什么我给的截图里，那些按钮看着像画上去的。判断活动页同理，备课态显示的是希沃模板封面，授课时才逐题出 5 道题。</p>
+<p>顺便说实话：它朗读的是整个音节（jiàng），<strong>不做</strong> <code>j—i—àng</code> 这种声母韵母分解拼读，也不带组词释义。三年级这一课要的是「认读 + 看清笔顺」，拼读分解属于低年级正音，不该硬塞进来。工具能力有边界，说清楚比吹满更有用。</p>
+<h2>别把「响应成功」当成「真的做好了」</h2>
+<figure><img src="配图/11-回读与两个环境坑.png" alt="配图 11"><figcaption>配图 11 · 回读结果与两个环境坑</figcaption></figure>
+<p>生成日志说成功，不等于课件落地了。我又独立回读了一遍：9 页、1280×720、备课 Edit 模式、4.98 MB、已同步，用「赵州桥」能在希沃课件库里检索到。</p>
+<p>路上还踩了两个环境坑：⚠️ 注册表查询命令被安全策略拦截，导致脚本找不到希沃的启动程序——改成运行时直接指向真实安装路径就通了；再就是刚才那个水印。都不影响教学，但会让人卡半天，记下来给后面的人省点时间。</p>
+<p>所以回到开头那个问题：AI 做的课件，为什么点不动？</p>
+<p>因为它交的是一份<strong>关于课件的文件</strong>，而不是<strong>教室里的课件</strong>。</p>
+<p>真正的分水岭，从来不是有没有生成那 9 页，而是汉字还能不能读、导图还能不能展开、学生还能不能上台点一下。</p>
+<p><strong>省下来的时间，磨你的教学设计。</strong></p>
+<p>💬 你们学校用希沃时，最想让 AI 直接生成哪一类原生组件？留言聊聊。</p>
+<hr>
+</div></body></html>

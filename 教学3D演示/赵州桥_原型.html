@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>赵州桥 · 实时 3D 演示原型</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;height:100%;overflow:hidden;background:#03080c;
+    font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:#e8f4fb}
+  canvas{position:fixed;top:0;left:0;display:block;z-index:0}
+
+  #hud{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
+  #hud.on{opacity:1}
+
+  .tl{position:absolute;left:56px;top:48px}
+  .tl h1{font-size:44px;font-weight:800;letter-spacing:8px;line-height:1;
+    text-shadow:0 4px 28px rgba(0,0,0,.85)}
+  .tl .sub{margin-top:16px;font-size:15px;letter-spacing:6px;color:#9dc0d4}
+  .tl .met{margin-top:22px;font-size:13px;line-height:1.9;color:#8fabbd;letter-spacing:1px;
+    padding:10px 16px;background:rgba(3,8,12,.42);border-radius:4px;display:inline-block}
+  .tl .met b{color:#e0c090;font-weight:600}
+
+  .bl{position:absolute;left:56px;bottom:58px;display:flex;gap:14px;align-items:flex-start}
+  .bl .bar{width:3px;height:64px;background:linear-gradient(#f0a24a,#c2702a);border-radius:2px}
+  .bl .rows{display:flex;flex-direction:column;gap:7px;padding:10px 18px 10px 14px;
+    background:rgba(3,8,12,.46);border-radius:4px}
+  .bl .r{font-size:14px;letter-spacing:1px;color:#dceef8}
+  .bl .r span{color:#7d9aad;font-size:12.5px}
+
+  .br{position:absolute;right:56px;bottom:48px;text-align:right;
+    padding:12px 18px;background:rgba(3,8,12,.46);border-radius:4px}
+  .br .big{font-size:15px;letter-spacing:1px}
+  .br .big b{color:#f0a24a;font-weight:700}
+  .br .sm{margin-top:8px;font-size:12px;color:#7d9aad;letter-spacing:1px;line-height:1.8}
+
+  .tip{position:absolute;left:50%;bottom:48px;transform:translateX(-50%);
+    font-size:12.5px;letter-spacing:2px;color:#6b8899}
+  .tip kbd{display:inline-block;padding:1px 6px;margin:0 2px;border-radius:3px;
+    background:#14252f;border:1px solid #23414f;color:#a9c6d6;font-family:inherit;font-size:11.5px}
+
+  #veil{position:fixed;inset:0;background:#03080c;display:flex;align-items:center;
+    justify-content:center;flex-direction:column;gap:26px;z-index:20;
+    transition:opacity .9s ease}
+  #veil.gone{opacity:0;pointer-events:none}
+  #veil .t{font-size:13px;letter-spacing:8px;color:#5c7c8e}
+  #veil .bar{width:200px;height:2px;background:#102029;overflow:hidden;border-radius:2px}
+  #veil .bar i{display:block;height:100%;width:0;background:#f0a24a;transition:width .3s}
+  #veil .go{margin-top:8px;padding:12px 34px;font-size:14px;letter-spacing:4px;
+    color:#f0a24a;border:1px solid #6b4a24;background:rgba(240,162,74,.06);
+    cursor:pointer;border-radius:2px;opacity:0;transition:all .4s;font-family:inherit}
+  #veil .go.on{opacity:1}
+  #veil .go:hover{background:rgba(240,162,74,.16);border-color:#f0a24a}
+  #veil .err{max-width:560px;font-size:13px;line-height:1.8;color:#c98; text-align:center;display:none}
+</style>
+</head>
+<body>
+
+<div id="veil">
+  <div class="t">正在生成场景</div>
+  <div class="bar"><i id="pg"></i></div>
+  <div class="err" id="err"></div>
+  <button class="go" id="go">开 始</button>
+</div>
+
+<div id="hud">
+  <div class="tl">
+    <h1>赵 州 桥</h1>
+    <div class="sub">实时 3D · 单文件 · 断网可用</div>
+    <div class="met">
+      隋 · 大业年间 · 匠师 <b>李春</b><br>
+      主拱净跨 <b>37.02</b> 米 · 矢高 <b>7.23</b> 米<br>
+      敞肩四小拱 · 栏板浮雕 <b>58</b> 块
+    </div>
+  </div>
+
+  <div class="bl">
+    <div class="bar"></div>
+    <div class="rows">
+      <div class="r">夜景写实<span>　导入：先看见这座桥</span></div>
+      <div class="r">结构透视<span>　讲「坚固」：拱形受力</span></div>
+      <div class="r">雕刻细节<span>　讲「美观」：栏板纹样</span></div>
+    </div>
+  </div>
+
+  <div class="br">
+    <div class="big">零素材　<b id="kb">—</b></div>
+    <div class="sm">0 张贴图 · 0 个模型文件 · 0 次额外请求</div>
+    <div class="sm">全部几何与材质由代码生成</div>
+  </div>
+
+  <div class="tip">拖拽旋转 · 滚轮缩放 · <kbd>空格</kbd>重播开场 · <kbd>R</kbd>复位</div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+const $ = s => document.querySelector(s);
+const pg = $('#pg'), veil = $('#veil'), goBtn = $('#go');
+
+let STAGE = 'boot';
+function setStage(s, pct){ STAGE = s; if (pct != null) pg.style.width = pct + '%'; }
+
+function fail(msg){
+  const e = $('#err'); e.style.display = 'block';
+  e.textContent = '[' + STAGE + '] ' + msg;
+  $('.t').textContent = '加载失败';
+  document.title = 'FAIL:' + STAGE + ':' + msg;
+  console.error(msg);
+}
+addEventListener('error', ev => fail((ev.message || 'unknown') + ' @ ' + (ev.filename||'').split('/').pop() + ':' + ev.lineno));
+addEventListener('unhandledrejection', ev => fail('promise: ' + (ev.reason && ev.reason.message || ev.reason)));
+
+let THREE, OrbitControls;
+try {
+  THREE = await import('three');
+  ({ OrbitControls } = await import('three/addons/controls/OrbitControls.js'));
+} catch (e) {
+  fail('无法加载 three.js（本次原型从 CDN 取）。检查网络后刷新即可：' + e.message);
+  throw e;
+}
+setStage('import-three', 35);
+
+// —— 排查开关：?hide=flies,fog,beam,stars,inst,water  /  ?flat=1 关闭水面起伏 ——
+const QS0 = new URLSearchParams(location.search);
+const HIDE = new Set((QS0.get('hide') || '').split(',').filter(Boolean));
+const FLAT = QS0.get('flat') === '1';
+const show = k => !HIDE.has(k);
+
+/* ══════════════════════════════════════════════════════════
+   一、桥的几何参数（按真实尺寸建模，单位：米）
+   ══════════════════════════════════════════════════════════ */
+const B = {
+  L: 37.02,      // 主拱净跨
+  H: 7.23,       // 矢高
+  W: 9.6,        // 桥宽
+  t: 0.90,       // 拱圈厚
+  deck: 1.05,    // 拱顶到桥面
+  railH: 1.15,   // 栏板高
+};
+// 三点定圆：拱脚 (±L/2, 0)、拱顶 (0, H)
+B.cy = (B.H * B.H - B.L * B.L / 4) / (2 * B.H);   // 圆心 y ≈ -20.08
+B.R  = B.H - B.cy;                                // 半径 ≈ 27.31
+B.thA = Math.atan2(-B.cy, B.L / 2);               // 拱脚角 ≈ 0.827
+B.thB = Math.PI - B.thA;                          // 另一侧拱脚
+B.deckY = B.H + B.t + B.deck;                     // 桥面顶 ≈ 9.18
+
+/* ══════════════════════════════════════════════════════════
+   二、渲染器 / 场景 / 相机
+   ══════════════════════════════════════════════════════════ */
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+renderer.setSize(innerWidth, innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.02;
+renderer.shadowMap.enabled = false;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x061420, 0.0108);
+
+const camera = new THREE.PerspectiveCamera(46, innerWidth / innerHeight, 0.1, 900);
+camera.position.set(-6, 1.1, 31);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.055;
+controls.target.set(0, 5.0, 0);
+controls.minDistance = 6;
+controls.maxDistance = 150;
+controls.maxPolarAngle = Math.PI * 0.502;
+controls.enablePan = false;
+controls.autoRotate = false;
+controls.enabled = false;
+
+/* ══════════════════════════════════════════════════════════
+   三、光照：月光 + 环境 + 灯笼点光
+   ══════════════════════════════════════════════════════════ */
+const hemi = new THREE.HemisphereLight(0x3d7598, 0x070f16, 0.95);
+scene.add(hemi);
+
+// 主光：从观察侧上方斜下来（天光/水面反光），负责把桥的立面和石块层次照出来
+const keyLight = new THREE.DirectionalLight(0xb9d0e0, 1.85);
+keyLight.position.set(26, 34, 40);
+keyLight.target.position.set(-2, 5, 0);
+scene.add(keyLight, keyLight.target);
+
+// 轮廓光：月亮在桥洞后方，从背面把拱圈边缘勾出来 —— 这是「不可能感」的来源
+const moonLight = new THREE.DirectionalLight(0xd4ecff, 2.15);
+moonLight.position.set(0, 12, -70);
+moonLight.target.position.set(0, 6, 0);
+scene.add(moonLight, moonLight.target);
+
+// 侧面冷补光，避免背光面死黑
+const fillLight = new THREE.DirectionalLight(0x4a8fb8, 1.35);
+fillLight.position.set(-34, 9, 12);
+scene.add(fillLight);
+
+/* ══════════════════════════════════════════════════════════
+   四、夜空：程序化星空（Points，带尺寸随机与闪烁）
+   ══════════════════════════════════════════════════════════ */
+function buildStars() {
+  const N = 2600, pos = new Float32Array(N * 3), sz = new Float32Array(N), ph = new Float32Array(N);
+  for (let i = 0; i < N; i++) {
+    // 半球壳分布，压低避免水面以下
+    const a = Math.random() * Math.PI * 2;
+    const e = Math.random() * Math.PI * 0.52;             // 仰角 0~94°
+    const r = 260 + Math.random() * 130;
+    pos[i*3]   = Math.cos(a) * Math.cos(e) * r;
+    pos[i*3+1] = Math.sin(e) * r * 0.92 + 6;
+    pos[i*3+2] = Math.sin(a) * Math.cos(e) * r;
+    sz[i] = 0.5 + Math.pow(Math.random(), 2.6) * 2.2;
+    ph[i] = Math.random() * 6.283;
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  g.setAttribute('aSize', new THREE.BufferAttribute(sz, 1));
+  g.setAttribute('aPhase', new THREE.BufferAttribute(ph, 1));
+
+  const m = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uFog: { value: 0.0125 } },
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: /* glsl */`
+      attribute float aSize; attribute float aPhase;
+      uniform float uTime;
+      varying float vA;
+      void main(){
+        vec3 p = position;
+        float tw = 0.62 + 0.38 * sin(uTime * 1.7 + aPhase);
+        vA = tw;
+        vec4 mv = modelViewMatrix * vec4(p, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_PointSize = aSize * (300.0 / -mv.z) * (0.85 + 0.35 * tw);
+      }`,
+    fragmentShader: /* glsl */`
+      varying float vA;
+      void main(){
+        float d = length(gl_PointCoord - vec2(0.5));
+        if(d > 0.5) discard;
+        float a = (1.0 - smoothstep(0.02, 0.5, d)) * vA;
+        gl_FragColor = vec4(vec3(0.86, 0.94, 1.0), a * 0.92);
+      }`
+  });
+  const pts = new THREE.Points(g, m);
+  pts.frustumCulled = false;
+  if (show('stars')) scene.add(pts);
+  return m;
+}
+const starMat = buildStars();
+
+/* ══════════════════════════════════════════════════════════
+   五、月亮：程序化软边 + 多层辉光（全 shader，无贴图）
+   ══════════════════════════════════════════════════════════ */
+const MOON_POS = new THREE.Vector3(0, 22.0, -150);
+
+function buildMoon() {
+  const g = new THREE.PlaneGeometry(1, 1);
+  const m = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uTime: { value: 0 } },
+    vertexShader: /* glsl */`
+      varying vec2 vUv;
+      void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,
+    fragmentShader: /* glsl */`
+      varying vec2 vUv;
+      uniform float uTime;
+      // 值噪声，用来给月面加一点斑驳，避免死白
+      float h(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+      float noise(vec2 p){
+        vec2 i = floor(p), f = fract(p);
+        f = f*f*(3.0-2.0*f);
+        return mix(mix(h(i), h(i+vec2(1,0)), f.x), mix(h(i+vec2(0,1)), h(i+vec2(1,1)), f.x), f.y);
+      }
+      void main(){
+        vec2 c = vUv - 0.5;
+        float d = length(c) * 2.0;                 // 0=中心 1=边缘
+        // 月盘本体
+        float disk = 1.0 - smoothstep(0.93, 1.0, d);
+        // 月面斑驳
+        float n = noise(c * 26.0) * 0.5 + noise(c * 61.0) * 0.3;
+        // 外辉光：指数衰减
+        float glow = exp(-d * 2.6) * 0.55 + exp(-d * 7.0) * 0.45;
+        float halo = exp(-d * 1.15) * 0.10;
+        vec3 col = vec3(0.94, 0.975, 1.0) * disk * (0.94 + 0.06 * n);
+        col += vec3(0.62, 0.80, 0.95) * glow * 0.55;
+        col += vec3(0.30, 0.55, 0.78) * halo;
+        float a = max(disk * 0.96, glow * 0.9 + halo * 0.7);
+        gl_FragColor = vec4(col, a);
+      }`
+  });
+  const mesh = new THREE.Mesh(g, m);
+  mesh.position.copy(MOON_POS);
+  mesh.scale.setScalar(22);
+  mesh.renderOrder = -5;
+  scene.add(mesh);
+
+  // 月亮在水面的垂直光柱（一条很长的窄面片，加色混合）
+  const beamG = new THREE.PlaneGeometry(1, 1, 1, 24);
+  const beamM = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uTime: { value: 0 } },
+    vertexShader: /* glsl */`
+      varying vec2 vUv;
+      void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }`,
+    fragmentShader: /* glsl */`
+      varying vec2 vUv; uniform float uTime;
+      void main(){
+        float x = abs(vUv.x - 0.5) * 2.0;
+        float y = vUv.y;
+        // 光路越近越宽、边缘被浪打散
+        float widen = 0.42 + 0.26 * y;
+        float wob = sin(y * 44.0 + uTime * 1.5) * 0.030
+                  + sin(y * 97.0 - uTime * 2.2) * 0.018;
+        float band = 1.0 - smoothstep(0.0, widen + wob, x);
+        // 沿长度两头淡出，中段最亮
+        float lenFade = smoothstep(0.02, 0.26, y) * (1.0 - smoothstep(0.52, 1.0, y));
+        // 碎浪：横向细纹，让光路不是一块均匀的板
+        float sparkle = 0.66 + 0.34 * sin(y * 128.0 + uTime * 3.0)
+                             * sin(y * 37.0 - uTime * 1.1);
+        float a = clamp(band * lenFade * sparkle, 0.0, 1.0) * 0.22;
+        if(a < 0.003) discard;
+        gl_FragColor = vec4(vec3(0.66, 0.82, 0.96), a);
+      }`
+  });
+  const beam = new THREE.Mesh(beamG, beamM);
+  beam.rotation.x = -Math.PI / 2;
+  beam.position.set(0, 0.24, -50);
+  beam.scale.set(58, 290, 1);
+  beam.renderOrder = 3;
+  if (show('beam')) scene.add(beam);
+
+  return { moonMat: m, beamMat: beamM };
+}
+const moon = buildMoon();
+
+/* ══════════════════════════════════════════════════════════
+   六、石块池：主拱 + 敞肩小拱全部塞进一个 InstancedMesh
+   —— 一个 draw call，开场逐块动画
+   ══════════════════════════════════════════════════════════ */
+const stoneGeo = new THREE.BoxGeometry(1, 1, 1);
+const stoneMat = new THREE.MeshStandardMaterial({
+  color: 0xffffff, roughness: 0.93, metalness: 0.03,
+});
+const stoneMatV = stoneMat.clone();   // 竖石（栏板、望柱）用同一套参数
+
+// 收集：每块石头记录 final（位置/欧拉/缩放）与 start（水下）
+const BLOCKS = [];
+const _v = new THREE.Vector3(), _q = new THREE.Quaternion(), _e = new THREE.Euler();
+
+function addBlock(x, y, z, sx, sy, sz, rz, tint, delay) {
+  BLOCKS.push({
+    f: { x, y, z, sx, sy, sz, rz },
+    tint: tint ?? (0.80 + Math.random() * 0.26),   // ❗漏传会算成纯黑，必须兜底
+    delay: (delay ?? 0) * 0.5,
+    // 固化微转角：石块之间不到 1 度的差异，正是「一块一块」的来源
+    jx: (Math.random() - 0.5) * 0.030,
+    jy: (Math.random() - 0.5) * 0.022,
+    // 起始姿态：沉在水下、随机偏移与翻滚
+    s: {
+      x: x + (Math.random() - 0.5) * 3.2,
+      y: y - 9 - Math.random() * 7,
+      z: z + (Math.random() - 0.5) * 2.6,
+      rx: (Math.random() - 0.5) * 1.6,
+      ry: (Math.random() - 0.5) * 1.6,
+      rz: rz + (Math.random() - 0.5) * 1.4,
+    }
+  });
+}
+
+/* ── 6.1 主拱：沿弧线 26 段 × 沿桥宽 12 道 ── */
+const ARCH_SEG = 26, ARCH_LANE = 12;
+const dTh = (B.thB - B.thA) / ARCH_SEG;
+const laneW = B.W / ARCH_LANE;
+const arcLen = B.R * dTh;
+
+for (let i = 0; i < ARCH_SEG; i++) {
+  const th = B.thA + dTh * (i + 0.5);
+  const rr = B.R - B.t / 2;
+  const cx = Math.cos(th) * rr, cy = B.cy + Math.sin(th) * rr;
+  const rz = th + Math.PI / 2;
+  // 从拱脚向拱顶推进的顺序，做出「两侧同时向中间长」的感觉
+  const order = Math.min(i, ARCH_SEG - 1 - i) / (ARCH_SEG / 2);
+  for (let j = 0; j < ARCH_LANE; j++) {
+    const lz = -B.W / 2 + laneW * (j + 0.5);
+    const jitter = (Math.random() - 0.5) * 0.035;
+    addBlock(
+      cx, cy, lz + jitter,
+      arcLen * 1.055, B.t * 1.02, laneW * 1.03,
+      rz,
+      0.96 + Math.random() * 0.22,        // 拱券比腹墙亮一档
+      order * 1.35 + Math.random() * 0.22
+    );
+  }
+}
+
+/* ── 6.2 敞肩四小拱：每侧两个，用石块拼半圆 ── */
+// 拱圈外表面的高度
+function archOuterY(x) {
+  return B.cy + Math.sqrt(Math.max(0, B.R * B.R - x * x));
+}
+const SMALL = [
+  { x: -14.6, r: 1.62, seg: 13 },
+  { x: -10.9, r: 1.22, seg: 11 },
+  { x:  14.6, r: 1.62, seg: 13 },
+  { x:  10.9, r: 1.22, seg: 11 },
+].map(o => ({ ...o, base: archOuterY(Math.abs(o.x)) + 0.10 }));
+const smallHoleGeo = [];   // 记录小拱洞口的暗面位置（后面做洞内阴影）
+
+for (const s of SMALL) {
+  const th0 = 0.02, th1 = Math.PI - 0.02;
+  const dst = (th1 - th0) / s.seg;
+  const sl = (s.r + 0.34) * dst;
+  for (let i = 0; i < s.seg; i++) {
+    const th = th0 + dst * (i + 0.5);
+    const rr = s.r + 0.17;
+    const cx = s.x + Math.cos(th) * rr;
+    const cy = s.base + Math.sin(th) * rr;
+    // 低于拱背的石块就是被砌体包住的部分，不画，洞形自然收成敞肩
+    if (cy < archOuterY(cx) + 0.06) continue;
+    for (let j = 0; j < 7; j++) {
+      const lz = -B.W / 2 + (B.W / 7) * (j + 0.5);
+      addBlock(cx, cy, lz, sl * 1.18, 0.40, (B.W / 7) * 1.04, th + Math.PI / 2,
+        0.94 + Math.random() * 0.20, 1.9 + i * 0.028 + Math.random() * 0.2);
+    }
+  }
+  // 小拱两侧的立柱（拱脚到桥面之间填实）
+  for (let j = 0; j < 7; j++) {
+    const lz = -B.W / 2 + (B.W / 7) * (j + 0.5);
+    for (const sx of [-1, 1]) {
+      const px = s.x + sx * (s.r + 0.34);
+      const y0 = Math.min(s.base, archOuterY(px) - 0.10);   // 落到拱背上
+      const y1 = B.deckY - 0.35;
+      if (y1 - y0 < 0.3) continue;
+      addBlock(px, (y0 + y1) / 2, lz, 0.92, y1 - y0, (B.W / 7) * 1.05, 0,
+        null, 0.78 + Math.random() * 0.25);
+    }
+  }
+}
+
+/* ── 6.3 桥台（两侧落地部分）── */
+for (const sx of [-1, 1]) {
+  const x0 = sx * (B.L / 2);
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 12; j++) {
+      const lz = -B.W / 2 + laneW * (j + 0.5);
+      addBlock(
+        x0 + sx * (0.55 + i * 1.05),
+        B.deckY / 2 - 0.2 - i * 0.06,
+        lz,
+        1.08, B.deckY + 0.6, laneW * 1.03, 0,
+        0.72 + Math.random() * 0.26, 0.35 + Math.random() * 0.3
+      );
+    }
+  }
+}
+
+/* ── 6.4 拱背填料：拱圈外表面到桥面之间的墙体 ── */
+// 小拱所在的 x 区间要挖空，否则四个洞会被填料糊死
+const SMALL_HOLES = SMALL.map(s => {
+  const pad = s.r + 0.80;
+  return [Math.min(s.x - pad, s.x + pad), Math.max(s.x - pad, s.x + pad),
+          s.base + s.r + 0.41];        // 第三个值是「洞顶」高度
+});
+function fillBottom(x) {
+  let y = archOuterY(x);
+  for (const [lo, hi, top] of SMALL_HOLES) {
+    if (x > lo && x < hi) y = Math.max(y, top);
+  }
+  return y;
+}
+
+const FILL_COLS = 15, FILL_LANES = 7;
+for (const sx of [-1, 1]) {
+  for (let i = 0; i < FILL_COLS; i++) {
+    const x = sx * (1.5 + i * 1.10);
+    if (Math.abs(x) > B.L / 2) continue;
+    const y0 = fillBottom(x);
+    const y1 = B.deckY - 0.32;
+    if (y1 - y0 < 0.25) continue;
+    const colW = 1.10;
+    for (let j = 0; j < FILL_LANES; j++) {
+      const lz = -B.W / 2 + (B.W / FILL_LANES) * (j + 0.5);
+      addBlock(x, (y0 + y1) / 2, lz, colW * 1.04, y1 - y0,
+        (B.W / FILL_LANES) * 1.04, 0, 0.74 + Math.random() * 0.22, 1.35 + Math.random() * 0.4);
+    }
+  }
+}
+
+/* ── 6.5 桥面板 ── */
+const DECK_T = 0.52;
+for (let i = 0; i < 24; i++) {
+  const x = -B.L / 2 - 2.2 + (B.L + 4.4) / 24 * (i + 0.5);
+  for (let j = 0; j < 8; j++) {
+    const lz = -B.W / 2 + (B.W / 8) * (j + 0.5);
+    addBlock(x, B.deckY - DECK_T / 2, lz,
+      (B.L + 4.4) / 24 * 1.04, DECK_T, (B.W / 8) * 1.03, 0,
+      0.88 + Math.random() * 0.24, 2.1 + Math.random() * 0.35);
+  }
+}
+
+/* ── 6.6 栏板 + 望柱 ── */
+const RAIL_N = 21;
+const railTotal = B.L + 4.0;
+for (const sz of [-1, 1]) {
+  for (let i = 0; i < RAIL_N; i++) {
+    const x = -railTotal / 2 + (railTotal / (RAIL_N - 1)) * i;
+    // 望柱
+    addBlock(x, B.deckY + 0.10 + B.railH / 2, sz * (B.W / 2 - 0.20),
+      0.26, B.railH, 0.26, 0,
+      0.95 + Math.random() * 0.12, 2.55 + Math.random() * 0.3);
+    // 栏板（在望柱之间）
+    if (i < RAIL_N - 1) {
+      addBlock(x + railTotal / (RAIL_N - 1) / 2,
+        B.deckY + 0.10 + B.railH * 0.42,
+        sz * (B.W / 2 - 0.20),
+        railTotal / (RAIL_N - 1) * 0.70, B.railH * 0.68, 0.20, 0,
+        1.05 + Math.random() * 0.14, 2.7 + i * 0.012);
+    }
+  }
+}
+
+/* ── 实例化 ── */
+const inst = new THREE.InstancedMesh(stoneGeo, stoneMat, BLOCKS.length);
+inst.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+inst.frustumCulled = false;
+if (show('inst')) scene.add(inst);
+
+const _c = new THREE.Color();
+for (let i = 0; i < BLOCKS.length; i++) {
+  const b = BLOCKS[i];
+  // 石材底色在青灰之间游走，靠这个做出「一块一块」的质感
+  const t = b.tint;
+  // 每块在「冷青灰」与「暖石色」之间随机偏一点，避免整片糊成一个色块
+  const warm = (i * 0.6180339887) % 1;          // 黄金比散列，分布均匀又不用随机数
+  _c.setRGB(
+    (0.212 + warm * 0.050) * t,
+    (0.238 + warm * 0.036) * t,
+    (0.250 + warm * 0.030) * t
+  );
+  inst.setColorAt(i, _c);
+}
+inst.instanceColor.needsUpdate = true;
+
+setStage('build-blocks', 62);
+
+/* 开场：石块从水下浮起拼合 */
+const BUILD_DUR = 1.85;      // 拼合总时长
+let buildT = 0;
+
+function easeOutCubic(x) { return 1 - Math.pow(1 - x, 3); }
+function easeInOutQuad(x){ return x < .5 ? 2*x*x : 1 - Math.pow(-2*x+2, 2)/2; }
+
+function updateBlocks(t) {
+  for (let i = 0; i < BLOCKS.length; i++) {
+    const b = BLOCKS[i];
+    const local = Math.min(1, Math.max(0, (t - b.delay) / (BUILD_DUR * 0.62)));
+    const k = easeOutCubic(local);
+
+    const f = b.f, s = b.s;
+    _v.set(
+      s.x + (f.x - s.x) * k,
+      s.y + (f.y - s.y) * k,
+      s.z + (f.z - s.z) * k
+    );
+    // 起飞时带一点向上的过冲，像被水托起来
+    if (local > 0 && local < 1) {
+      _v.y += Math.sin(local * Math.PI) * 0.55;
+    }
+    _e.set(
+      b.jx + (s.rx ?? 0) * (1 - k),
+      b.jy + (s.ry ?? 0) * (1 - k),
+      s.rz + (f.rz - s.rz) * k
+    );
+    _q.setFromEuler(_e);
+    _v2.set(f.sx, f.sy, f.sz).multiplyScalar(0.55 + 0.45 * k);
+
+    _m.compose(_v, _q, _v2);
+    inst.setMatrixAt(i, _m);
+  }
+  inst.instanceMatrix.needsUpdate = true;
+}
+const _v2 = new THREE.Vector3(), _m = new THREE.Matrix4();
+updateBlocks(-99);
+
+setStage('layout-blocks', 80);
+
+/* ══════════════════════════════════════════════════════════
+   六点五、两岸：桥必须「跨在河上」，不能浮在水面上
+   ══════════════════════════════════════════════════════════ */
+const bankMat = new THREE.MeshStandardMaterial({
+  color: 0x1b2024, roughness: 0.98, metalness: 0.0,
+});
+
+function hash2(x, y) {
+  const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
+  return n - Math.floor(n);
+}
+function smoothNoise(x, y) {
+  const xi = Math.floor(x), yi = Math.floor(y);
+  const xf = x - xi, yf = y - yi;
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+  const a = hash2(xi, yi), b = hash2(xi + 1, yi);
+  const c = hash2(xi, yi + 1), d = hash2(xi + 1, yi + 1);
+  return (a * (1 - u) + b * u) * (1 - v) + (c * (1 - u) + d * u) * v;
+}
+
+const BANKS = [];
+for (const side of [-1, 1]) {
+  const W = 110, D = 190, SX = 56, SZ = 60;
+  const g = new THREE.PlaneGeometry(W, D, SX, SZ);
+  g.rotateX(-Math.PI / 2);
+  const pos = g.attributes.position;
+  const colors = new Float32Array(pos.count * 3);
+
+  for (let i = 0; i < pos.count; i++) {
+    const lx = pos.getX(i), lz = pos.getZ(i);
+    // 世界坐标：岸的内缘贴着桥台外侧
+    const wx = side * (B.L / 2 + 3.4) + lx;
+    // 离河心越远越高，形成一个缓坡，同时沿河岸方向有起伏
+    const away = Math.max(0, Math.abs(wx) - (B.L / 2 + 3.4));
+    let h = Math.pow(Math.min(away / 26, 1), 0.72) * 7.2;
+    h += smoothNoise(wx * 0.055, lz * 0.055) * 2.6 - 1.2;
+    h += smoothNoise(wx * 0.16, lz * 0.16) * 0.9;
+    // 靠河心处压到水线以下，和河床接上，不露缝
+    if (away < 2.5) h = -1.2 + away * 0.5;
+    pos.setY(i, h);
+
+    const shade = 0.55 + smoothNoise(wx * 0.3, lz * 0.3) * 0.45;
+    colors[i * 3] = 0.085 * shade;
+    colors[i * 3 + 1] = 0.098 * shade;
+    colors[i * 3 + 2] = 0.108 * shade;
+  }
+  g.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  g.computeVertexNormals();
+
+  const m = new THREE.MeshStandardMaterial({
+    vertexColors: true, roughness: 0.99, metalness: 0.0,
+    color: 0xffffff,
+  });
+  const mesh = new THREE.Mesh(g, m);
+  mesh.position.set(side * (B.L / 2 + 3.4), 0, 0);
+  if (show('banks')) scene.add(mesh);
+  BANKS.push(mesh);
+}
+
+/* 岸上的树：锥形暗影，只为给出一条岸线，不抢主体 */
+const treeTrunkMat = new THREE.MeshStandardMaterial({ color: 0x14181c, roughness: 1 });
+const treeCrownMat = new THREE.MeshStandardMaterial({ color: 0x14251f, roughness: 1 });
+const crownGeo = new THREE.ConeGeometry(1, 1, 7);
+const trunkGeo = new THREE.CylinderGeometry(0.12, 0.16, 1, 5);
+
+for (let i = 0; i < 22; i++) {
+  const side = i % 2 === 0 ? -1 : 1;
+  const wx = side * (B.L / 2 + 9 + Math.random() * 34);
+  const wz = (Math.random() - 0.5) * 150;
+  const away = Math.abs(wx) - (B.L / 2 + 3.4);
+  let baseY = Math.pow(Math.min(away / 26, 1), 0.72) * 7.2;
+  baseY += smoothNoise(wx * 0.055, wz * 0.055) * 2.6 - 1.2;
+  const hgt = 3.2 + Math.random() * 3.4;
+
+  const crown = new THREE.Mesh(crownGeo, treeCrownMat);
+  crown.position.set(wx, baseY + hgt * 0.72, wz);
+  crown.scale.set(1.1 + Math.random() * 0.9, hgt, 1.1 + Math.random() * 0.9);
+  crown.rotation.y = Math.random() * 6.28;
+  if (show('trees')) scene.add(crown);
+
+  const trunk = new THREE.Mesh(trunkGeo, treeTrunkMat);
+  trunk.position.set(wx, baseY + hgt * 0.18, wz);
+  trunk.scale.set(1, hgt * 0.5, 1);
+  if (show('trees')) scene.add(trunk);
+}
+
+/* ══════════════════════════════════════════════════════════
+   七、水面
+   ══════════════════════════════════════════════════════════ */
+const waterGeo = new THREE.PlaneGeometry(420, 420, 190, 190);
+waterGeo.rotateX(-Math.PI / 2);
+
+const waterMat = new THREE.MeshStandardMaterial({
+  color: 0x11303f,
+  roughness: 0.52,
+  metalness: 0.02,       // 无 envMap 时高金属度会让水面算成黑色
+  transparent: false,
+});
+// 顶点里注入低频波纹；不给法线重算（开销大），靠环境高光糊过去
+waterMat.onBeforeCompile = (sh) => {
+  sh.uniforms.uTime = { value: 0 };
+  sh.uniforms.uWaves = { value: FLAT ? 0.0 : 1.0 };
+  waterMat.userData.sh = sh;
+  sh.vertexShader = sh.vertexShader
+    .replace('#include <common>', `#include <common>
+      uniform float uTime;
+      uniform float uWaves;
+      float wv(vec2 p, float t){
+        return sin(p.x * 0.62 + t * 0.85) * 0.072
+             + sin(p.y * 0.51 - t * 0.62) * 0.060
+             + sin((p.x + p.y) * 0.93 + t * 1.35) * 0.034;
+      }`)
+    .replace('#include <beginnormal_vertex>', `#include <beginnormal_vertex>
+      {
+        // 用有限差分算法线：不重算法线的话，波纹只有位移没有明暗，水面会像一块蓝布
+        float d0 = length(position.xz);
+        float a0 = 1.0 - smoothstep(8.0, 150.0, d0);
+        float e = 0.55;
+        float h0 = wv(position.xz, uTime) * uWaves;
+        float hx = wv(position.xz + vec2(e, 0.0), uTime) * uWaves;
+        float hz = wv(position.xz + vec2(0.0, e), uTime) * uWaves;
+        objectNormal = normalize(vec3(-(hx - h0) / e * a0, 1.0, -(hz - h0) / e * a0));
+      }`)
+    .replace('#include <begin_vertex>', `#include <begin_vertex>
+      float d = length(position.xz);
+      float atten = 1.0 - smoothstep(8.0, 150.0, d);
+      transformed.y += wv(position.xz, uTime) * atten * uWaves;`);
+  if (sh.vertexShader.indexOf('objectNormal') < 0) console.warn('水面法线注入失败');
+};
+const water = new THREE.Mesh(waterGeo, waterMat);
+water.position.y = 0;
+if (show('water')) scene.add(water);
+
+setStage('water', 90);
+
+/* ══════════════════════════════════════════════════════════
+   八、灯笼（暖光点）+ 萤火虫
+   ══════════════════════════════════════════════════════════ */
+const LAMPS = [];
+const lampGlowGeo = new THREE.PlaneGeometry(1, 1);
+
+function makeGlow(color, size) {
+  const m = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uColor: { value: new THREE.Color(color) }, uTime: { value: 0 }, uSeed: { value: Math.random() * 10 }, uOn: { value: 0 } },
+    vertexShader: `varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+    fragmentShader: `
+      varying vec2 vUv; uniform vec3 uColor; uniform float uTime; uniform float uSeed; uniform float uOn;
+      void main(){
+        float d = length(vUv - 0.5) * 2.0;
+        float core = exp(-d * 6.2);
+        float halo = exp(-d * 3.4) * 0.40;
+        float mask = 1.0 - smoothstep(0.42, 1.0, d);   // 关键：把面片方角压掉
+        float flick = 0.86 + 0.14 * sin(uTime * 3.1 + uSeed) * sin(uTime * 7.7 + uSeed * 2.0);
+        float a = (core + halo) * flick * mask * uOn;
+        if(a < 0.004) discard;
+        gl_FragColor = vec4(uColor * (1.0 + core * 0.7), a);
+      }`
+  });
+  const mesh = new THREE.Mesh(lampGlowGeo, m);
+  mesh.scale.setScalar(size);
+  mesh.renderOrder = 4;
+  return mesh;
+}
+
+for (let i = 0; i < 5; i++) {
+  const x = -railTotal / 2 + (railTotal / 4) * i;
+  const y = B.deckY + 0.10 + B.railH + 0.42;
+  const z = B.W / 2 - 0.20;
+  const g = makeGlow(0xffa845, 4.4);
+  g.position.set(x, y, z);
+  scene.add(g);
+  LAMPS.push(g);
+
+  // 少量真实点光，只为照亮附近栏板；不用太多，控制开销
+  if (i % 2 === 0) {
+    const pl = new THREE.PointLight(0xff9d42, 0, 16, 2.0);
+    pl.position.set(x, y, z);
+    pl.userData.full = 7.5;
+    scene.add(pl);
+    LAMPS.userLights = LAMPS.userLights || [];
+    LAMPS.userLights.push(pl);
+  }
+}
+// 桥洞内部补一点冷光，让拱腹不是死黑
+const caveLight = new THREE.PointLight(0x9fd0e8, 9.0, 26, 2.0);
+caveLight.position.set(0, 3.2, -6);
+scene.add(caveLight);
+
+/* 萤火虫 */
+function buildFlies() {
+  const N = 130;
+  const p = new Float32Array(N * 3), ph = new Float32Array(N), sz = new Float32Array(N);
+  const seeds = [];
+  for (let i = 0; i < N; i++) {
+    const x = (Math.random() - 0.5) * 110;
+    const z = (Math.random() - 0.5) * 150 - 8;
+    const y = 0.5 + Math.random() * 7.5;
+    p[i*3] = x; p[i*3+1] = y; p[i*3+2] = z;
+    ph[i] = Math.random() * 6.283;
+    sz[i] = 0.8 + Math.random() * 1.5;
+    seeds.push(x, y, z);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(p, 3));
+  g.setAttribute('aPhase', new THREE.BufferAttribute(ph, 1));
+  g.setAttribute('aSize', new THREE.BufferAttribute(sz, 1));
+
+  const m = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uTime: { value: 0 } },
+    vertexShader: `
+      attribute float aPhase; attribute float aSize;
+      uniform float uTime; varying float vA;
+      void main(){
+        vec3 p = position;
+        p.x += sin(uTime * 0.31 + aPhase) * 3.4 + sin(uTime * 0.77 + aPhase * 2.1) * 1.1;
+        p.y += sin(uTime * 0.43 + aPhase * 1.7) * 1.5;
+        p.z += cos(uTime * 0.27 + aPhase * 0.8) * 2.6;
+        float blink = 0.35 + 0.65 * pow(max(0.0, sin(uTime * 1.35 + aPhase * 3.0)), 2.2);
+        vA = blink;
+        vec4 mv = modelViewMatrix * vec4(p, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_PointSize = aSize * (220.0 / -mv.z) * (0.7 + 0.6 * blink);
+      }`,
+    fragmentShader: `
+      varying float vA;
+      void main(){
+        float d = length(gl_PointCoord - vec2(0.5));
+        if(d > 0.5) discard;
+        float a = (1.0 - smoothstep(0.0, 0.5, d)) * vA;
+        gl_FragColor = vec4(vec3(1.0, 0.84, 0.52), a * 0.62);
+      }`
+  });
+  const pts = new THREE.Points(g, m);
+  pts.frustumCulled = false;
+  if (show('flies')) scene.add(pts);
+  return m;
+}
+const flyMat = buildFlies();
+
+/* ══════════════════════════════════════════════════════════
+   九、雾气层（低空体积感）：几片水平加色面片
+   ══════════════════════════════════════════════════════════ */
+const fogPlanes = [];
+for (let i = 0; i < 4; i++) {
+  const g = new THREE.PlaneGeometry(360, 360);
+  g.rotateX(-Math.PI / 2);
+  const m = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { uTime: { value: 0 }, uSeed: { value: i * 2.7 }, uY: { value: i } },
+    vertexShader: `varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+    fragmentShader: `
+      varying vec2 vUv; uniform float uTime; uniform float uSeed; uniform float uY;
+      float h(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
+      float noise(vec2 p){
+        vec2 i=floor(p), f=fract(p); f=f*f*(3.0-2.0*f);
+        return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);
+      }
+      void main(){
+        vec2 c = vUv - 0.5;
+        float d = length(c) * 2.0;
+        // 多层噪声缓慢漂移
+        float n = noise(vUv * 6.0 + vec2(uTime * 0.014, uSeed))
+                + noise(vUv * 14.0 - vec2(uTime * 0.026, uSeed * 1.7)) * 0.55;
+        n = n / 1.55;
+        float edge = 1.0 - smoothstep(0.15, 1.0, d);
+        float a = edge * smoothstep(0.34, 0.78, n) * (0.030 + uY * 0.010);
+        gl_FragColor = vec4(vec3(0.46, 0.66, 0.82), a);
+      }`
+  });
+  const mesh = new THREE.Mesh(g, m);
+  mesh.position.y = 0.5 + i * 1.5;
+  mesh.renderOrder = 2;
+  if (show('fog')) scene.add(mesh);
+  fogPlanes.push(m);
+}
+
+setStage('atmosphere', 100);
+
+/* ══════════════════════════════════════════════════════════
+   十、开场镜头：一条相机轨迹（0–13 秒）
+   ══════════════════════════════════════════════════════════ */
+const CAM_KEYS = [
+  // ① 0–5s 中景 3/4 俯视：整座桥连着水面一起进画面，石块从水里长出来
+  { t: 0.0,  p: [-19.5, 19.0, 39.0], q: [-1, 5.4, 0] },
+  { t: 2.6,  p: [-18.0, 17.4, 36.0], q: [-0.5, 5.6, 0] },
+  { t: 5.0,  p: [-13.5, 12.6, 31.0], q: [0, 5.8, 0] },
+  // ② 5–8.5s 压到水面：桥洞正好框住月亮
+  { t: 7.0,  p: [-8.5, 3.6, 27.0],  q: [0, 5.2, -4] },
+  { t: 8.5,  p: [-2.8, 2.2, 23.0],  q: [0, 4.8, -14] },
+  // ③ 8.5–11s 再压一点，贴水面，月亮几乎顶到拱顶
+  { t: 10.2, p: [0.8, 1.85, 17.0],  q: [0, 4.6, -20] },
+  // ④ 11–15s 拉升环绕，露出四小拱与桥面灯笼
+  { t: 12.6, p: [9.0, 8.5, 27.0],   q: [0, 6.2, -2] },
+  { t: 15.0, p: [23.0, 14.5, 34.0], q: [-1, 6.4, 0] },
+];
+const camPosCurve = new THREE.CatmullRomCurve3(
+  CAM_KEYS.map(k => new THREE.Vector3(...k.p)), false, 'catmullrom', 0.4);
+const camTgtCurve = new THREE.CatmullRomCurve3(
+  CAM_KEYS.map(k => new THREE.Vector3(...k.q)), false, 'catmullrom', 0.4);
+
+const OPEN_DUR = 15.0;
+let openT = 0;      // 开场进度（秒）
+let opening = true;
+
+function applyCam(prog) {
+  const t = Math.min(1, Math.max(0, prog));
+  camPosCurve.getPoint(t, camera.position);
+  camTgtCurve.getPoint(t, controls.target);
+  // 开场末段轻微呼吸感
+  camera.position.y += Math.sin(t * 9.0) * 0.02 * (1 - t);
+  camera.lookAt(controls.target);
+}
+applyCam(0);
+
+/* ══════════════════════════════════════════════════════════
+   十一、主循环
+   ══════════════════════════════════════════════════════════ */
+const clock = new THREE.Clock();
+let blockT = 0;
+
+// 调参用：?seek=6.5 直接把画面定在开场第 6.5 秒
+const QS = new URLSearchParams(location.search);
+const SEEK = QS.has('seek') ? Math.max(0, parseFloat(QS.get('seek')) || 0) : null;
+const FROZEN = SEEK !== null;
+
+function tick() {
+  requestAnimationFrame(tick);
+  const dt = Math.min(clock.getDelta(), 0.05);
+  const el = FROZEN ? SEEK : clock.elapsedTime;
+
+  // 石头拼合：第一秒沉在水里等待，之后开始
+  if (!FROZEN) blockT = opening ? blockT + dt : blockT;
+  const bt = FROZEN ? Math.max(0, SEEK - 0.80) : Math.max(0, blockT - 0.80);
+  updateBlocks(bt);
+
+  // 开场镜头推进
+  if (FROZEN) {
+    applyCam(Math.min(1, SEEK / OPEN_DUR));
+    if (SEEK >= OPEN_DUR) { controls.enabled = true; $('#hud').classList.add('on'); }
+  } else if (opening) {
+    openT += dt;
+    applyCam(openT / OPEN_DUR);
+    if (openT >= OPEN_DUR) {
+      opening = false;
+      controls.enabled = true;
+      $('#hud').classList.add('on');
+    }
+  } else {
+    controls.update();
+  }
+
+  // 水波
+  if (waterMat.userData.sh) waterMat.userData.sh.uniforms.uTime.value = el;
+
+  // 星空 / 萤火虫 / 月 / 雾
+  starMat.uniforms.uTime.value = el;
+  flyMat.uniforms.uTime.value = el;
+  moon.moonMat.uniforms.uTime.value = el;
+  moon.beamMat.uniforms.uTime.value = el;
+  for (const f of fogPlanes) f.uniforms.uTime.value = el;
+
+  // 灯笼：跟着拼合进度亮起来，同时轻微闪烁
+  const lampOn = Math.min(1, Math.max(0, (bt - 1.15) / 0.55));
+  for (let i = 0; i < LAMPS.length; i++) {
+    LAMPS[i].material.uniforms.uTime.value = el;
+    LAMPS[i].material.uniforms.uOn.value = lampOn;
+  }
+  if (LAMPS.userLights) for (const pl of LAMPS.userLights) pl.intensity = pl.userData.full * lampOn;
+
+  renderer.render(scene, camera);
+}
+tick();
+
+/* ══════════════════════════════════════════════════════════
+   十二、交互
+   ══════════════════════════════════════════════════════════ */
+function replay() {
+  opening = true; openT = 0; blockT = 0;
+  controls.enabled = false;
+  $('#hud').classList.remove('on');
+  applyCam(0);
+}
+
+addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); replay(); }
+  if (e.code === 'KeyR') {
+    controls.target.set(0, 5.0, 0);
+    camera.position.set(-16, 9, 34);
+    controls.update();
+  }
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+// 显存里估个体积，给右下角那个数字一点实感
+$('#kb').textContent = '≈ 1 个 HTML';
+
+goBtn.classList.add('on');
+// 打开即播：加载完缓冲一拍就开始，按钮只是给想手动重来的人一个落点
+function begin(instant) {
+  if (instant) veil.style.transition = 'none';
+  veil.classList.add('gone');
+  if (FROZEN) {                       // 定格模式：直接摆到目标帧，不播开场
+    opening = SEEK < OPEN_DUR;
+    blockT = SEEK; openT = SEEK;
+    if (SEEK >= OPEN_DUR) $('#hud').classList.add('on');
+    return;
+  }
+  replay();
+}
+goBtn.addEventListener('click', () => begin(false));
+begin(true);
+</script>
+</body>
+</html>

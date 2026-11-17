@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>workbuddy+希沃：4步直接在希沃里做出原生课件</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#EDEAE3;font-family:"Microsoft YaHei","PingFang SC",sans-serif;color:#26312F}
+.wrap{max-width:700px;margin:0 auto;background:#FFFFFF;padding:34px 32px 56px;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+h1{font-size:29px;line-height:1.4;margin:0 0 8px}
+.meta{font-size:13px;color:#8A8A82;border-bottom:1px solid #E5DFD0;padding-bottom:16px;margin-bottom:26px}
+h2{font-size:22px;margin:34px 0 14px;padding-left:11px;border-left:4px solid #B4472B}
+p{font-size:16px;line-height:1.9;margin:0 0 14px}
+strong{color:#B4472B}
+code{background:#F5F1E8;padding:2px 6px;border-radius:4px;font-size:14px;color:#3F5A62}
+pre{background:#26312F;color:#F5F1E8;padding:16px 18px;border-radius:8px;overflow-x:auto;line-height:1.7;font-size:14px;margin:16px 0}
+pre code{background:none;color:inherit;padding:0}
+blockquote{background:#FBF3EF;border-left:4px solid #B4472B;padding:12px 16px;margin:16px 0;font-size:15px;line-height:1.85;color:#3F5A62}
+blockquote code{background:#F3E7E1}
+ul{padding-left:22px;margin:0 0 16px}li{font-size:16px;line-height:1.9;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th,td{border:1px solid #E5DFD0;padding:9px 12px;text-align:left;line-height:1.7}
+th{background:#FBF8F2;font-weight:700}
+figure{margin:22px 0}figure img{width:100%;display:block;border:1px solid #E5DFD0;border-radius:6px}
+figcaption{font-size:13px;color:#8A8A82;text-align:center;margin-top:8px}
+hr{border:0;border-top:1px solid #E5DFD0;margin:28px 0}
+.miss{color:#B4472B;background:#FBF0EC;padding:10px 14px;border-radius:6px}
+</style></head><body><div class="wrap">
+<h1>workbuddy+希沃：4步直接在希沃里做出原生课件</h1>
+<div class="meta">极简操作教程 · 配图 01–10 按步骤顺序编号</div>
+<blockquote>这篇不解释原理，只讲操作。照着做，用《赵州桥》这一课走一遍，约 10 分钟。<br>开始之前，装好<strong>希沃白板 5</strong> 并用自己账号登录，WorkBuddy 打开即可。</blockquote>
+<p>workbuddy 搭配希沃，简单四步，直接在希沃中做出原生课件。有汉字卡，可以读，带笔顺，有思维导图，有交互游戏。这是其他的 AI 生成 PPT 所做不到的，接下来四步带你完成。</p>
+<p>实在搞不定就私信我（是点我头像，私信，不是留言），回复「希沃」，获取详细教程。</p>
+<p><strong>先看成品</strong>：9 页《赵州桥》，汉字能读、导图能展开、学生能上台答题。</p>
+<figure><img src="极简教程_配图/01-成品-赵州桥思维导图页.png" alt="配图 01"><figcaption>配图 01 · 成品：《赵州桥》思维导图页</figcaption></figure>
+<hr>
+<h2>第 1 步　装一个技能</h2>
+<p>在左侧「专家 / 技能 / 连接器」里点开<strong>技能市场（SkillHub）</strong>，搜索「希沃」，找到「希沃白板助手」并安装启用。</p>
+<figure><img src="极简教程_配图/02-第一步-技能市场搜希沃.png" alt="配图 02"><figcaption>配图 02 · 技能市场 SkillHub 搜「希沃」，第一项即希沃白板助手</figcaption></figure>
+<figure><img src="极简教程_配图/03-第一步-技能详情已启用.png" alt="配图 03"><figcaption>配图 03 · 技能详情 v1.0.2，开关已启用</figcaption></figure>
+<figure><img src="极简教程_配图/04-第一步-技能菜单入口.png" alt="配图 04"><figcaption>配图 04 · 左侧「技能」菜单里的另一个入口</figcaption></figure>
+<p>或者直接在 WorkBuddy 对话框里发这一句，让它自己安装。</p>
+<pre><code>seewo-easinote-assistant-skill，安装这个技能</code></pre>
+<h2>第 2 步　连上希沃（最容易卡住的一步）</h2>
+<p><strong>做</strong>：打开希沃白板 5 → 登录 → 主界面出来后再等 30 秒。</p>
+<p><strong>说</strong>：</p>
+<pre><code>@希沃白板助手 连接希沃白板</code></pre>
+<p>或者在对话框里选择技能，搜索「希沃白板助手」，点它，再在对话框里对话。</p>
+<p><strong>看到这三样才算连上</strong>，缺一个都别往下走：</p>
+<ul><li><code>&quot;connected&quot;: true, &quot;port&quot;: 7916</code></li><li><code>&quot;has_tools&quot;: true</code>（工具列表非空）</li><li><code>mcp.json</code> 里 <code>entry</code> 有值</li></ul>
+<figure><img src="极简教程_配图/05-第二步-连接成功三条证据.png" alt="配图 05"><figcaption>配图 05 · 连接成功：7916 端口、工具列表校验通过、保持备课态</figcaption></figure>
+<figure><img src="极简教程_配图/06-第二步-连接状态反转.png" alt="配图 06"><figcaption>配图 06 · 连接状态反转：重启客户端后 tools/list 才就绪</figcaption></figure>
+<h2>第 3 步　说一句话生成课件</h2>
+<p>下面这段整段复制过去，换课题就能用。当然，课件你也可以自己设计好发给它，本身这个技能带的有课件设计的功能。</p>
+<pre><code>用 seewo-easinote-assistant-skill 生成人教版小学语文三年级下册《赵州桥》第一课时的课件，
+5-10 页，图片由 AI 生成；
+必须用到希沃特有的汉字卡（匠、慧、赵，带笔顺演示）、
+思维导图（总说身份→分写雄伟/坚固/美观→总结文化遗产）、
+判断对错课堂活动（5 题）；
+交付物是希沃客户端里真实打开的 .enbx 原生课件，不要导出 PPT。</code></pre>
+<p><strong>它会弹 4 次确认，依次回</strong>：</p>
+<table><thead><tr><th>第几次</th><th>你回什么</th></tr></thead><tbody><tr><td>① 基本信息</td><td>5-10 页 / AI 生成图片 / 交付 <code>.enbx</code></td></tr><tr><td>② 教学目标</td><td>4 条目标，看一眼点确认</td></tr><tr><td>③ 大纲设计</td><td>看页序和组件位置，点确认</td></tr><tr><td>④ 开工</td><td>点确认</td></tr></tbody></table>
+<figure><img src="极简教程_配图/07-第三步-阶段二教学目标.png" alt="配图 07"><figcaption>配图 07 · 阶段② 四条教学目标卡片</figcaption></figure>
+<figure><img src="极简教程_配图/08-第三步-阶段三大纲硬约束.png" alt="配图 08"><figcaption>配图 08 · 阶段③ 大纲硬约束：8 页内容 + 1 页封面</figcaption></figure>
+<blockquote>特有功能要<strong>点名</strong>：写清哪几个生字、哪几道题、导图根节点是什么。不点名就可能不生成。</blockquote>
+<h2>第 4 步　看成品，点一下「开始授课」</h2>
+<p>约 30 秒后，希沃客户端里自动打开 9 页《赵州桥》。</p>
+<p><strong>一定要点「开始授课」再验</strong>：汉字卡喇叭能读、「分步」能逐笔演示、导图能逐级展开、判断活动逐题出题。</p>
+<p>备课状态下这些组件只是静态预览，不点「开始授课」，看起来就跟图片一样。</p>
+<figure><img src="极简教程_配图/09-第四步-汉字卡控件与开始授课.png" alt="配图 09"><figcaption>配图 09 · 汉字卡控件：喇叭 / 连续 / 分步，需点「开始授课」</figcaption></figure>
+<figure><img src="极简教程_配图/10-第四步-判断对错活动页.png" alt="配图 10"><figcaption>配图 10 · 判断对错活动（备课态模板预览）</figcaption></figure>
+<hr>
+<h2>卡住了看这 3 行</h2>
+<table><thead><tr><th>现象</th><th>怎么做</th></tr></thead><tbody><tr><td>一直 <code>login_required</code> / 端口不通</td><td>彻底退出希沃重开、登录、等 30 秒，再连一次</td></tr><tr><td>汉字卡点了没反应</td><td>没点「开始授课」</td></tr><tr><td>只给了 PPT</td><td>提示词里没写「交付希沃客户端里的 <code>.enbx</code> 原生课件」</td></tr></tbody></table>
+<hr>
+<p>一节课值钱的地方，在学生能不能上手点一下。这四步走完，剩下的时间留给教学设计。</p>
+<p><strong>看了教程不知道怎么操作的，私信我沟通。</strong></p>
+<p>#AI备课 #希沃白板 #WorkBuddy #课件制作 #小学语文 #教师效率</p>
+<hr>
+</div></body></html>

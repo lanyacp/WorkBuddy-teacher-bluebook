@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#12304A', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#8FE0D2' }}>封面</Text>
+    <Text style={{ fontSize: 17, color: '#CFE4EA' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#FFFFFF', lineHeight: 1.25 }}>蓝皮书系列课 · 第一季</Text>
+    <Text style={{ fontSize: 27, color: '#CFE4EA', lineHeight: 1.45 }}>26 讲 · 含跟做 11 小时 · 讲解净时长 ≈6 小时</Text>
+    <Text style={{ fontSize: 27, color: '#CFE4EA', lineHeight: 1.45 }}>路径 A 前四节课件（00 / 01 / 02 / 03）· 34 页可直接放映</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#CFE4EA' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#CFE4EA' }}>1 / 34</Text>
+  </Box>
+</Slide>

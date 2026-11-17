@@ -1,0 +1,549 @@
+{
+  "creativeDirection": {
+    "concept": "一座桥的三种看法：远看其势、近观其构、细察其纹",
+    "visualMetaphor": "洨河水面上一道石弧，镜头从远景逐级推近到栏板上的龙纹",
+    "backgroundStrategy": "封面用桥在右、左侧雾面留白的远视图；讲解与梳理页用主体压在四角、中心安静的淡墨水岸图；资料、表达与总结页用上部淡山、中下部极安静的同源雾面图；判断活动页由希沃组件独占，不设背景"
+  },
+  "pages": [
+    {
+      "page": 1,
+      "background": {
+        "type": "image",
+        "source": "images/bg-a.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "left",
+          "subjects": [
+            {
+              "label": "赵州桥石拱主体",
+              "importance": "primary",
+              "box": {
+                "x": 700,
+                "y": 250,
+                "w": 580,
+                "h": 310
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "左侧雾面留白",
+              "box": {
+                "x": 50,
+                "y": 50,
+                "w": 430,
+                "h": 610
+              },
+              "bgTone": "#E5DFD0"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "kicker:0:1",
+        "kicker:1:1",
+        "kicker:anchor:0:2",
+        "kicker:size:2:1",
+        "lead:0:1",
+        "lead:1:1",
+        "lead:anchor:0:3",
+        "lead:size:2:2",
+        "title:0:0",
+        "title:1:0",
+        "title:anchor:0:1",
+        "title:size:2:1"
+      ],
+      "designRationale": "封面把完整石拱桥放在右侧，左侧雾面留白承载大字课题，先建立「远看其势」的第一眼印象，与后页逐级推近的镜头形成呼应。"
+    },
+    {
+      "page": 2,
+      "background": {
+        "type": "image",
+        "source": "images/bg-b.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "右上角桥影",
+              "importance": "primary",
+              "box": {
+                "x": 870,
+                "y": 0,
+                "w": 410,
+                "h": 82
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "全页安静带",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 1180,
+                "h": 680
+              },
+              "bgTone": "#DFDCD2"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "body:0:1",
+        "body:1:1",
+        "body:2:1",
+        "body:anchor:0:2",
+        "body:size:5:2",
+        "item:2:0",
+        "item:2:1",
+        "item:3:0",
+        "item:3:1",
+        "item:anchor:5:1",
+        "item:anchor:5:2",
+        "item:anchor:5:3",
+        "item:size:2:1",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:2:0",
+        "lead:anchor:0:1",
+        "lead:size:5:1",
+        "question:0:1",
+        "question:1:1",
+        "question:2:1",
+        "question:anchor:0:3",
+        "question:size:5:1",
+        "summary:0:2",
+        "summary:1:2",
+        "summary:2:2",
+        "summary:3:2",
+        "summary:anchor:0:4",
+        "summary:size:7:0",
+        "title:0:0",
+        "title:1:0",
+        "title:2:0",
+        "title:anchor:0:0",
+        "title:size:5:1"
+      ],
+      "designRationale": "导入页用通栏标题加左文右线索的双栏，让「看图说话」的任务与三条观察线索并置；中心留白图保证大段引导语和正文清晰可读。"
+    },
+    {
+      "page": 3,
+      "background": {
+        "type": "image",
+        "source": "images/bg-c.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "远景石拱桥",
+              "importance": "primary",
+              "box": {
+                "x": 460,
+                "y": 105,
+                "w": 360,
+                "h": 95
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "上方左侧留白",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 390,
+                "h": 210
+              },
+              "bgTone": "#D3CFC4"
+            },
+            {
+              "label": "中下部雾面留白",
+              "box": {
+                "x": 50,
+                "y": 240,
+                "w": 1180,
+                "h": 440
+              },
+              "bgTone": "#E7E1D5"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "body:0:1",
+        "body:1:1",
+        "body:2:1",
+        "body:3:1",
+        "body:anchor:0:2",
+        "body:size:7:1",
+        "item:0:1",
+        "item:0:2",
+        "item:1:1",
+        "item:1:2",
+        "item:2:1",
+        "item:2:2",
+        "item:3:1",
+        "item:anchor:0:3",
+        "item:anchor:0:4",
+        "item:anchor:3:3",
+        "item:anchor:3:4",
+        "item:anchor:5:3",
+        "item:size:2:0",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:anchor:0:1",
+        "lead:size:2:1",
+        "summary:0:2",
+        "summary:1:2",
+        "summary:2:2",
+        "summary:3:2",
+        "summary:anchor:0:4",
+        "summary:size:7:0",
+        "title:0:0",
+        "title:1:0",
+        "title:anchor:0:0",
+        "title:size:2:1"
+      ],
+      "designRationale": "资料页把标题与圈画任务收在上方左侧安静带，正文横贯中下部，五个事实点横向铺开成档案条，与导入页的双栏轮廓明显不同。"
+    },
+    {
+      "page": 4,
+      "background": {
+        "type": "image",
+        "source": "images/bg-b.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "右上角桥影",
+              "importance": "primary",
+              "box": {
+                "x": 870,
+                "y": 0,
+                "w": 410,
+                "h": 82
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "全页安静带",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 1180,
+                "h": 680
+              },
+              "bgTone": "#DFDCD2"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "item:0:0",
+        "item:1:0",
+        "item:2:0",
+        "item:3:0",
+        "item:anchor:0:1",
+        "item:anchor:3:1",
+        "item:anchor:5:1",
+        "item:size:2:0",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:2:0",
+        "lead:3:0",
+        "lead:anchor:0:1",
+        "lead:size:7:0",
+        "title:0:0",
+        "title:1:0",
+        "title:2:0",
+        "title:anchor:0:0",
+        "title:size:5:1"
+      ],
+      "designRationale": "汉字卡由希沃原生组件独占中下部交互区，页面只在顶部留一条通栏标题与三个短提示，让笔顺演示成为唯一视觉焦点。"
+    },
+    {
+      "page": 5,
+      "background": {
+        "type": "image",
+        "source": "images/bg-b.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "右上角桥影",
+              "importance": "primary",
+              "box": {
+                "x": 870,
+                "y": 0,
+                "w": 410,
+                "h": 82
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "全页安静带",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 1180,
+                "h": 680
+              },
+              "bgTone": "#DFDCD2"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "item:0:0",
+        "item:1:0",
+        "item:2:0",
+        "item:3:0",
+        "item:anchor:0:1",
+        "item:anchor:0:2",
+        "item:anchor:4:1",
+        "item:anchor:4:2",
+        "item:size:4:0",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:anchor:0:1",
+        "lead:size:4:0",
+        "title:0:0",
+        "title:1:0",
+        "title:anchor:0:0",
+        "title:size:4:1"
+      ],
+      "designRationale": "对照表组件承担两段关键句的同构比较，顶部用窄标题加两行两列的辨析提示，与前一页汉字卡的通栏一行式提示形成不同轮廓。"
+    },
+    {
+      "page": 6,
+      "background": {
+        "type": "image",
+        "source": "images/bg-b.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "右上角桥影",
+              "importance": "primary",
+              "box": {
+                "x": 870,
+                "y": 0,
+                "w": 410,
+                "h": 82
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "全页安静带",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 1180,
+                "h": 680
+              },
+              "bgTone": "#DFDCD2"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "item:0:0",
+        "item:1:0",
+        "item:2:0",
+        "item:anchor:0:2",
+        "item:size:5:0",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:2:0",
+        "lead:anchor:0:1",
+        "lead:size:5:1",
+        "title:0:0",
+        "title:1:0",
+        "title:2:0",
+        "title:anchor:0:0",
+        "title:size:5:1"
+      ],
+      "designRationale": "脑图页顶部按标题、任务引导、结构说明依次纵向排布，全部避开组件安全区；中心留白图的中下部安静低细节，保证逐级展开的节点清晰可读。"
+    },
+    {
+      "page": 8,
+      "background": {
+        "type": "image",
+        "source": "images/bg-c.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "远景石拱桥",
+              "importance": "primary",
+              "box": {
+                "x": 460,
+                "y": 105,
+                "w": 360,
+                "h": 95
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "上方左侧留白",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 390,
+                "h": 210
+              },
+              "bgTone": "#D3CFC4"
+            },
+            {
+              "label": "中下部雾面留白",
+              "box": {
+                "x": 50,
+                "y": 240,
+                "w": 1180,
+                "h": 440
+              },
+              "bgTone": "#E7E1D5"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "answer:0:1",
+        "answer:1:1",
+        "answer:2:1",
+        "answer:3:1",
+        "answer:anchor:0:3",
+        "answer:size:7:1",
+        "background:image",
+        "item:0:1",
+        "item:0:2",
+        "item:1:1",
+        "item:1:2",
+        "item:2:1",
+        "item:2:2",
+        "item:3:1",
+        "item:3:2",
+        "item:anchor:0:4",
+        "item:anchor:3:4",
+        "item:anchor:5:4",
+        "item:size:2:0",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:anchor:0:1",
+        "lead:size:2:1",
+        "question:0:1",
+        "question:1:1",
+        "question:2:1",
+        "question:3:1",
+        "question:anchor:0:2",
+        "question:size:7:1",
+        "summary:0:2",
+        "summary:1:2",
+        "summary:2:2",
+        "summary:3:2",
+        "summary:anchor:0:4",
+        "summary:size:7:0",
+        "title:0:0",
+        "title:1:0",
+        "title:anchor:0:0",
+        "title:size:2:1"
+      ],
+      "designRationale": "表达页用问题与答案的通栏纵向递进占据中部，三条写作要求横排收在下方，形成「问—答—用」的单一阅读动线，与前后页的分栏骨架都不同。"
+    },
+    {
+      "page": 9,
+      "background": {
+        "type": "image",
+        "source": "images/bg-c.png",
+        "fit": "cover",
+        "imageLayout": {
+          "hasRecognizableSubject": true,
+          "whitespace": "center",
+          "subjects": [
+            {
+              "label": "远景石拱桥",
+              "importance": "primary",
+              "box": {
+                "x": 460,
+                "y": 105,
+                "w": 360,
+                "h": 95
+              }
+            }
+          ],
+          "textSafeRegions": [
+            {
+              "label": "上方左侧留白",
+              "box": {
+                "x": 50,
+                "y": 20,
+                "w": 390,
+                "h": 210
+              },
+              "bgTone": "#D3CFC4"
+            },
+            {
+              "label": "中下部雾面留白",
+              "box": {
+                "x": 50,
+                "y": 240,
+                "w": 1180,
+                "h": 440
+              },
+              "bgTone": "#E7E1D5"
+            }
+          ]
+        }
+      },
+      "silhouette": [
+        "background:image",
+        "body:0:1",
+        "body:1:1",
+        "body:2:1",
+        "body:anchor:0:2",
+        "body:size:4:1",
+        "item:2:1",
+        "item:3:1",
+        "item:anchor:5:2",
+        "item:anchor:5:3",
+        "item:size:3:0",
+        "lead:0:0",
+        "lead:1:0",
+        "lead:anchor:0:1",
+        "lead:size:2:1",
+        "summary:0:2",
+        "summary:1:2",
+        "summary:anchor:0:4",
+        "summary:size:4:1",
+        "title:0:0",
+        "title:1:0",
+        "title:anchor:0:0",
+        "title:size:2:1"
+      ],
+      "designRationale": "收束页把「一条线」放在左下大块正文，三层作业收在右侧纵列，形成左重右轻的收尾节奏；沿用上方淡山的同源背景，与封面首尾呼应。"
+    }
+  ]
+}

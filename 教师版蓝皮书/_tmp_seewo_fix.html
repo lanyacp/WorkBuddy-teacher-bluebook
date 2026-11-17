@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1600px;height:900px;background:#f5f6f8;font-family:"Microsoft YaHei","Segoe UI",sans-serif;padding:42px 56px;color:#1a1d23}
+.head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}
+.head h1{font-size:38px;font-weight:700;line-height:1.2;color:#111827}
+.head .sub{font-size:18px;color:#6b7280;margin-top:8px}
+.head .tag{font-size:15px;color:#1d4ed8;background:#e8efff;padding:8px 18px;border-radius:999px;font-weight:700;white-space:nowrap}
+.row{display:flex;gap:20px;background:#fff;border:1px solid #e3e6ec;border-left:5px solid #dc2626;border-radius:12px;padding:17px 26px;margin-bottom:14px;height:170px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.n{width:52px;flex:none}
+.n b{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:11px;background:#fee2e2;color:#b91c1c;font-size:24px}
+.n span{display:block;font-size:13px;color:#98a0ae;margin-top:9px;text-align:center}
+.c1{width:294px;flex:none}
+.c1 .lbl{font-size:13px;color:#98a0ae;letter-spacing:.5px;margin-bottom:8px}
+.c1 b{font-size:22px;line-height:1.38;color:#111827;font-weight:700}
+.c1 .why{font-size:15px;color:#6b7280;margin-top:11px;line-height:1.5}
+.c2{flex:1;border-left:1px dashed #d9dee6;padding-left:22px}
+.c2 .lbl{font-size:13px;color:#059669;letter-spacing:.5px;font-weight:700;margin-bottom:8px}
+.c2 .txt{font-size:17px;line-height:1.62;color:#374151}
+.c2 .txt em{font-style:normal;font-weight:700;color:#111827}
+.c2 .cmd{font-family:Consolas,monospace;font-size:14.5px;background:#eef2f7;color:#1e3a5f;padding:2px 7px;border-radius:5px}
+.c2 .second{margin-top:9px;padding-top:8px;border-top:1px solid #eef0f4}
+.c2 .lbl2{font-size:13px;color:#d97706;font-weight:700;letter-spacing:.5px;margin-bottom:6px}
+.foot{margin-top:16px;display:flex;align-items:center;gap:12px;font-size:17.5px;color:#4b5563;background:#eef4ff;border-left:4px solid #2563eb;padding:16px 22px;border-radius:0 9px 9px 0}
+.foot b{color:#1d4ed8}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div>
+    <h1>生成后必查的三件事 · 从「事后改」变成「事前防」</h1>
+    <div class="sub">原文作者做完 14 页撞到的三个问题 —— 逐一归因，并给出三层解法</div>
+  </div>
+  <div class="tag">技能 v1.0.2 已内置校验器</div>
+</div>
+
+<div class="row">
+  <div class="n"><b>1</b><span>P1</span></div>
+  <div class="c1">
+    <div class="lbl">症状</div>
+    <b>黑字压在深色背景上<br>看不清</b>
+    <div class="why">配图按好看生成，文字按模板默认色排，两者没对齐</div>
+  </div>
+  <div class="c2">
+    <div class="lbl">事前预防（推荐）</div>
+    <div class="txt"><em>深色背景页文字一律白色/浅色，对比度 ≥4.5:1，标题加局部 scrims。</em>技能自带 <span class="cmd">text_contrast.py</span>（WCAG 2.1）会算</div>
+    <div class="second">
+      <div class="lbl2">事后怎么修</div>
+      <div class="txt">「P1 文字跟深色背景融合，导致文字看不清，要调整」—— <em>页码 + 具体现象</em>，不用重做整份</div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="n"><b>2</b><span>P4</span></div>
+  <div class="c1">
+    <div class="lbl">症状</div>
+    <b>某一页突然<br>没有背景图</b>
+    <div class="why">背景要靠客户端写入页面自身背景，中途失败或没回读就丢</div>
+  </div>
+  <div class="c2">
+    <div class="lbl">事前预防（推荐）</div>
+    <div class="txt"><em>生成后逐页回读元素，确认图片 source 有效且已写入页面背景。</em>技能会报 <span class="cmd">source 不存在</span>，并明确「不能把响应成功当成落地成功」</div>
+    <div class="second">
+      <div class="lbl2">事后怎么修</div>
+      <div class="txt">让 AI <em>回读</em>，比说「再美化一下」有效得多 —— 这是资源落地失败，不是审美问题</div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="n"><b>3</b><span>P6</span></div>
+  <div class="c1">
+    <div class="lbl">症状</div>
+    <b>表格太大<br>越出画面</b>
+    <div class="why">表格按内容撑开，没被 1280×720 逻辑画布边界约束</div>
+  </div>
+  <div class="c2">
+    <div class="lbl">事前预防（推荐）</div>
+    <div class="txt"><em>列数 ≤4、宽度 ≤画布 80%、四边留 5% 安全边距，超出就拆页。</em>校验器越界会报 <span class="cmd">box 越界或无效</span></div>
+    <div class="second">
+      <div class="lbl2">事后怎么修</div>
+      <div class="txt">「P6 的表格超出页面范围了，授课看不全，要调整」；脑图节点<em>超过 4 字</em>同样会被挤压</div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <b>最实用的一句：</b>别把 AI 说「完成」当完成 —— 回读 + 逐页截图复核，这一步不能省；再把三条沉淀成检查项，往后每份课件都受益。
+</div>
+
+</body>
+</html>

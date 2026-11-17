@@ -1,0 +1,75 @@
+<Slide style={{
+    width: 1280, height: 720,
+    padding: 60,
+    background: '#FFF7ED',
+    fontFamily: 'Microsoft YaHei, Arial',
+    position: 'relative',
+    flexDirection: 'column',
+}}>
+    <Box style={{ flexDirection: 'column' }}>
+        <Text style={{ fontSize: 36, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.2 }}>四步确认，别跳过任何一次</Text>
+        <Box style={{ width: '100%', height: 1, background: '#EA580C', marginTop: 16 }} />
+    </Box>
+    <Box style={{ flexDirection: 'row', alignItems: 'center', marginTop: 24, height: 300 }}>
+        <Box style={{ width: 250, height: 300, background: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: 8, padding: 20, flexDirection: 'column' }}>
+            <Box style={{ width: 44, height: 44, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>01</Text>
+            </Box>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917', marginTop: 18, lineHeight: 1.3 }}>基本信息</Text>
+            <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5, marginTop: 10 }}>做几页、配图怎么办。页数区间 5-10 / 10-15 / 15-20 / 20-30，图片 AI 生成还是自己提供。</Text>
+            <Box style={{ width: '100%', height: 1, background: '#E7E5E4', marginTop: 18, marginBottom: 12 }} />
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#C2410C', lineHeight: 1.4 }}>加一句约束最划算</Text>
+        </Box>
+        <Box style={{ width: 50, height: 300, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 36, color: '#EA580C' }}>›</Text>
+        </Box>
+        <Box style={{ width: 250, height: 300, background: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: 8, padding: 20, flexDirection: 'column' }}>
+            <Box style={{ width: 44, height: 44, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>02</Text>
+            </Box>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917', marginTop: 18, lineHeight: 1.3 }}>教学目标</Text>
+            <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5, marginTop: 10 }}>目标写什么，这一步当场改。别等 14 页都生成完，再回头说目标不对。</Text>
+            <Box style={{ width: '100%', height: 1, background: '#E7E5E4', marginTop: 18, marginBottom: 12 }} />
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#C2410C', lineHeight: 1.4 }}>不满意当场改</Text>
+        </Box>
+        <Box style={{ width: 50, height: 300, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 36, color: '#EA580C' }}>›</Text>
+        </Box>
+        <Box style={{ width: 250, height: 300, background: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: 8, padding: 20, flexDirection: 'column' }}>
+            <Box style={{ width: 44, height: 44, borderRadius: 8, background: '#EA580C', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>03</Text>
+            </Box>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917', marginTop: 18, lineHeight: 1.3 }}>大纲</Text>
+            <Text style={{ fontSize: 18, color: '#78716C', lineHeight: 1.5, marginTop: 10 }}>每页讲什么。看结构对不对，比盯着措辞打磨重要得多。</Text>
+            <Box style={{ width: '100%', height: 1, background: '#E7E5E4', marginTop: 18, marginBottom: 12 }} />
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#C2410C', lineHeight: 1.4 }}>先看结构</Text>
+        </Box>
+        <Box style={{ width: 50, height: 300, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 36, color: '#EA580C' }}>›</Text>
+        </Box>
+        <Box style={{ width: 250, height: 300, background: '#FDBA74', borderRadius: 8, padding: 20, flexDirection: 'column' }}>
+            <Box style={{ width: 44, height: 44, borderRadius: 8, background: '#C2410C', justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#FFFFFF' }}>04</Text>
+            </Box>
+            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#1C1917', marginTop: 18, lineHeight: 1.3 }}>生成</Text>
+            <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5, marginTop: 10 }}>点确认之后才真正动手。此前四步都是卡片，随时能改、不用重做。</Text>
+            <Box style={{ width: '100%', height: 1, background: '#EA580C', marginTop: 18, marginBottom: 12 }} />
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#C2410C', lineHeight: 1.4 }}>确认后才开工</Text>
+        </Box>
+    </Box>
+    <Box style={{ flexDirection: 'row', gap: 24, marginTop: 20, height: 104 }}>
+        <Box style={{ width: 620, background: '#FFFFFF', border: '1px solid #E7E5E4', borderRadius: 8, padding: 18, flexDirection: 'column', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 18, color: '#1C1917', lineHeight: 1.5 }}>原作者实测：14 页约 23 分钟，含确认环节。第一份别卡着公开课前一晚做。</Text>
+        </Box>
+        <Box style={{ width: 516, background: '#FFFFFF', border: '1px solid #FDBA74', borderRadius: 8, padding: 18, flexDirection: 'column', justifyContent: 'center' }}>
+            <Text style={{ fontSize: 18, color: '#C2410C', lineHeight: 1.5 }}>提示词：用 seewo-easinote-assistant-skill 生成人教版语文八年级上册《三峡》的教学课件制作</Text>
+        </Box>
+    </Box>
+    <Box style={{ background: '#FDBA74', borderRadius: 8, padding: 16, marginTop: 16, flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1C1917', lineHeight: 1.5 }}>文章里那三个毛病，有两个本来能在第 ① 步用一句话挡掉</Text>
+    </Box>
+    <Box style={{ position: 'absolute', top: 670, left: 60, width: 1160, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>希沃白板 · 特有功能</Text>
+        <Text style={{ fontSize: 14, color: '#78716C' }}>07</Text>
+    </Box>
+</Slide>

@@ -1,0 +1,16 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#E8833A', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#FFE0C2' }}>03 · P6 · 暂停跟做</Text>
+    <Text style={{ fontSize: 17, color: '#FFF3E8' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#FFFFFF', lineHeight: 1.25 }}>现在暂停，自己动手</Text>
+    <Text style={{ fontSize: 27, color: '#FFF3E8', lineHeight: 1.45 }}>① 搜一个本学科教学 Skill ② 只装 1 个 ③ 用示例教案跑一遍</Text>
+    <Text style={{ fontSize: 27, color: '#FFF3E8', lineHeight: 1.45 }}>卡住三步回退 + 允许跳过；做完标志：说得出管哪一段，且手里有文件</Text>
+    <Text style={{ fontSize: 27, color: '#FFF3E8', lineHeight: 1.45 }}>12:00–22:00 静音定格，不加新信息</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#FFF3E8' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#FFF3E8' }}>32 / 34</Text>
+  </Box>
+</Slide>

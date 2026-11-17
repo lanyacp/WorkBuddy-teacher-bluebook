@@ -1,0 +1,18 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#F2F6F9', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#1E9E8A' }}>02 · P7 · 交付验收</Text>
+    <Text style={{ fontSize: 17, color: '#1B2A38' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#12304A', lineHeight: 1.25 }}>交付：工作区目录 + 一次三层对话</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>验收 3 条：说得出产物在哪 / 只改了指定一处 / 原件未被覆盖</Text>
+    <Text style={{ fontSize: 27, color: '#1B2A38', lineHeight: 1.45 }}>踩坑 ≤3 条｜这讲不打分</Text>
+    <Box style={{ background: '#E9EEF1', border: '2px solid #9BB2BF', borderRadius: 10, padding: 18, marginTop: 12 }}>
+      <Text style={{ fontSize: 22, color: '#4A6272', textAlign: 'center', lineHeight: 1.4 }}>【待补｜S-02-05】 学员做完的对照样张（可选）</Text>
+    </Box>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#1B2A38' }}>25 / 34</Text>
+  </Box>
+</Slide>

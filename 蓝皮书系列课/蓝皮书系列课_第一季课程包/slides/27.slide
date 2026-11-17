@@ -1,0 +1,15 @@
+<Slide style={{ width: '1280px', height: '720px', padding: '56px', background: '#12304A', flexDirection: 'column', justifyContent: 'space-between' }}>
+  <Box style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
+    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#8FE0D2' }}>03 · P1 · 封面</Text>
+    <Text style={{ fontSize: 17, color: '#CFE4EA' }}>WorkBuddy 教师实战蓝皮书 · 第一季</Text>
+  </Box>
+  <Box style={{ flexDirection: 'column', gap: 14 }}>
+    <Text style={{ fontSize: 50, fontWeight: 'bold', color: '#FFFFFF', lineHeight: 1.25 }}>会下指令，更要会装 Skill</Text>
+    <Text style={{ fontSize: 27, color: '#CFE4EA', lineHeight: 1.45 }}>这讲解决你哪个麻烦：同一段要求每次重说，或者装了一堆却总选错</Text>
+    <Text style={{ fontSize: 27, color: '#CFE4EA', lineHeight: 1.45 }}>这讲只装一个，判断标准就一句：这件事你做过三次以上没有</Text>
+  </Box>
+  <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+    <Text style={{ fontSize: 18, color: '#CFE4EA' }}>工具负责「量」，教师负责「读懂学生」</Text>
+    <Text style={{ fontSize: 18, color: '#CFE4EA' }}>27 / 34</Text>
+  </Box>
+</Slide>

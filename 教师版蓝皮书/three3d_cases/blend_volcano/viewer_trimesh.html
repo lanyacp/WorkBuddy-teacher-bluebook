@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火山剖面 · trimesh 快速版（路线 C）</title>
+<script type="module" src="../_lib/model-viewer.min.js"></script>
+<style>
+  html,body{margin:0;height:100%;background:#0f172a;font-family:"Microsoft YaHei",system-ui,sans-serif;}
+  header{padding:14px 22px;color:#e2e8f0;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;}
+  h1{font-size:17px;margin:0;font-weight:600;}
+  p{margin:0;font-size:12.5px;color:#94a3b8;}
+  a.back{font-size:12.5px;color:#38bdf8;text-decoration:none;margin-left:auto;}
+  a.back:hover{text-decoration:underline;}
+  model-viewer{width:100%;height:calc(100% - 74px);background:#0f172a;--poster-color:transparent;}
+</style>
+</head>
+<body>
+<header>
+  <h1>火山剖面 · trimesh 快速版</h1>
+  <p>纯 Python 建模，30 分钟出件，不装 Blender</p>
+  <a class="back" href="../index.html">← 返回一览</a>
+</header>
+<model-viewer
+  src="volcano_section.glb"
+  alt="火山剖面 3D 模型（trimesh 版）"
+  camera-controls
+  auto-rotate
+  auto-rotate-delay="800"
+  rotation-per-second="10deg"
+  shadow-intensity="1"
+  exposure="1"
+  camera-orbit="38deg 68deg 82%"
+  min-camera-orbit="auto auto 45%">
+</model-viewer>
+</body>
+</html>

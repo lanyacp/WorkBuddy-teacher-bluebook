@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>每讲课件骨架 · 8 种母版页型（v2 成人学习版）</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1760px;overflow:hidden}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#F2F6F9;color:#1B2A38}
+  .page{width:1080px;height:1760px;padding:0 32px}
+  .hd{height:150px;margin:0 -32px 0;background:linear-gradient(120deg,#12304A 0%,#1B4A6B 60%,#1E9E8A 140%);padding:26px 32px 0;color:#fff;position:relative}
+  .kicker{font-size:17px;letter-spacing:3px;color:#8FE0D2;font-weight:700}
+  .hd h1{font-size:40px;margin-top:8px;font-weight:800;line-height:1.2}
+  .hd p{font-size:18px;color:#CFE4EA;margin-top:7px}
+  .hd .right{position:absolute;right:32px;top:34px;text-align:right;font-size:16px;color:#BFE3DC;line-height:1.7}
+
+  .grid{margin-top:18px;display:grid;grid-template-columns:496px 496px;grid-template-rows:repeat(4,360px);gap:12px 24px}
+  .cell{background:#fff;border-radius:12px;border:1px solid #DCE8ED;overflow:hidden}
+  .thumb{width:496px;height:279px;position:relative;overflow:hidden;background:#F7FAFB}
+  .cap{height:72px;padding:9px 14px;display:flex;align-items:flex-start;gap:12px}
+  .cap b{font-size:18px;color:#12304A;white-space:nowrap;font-weight:800}
+  .cap .id{font-size:13px;color:#fff;background:#1E9E8A;border-radius:4px;padding:2px 7px;white-space:nowrap;font-weight:700;height:22px;line-height:18px}
+  .cap .id.o{background:#E8833A}
+  .cap .txt{font-size:14px;color:#5A7180;line-height:1.45}
+  .cap .txt strong{color:#12776A}
+
+  .bar{position:absolute;background:#CBD9E1;border-radius:4px}
+  .bar.d{background:#12304A}
+  .bar.g{background:#1E9E8A}
+  .bar.o{background:#E8833A}
+  .bar.w{background:rgba(255,255,255,.82)}
+  .bar.w2{background:rgba(255,255,255,.36)}
+  .lab{position:absolute;font-size:13px;color:#6B8090;font-weight:700}
+  .lab.on{color:#fff}
+  .dot{position:absolute;border-radius:50%;background:#1E9E8A;color:#fff;font-size:16px;font-weight:800;text-align:center;line-height:38px;width:38px;height:38px}
+  .imgbox{position:absolute;background:#DDE7EC;border:2px dashed #A8BDC9;border-radius:6px;color:#6B8090;font-size:13px;text-align:center;padding-top:22px}
+  .note{position:absolute;bottom:8px;left:10px;font-size:12px;color:#8AA0AD;background:rgba(255,255,255,.8);padding:2px 6px;border-radius:3px}
+  .note.dk{color:#CFE4EA;background:rgba(9,28,44,.5)}
+
+  .t1{background:linear-gradient(135deg,#12304A,#1B4A6B)}
+  .t2{background:linear-gradient(160deg,#2A5D6E,#12304A 70%)}
+  .t6{background:linear-gradient(135deg,#12304A,#1E4C63)}
+  .t8{background:linear-gradient(135deg,#12304A,#1E4C63)}
+  .arrow{position:absolute;font-size:30px;color:#E8833A;font-weight:800}
+  .chk{position:absolute;font-size:15px;color:#12776A;font-weight:700}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hd">
+    <div class="kicker">SLIDE MASTER / 8 PAGE TYPES · V2 成人学习版</div>
+    <h1>每讲固定 8 页 · 课件母版页型</h1>
+    <p>按 Kolb 体验学习圈重排 · 页数不变、信息减半 · P6 强制暂停点</p>
+    <div class="right">标题 ≥56px（建议 64–72）　正文 ≥28px<br>标签 ≥22px　内容距边 ≥100px<br>一页一个意思，放不下就删内容</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- P1 -->
+    <div class="cell">
+      <div class="thumb t1">
+        <div class="bar" style="left:34px;top:60px;width:300px;height:26px;background:#8FE0D2"></div>
+        <div class="bar w" style="left:34px;top:100px;width:352px;height:34px"></div>
+        <div class="bar w" style="left:34px;top:142px;width:268px;height:34px"></div>
+        <div class="bar w2" style="left:34px;top:192px;width:300px;height:16px"></div>
+        <div class="dot" style="right:30px;bottom:28px;background:#E8833A">01</div>
+        <div class="lab on" style="left:34px;bottom:22px">这讲解决你哪个麻烦</div>
+        <div class="note dk">版式示意 · 先讲麻烦，不先讲工具</div>
+      </div>
+      <div class="cap"><b>P1 封面</b><span class="id">L02</span><div class="txt">讲次 + 标题 + <strong>「这讲解决你哪个麻烦」</strong>；深色底。标题 72–88 / 副题 32。</div></div>
+    </div>
+
+    <!-- P2 -->
+    <div class="cell">
+      <div class="thumb t2">
+        <div class="imgbox" style="left:0;top:0;width:496px;height:279px;border:none;border-radius:0;background:linear-gradient(150deg,#3C7A86,#16405A 65%);color:transparent;padding:0">成片定格图</div>
+        <div class="bar" style="left:0;bottom:0;width:496px;height:92px;background:rgba(9,28,44,.72);border-radius:0"></div>
+        <div class="bar w" style="left:32px;bottom:50px;width:330px;height:24px"></div>
+        <div class="bar w2" style="left:32px;bottom:24px;width:220px;height:12px"></div>
+        <div class="lab on" style="right:22px;top:16px">30 秒看成片</div>
+        <div class="note dk">版式示意 · 具体经验</div>
+      </div>
+      <div class="cap"><b>P2 成片先行</b><span class="id">L14</span><div class="txt">成品定格 + 一句「做完你会得到 XX」；<strong>＝ P7 要验收的那一个成品</strong>。叠字 56–72。</div></div>
+    </div>
+
+    <!-- P3 -->
+    <div class="cell">
+      <div class="thumb" style="background:#fff">
+        <div class="bar d" style="left:24px;top:26px;width:206px;height:20px"></div>
+        <div class="bar g" style="left:266px;top:26px;width:206px;height:20px;opacity:.35"></div>
+        <div class="bar" style="left:24px;top:66px;width:206px;height:14px"></div>
+        <div class="bar" style="left:24px;top:92px;width:180px;height:14px"></div>
+        <div class="bar" style="left:24px;top:118px;width:196px;height:14px"></div>
+        <div class="bar" style="left:266px;top:66px;width:206px;height:14px;background:#E3EAED"></div>
+        <div class="bar" style="left:266px;top:92px;width:172px;height:14px;background:#E3EAED"></div>
+        <div class="bar" style="left:266px;top:118px;width:190px;height:14px;background:#E3EAED"></div>
+        <div class="lab" style="left:24px;top:170px">「你现在是怎么做的」 → 用 / 别用</div>
+        <div class="note">版式示意 · 先调出已有经验，不否定原做法</div>
+      </div>
+      <div class="cap"><b>P3 回想+选型</b><span class="id">L08</span><div class="txt">左栏先问<strong>「你现在怎么做」</strong>，右栏给用/别用；具体经验 → 反思观察。条目 28。</div></div>
+    </div>
+
+    <!-- P4 -->
+    <div class="cell">
+      <div class="thumb" style="background:#F7FAFB">
+        <div class="bar d" style="left:24px;top:24px;width:448px;height:30px"></div>
+        <div class="lab" style="left:24px;top:62px">一句原理 ≤25 字</div>
+        <div class="dot" style="left:26px;top:96px">1</div>
+        <div class="dot" style="left:142px;top:96px">2</div>
+        <div class="dot" style="left:258px;top:96px">3</div>
+        <div class="dot" style="left:374px;top:96px">4</div>
+        <div class="bar" style="left:26px;top:146px;width:80px;height:12px"></div>
+        <div class="bar" style="left:142px;top:146px;width:80px;height:12px"></div>
+        <div class="bar" style="left:258px;top:146px;width:80px;height:12px"></div>
+        <div class="bar" style="left:374px;top:146px;width:80px;height:12px"></div>
+        <div class="bar g" style="left:24px;top:190px;width:448px;height:40px;border-radius:6px;opacity:.85"></div>
+        <div class="bar w" style="left:38px;top:203px;width:390px;height:13px"></div>
+        <div class="note">版式示意 · 底部 1 条可原样粘贴的指令</div>
+      </div>
+      <div class="cap"><b>P4 原理+路径</b><span class="id">L13</span><div class="txt"><strong>一句原理 ≤25 字</strong>（48–56）+ 3–5 步 + 1 条指令；全讲唯一的新概念。</div></div>
+    </div>
+
+    <!-- P5 -->
+    <div class="cell">
+      <div class="thumb" style="background:#fff">
+        <div class="imgbox" style="left:24px;top:34px;width:230px;height:64px">截图位 1</div>
+        <div class="imgbox" style="left:24px;top:108px;width:230px;height:64px">截图位 2</div>
+        <div class="imgbox" style="left:24px;top:182px;width:230px;height:64px">截图位 3</div>
+        <div class="bar d" style="left:282px;top:40px;width:180px;height:18px"></div>
+        <div class="bar" style="left:282px;top:76px;width:186px;height:13px"></div>
+        <div class="bar" style="left:282px;top:102px;width:160px;height:13px"></div>
+        <div class="bar" style="left:282px;top:128px;width:176px;height:13px"></div>
+        <div class="bar g" style="left:282px;top:170px;width:120px;height:12px;opacity:.7"></div>
+        <div class="lab" style="left:24px;top:12px">≤3 张 · 一镜到底不跳剪</div>
+        <div class="note">版式示意 · 录制当天补拍，不用旧版图</div>
+      </div>
+      <div class="cap"><b>P5 教师演示</b><span class="id">L05/L06</span><div class="txt">≤3 张关键帧 + 要点 28–32；<strong>翻车别剪，但不单独成段</strong>，压进 P7 的 3 条踩坑。</div></div>
+    </div>
+
+    <!-- P6 -->
+    <div class="cell">
+      <div class="thumb t6">
+        <div class="lab on" style="left:34px;top:22px;color:#8FE0D2">主动实验 · 强制暂停点</div>
+        <div class="bar w" style="left:34px;top:52px;width:428px;height:40px"></div>
+        <div class="bar g" style="left:34px;top:108px;width:128px;height:26px"></div>
+        <div class="bar g" style="left:176px;top:108px;width:128px;height:26px"></div>
+        <div class="bar g" style="left:318px;top:108px;width:144px;height:26px"></div>
+        <div class="bar o" style="left:34px;top:154px;width:428px;height:34px;opacity:.9"></div>
+        <div class="bar w2" style="left:34px;top:206px;width:300px;height:14px"></div>
+        <div class="dot" style="right:26px;bottom:22px;background:#E8833A;width:34px;height:34px;line-height:34px;font-size:14px">‖</div>
+        <div class="note dk">大字「现在暂停，自己动手」+ 3 步 + 卡住回退 + 做完标志</div>
+      </div>
+      <div class="cap"><b>P6 暂停跟做</b><span class="id o">L04</span><div class="txt"><strong>全季最重要的一页</strong>：3 步动作 + 卡住三步回退 + 可验证的做完标志；大字 64–80。S 类跳过。</div></div>
+    </div>
+
+    <!-- P7 -->
+    <div class="cell">
+      <div class="thumb" style="background:#fff">
+        <div class="bar" style="left:24px;top:34px;width:186px;height:112px;background:#E7EDF0;border-radius:8px"></div>
+        <div class="bar g" style="left:278px;top:34px;width:186px;height:112px;border-radius:8px;opacity:.9"></div>
+        <div class="arrow" style="left:222px;top:74px">→</div>
+        <div class="lab" style="left:24px;top:158px">动手前</div>
+        <div class="lab" style="left:278px;top:158px;color:#12776A">这讲交付（1 个）</div>
+        <div class="chk" style="left:24px;top:196px">✓ 验收 1</div>
+        <div class="chk" style="left:184px;top:196px">✓ 验收 2</div>
+        <div class="chk" style="left:344px;top:196px">✓ 验收 3</div>
+        <div class="lab" style="left:24px;top:230px;color:#E8833A">≤3 条踩坑 · 模块末讲加同伴互看 2 分钟</div>
+        <div class="note">版式示意 · 只认成品文件，不认「看完了」</div>
+      </div>
+      <div class="cap"><b>P7 交付验收</b><span class="id">L18/L19</span><div class="txt">1 个成品 + 3 条验收 + <strong>≤3 条踩坑</strong>；验收看学员自己做出来的文件。</div></div>
+    </div>
+
+    <!-- P8 -->
+    <div class="cell">
+      <div class="thumb t8">
+        <div class="lab on" style="left:36px;top:34px;color:#8FE0D2">本讲红线 · 原文</div>
+        <div class="bar w" style="left:56px;top:84px;width:384px;height:30px"></div>
+        <div class="bar w" style="left:88px;top:124px;width:320px;height:30px"></div>
+        <div class="bar" style="left:56px;top:186px;width:230px;height:12px;background:rgba(255,255,255,.35)"></div>
+        <div class="bar" style="left:56px;top:206px;width:290px;height:12px;background:rgba(255,255,255,.35)"></div>
+        <div class="dot" style="right:26px;bottom:26px;background:#E8833A;width:32px;height:32px;line-height:32px;font-size:13px">→</div>
+        <div class="note dk">红线 + 下周在哪用 + 每 4 讲回想上一讲成品</div>
+      </div>
+      <div class="cap"><b>P8 红线+回想</b><span class="id">L04</span><div class="txt">1 条红线 48–60 +「下周在哪用」；每 4 讲加一句提取练习，<strong>不新增页</strong>。</div></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

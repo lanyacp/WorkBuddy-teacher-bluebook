@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>4 步，让 AI 直接在希沃里做出课件</title></head>
+<body style="max-width:677px;margin:0 auto;padding:0 2px;font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#FFFFFF;">
+<section id="article">
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">很多老师问同一件事，AI 做的课件，怎么才能不是一份 PPT，而是希沃里那种<strong style="color:#B4472B;">汉字能读、导图能展开、学生能上台答题</strong>的课件？</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">这篇不讲原理，就四步。照着做，用《赵州桥》走一遍，十分钟左右。</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">开始之前，电脑上装好<strong style="color:#B4472B;">希沃白板 5</strong>、登录自己的账号，WorkBuddy 打开就行。</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">先看成品 👇</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 01｜成品，9 页《赵州桥》封面页，请在此处插入对应编号图片）</p>
+<hr style="border:0;border-top:1px solid #E5DFD0;margin:26px 0;">
+<h2 style="font-size:21px;line-height:1.5;margin:32px 0 14px;padding-left:11px;border-left:4px solid #B4472B;color:#26312F;font-weight:700;">第一步　装一个技能</h2>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">在 WorkBuddy 对话框里发这一句。</p>
+<section style="background:#26312F;color:#F5F1E8;padding:14px 16px;border-radius:6px;font-family:Consolas,Monaco,monospace;font-size:14px;line-height:1.75;white-space:pre-wrap;word-break:break-all;margin:16px 0;">seewo-easinote-assistant-skill，安装这个技能</section>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">装完就好，不用去技能市场翻。</p>
+<h2 style="font-size:21px;line-height:1.5;margin:32px 0 14px;padding-left:11px;border-left:4px solid #B4472B;color:#26312F;font-weight:700;">第二步　连上希沃（最容易卡住的一步）</h2>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">先打开希沃白板 5、登录，<strong style="color:#B4472B;">等主界面出来之后再等 30 秒</strong>。然后回 WorkBuddy 说。</p>
+<section style="background:#26312F;color:#F5F1E8;padding:14px 16px;border-radius:6px;font-family:Consolas,Monaco,monospace;font-size:14px;line-height:1.75;white-space:pre-wrap;word-break:break-all;margin:16px 0;">@skill:seewo-easinote-assistant-skill 连接希沃白板</section>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">看到这三样，才算连上。</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· 返回里 <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">"connected": true</code>，端口 7916</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· 工具列表非空，<code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">has_tools: true</code></p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">mcp.json</code> 里 <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">entry</code> 有值</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 02｜连接确认，五步操作与三条证据，请在此处插入对应编号图片）</p>
+<section style="background:#FBF3EF;border-left:4px solid #B4472B;padding:12px 16px;margin:16px 0;font-size:15px;line-height:1.9;color:#3F5A62;">⚠️ <strong style="color:#B4472B;">希沃客户端里没有「MCP 开关」，设置里翻不到是正常的，别找。</strong><br>连不上就这么做，<strong style="color:#B4472B;">彻底退出</strong>希沃（托盘退出，或在任务管理器结束 EasiNote 进程）→ 重新打开 → 登录 → 等 30 秒 → 再说一次「重新连接希沃」。很多时候真的就是重启一下。<br>另外 <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">need_trust: true</code> 不是没连上，不用管它。</section>
+<h2 style="font-size:21px;line-height:1.5;margin:32px 0 14px;padding-left:11px;border-left:4px solid #B4472B;color:#26312F;font-weight:700;">第三步　一句话生成课件</h2>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">下面这段整段复制过去，换课题就能用。</p>
+<section style="background:#26312F;color:#F5F1E8;padding:14px 16px;border-radius:6px;font-family:Consolas,Monaco,monospace;font-size:14px;line-height:1.75;white-space:pre-wrap;word-break:break-all;margin:16px 0;">用 seewo-easinote-assistant-skill 生成人教版小学语文三年级下册《赵州桥》第一课时的课件：
+5-10 页，图片由 AI 生成；
+必须用到希沃特有的汉字卡（匠、慧、赵，带笔顺演示）、
+思维导图（总说身份→分写雄伟/坚固/美观→总结文化遗产）、
+判断对错课堂活动（5 题）；
+交付物是希沃客户端里真实打开的 .enbx 原生课件，不要导出 PPT。</section>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">它会弹四次确认，按顺序回。</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· ① 基本信息，5-10 页 / AI 生成图片 / 交付 <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">.enbx</code></p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· ② 教学目标，四条，看一眼，确认</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· ③ 大纲设计，看页序和组件放在哪页，确认</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· ④ 开工，点确认</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">有个小窍门，<strong style="color:#B4472B;">希沃那些特有功能是「点名才有」的</strong>。生字是哪几个、判断题考什么、思维导图根节点是什么，都写进提示词里。只说「做个互动课件」，它可能就不给你加。</p>
+<h2 style="font-size:21px;line-height:1.5;margin:32px 0 14px;padding-left:11px;border-left:4px solid #B4472B;color:#26312F;font-weight:700;">第四步　看成品，点一下「开始授课」</h2>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">大概 30 秒，希沃客户端里会自动打开 9 页《赵州桥》。</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 03｜希沃原生汉字卡，请在此处插入对应编号图片）</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 04｜两段关键句对照表，请在此处插入对应编号图片）</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 05｜思维导图逐级展开，请在此处插入对应编号图片）</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 06｜判断对错活动页，请在此处插入对应编号图片）</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">这时候<strong style="color:#B4472B;">一定要点「开始授课」再验</strong>，汉字卡旁边的小喇叭能读、「分步」能一笔一笔演示、思维导图能逐级点开、判断活动会一道道出题。</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">备课状态下这些组件只是静态预览，不点「开始授课」，看起来就跟图片一样。</p>
+<p style="background:#F7F4EE;border:1px dashed #D8CFC0;border-radius:6px;padding:10px 14px;margin:18px 0;text-align:center;font-size:14px;color:#8A8A82;">（配图 07｜汉字卡控件与开始授课，请在此处插入对应编号图片）</p>
+<hr style="border:0;border-top:1px solid #E5DFD0;margin:26px 0;">
+<h2 style="font-size:21px;line-height:1.5;margin:32px 0 14px;padding-left:11px;border-left:4px solid #B4472B;color:#26312F;font-weight:700;">卡住了？看这三行</h2>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· 一直 <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">login_required</code> / 端口不通 → 彻底退出希沃重开、登录、等 30 秒，再连一次</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· 汉字卡点了没反应 → 没点「开始授课」</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 8px 10px;color:#26312F;">· 只给了一份 PPT → 提示词里没写「交付希沃客户端里的 <code style="background:#F5F1E8;padding:2px 5px;border-radius:3px;font-size:14px;color:#3F5A62;">.enbx</code> 原生课件」</p>
+<hr style="border:0;border-top:1px solid #E5DFD0;margin:26px 0;">
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;">一节课值钱的不是排版，是学生能不能上手点一下。这四步走完，剩下的时间留给教学设计。</p>
+<p style="font-size:16px;line-height:1.9;margin:0 0 16px;color:#26312F;"><strong style="color:#B4472B;">看了教程不知道怎么操作的，私信我沟通。</strong></p>
+<p style="font-size:13px;color:#8A8A82;line-height:1.8;margin:18px 0 0;">#AI备课 #希沃白板 #WorkBuddy #课件制作 #小学语文 #教师效率</p>
+</section>
+</body></html>
