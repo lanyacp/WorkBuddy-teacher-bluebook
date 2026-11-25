@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkBuddy 技能与专家，怎么分、怎么分享</title>
+<style>
+* { box-sizing:border-box; }
+body { margin:0; background:#F3F1EC; font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  color:#2F2C27; line-height:1.85; }
+.page { max-width:900px; margin:0 auto; background:#FFFDF8; padding:56px 64px 80px;
+  box-shadow:0 2px 24px rgba(0,0,0,.05); }
+h1 { font-size:34px; line-height:1.4; margin:0 0 28px; color:#222;
+  border-bottom:4px solid #E8834A; padding-bottom:20px; }
+h2 { font-size:25px; margin:46px 0 16px; color:#B0653A;
+  border-left:5px solid #E8834A; padding-left:14px; }
+h3 { font-size:19px; margin:30px 0 12px; color:#3D6B5E; }
+p { font-size:16px; margin:14px 0; }
+strong { color:#C2602B; }
+code { background:#F3EDE3; padding:2px 6px; border-radius:4px; font-size:14px; color:#8A4E28; }
+pre { background:#2F2C27; color:#F3EDE3; padding:18px 22px; border-radius:10px;
+  overflow-x:auto; font-size:14px; line-height:1.65; margin:18px 0; }
+pre code { background:none; color:inherit; padding:0; }
+a { color:#3D6B5E; word-break:break-all; }
+hr { border:none; border-top:1px solid #EAE2D6; margin:36px 0; }
+table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14.5px; }
+th { background:#FBEDE1; color:#8A4E28; text-align:left; padding:11px 13px;
+  border:1px solid #EADBC6; font-weight:700; }
+td { padding:10px 13px; border:1px solid #EADBC6; vertical-align:top; }
+tr:nth-child(even) td { background:#FDFBF6; }
+ul { margin:14px 0; padding-left:24px; }
+li { margin:7px 0; }
+blockquote { background:#EFF6F3; border-left:4px solid #5B9A8B; margin:18px 0;
+  padding:14px 20px; border-radius:0 8px 8px 0; font-size:15px; color:#3D564E; }
+figure { margin:26px 0; }
+figure img { width:100%; border:1px solid #EADBC6; border-radius:8px; display:block; }
+figcaption { text-align:center; font-size:13px; color:#9A9085; margin-top:9px; letter-spacing:1px; }
+@media print { body { background:#fff; } .page { box-shadow:none; padding:0; max-width:none; } }
+</style></head><body><div class="page">
+<h1>WorkBuddy 技能与专家，到底怎么分、怎么分享出去</h1>
+<p>写给一线老师的一份实操说明。看完你能回答三个问题，技能与专家有什么不同、做好的东西怎么给同事用、怎么放到市场上让更多人用。</p>
+<hr>
+<h2>一、先把三件事分清</h2>
+<p>WorkBuddy 里最容易混的就是技能、专家、专家团。一句话记法是：</p>
+<p><strong>技能是能力，专家是能力加经验，专家团是几位专家加一套协作流程。</strong></p>
+<table><thead><tr><th>维度</th><th>技能 Skill</th><th>专家 Expert</th><th>专家团 Team</th></tr></thead><tbody><tr><td>本质</td><td>工具能力，让 AI 能做某件事</td><td>AI 顾问，懂某个领域的角色</td><td>AI 协作团队，自动拆解分工</td></tr><tr><td>组成</td><td>一个流程文件加可选脚本</td><td>人设 + 方法论 + 工具链</td><td>多位专家 + 团长 + 协作流程</td></tr><tr><td>适合</td><td>需要固定步骤的任务</td><td>目标明确的单点专业问题</td><td>复杂任务，要多角色配合</td></tr><tr><td>老师举例</td><td>批量排版试卷、生成周报、下载资源</td><td>作业设计专家、命题专家、听评课专家</td><td>一节课从备课到出题到评价完整交付</td></tr><tr><td>怎么选</td><td>想让 AI 按你的步骤干</td><td>想让 AI 用某个角色的判断</td><td>想让 AI 分头做再汇总</td></tr></tbody></table>
+<figure><img src="配图/官方_三者区别.png" alt="Skill、专家、专家团的关系"><figcaption>Skill、专家、专家团的关系</figcaption></figure>
+<p>还有一个关键边界，专家本身不会主动去读你的文件，它只处理你主动给它的对话和上传文件。只有给它配了技能或连接器，它才会在你授权后去访问文件或外部服务。</p>
+<p>官方原文参考 <a href="https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center" target="_blank">https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Expert-Center</a> <a href="https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market" target="_blank">https://www.codebuddy.cn/docs/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills-Market</a></p>
+<hr>
+<h2>二、先做出一个能分享的技能或专家</h2>
+<h3>2.1 最省事的做法，对话里让它自己生成</h3>
+<p>不用会写代码。在 WorkBuddy 对话框里把话说清楚就行。</p>
+<p>做技能这样说</p>
+<blockquote>帮我创建一个技能。用途是把每次教研活动的记录整理成固定格式，包含时间、参与人、议题、结论、待办五项，输出 Markdown 文件，保存到当前工作目录。</blockquote>
+<p>做专家这样说</p>
+<blockquote>帮我创建一个作业设计专家。人设是有 15 年经验的县乡小学语文教研员，擅长分层作业设计。工作方法是先读课标再定目标，按基础、提升、拓展三层出题，每层给出设计理由。只做作业设计，不改试卷不评卷。输出包含题目、答案、设计说明三部分。</blockquote>
+<p>生成后先自己跑三到五个真实任务，输出稳定了再分享。</p>
+<h3>2.2 客户端入口在哪</h3>
+<p>左侧边栏点 <strong>专家·技能·连接器</strong>，默认进专家页；切到技能页管技能。</p>
+<figure><img src="配图/官方_专家中心首页.png" alt="专家中心首页"><figcaption>专家中心首页</figcaption></figure>
+<ul><li>创建专家：专家页右上角 <strong>我的专家</strong> → <strong>创建专家</strong>，进入对话式引导。</li><li>创建技能：技能页右上角 <strong>添加技能</strong> → <strong>创建技能</strong>。</li><li>专家建好后在 <strong>我的专家</strong> 列表里，卡片右上角三个点可以修改、分享、删除。</li></ul>
+<p>创建专家有两个坑要记住，<strong>名称创建后不能改</strong>，要换名字只能重建；<strong>删除专家不可恢复</strong>，已经分享出去的专家删掉后对方也用不了。</p>
+<figure><img src="配图/官方_专家搜索与置顶.png" alt="专家搜索与置顶"><figcaption>专家搜索与置顶</figcaption></figure>
+<h3>2.3 技能包的目录长什么样</h3>
+<pre><code>my-skill/
+├── SKILL.md              # 必需，技能定义
+├── references/           # 可选，参考文档
+├── scripts/              # 可选，可执行脚本
+└── templates/            # 可选，模板文件</code></pre>
+<p>SKILL.md 上半段是 YAML 说明身份，下半段是 Markdown 写具体步骤。<strong>description 字段最关键</strong>，写成一句话说清用途和触发词，写得含糊 AI 就不知道什么时候该用它。</p>
+<h3>2.4 专家包的目录长什么样</h3>
+<pre><code>my-expert/
+├── .codebuddy-plugin/
+│   └── plugin.json       # 核心配置
+├── avatars/
+│   └── expert.png        # 头像 512×512 PNG，不超过 500KB
+├── agents/
+│   └── my-expert.md      # 人设与提示词
+└── README.md</code></pre>
+<p>专家包的硬要求比技能多，头像必须 512×512 且小于 500KB，行业分类要从平台给的选项里挑，中文展示描述控制在 40 到 50 字。官方还提供了一个可以直接照抄的模板包。</p>
+<p>模板下载 <a href="https://codebuddy-platform-1258344699.cos.ap-beijing.myqcloud.com/open/static/files/design-experts.zip" target="_blank">https://codebuddy-platform-1258344699.cos.ap-beijing.myqcloud.com/open/static/files/design-experts.zip</a></p>
+<p>专家包规范的官方说明 <a href="https://open.workbuddy.cn/docs/expert" target="_blank">https://open.workbuddy.cn/docs/expert</a></p>
+<p>技能包规范的官方说明 <a href="https://open.workbuddy.cn/docs/skill" target="_blank">https://open.workbuddy.cn/docs/skill</a></p>
+<hr>
+<h2>三、分享出去的三条路</h2>
+<p>三条路由轻到重，适用场景不一样。先对照着选。</p>
+<table><thead><tr><th>方式</th><th>适合谁</th><th>对方怎么装</th><th>门槛</th></tr></thead><tbody><tr><td>直接发压缩包</td><td>同事、朋友、小范围</td><td>本地导入</td><td>零</td></tr><tr><td>SkillHub</td><td>想公开给全网用 Skill</td><td>网页或命令行安装</td><td>实名认证</td></tr><tr><td>WorkBuddy 开放平台</td><td>想上架技能或专家，可免费可付费</td><td>市场里一键安装</td><td>开发者认证 + 审核</td></tr></tbody></table>
+<h3>方式一　直接发送压缩包</h3>
+<p>最快，也最适合教研组内分享。</p>
+<p>发送方做三件事</p>
+<p>1. 把技能或专家的整个文件夹打成 zip。注意是<strong>打包文件夹本身</strong>，不是把里面的文件散着装。 2. 保留完整目录结构。技能的 SKILL.md、专家的 .codebuddy-plugin 和 plugin.json、avatars、agents 一个都不能少。最常见的失败就是漏了配置文件，导入直接报错。 3. 把 zip 发给对方，附上三句说明，这个东西解决什么问题、怎么用一句话触发、有什么限制。</p>
+<p>接收方安装</p>
+<p>左侧 <strong>专家·技能·连接器</strong> → <strong>技能</strong> 页 → <strong>添加技能</strong> → <strong>上传技能</strong> → 选中本地 zip，系统自动完成配置，不用额外操作。这就是官方说的「上传技能」入口。</p>
+<figure><img src="配图/网页_开放平台文档_技能.png" alt="技能市场与上传入口"><figcaption>技能市场与上传入口</figcaption></figure>
+<p>给老师的提醒，对方装完最好新开一个对话再试。已经加载在当前会话的技能，本会话内还能用，但新会话才完全按新配置走。</p>
+<h3>方式二　上传到 SkillHub</h3>
+<p>SkillHub 是专为中国用户优化的 Skill 社区，WorkBuddy 的技能市场里就有 SkillHub 分类，装起来很顺。想把技能公开给全网用，走这里。</p>
+<figure><img src="配图/网页_SkillHub首页.png" alt="SkillHub 首页与发布入口"><figcaption>SkillHub 首页与发布入口</figcaption></figure>
+<p>具体步骤</p>
+<p>1. 打开 <a href="https://skillhub.cn/" target="_blank">https://skillhub.cn/</a> ，右上角点 <strong>发布 Skill</strong>。 2. 首次发布要实名认证。平台用腾讯云人脸核身核验，信息加密存储，只用于身份核实。 3. 登录后进入发布页，按提示填技能信息、上传技能包。这一步需要登录，未登录会看到「需要登录才能访问」的提示。 4. 提交后平台做三层审核，内容合规过滤、科恩实验室深度漏洞扫描、云鼎实验室 AI 模型安全评估，全部通过才自动上架，任一不通过就拒绝。 5. 上架后别人有两条安装路，在 WorkBuddy 技能市场里搜到后点加号，或者复制 SkillHub 的安装指令贴到 WorkBuddy 对话里让它自动装。</p>
+<figure><img src="配图/网页_SkillHub发布页.png" alt="SkillHub 发布页需要登录"><figcaption>SkillHub 发布页需要登录</figcaption></figure>
+<p>SkillHub 还支持网页、CLI、Agent 三种发布方式。想用命令行的，先看安装说明。</p>
+<p><a href="https://skillhub.cn/install/skillhub.md" target="_blank">https://skillhub.cn/install/skillhub.md</a></p>
+<p>命令行安装技能时用 <code>--dir</code> 指向 WorkBuddy 的技能目录，不然默认装到当前目录的 skills 文件夹，WorkBuddy 认不到。</p>
+<pre><code>skillhub search 关键词
+skillhub install 技能名 --dir ~/.workbuddy/skills/</code></pre>
+<h3>方式三　WorkBuddy 开放平台</h3>
+<p>这条最正规。技能、专家、专家团、连接器都能上架，也能开通付费。老师分享给本校用，可以只走免费上架。</p>
+<figure><img src="配图/网页_开放平台首页.png" alt="WorkBuddy 开放平台首页"><figcaption>WorkBuddy 开放平台首页</figcaption></figure>
+<p>开放平台地址 <a href="https://open.workbuddy.cn/" target="_blank">https://open.workbuddy.cn/</a></p>
+<p>完整七步</p>
+<p><strong>第一步，注册并入驻。</strong> 打开开放平台，点右上角 <strong>立即入驻</strong>，注册登录。</p>
+<p><strong>第二步，完成开发者认证。</strong> 个人准备身份证、手机号、邮箱，扫脸认证大约三分钟。企业可用法人扫码或腾讯云账号授权。认证完记得把开发者主页补好，头像、简介、联系方式，这决定别人敢不敢用你的东西。</p>
+<p><strong>第三步，创建业务类型。</strong> 在后台选你要发布的是技能还是专家，进入对应的发布管理页。</p>
+<p><strong>第四步，完善信息和能力配置。</strong> 上传打包好的 zip，填市场展示名称、头像、分类、功能介绍、适用行业、使用说明、风险提示。介绍写清三件事，谁用、解决什么具体问题、有什么限制。别写高效智能强大这类空词。</p>
+<figure><img src="配图/网页_开放平台文档_技能.png" alt="开放平台的技能规范文档"><figcaption>开放平台的技能规范文档</figcaption></figure>
+<p><strong>第五步，提交审核。</strong> 走配置资产、确认信息、提交审核三步。官方口径七个工作日内，实测快的第二天就过。</p>
+<p>审核其实是四道关，不只是走流程：</p>
+<ul><li>代码和行为安检，看有没有硬编码密钥、危险函数、混淆代码，还会在隔离环境里实际跑一遍看文件读写和网络出站。</li><li>开发者身份核验，确认是谁做的，出问题找得到人。</li><li>能力评测，用真实任务测完成质量、准确性和稳定性。</li><li>上架后持续检测，命中风险会预警、限流或下架。</li></ul>
+<p>专家包里的技能和 MCP 配置也会一起查，不只是查专家本体。</p>
+<p><strong>第六步，审核通过后手动点发布。</strong> 这一步最容易漏，过审不等于上线，要在后台点 <strong>发布</strong> 并选 <strong>公开发布</strong>。没点的话资产一直躺在后台，市场上搜不到。发完自己去市场搜一下名字，确认卡片完整、提示句能跑通。</p>
+<p><strong>第七步，需要收费才走变现。</strong> 进开放平台后台的收入变现入口，开通收款账户、完成微信签约。有三个前置条件，完成开发者认证、账号无违规、至少有一个已经通过审核的免费技能或专家。所以想收费，得先免费上架一个跑通。</p>
+<figure><img src="配图/网页_开放平台文档_专家.png" alt="开放平台的专家规范文档"><figcaption>开放平台的专家规范文档</figcaption></figure>
+<hr>
+<h2>四、注意事项，按重要性排</h2>
+<p><strong>打包别漏文件。</strong> 最高频的失败原因。技能必须有 SKILL.md，专家必须有 .codebuddy-plugin 下的 plugin.json、avatars 下的头像、agents 下的定义文件。打包前照着目录清点对一遍。</p>
+<p><strong>付费方式上架后不能改。</strong> 一次性买断和按月订阅，选了就定了，免费也不能直接转付费。想试水就先发免费的积累评价，再发一个新的付费版本。</p>
+<p><strong>审核期间别反复改文件重新上传。</strong> 可能打断流程，等结果出来再说。审核状态有时只显示已发布、没有进度提示，属于已知现象，预留几天耐心等。</p>
+<p><strong>别硬编码密钥和令牌。</strong> 专家包里严禁写真实 Token 和密钥。需要用户提供凭据的，用 MCP 依赖声明加 Token 表单，让用户自己填、存在本地。</p>
+<p><strong>专家名称创建后不能改。</strong> 想好再建。</p>
+<p><strong>分享链接不等于上架市场。</strong> 客户端「我的专家」里的分享，只是生成一个链接让别人召唤副本，对方的使用不影响你的配置，但别人在专家市场里搜不到。要公开发布得走开放平台。</p>
+<p><strong>安全第一。</strong> 优先用官方推荐的技能和专家。安装第三方包之前看清来源、权限申请和脚本内容。技能调用第三方、改本地文件、执行系统命令时，都是用你本人的身份执行，涉及删除、批量写入、资金操作，先小范围验证再放大。</p>
+<p><strong>涉及数据要守规矩。</strong> 上传学生作业、成绩、名单前，确认你有合法权利或已获授权，注意保护未成年人个人信息。生成内容仅供参考，重要判断要老师自己把关。</p>
+<p><strong>积分消耗要看住。</strong> 专家团会并行调多位专家、多轮交互，积分消耗通常是单专家的三到五倍。技能复杂时消耗也高。召唤前看一眼余额。</p>
+<hr>
+<h2>五、给老师的一句话建议</h2>
+<p>先做技能，从你每周都要重复干的那件事开始，比如周报、排版、资源整理。跑顺了再考虑做专家，把你最有判断力的那件事封装成角色。分享先从小范围的压缩包开始，同事用着好了，再考虑放上 SkillHub 或开放平台。</p>
+<hr>
+<p>资料来源与核对日期，2026 年 11 月 25 日。流程与规则以平台最新页面为准，遇到问题可发邮件到 openworkbuddy@tencent.com，或在开放平台首页扫码进社群。</p>
+</div></body></html>
